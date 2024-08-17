@@ -72,7 +72,7 @@
             this.Nave.Location = new System.Drawing.Point(188, 0);
             this.Nave.Margin = new System.Windows.Forms.Padding(2);
             this.Nave.Name = "Nave";
-            this.Nave.Size = new System.Drawing.Size(1732, 81);
+            this.Nave.Size = new System.Drawing.Size(967, 81);
             this.Nave.TabIndex = 66;
             // 
             // Menu
@@ -89,7 +89,7 @@
             this.Menu.Location = new System.Drawing.Point(0, 0);
             this.Menu.Margin = new System.Windows.Forms.Padding(2);
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(188, 1080);
+            this.Menu.Size = new System.Drawing.Size(188, 687);
             this.Menu.TabIndex = 65;
             // 
             // BtnHome
@@ -308,7 +308,7 @@
             this.panel1.Controls.Add(this.NomeCompTxt);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(706, 337);
+            this.panel1.Location = new System.Drawing.Point(253, 120);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(841, 534);
             this.panel1.TabIndex = 67;
@@ -434,11 +434,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.ClientSize = new System.Drawing.Size(1155, 687);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Nave);
             this.Controls.Add(this.Menu);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CadastrarClientes";
             this.Text = "Form3";
