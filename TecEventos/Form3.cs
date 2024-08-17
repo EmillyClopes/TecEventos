@@ -10,11 +10,47 @@ using System.Windows.Forms;
 
 namespace TecEventos
 {
-    public partial class CadastrarButton : Form
+    public partial class CadastrarClientes : Form
     {
-        public CadastrarButton()
+        public CadastrarClientes()
         {
             InitializeComponent();
+        }
+
+        private void NomeCompTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EmailTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EnderecoTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TelefoneTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SenhaTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            /*Fecha a tela*/
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace TecEventos
 {
-    partial class CadastrarButton
+    partial class CadastrarClientes
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastrarButton));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastrarClientes));
             this.Nave = new System.Windows.Forms.Panel();
             this.Menu = new System.Windows.Forms.Panel();
             this.BtnHome = new System.Windows.Forms.Button();
@@ -45,7 +45,7 @@
             this.PanelLogo = new System.Windows.Forms.Panel();
             this.LogoTxt = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.CadastrarButton = new System.Windows.Forms.Button();
             this.SenhaTxt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.TelefoneTxt = new System.Windows.Forms.TextBox();
@@ -72,7 +72,7 @@
             this.Nave.Location = new System.Drawing.Point(188, 0);
             this.Nave.Margin = new System.Windows.Forms.Padding(2);
             this.Nave.Name = "Nave";
-            this.Nave.Size = new System.Drawing.Size(1716, 81);
+            this.Nave.Size = new System.Drawing.Size(967, 81);
             this.Nave.TabIndex = 66;
             // 
             // Menu
@@ -89,7 +89,7 @@
             this.Menu.Location = new System.Drawing.Point(0, 0);
             this.Menu.Margin = new System.Windows.Forms.Padding(2);
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(188, 1041);
+            this.Menu.Size = new System.Drawing.Size(188, 687);
             this.Menu.TabIndex = 65;
             // 
             // BtnHome
@@ -136,6 +136,7 @@
             this.BtnSair.Text = "Sair";
             this.BtnSair.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnSair.UseVisualStyleBackColor = true;
+            this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
             // BtnPerfil
             // 
@@ -295,7 +296,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.CadastrarButton);
             this.panel1.Controls.Add(this.SenhaTxt);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.TelefoneTxt);
@@ -307,21 +308,22 @@
             this.panel1.Controls.Add(this.NomeCompTxt);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(704, 247);
+            this.panel1.Location = new System.Drawing.Point(253, 120);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(841, 534);
             this.panel1.TabIndex = 67;
             // 
-            // button1
+            // CadastrarButton
             // 
-            this.button1.BackColor = System.Drawing.Color.SkyBlue;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(348, 434);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 64);
-            this.button1.TabIndex = 79;
-            this.button1.Text = "Cadastrar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.CadastrarButton.BackColor = System.Drawing.Color.SkyBlue;
+            this.CadastrarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CadastrarButton.Location = new System.Drawing.Point(348, 434);
+            this.CadastrarButton.Name = "CadastrarButton";
+            this.CadastrarButton.Size = new System.Drawing.Size(147, 64);
+            this.CadastrarButton.TabIndex = 79;
+            this.CadastrarButton.Text = "Cadastrar";
+            this.CadastrarButton.UseVisualStyleBackColor = false;
+            this.CadastrarButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // SenhaTxt
             // 
@@ -330,6 +332,7 @@
             this.SenhaTxt.Name = "SenhaTxt";
             this.SenhaTxt.Size = new System.Drawing.Size(606, 26);
             this.SenhaTxt.TabIndex = 78;
+            this.SenhaTxt.TextChanged += new System.EventHandler(this.SenhaTxt_TextChanged);
             // 
             // label6
             // 
@@ -348,6 +351,7 @@
             this.TelefoneTxt.Name = "TelefoneTxt";
             this.TelefoneTxt.Size = new System.Drawing.Size(606, 26);
             this.TelefoneTxt.TabIndex = 76;
+            this.TelefoneTxt.TextChanged += new System.EventHandler(this.TelefoneTxt_TextChanged);
             // 
             // label5
             // 
@@ -366,6 +370,7 @@
             this.EnderecoTxt.Name = "EnderecoTxt";
             this.EnderecoTxt.Size = new System.Drawing.Size(606, 26);
             this.EnderecoTxt.TabIndex = 74;
+            this.EnderecoTxt.TextChanged += new System.EventHandler(this.EnderecoTxt_TextChanged);
             // 
             // label4
             // 
@@ -384,6 +389,7 @@
             this.EmailTxt.Name = "EmailTxt";
             this.EmailTxt.Size = new System.Drawing.Size(606, 26);
             this.EmailTxt.TabIndex = 72;
+            this.EmailTxt.TextChanged += new System.EventHandler(this.EmailTxt_TextChanged);
             // 
             // label3
             // 
@@ -402,6 +408,7 @@
             this.NomeCompTxt.Name = "NomeCompTxt";
             this.NomeCompTxt.Size = new System.Drawing.Size(606, 26);
             this.NomeCompTxt.TabIndex = 70;
+            this.NomeCompTxt.TextChanged += new System.EventHandler(this.NomeCompTxt_TextChanged);
             // 
             // label2
             // 
@@ -423,16 +430,16 @@
             this.label1.TabIndex = 68;
             this.label1.Text = "Cadastro de Clientes";
             // 
-            // CadastrarButton
+            // CadastrarClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.ClientSize = new System.Drawing.Size(1155, 687);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Nave);
             this.Controls.Add(this.Menu);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "CadastrarButton";
+            this.Name = "CadastrarClientes";
             this.Text = "Form3";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Menu.ResumeLayout(false);
@@ -475,6 +482,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox EnderecoTxt;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button CadastrarButton;
     }
 }
