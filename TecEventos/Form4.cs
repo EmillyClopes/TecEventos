@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TecEventos
 {
-    public partial class CadastrarButton : Form
+    public partial class Form4 : Form
     {
-        public CadastrarButton()
+        public Form4()
         {
             InitializeComponent();
         }
