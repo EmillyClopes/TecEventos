@@ -1,6 +1,6 @@
 ﻿namespace TecEventos
 {
-    partial class CadastrarButton
+    partial class CadastrarClientes
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastrarButton));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastrarClientes));
             this.Nave = new System.Windows.Forms.Panel();
             this.Menu = new System.Windows.Forms.Panel();
             this.BtnHome = new System.Windows.Forms.Button();
@@ -45,18 +45,18 @@
             this.PanelLogo = new System.Windows.Forms.Panel();
             this.LogoTxt = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.NomeCompTxt = new System.Windows.Forms.TextBox();
-            this.EmailTxt = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.EnderecoTxt = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.TelefoneTxt = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.CadastrarButton = new System.Windows.Forms.Button();
             this.SenhaTxt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.TelefoneTxt = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.EnderecoTxt = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.EmailTxt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.NomeCompTxt = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.Menu.SuspendLayout();
             this.SubMenuUsuario.SuspendLayout();
             this.SubMenuChacaras.SuspendLayout();
@@ -136,6 +136,7 @@
             this.BtnSair.Text = "Sair";
             this.BtnSair.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnSair.UseVisualStyleBackColor = true;
+            this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
             // BtnPerfil
             // 
@@ -295,7 +296,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.CadastrarButton);
             this.panel1.Controls.Add(this.SenhaTxt);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.TelefoneTxt);
@@ -312,91 +313,17 @@
             this.panel1.Size = new System.Drawing.Size(841, 534);
             this.panel1.TabIndex = 67;
             // 
-            // label1
+            // CadastrarButton
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(320, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 25);
-            this.label1.TabIndex = 68;
-            this.label1.Text = "Cadastro de Clientes";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(59, 120);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 20);
-            this.label2.TabIndex = 69;
-            this.label2.Text = "Nome Completo:";
-            // 
-            // NomeCompTxt
-            // 
-            this.NomeCompTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NomeCompTxt.Location = new System.Drawing.Point(192, 120);
-            this.NomeCompTxt.Name = "NomeCompTxt";
-            this.NomeCompTxt.Size = new System.Drawing.Size(606, 26);
-            this.NomeCompTxt.TabIndex = 70;
-            this.NomeCompTxt.TextChanged += new System.EventHandler(this.NomeCompTxt_TextChanged);
-            // 
-            // EmailTxt
-            // 
-            this.EmailTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailTxt.Location = new System.Drawing.Point(192, 180);
-            this.EmailTxt.Name = "EmailTxt";
-            this.EmailTxt.Size = new System.Drawing.Size(606, 26);
-            this.EmailTxt.TabIndex = 72;
-            this.EmailTxt.TextChanged += new System.EventHandler(this.EmailTxt_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(134, 180);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 20);
-            this.label3.TabIndex = 71;
-            this.label3.Text = "Email:";
-            // 
-            // EnderecoTxt
-            // 
-            this.EnderecoTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EnderecoTxt.Location = new System.Drawing.Point(192, 240);
-            this.EnderecoTxt.Name = "EnderecoTxt";
-            this.EnderecoTxt.Size = new System.Drawing.Size(606, 26);
-            this.EnderecoTxt.TabIndex = 74;
-            this.EnderecoTxt.TextChanged += new System.EventHandler(this.EnderecoTxt_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(104, 240);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 20);
-            this.label4.TabIndex = 73;
-            this.label4.Text = "Endereço:";
-            // 
-            // TelefoneTxt
-            // 
-            this.TelefoneTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TelefoneTxt.Location = new System.Drawing.Point(192, 300);
-            this.TelefoneTxt.Name = "TelefoneTxt";
-            this.TelefoneTxt.Size = new System.Drawing.Size(606, 26);
-            this.TelefoneTxt.TabIndex = 76;
-            this.TelefoneTxt.TextChanged += new System.EventHandler(this.TelefoneTxt_TextChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(111, 300);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 20);
-            this.label5.TabIndex = 75;
-            this.label5.Text = "Telefone:";
+            this.CadastrarButton.BackColor = System.Drawing.Color.SkyBlue;
+            this.CadastrarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CadastrarButton.Location = new System.Drawing.Point(348, 434);
+            this.CadastrarButton.Name = "CadastrarButton";
+            this.CadastrarButton.Size = new System.Drawing.Size(147, 64);
+            this.CadastrarButton.TabIndex = 79;
+            this.CadastrarButton.Text = "Cadastrar";
+            this.CadastrarButton.UseVisualStyleBackColor = false;
+            this.CadastrarButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // SenhaTxt
             // 
@@ -417,19 +344,93 @@
             this.label6.TabIndex = 77;
             this.label6.Text = "Senha:";
             // 
-            // button1
+            // TelefoneTxt
             // 
-            this.button1.BackColor = System.Drawing.Color.SkyBlue;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(348, 434);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 64);
-            this.button1.TabIndex = 79;
-            this.button1.Text = "Cadastrar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.TelefoneTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TelefoneTxt.Location = new System.Drawing.Point(192, 300);
+            this.TelefoneTxt.Name = "TelefoneTxt";
+            this.TelefoneTxt.Size = new System.Drawing.Size(606, 26);
+            this.TelefoneTxt.TabIndex = 76;
+            this.TelefoneTxt.TextChanged += new System.EventHandler(this.TelefoneTxt_TextChanged);
             // 
-            // CadastrarButton
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(111, 300);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(75, 20);
+            this.label5.TabIndex = 75;
+            this.label5.Text = "Telefone:";
+            // 
+            // EnderecoTxt
+            // 
+            this.EnderecoTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EnderecoTxt.Location = new System.Drawing.Point(192, 240);
+            this.EnderecoTxt.Name = "EnderecoTxt";
+            this.EnderecoTxt.Size = new System.Drawing.Size(606, 26);
+            this.EnderecoTxt.TabIndex = 74;
+            this.EnderecoTxt.TextChanged += new System.EventHandler(this.EnderecoTxt_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(104, 240);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(82, 20);
+            this.label4.TabIndex = 73;
+            this.label4.Text = "Endereço:";
+            // 
+            // EmailTxt
+            // 
+            this.EmailTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmailTxt.Location = new System.Drawing.Point(192, 180);
+            this.EmailTxt.Name = "EmailTxt";
+            this.EmailTxt.Size = new System.Drawing.Size(606, 26);
+            this.EmailTxt.TabIndex = 72;
+            this.EmailTxt.TextChanged += new System.EventHandler(this.EmailTxt_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(134, 180);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 20);
+            this.label3.TabIndex = 71;
+            this.label3.Text = "Email:";
+            // 
+            // NomeCompTxt
+            // 
+            this.NomeCompTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NomeCompTxt.Location = new System.Drawing.Point(192, 120);
+            this.NomeCompTxt.Name = "NomeCompTxt";
+            this.NomeCompTxt.Size = new System.Drawing.Size(606, 26);
+            this.NomeCompTxt.TabIndex = 70;
+            this.NomeCompTxt.TextChanged += new System.EventHandler(this.NomeCompTxt_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(59, 120);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(127, 20);
+            this.label2.TabIndex = 69;
+            this.label2.Text = "Nome Completo:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(320, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(213, 25);
+            this.label1.TabIndex = 68;
+            this.label1.Text = "Cadastro de Clientes";
+            // 
+            // CadastrarClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -437,8 +438,8 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Nave);
             this.Controls.Add(this.Menu);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "CadastrarButton";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "CadastrarClientes";
             this.Text = "Form3";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Menu.ResumeLayout(false);
@@ -481,6 +482,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox EnderecoTxt;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button CadastrarButton;
     }
 }
