@@ -42,15 +42,12 @@ namespace TecEventos
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
+    
 
         private void BtnSair_Click(object sender, EventArgs e)
         {
-            this.Close();
-            /*Fecha a tela*/
+            Application.Exit();
+            /*Encerra o programa*/
         }
     }
 }

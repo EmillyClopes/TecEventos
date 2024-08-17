@@ -45,7 +45,7 @@
             this.PanelLogo = new System.Windows.Forms.Panel();
             this.LogoTxt = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.CadastrarButton = new System.Windows.Forms.Button();
+            this.btnCadastrar = new System.Windows.Forms.Button();
             this.SenhaTxt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.TelefoneTxt = new System.Windows.Forms.TextBox();
@@ -72,7 +72,7 @@
             this.Nave.Location = new System.Drawing.Point(188, 0);
             this.Nave.Margin = new System.Windows.Forms.Padding(2);
             this.Nave.Name = "Nave";
-            this.Nave.Size = new System.Drawing.Size(967, 81);
+            this.Nave.Size = new System.Drawing.Size(1732, 81);
             this.Nave.TabIndex = 66;
             // 
             // Menu
@@ -89,7 +89,7 @@
             this.Menu.Location = new System.Drawing.Point(0, 0);
             this.Menu.Margin = new System.Windows.Forms.Padding(2);
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(188, 687);
+            this.Menu.Size = new System.Drawing.Size(188, 1080);
             this.Menu.TabIndex = 65;
             // 
             // BtnHome
@@ -296,7 +296,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.CadastrarButton);
+            this.panel1.Controls.Add(this.btnCadastrar);
             this.panel1.Controls.Add(this.SenhaTxt);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.TelefoneTxt);
@@ -308,22 +308,21 @@
             this.panel1.Controls.Add(this.NomeCompTxt);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(253, 120);
+            this.panel1.Location = new System.Drawing.Point(650, 288);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(841, 534);
             this.panel1.TabIndex = 67;
             // 
-            // CadastrarButton
+            // btnCadastrar
             // 
-            this.CadastrarButton.BackColor = System.Drawing.Color.SkyBlue;
-            this.CadastrarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CadastrarButton.Location = new System.Drawing.Point(348, 434);
-            this.CadastrarButton.Name = "CadastrarButton";
-            this.CadastrarButton.Size = new System.Drawing.Size(147, 64);
-            this.CadastrarButton.TabIndex = 79;
-            this.CadastrarButton.Text = "Cadastrar";
-            this.CadastrarButton.UseVisualStyleBackColor = false;
-            this.CadastrarButton.Click += new System.EventHandler(this.button1_Click);
+            this.btnCadastrar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.Location = new System.Drawing.Point(348, 434);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(147, 64);
+            this.btnCadastrar.TabIndex = 79;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = false;
             // 
             // SenhaTxt
             // 
@@ -434,10 +433,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1155, 687);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Nave);
             this.Controls.Add(this.Menu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CadastrarClientes";
             this.Text = "Form3";
@@ -482,6 +482,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox EnderecoTxt;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button CadastrarButton;
+        private System.Windows.Forms.Button btnCadastrar;
     }
 }

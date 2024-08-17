@@ -8,19 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+// CS0108.cs
+// compile with: /W:2
+using System;
+
 namespace TecEventos
 {
-    public partial class AdicionarChacara : Form
+    public partial class AgendarAlugueis : Form
     {
-        public AdicionarChacara()
+        public AgendarAlugueis()
         {
             InitializeComponent();
         }
 
         private void BtnSair_Click(object sender, EventArgs e)
         {
-                this.Close();
-                /*Fecha a tela*/
+            Application.Exit();
+            /*Encerra o programa*/
         }
     }
 }

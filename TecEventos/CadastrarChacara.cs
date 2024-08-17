@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace TecEventos
 {
-    public partial class Form4 : Form
+    public partial class AdicionarChacara : Form
     {
-        public Form4()
+        public AdicionarChacara()
         {
             InitializeComponent();
+        }
+
+        private void BtnSair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+            /*Encerra o programa*/
         }
     }
 }

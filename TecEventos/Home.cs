@@ -19,8 +19,8 @@ namespace TecEventos
 
         private void BtnSair_Click(object sender, EventArgs e)
         {
-            this.Close();
-            /*Fecha a tela*/
+            Application.Exit();
+            /*Encerra o programa*/
         }
 
         private void AbreForm(Form AdicionarChacara)

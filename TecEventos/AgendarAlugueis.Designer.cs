@@ -1,6 +1,6 @@
 ﻿namespace TecEventos
 {
-    partial class Form4
+    partial class AgendarAlugueis
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgendarAlugueis));
             this.PanelLogo = new System.Windows.Forms.Panel();
             this.LogoTxt = new System.Windows.Forms.PictureBox();
             this.Nave = new System.Windows.Forms.Panel();
@@ -231,6 +231,7 @@
             this.BtnSair.Text = "Sair";
             this.BtnSair.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnSair.UseVisualStyleBackColor = true;
+            this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
             // BtnPerfil
             // 
