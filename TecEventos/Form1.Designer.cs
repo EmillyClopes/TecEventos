@@ -62,7 +62,7 @@
             this.Nave.Location = new System.Drawing.Point(188, 0);
             this.Nave.Margin = new System.Windows.Forms.Padding(2);
             this.Nave.Name = "Nave";
-            this.Nave.Size = new System.Drawing.Size(1716, 81);
+            this.Nave.Size = new System.Drawing.Size(1732, 81);
             this.Nave.TabIndex = 5;
             // 
             // PanelHome
@@ -74,7 +74,7 @@
             this.PanelHome.Location = new System.Drawing.Point(188, 0);
             this.PanelHome.Margin = new System.Windows.Forms.Padding(2);
             this.PanelHome.Name = "PanelHome";
-            this.PanelHome.Size = new System.Drawing.Size(1716, 1041);
+            this.PanelHome.Size = new System.Drawing.Size(1732, 1080);
             this.PanelHome.TabIndex = 4;
             // 
             // pictureBox1
@@ -86,7 +86,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(203, 175);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1319, 733);
+            this.pictureBox1.Size = new System.Drawing.Size(1335, 772);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -122,7 +122,7 @@
             this.Menu.Location = new System.Drawing.Point(0, 0);
             this.Menu.Margin = new System.Windows.Forms.Padding(2);
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(188, 1041);
+            this.Menu.Size = new System.Drawing.Size(188, 1080);
             this.Menu.TabIndex = 3;
             // 
             // SubMenuUsuario
@@ -316,10 +316,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.Nave);
             this.Controls.Add(this.PanelHome);
             this.Controls.Add(this.Menu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Home";
             this.Text = "TecEventos";
