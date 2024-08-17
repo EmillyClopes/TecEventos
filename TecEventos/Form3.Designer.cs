@@ -122,6 +122,7 @@
             this.BtnSair.Text = "Sair";
             this.BtnSair.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnSair.UseVisualStyleBackColor = true;
+            this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
             // BtnPerfil
             // 
@@ -285,7 +286,7 @@
             this.ClientSize = new System.Drawing.Size(1155, 687);
             this.Controls.Add(this.Nave);
             this.Controls.Add(this.Menu);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form3";
             this.Text = "Form3";
             this.Menu.ResumeLayout(false);

@@ -16,5 +16,11 @@ namespace TecEventos
         {
             InitializeComponent();
         }
+
+        private void BtnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            /*Fecha a tela*/
+        }
     }
 }
