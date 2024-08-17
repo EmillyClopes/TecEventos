@@ -34,12 +34,16 @@ namespace TecEventos
         private void BtnAdicionar_Click(object sender, EventArgs e)
         {
             AbreForm(new AdicionarChacara()); /*abre o outro formulário*/
-
         }
 
-        private void BtnHome_Click(object sender, EventArgs e)
+        private void BtnAgendar_Click(object sender, EventArgs e)
         {
-            AbreForm(new Home());
+            AbreForm(new AgendarAlugueis()); /*abre o outro formulário*/
+        }
+
+        private void BtnCadastrarCliente_Click(object sender, EventArgs e)
+        {
+            AbreForm(new CadastrarClientes()); /*abre o outro formulário*/
         }
     }
 }
