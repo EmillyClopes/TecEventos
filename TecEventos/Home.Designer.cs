@@ -33,8 +33,6 @@
             this.PanelHome = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Menu = new System.Windows.Forms.Panel();
-            this.PanelLogo = new System.Windows.Forms.Panel();
-            this.LogoTxt = new System.Windows.Forms.PictureBox();
             this.BtnHome = new System.Windows.Forms.Button();
             this.SubMenuUsuario = new System.Windows.Forms.Panel();
             this.BtnCadastrarCliente = new System.Windows.Forms.Button();
@@ -46,13 +44,15 @@
             this.BtnAgendar = new System.Windows.Forms.Button();
             this.BtnAdicionar = new System.Windows.Forms.Button();
             this.BtnProcurar = new System.Windows.Forms.Button();
+            this.PanelLogo = new System.Windows.Forms.Panel();
+            this.LogoTxt = new System.Windows.Forms.PictureBox();
             this.PanelHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Menu.SuspendLayout();
-            this.PanelLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoTxt)).BeginInit();
             this.SubMenuUsuario.SuspendLayout();
             this.SubMenuChacaras.SuspendLayout();
+            this.PanelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoTxt)).BeginInit();
             this.SuspendLayout();
             // 
             // Nave
@@ -107,28 +107,6 @@
             this.Menu.Name = "Menu";
             this.Menu.Size = new System.Drawing.Size(188, 1080);
             this.Menu.TabIndex = 3;
-            // 
-            // PanelLogo
-            // 
-            this.PanelLogo.Controls.Add(this.LogoTxt);
-            this.PanelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelLogo.Location = new System.Drawing.Point(0, 0);
-            this.PanelLogo.Margin = new System.Windows.Forms.Padding(2);
-            this.PanelLogo.Name = "PanelLogo";
-            this.PanelLogo.Size = new System.Drawing.Size(190, 81);
-            this.PanelLogo.TabIndex = 0;
-            // 
-            // LogoTxt
-            // 
-            this.LogoTxt.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LogoTxt.Image = ((System.Drawing.Image)(resources.GetObject("LogoTxt.Image")));
-            this.LogoTxt.Location = new System.Drawing.Point(0, 0);
-            this.LogoTxt.Margin = new System.Windows.Forms.Padding(2);
-            this.LogoTxt.Name = "LogoTxt";
-            this.LogoTxt.Size = new System.Drawing.Size(190, 79);
-            this.LogoTxt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.LogoTxt.TabIndex = 0;
-            this.LogoTxt.TabStop = false;
             // 
             // BtnHome
             // 
@@ -194,6 +172,7 @@
             this.BtnSair.Text = "Sair";
             this.BtnSair.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnSair.UseVisualStyleBackColor = true;
+            this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
             // BtnPerfil
             // 
@@ -291,6 +270,7 @@
             this.BtnAdicionar.Text = "Adicionar";
             this.BtnAdicionar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnAdicionar.UseVisualStyleBackColor = true;
+            this.BtnAdicionar.Click += new System.EventHandler(this.BtnAdicionar_Click);
             // 
             // BtnProcurar
             // 
@@ -310,6 +290,28 @@
             this.BtnProcurar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnProcurar.UseVisualStyleBackColor = true;
             // 
+            // PanelLogo
+            // 
+            this.PanelLogo.Controls.Add(this.LogoTxt);
+            this.PanelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelLogo.Location = new System.Drawing.Point(0, 0);
+            this.PanelLogo.Margin = new System.Windows.Forms.Padding(2);
+            this.PanelLogo.Name = "PanelLogo";
+            this.PanelLogo.Size = new System.Drawing.Size(190, 81);
+            this.PanelLogo.TabIndex = 0;
+            // 
+            // LogoTxt
+            // 
+            this.LogoTxt.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LogoTxt.Image = ((System.Drawing.Image)(resources.GetObject("LogoTxt.Image")));
+            this.LogoTxt.Location = new System.Drawing.Point(0, 0);
+            this.LogoTxt.Margin = new System.Windows.Forms.Padding(2);
+            this.LogoTxt.Name = "LogoTxt";
+            this.LogoTxt.Size = new System.Drawing.Size(190, 79);
+            this.LogoTxt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LogoTxt.TabIndex = 0;
+            this.LogoTxt.TabStop = false;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -327,10 +329,10 @@
             this.PanelHome.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Menu.ResumeLayout(false);
-            this.PanelLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.LogoTxt)).EndInit();
             this.SubMenuUsuario.ResumeLayout(false);
             this.SubMenuChacaras.ResumeLayout(false);
+            this.PanelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.LogoTxt)).EndInit();
             this.ResumeLayout(false);
 
         }

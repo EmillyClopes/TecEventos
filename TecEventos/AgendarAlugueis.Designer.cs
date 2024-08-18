@@ -68,6 +68,8 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnLimpar = new System.Windows.Forms.Button();
+            this.btnFinalizar = new System.Windows.Forms.Button();
             this.PanelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoTxt)).BeginInit();
             this.SubMenuChacaras.SuspendLayout();
@@ -250,7 +252,7 @@
             this.BtnSair.Margin = new System.Windows.Forms.Padding(2);
             this.BtnSair.Name = "BtnSair";
             this.BtnSair.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.BtnSair.Size = new System.Drawing.Size(188, 32);
+            this.BtnSair.Size = new System.Drawing.Size(188, 42);
             this.BtnSair.TabIndex = 1;
             this.BtnSair.Text = "Sair";
             this.BtnSair.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -284,7 +286,7 @@
             this.SubMenuUsuario.Location = new System.Drawing.Point(0, 307);
             this.SubMenuUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.SubMenuUsuario.Name = "SubMenuUsuario";
-            this.SubMenuUsuario.Size = new System.Drawing.Size(188, 108);
+            this.SubMenuUsuario.Size = new System.Drawing.Size(188, 122);
             this.SubMenuUsuario.TabIndex = 4;
             // 
             // Menu
@@ -314,11 +316,10 @@
             // 
             // txtDiaEntrada
             // 
-            this.txtDiaEntrada.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDiaEntrada.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaEntrada.Location = new System.Drawing.Point(253, 199);
             this.txtDiaEntrada.Name = "txtDiaEntrada";
-            this.txtDiaEntrada.Size = new System.Drawing.Size(39, 20);
+            this.txtDiaEntrada.Size = new System.Drawing.Size(39, 27);
             this.txtDiaEntrada.TabIndex = 73;
             // 
             // lblEntrada
@@ -353,11 +354,10 @@
             // 
             // txtAnoEntrada
             // 
-            this.txtAnoEntrada.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAnoEntrada.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAnoEntrada.Location = new System.Drawing.Point(375, 199);
             this.txtAnoEntrada.Name = "txtAnoEntrada";
-            this.txtAnoEntrada.Size = new System.Drawing.Size(66, 20);
+            this.txtAnoEntrada.Size = new System.Drawing.Size(66, 27);
             this.txtAnoEntrada.TabIndex = 79;
             // 
             // lblAnoEntrada
@@ -372,11 +372,10 @@
             // 
             // txtMesEntrada
             // 
-            this.txtMesEntrada.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMesEntrada.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMesEntrada.Location = new System.Drawing.Point(315, 199);
             this.txtMesEntrada.Name = "txtMesEntrada";
-            this.txtMesEntrada.Size = new System.Drawing.Size(39, 20);
+            this.txtMesEntrada.Size = new System.Drawing.Size(39, 27);
             this.txtMesEntrada.TabIndex = 81;
             // 
             // lblMesEntrada
@@ -391,11 +390,10 @@
             // 
             // txtMesSaida
             // 
-            this.txtMesSaida.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMesSaida.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMesSaida.Location = new System.Drawing.Point(315, 337);
             this.txtMesSaida.Name = "txtMesSaida";
-            this.txtMesSaida.Size = new System.Drawing.Size(39, 20);
+            this.txtMesSaida.Size = new System.Drawing.Size(39, 27);
             this.txtMesSaida.TabIndex = 88;
             // 
             // lblMesSaida
@@ -410,11 +408,10 @@
             // 
             // txtAnoSaida
             // 
-            this.txtAnoSaida.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAnoSaida.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAnoSaida.Location = new System.Drawing.Point(375, 337);
             this.txtAnoSaida.Name = "txtAnoSaida";
-            this.txtAnoSaida.Size = new System.Drawing.Size(66, 20);
+            this.txtAnoSaida.Size = new System.Drawing.Size(66, 27);
             this.txtAnoSaida.TabIndex = 86;
             // 
             // lblAnoSaida
@@ -429,11 +426,10 @@
             // 
             // txtDiaSaida
             // 
-            this.txtDiaSaida.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDiaSaida.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaSaida.Location = new System.Drawing.Point(253, 337);
             this.txtDiaSaida.Name = "txtDiaSaida";
-            this.txtDiaSaida.Size = new System.Drawing.Size(39, 20);
+            this.txtDiaSaida.Size = new System.Drawing.Size(39, 27);
             this.txtDiaSaida.TabIndex = 83;
             // 
             // lblSaida
@@ -458,11 +454,10 @@
             // 
             // txtNomeCliente
             // 
-            this.txtNomeCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNomeCliente.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomeCliente.Location = new System.Drawing.Point(253, 423);
             this.txtNomeCliente.Name = "txtNomeCliente";
-            this.txtNomeCliente.Size = new System.Drawing.Size(188, 20);
+            this.txtNomeCliente.Size = new System.Drawing.Size(188, 27);
             this.txtNomeCliente.TabIndex = 90;
             // 
             // lblNomeCliente
@@ -477,11 +472,10 @@
             // 
             // txtContatoCliente
             // 
-            this.txtContatoCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContatoCliente.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContatoCliente.Location = new System.Drawing.Point(485, 423);
             this.txtContatoCliente.Name = "txtContatoCliente";
-            this.txtContatoCliente.Size = new System.Drawing.Size(188, 20);
+            this.txtContatoCliente.Size = new System.Drawing.Size(188, 27);
             this.txtContatoCliente.TabIndex = 92;
             // 
             // lblContatoCliente
@@ -496,11 +490,10 @@
             // 
             // txtTotal
             // 
-            this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTotal.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.Location = new System.Drawing.Point(252, 581);
             this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(188, 20);
+            this.txtTotal.Size = new System.Drawing.Size(188, 27);
             this.txtTotal.TabIndex = 94;
             // 
             // lblTotal
@@ -535,11 +528,41 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 96;
             // 
+            // btnLimpar
+            // 
+            this.btnLimpar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnLimpar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpar.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnLimpar.Location = new System.Drawing.Point(418, 695);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(123, 39);
+            this.btnLimpar.TabIndex = 98;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = false;
+            // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnFinalizar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinalizar.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnFinalizar.Location = new System.Drawing.Point(240, 695);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(123, 39);
+            this.btnFinalizar.TabIndex = 97;
+            this.btnFinalizar.Text = "Finalizar";
+            this.btnFinalizar.UseVisualStyleBackColor = false;
+            // 
             // AgendarAlugueis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1556, 884);
+            this.Controls.Add(this.btnLimpar);
+            this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.txtTotal);
@@ -622,5 +645,7 @@
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.Button btnFinalizar;
     }
 }

@@ -45,23 +45,23 @@
             this.PanelLogo = new System.Windows.Forms.Panel();
             this.LogoTxt = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.NomeClienteTxt = new System.Windows.Forms.TextBox();
-            this.NomeChacTxt = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.ValorTotalTxt = new System.Windows.Forms.TextBox();
-            this.ValorPagoTxt = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.StatusPag = new System.Windows.Forms.ComboBox();
+            this.MetodoPag = new System.Windows.Forms.ComboBox();
             this.DataPagTxt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.MetodoPag = new System.Windows.Forms.ComboBox();
-            this.StatusPag = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.SaveButton = new System.Windows.Forms.Button();
+            this.ValorPagoTxt = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.ValorTotalTxt = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.NomeChacTxt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.NomeClienteTxt = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.Menu.SuspendLayout();
             this.SubMenuUsuario.SuspendLayout();
             this.SubMenuChacaras.SuspendLayout();
@@ -120,7 +120,7 @@
             this.SubMenuUsuario.Controls.Add(this.BtnCadastrarCliente);
             this.SubMenuUsuario.Controls.Add(this.BtnSair);
             this.SubMenuUsuario.Controls.Add(this.BtnPerfil);
-            this.SubMenuUsuario.Location = new System.Drawing.Point(0, 308);
+            this.SubMenuUsuario.Location = new System.Drawing.Point(-2, 309);
             this.SubMenuUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.SubMenuUsuario.Name = "SubMenuUsuario";
             this.SubMenuUsuario.Size = new System.Drawing.Size(188, 108);
@@ -161,6 +161,7 @@
             this.BtnSair.Text = "Sair";
             this.BtnSair.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnSair.UseVisualStyleBackColor = true;
+            this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
             // BtnPerfil
             // 
@@ -186,7 +187,7 @@
             this.BtnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnUsuario.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnUsuario.Location = new System.Drawing.Point(0, 272);
+            this.BtnUsuario.Location = new System.Drawing.Point(-2, 273);
             this.BtnUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.BtnUsuario.Name = "BtnUsuario";
             this.BtnUsuario.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
@@ -301,7 +302,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.SaveButton);
+            this.panel1.Controls.Add(this.btnSalvar);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
@@ -323,87 +324,60 @@
             this.panel1.Size = new System.Drawing.Size(1300, 703);
             this.panel1.TabIndex = 69;
             // 
-            // label1
+            // dataGridView1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(458, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(249, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Controle de Pagamentos";
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(463, 392);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(244, 150);
+            this.dataGridView1.TabIndex = 15;
             // 
-            // label2
+            // label8
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(92, 132);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nome do Cliente:";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(555, 312);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(150, 19);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Status de Pagamento:";
             // 
-            // NomeClienteTxt
+            // label7
             // 
-            this.NomeClienteTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NomeClienteTxt.Location = new System.Drawing.Point(228, 130);
-            this.NomeClienteTxt.Name = "NomeClienteTxt";
-            this.NomeClienteTxt.Size = new System.Drawing.Size(777, 26);
-            this.NomeClienteTxt.TabIndex = 2;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(168, 312);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(160, 19);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Método de pagamento:";
             // 
-            // NomeChacTxt
+            // StatusPag
             // 
-            this.NomeChacTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NomeChacTxt.Location = new System.Drawing.Point(228, 190);
-            this.NomeChacTxt.Name = "NomeChacTxt";
-            this.NomeChacTxt.Size = new System.Drawing.Size(777, 26);
-            this.NomeChacTxt.TabIndex = 4;
+            this.StatusPag.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatusPag.FormattingEnabled = true;
+            this.StatusPag.Items.AddRange(new object[] {
+            "Pago",
+            "Pendente",
+            "Atrasado"});
+            this.StatusPag.Location = new System.Drawing.Point(729, 309);
+            this.StatusPag.Name = "StatusPag";
+            this.StatusPag.Size = new System.Drawing.Size(169, 27);
+            this.StatusPag.TabIndex = 12;
             // 
-            // label3
+            // MetodoPag
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(88, 193);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 20);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Chácara alugada:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(93, 253);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(129, 20);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Valor do Aluguel:";
-            // 
-            // ValorTotalTxt
-            // 
-            this.ValorTotalTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ValorTotalTxt.Location = new System.Drawing.Point(228, 253);
-            this.ValorTotalTxt.Name = "ValorTotalTxt";
-            this.ValorTotalTxt.Size = new System.Drawing.Size(169, 26);
-            this.ValorTotalTxt.TabIndex = 6;
-            // 
-            // ValorPagoTxt
-            // 
-            this.ValorPagoTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ValorPagoTxt.Location = new System.Drawing.Point(523, 253);
-            this.ValorPagoTxt.Name = "ValorPagoTxt";
-            this.ValorPagoTxt.Size = new System.Drawing.Size(169, 26);
-            this.ValorPagoTxt.TabIndex = 8;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(426, 256);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 20);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Valor Pago:";
+            this.MetodoPag.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MetodoPag.FormattingEnabled = true;
+            this.MetodoPag.Items.AddRange(new object[] {
+            "PIX",
+            "Depósito Bancário",
+            "Cartão Débito",
+            "Cartão Crédito"});
+            this.MetodoPag.Location = new System.Drawing.Point(348, 309);
+            this.MetodoPag.Name = "MetodoPag";
+            this.MetodoPag.Size = new System.Drawing.Size(169, 27);
+            this.MetodoPag.TabIndex = 11;
             // 
             // DataPagTxt
             // 
@@ -416,77 +390,108 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(725, 256);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(156, 20);
+            this.label6.Size = new System.Drawing.Size(141, 19);
             this.label6.TabIndex = 9;
             this.label6.Text = "Data do Pagamento:";
             // 
-            // MetodoPag
+            // ValorPagoTxt
             // 
-            this.MetodoPag.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MetodoPag.FormattingEnabled = true;
-            this.MetodoPag.Items.AddRange(new object[] {
-            "PIX",
-            "Depósito Bancário",
-            "Cartão Débito",
-            "Cartão Crédito"});
-            this.MetodoPag.Location = new System.Drawing.Point(348, 309);
-            this.MetodoPag.Name = "MetodoPag";
-            this.MetodoPag.Size = new System.Drawing.Size(169, 28);
-            this.MetodoPag.TabIndex = 11;
+            this.ValorPagoTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ValorPagoTxt.Location = new System.Drawing.Point(523, 253);
+            this.ValorPagoTxt.Name = "ValorPagoTxt";
+            this.ValorPagoTxt.Size = new System.Drawing.Size(169, 26);
+            this.ValorPagoTxt.TabIndex = 8;
             // 
-            // StatusPag
+            // label5
             // 
-            this.StatusPag.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StatusPag.FormattingEnabled = true;
-            this.StatusPag.Items.AddRange(new object[] {
-            "Pago",
-            "Pendente",
-            "Atrasado"});
-            this.StatusPag.Location = new System.Drawing.Point(729, 309);
-            this.StatusPag.Name = "StatusPag";
-            this.StatusPag.Size = new System.Drawing.Size(169, 28);
-            this.StatusPag.TabIndex = 12;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(426, 256);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(82, 19);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Valor Pago:";
             // 
-            // label7
+            // ValorTotalTxt
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(168, 312);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(174, 20);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Método de pagamento:";
+            this.ValorTotalTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ValorTotalTxt.Location = new System.Drawing.Point(228, 253);
+            this.ValorTotalTxt.Name = "ValorTotalTxt";
+            this.ValorTotalTxt.Size = new System.Drawing.Size(169, 26);
+            this.ValorTotalTxt.TabIndex = 6;
             // 
-            // label8
+            // label4
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(555, 312);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(168, 20);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Status de Pagamento:";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(93, 253);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(119, 19);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Valor do Aluguel:";
             // 
-            // dataGridView1
+            // NomeChacTxt
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(463, 392);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(244, 150);
-            this.dataGridView1.TabIndex = 15;
+            this.NomeChacTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NomeChacTxt.Location = new System.Drawing.Point(228, 190);
+            this.NomeChacTxt.Name = "NomeChacTxt";
+            this.NomeChacTxt.Size = new System.Drawing.Size(777, 26);
+            this.NomeChacTxt.TabIndex = 4;
             // 
-            // SaveButton
+            // label3
             // 
-            this.SaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveButton.Location = new System.Drawing.Point(463, 583);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(244, 70);
-            this.SaveButton.TabIndex = 16;
-            this.SaveButton.Text = "Salvar";
-            this.SaveButton.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(88, 193);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(122, 19);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Chácara alugada:";
+            // 
+            // NomeClienteTxt
+            // 
+            this.NomeClienteTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NomeClienteTxt.Location = new System.Drawing.Point(228, 130);
+            this.NomeClienteTxt.Name = "NomeClienteTxt";
+            this.NomeClienteTxt.Size = new System.Drawing.Size(777, 26);
+            this.NomeClienteTxt.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(92, 132);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(121, 19);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Nome do Cliente:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(458, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(198, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Controle de Pagamentos";
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnSalvar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvar.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnSalvar.Location = new System.Drawing.Point(463, 583);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(244, 70);
+            this.btnSalvar.TabIndex = 71;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = false;
             // 
             // ControlePagamentos
             // 
@@ -545,6 +550,6 @@
         private System.Windows.Forms.ComboBox MetodoPag;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Button btnSalvar;
     }
 }

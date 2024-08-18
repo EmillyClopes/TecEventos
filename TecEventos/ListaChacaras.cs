@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace TecEventos
 {
-    public partial class ControlePagamentos : Form
+    public partial class ListaChacaras : Form
     {
-        public ControlePagamentos()
+        public ListaChacaras()
         {
             InitializeComponent();
-        }
-
-        private void BtnSair_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-            /*Encerra o programa*/
         }
     }
 }
