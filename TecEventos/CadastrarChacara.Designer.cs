@@ -34,6 +34,7 @@
             this.LogoTxt = new System.Windows.Forms.PictureBox();
             this.Nave = new System.Windows.Forms.Panel();
             this.Menu = new System.Windows.Forms.Panel();
+            this.btnPagamentos = new System.Windows.Forms.Button();
             this.BtnHome = new System.Windows.Forms.Button();
             this.SubMenuUsuario = new System.Windows.Forms.Panel();
             this.BtnCadastrarCliente = new System.Windows.Forms.Button();
@@ -124,6 +125,7 @@
             // 
             this.Menu.AutoScroll = true;
             this.Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.Menu.Controls.Add(this.btnPagamentos);
             this.Menu.Controls.Add(this.BtnHome);
             this.Menu.Controls.Add(this.SubMenuUsuario);
             this.Menu.Controls.Add(this.BtnUsuario);
@@ -136,6 +138,21 @@
             this.Menu.Name = "Menu";
             this.Menu.Size = new System.Drawing.Size(188, 884);
             this.Menu.TabIndex = 63;
+            // 
+            // btnPagamentos
+            // 
+            this.btnPagamentos.FlatAppearance.BorderSize = 0;
+            this.btnPagamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPagamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPagamentos.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnPagamentos.Location = new System.Drawing.Point(0, 415);
+            this.btnPagamentos.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPagamentos.Name = "btnPagamentos";
+            this.btnPagamentos.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnPagamentos.Size = new System.Drawing.Size(188, 36);
+            this.btnPagamentos.TabIndex = 12;
+            this.btnPagamentos.Text = "Pagamentos";
+            this.btnPagamentos.UseVisualStyleBackColor = true;
             // 
             // BtnHome
             // 
@@ -351,6 +368,7 @@
             this.panel1.Controls.Add(this.lblInfoAdicional);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lblBairro);
+            this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(507, 272);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1093, 561);
@@ -375,7 +393,7 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(177)))), ((int)(((byte)(206)))));
+            this.btnLimpar.BackColor = System.Drawing.Color.SkyBlue;
             this.btnLimpar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpar.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -509,7 +527,7 @@
             // 
             // btnCadastrarChacara
             // 
-            this.btnCadastrarChacara.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(177)))), ((int)(((byte)(206)))));
+            this.btnCadastrarChacara.BackColor = System.Drawing.Color.SkyBlue;
             this.btnCadastrarChacara.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnCadastrarChacara.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrarChacara.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -627,5 +645,6 @@
         private System.Windows.Forms.Label lblInfoAdicional;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblBairro;
+        private System.Windows.Forms.Button btnPagamentos;
     }
 }

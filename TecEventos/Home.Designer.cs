@@ -46,6 +46,7 @@
             this.BtnProcurar = new System.Windows.Forms.Button();
             this.PanelLogo = new System.Windows.Forms.Panel();
             this.LogoTxt = new System.Windows.Forms.PictureBox();
+            this.btnPagamentos = new System.Windows.Forms.Button();
             this.PanelHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Menu.SuspendLayout();
@@ -79,9 +80,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(203, 175);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
@@ -95,6 +93,7 @@
             // 
             this.Menu.AutoScroll = true;
             this.Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.Menu.Controls.Add(this.btnPagamentos);
             this.Menu.Controls.Add(this.BtnHome);
             this.Menu.Controls.Add(this.SubMenuUsuario);
             this.Menu.Controls.Add(this.BtnUsuario);
@@ -312,6 +311,22 @@
             this.LogoTxt.TabIndex = 0;
             this.LogoTxt.TabStop = false;
             // 
+            // btnPagamentos
+            // 
+            this.btnPagamentos.FlatAppearance.BorderSize = 0;
+            this.btnPagamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPagamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPagamentos.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnPagamentos.Location = new System.Drawing.Point(0, 416);
+            this.btnPagamentos.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPagamentos.Name = "btnPagamentos";
+            this.btnPagamentos.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnPagamentos.Size = new System.Drawing.Size(188, 36);
+            this.btnPagamentos.TabIndex = 12;
+            this.btnPagamentos.Text = "Pagamentos";
+            this.btnPagamentos.UseVisualStyleBackColor = true;
+            this.btnPagamentos.Click += new System.EventHandler(this.btnPagamentos_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -356,6 +371,7 @@
         private System.Windows.Forms.Button BtnAgendar;
         private System.Windows.Forms.Button BtnAdicionar;
         private System.Windows.Forms.Button BtnProcurar;
+        private System.Windows.Forms.Button btnPagamentos;
     }
 }
 

@@ -45,5 +45,10 @@ namespace TecEventos
         {
             AbreForm(new CadastrarClientes()); /*abre o outro formulário*/
         }
+
+        private void btnPagamentos_Click(object sender, EventArgs e)
+        {
+            AbreForm(new ControlePagamentos()); /*abre o outro formulário*/
+        }
     }
 }

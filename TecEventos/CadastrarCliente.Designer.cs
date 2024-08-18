@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastrarClientes));
             this.Nave = new System.Windows.Forms.Panel();
             this.Menu = new System.Windows.Forms.Panel();
+            this.btnPagamentos = new System.Windows.Forms.Button();
             this.BtnHome = new System.Windows.Forms.Button();
             this.SubMenuUsuario = new System.Windows.Forms.Panel();
             this.BtnCadastrarCliente = new System.Windows.Forms.Button();
@@ -44,7 +45,10 @@
             this.BtnProcurar = new System.Windows.Forms.Button();
             this.PanelLogo = new System.Windows.Forms.Panel();
             this.LogoTxt = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
             this.SenhaTxt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.TelefoneTxt = new System.Windows.Forms.TextBox();
@@ -56,13 +60,12 @@
             this.NomeCompTxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnLimpar = new System.Windows.Forms.Button();
-            this.btnCadastrar = new System.Windows.Forms.Button();
             this.Menu.SuspendLayout();
             this.SubMenuUsuario.SuspendLayout();
             this.SubMenuChacaras.SuspendLayout();
             this.PanelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoTxt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,6 +83,7 @@
             // 
             this.Menu.AutoScroll = true;
             this.Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.Menu.Controls.Add(this.btnPagamentos);
             this.Menu.Controls.Add(this.BtnHome);
             this.Menu.Controls.Add(this.SubMenuUsuario);
             this.Menu.Controls.Add(this.BtnUsuario);
@@ -92,6 +96,21 @@
             this.Menu.Name = "Menu";
             this.Menu.Size = new System.Drawing.Size(188, 884);
             this.Menu.TabIndex = 65;
+            // 
+            // btnPagamentos
+            // 
+            this.btnPagamentos.FlatAppearance.BorderSize = 0;
+            this.btnPagamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPagamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPagamentos.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnPagamentos.Location = new System.Drawing.Point(0, 415);
+            this.btnPagamentos.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPagamentos.Name = "btnPagamentos";
+            this.btnPagamentos.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnPagamentos.Size = new System.Drawing.Size(188, 36);
+            this.btnPagamentos.TabIndex = 12;
+            this.btnPagamentos.Text = "Pagamentos";
+            this.btnPagamentos.UseVisualStyleBackColor = true;
             // 
             // BtnHome
             // 
@@ -294,6 +313,17 @@
             this.LogoTxt.TabIndex = 0;
             this.LogoTxt.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(188, 81);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1368, 803);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 67;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -310,10 +340,38 @@
             this.panel1.Controls.Add(this.NomeCompTxt);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(406, 161);
+            this.panel1.Location = new System.Drawing.Point(568, 322);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(925, 589);
-            this.panel1.TabIndex = 67;
+            this.panel1.TabIndex = 69;
+            // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnCadastrar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCadastrar.Location = new System.Drawing.Point(322, 440);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(123, 39);
+            this.btnCadastrar.TabIndex = 82;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = false;
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnLimpar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnLimpar.Location = new System.Drawing.Point(501, 440);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(123, 40);
+            this.btnLimpar.TabIndex = 81;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = false;
             // 
             // SenhaTxt
             // 
@@ -322,7 +380,6 @@
             this.SenhaTxt.Name = "SenhaTxt";
             this.SenhaTxt.Size = new System.Drawing.Size(606, 26);
             this.SenhaTxt.TabIndex = 78;
-            this.SenhaTxt.TextChanged += new System.EventHandler(this.SenhaTxt_TextChanged);
             // 
             // label6
             // 
@@ -341,7 +398,6 @@
             this.TelefoneTxt.Name = "TelefoneTxt";
             this.TelefoneTxt.Size = new System.Drawing.Size(606, 26);
             this.TelefoneTxt.TabIndex = 76;
-            this.TelefoneTxt.TextChanged += new System.EventHandler(this.TelefoneTxt_TextChanged);
             // 
             // label5
             // 
@@ -360,7 +416,6 @@
             this.EnderecoTxt.Name = "EnderecoTxt";
             this.EnderecoTxt.Size = new System.Drawing.Size(606, 26);
             this.EnderecoTxt.TabIndex = 74;
-            this.EnderecoTxt.TextChanged += new System.EventHandler(this.EnderecoTxt_TextChanged);
             // 
             // label4
             // 
@@ -379,7 +434,6 @@
             this.EmailTxt.Name = "EmailTxt";
             this.EmailTxt.Size = new System.Drawing.Size(606, 26);
             this.EmailTxt.TabIndex = 72;
-            this.EmailTxt.TextChanged += new System.EventHandler(this.EmailTxt_TextChanged);
             // 
             // label3
             // 
@@ -398,7 +452,6 @@
             this.NomeCompTxt.Name = "NomeCompTxt";
             this.NomeCompTxt.Size = new System.Drawing.Size(606, 26);
             this.NomeCompTxt.TabIndex = 70;
-            this.NomeCompTxt.TextChanged += new System.EventHandler(this.NomeCompTxt_TextChanged);
             // 
             // label2
             // 
@@ -420,40 +473,13 @@
             this.label1.TabIndex = 68;
             this.label1.Text = "Cadastro de Clientes";
             // 
-            // btnLimpar
-            // 
-            this.btnLimpar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnLimpar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnLimpar.Location = new System.Drawing.Point(501, 440);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(147, 64);
-            this.btnLimpar.TabIndex = 81;
-            this.btnLimpar.Text = "Limpar";
-            this.btnLimpar.UseVisualStyleBackColor = false;
-            // 
-            // btnCadastrar
-            // 
-            this.btnCadastrar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnCadastrar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCadastrar.Location = new System.Drawing.Point(322, 440);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(147, 64);
-            this.btnCadastrar.TabIndex = 82;
-            this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = false;
-            // 
             // CadastrarClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1556, 884);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Nave);
             this.Controls.Add(this.Menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -467,9 +493,11 @@
             this.SubMenuChacaras.ResumeLayout(false);
             this.PanelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LogoTxt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -479,18 +507,6 @@
         private System.Windows.Forms.Panel Menu;
         private System.Windows.Forms.Panel PanelLogo;
         private System.Windows.Forms.PictureBox LogoTxt;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox EmailTxt;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox NomeCompTxt;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox SenhaTxt;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox TelefoneTxt;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox EnderecoTxt;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button BtnHome;
         private System.Windows.Forms.Panel SubMenuUsuario;
         private System.Windows.Forms.Button BtnCadastrarCliente;
@@ -502,7 +518,21 @@
         private System.Windows.Forms.Button BtnAgendar;
         private System.Windows.Forms.Button BtnAdicionar;
         private System.Windows.Forms.Button BtnProcurar;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.TextBox SenhaTxt;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox TelefoneTxt;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox EnderecoTxt;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox EmailTxt;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox NomeCompTxt;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnPagamentos;
     }
 }

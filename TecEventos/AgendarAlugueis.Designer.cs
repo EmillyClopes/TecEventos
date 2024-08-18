@@ -70,6 +70,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnFinalizar = new System.Windows.Forms.Button();
+            this.btnPagamentos = new System.Windows.Forms.Button();
             this.PanelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoTxt)).BeginInit();
             this.SubMenuChacaras.SuspendLayout();
@@ -293,6 +294,7 @@
             // 
             this.Menu.AutoScroll = true;
             this.Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.Menu.Controls.Add(this.btnPagamentos);
             this.Menu.Controls.Add(this.BtnHome);
             this.Menu.Controls.Add(this.SubMenuUsuario);
             this.Menu.Controls.Add(this.BtnUsuario);
@@ -556,6 +558,21 @@
             this.btnFinalizar.Text = "Finalizar";
             this.btnFinalizar.UseVisualStyleBackColor = false;
             // 
+            // btnPagamentos
+            // 
+            this.btnPagamentos.FlatAppearance.BorderSize = 0;
+            this.btnPagamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPagamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPagamentos.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnPagamentos.Location = new System.Drawing.Point(0, 431);
+            this.btnPagamentos.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPagamentos.Name = "btnPagamentos";
+            this.btnPagamentos.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnPagamentos.Size = new System.Drawing.Size(188, 36);
+            this.btnPagamentos.TabIndex = 12;
+            this.btnPagamentos.Text = "Pagamentos";
+            this.btnPagamentos.UseVisualStyleBackColor = true;
+            // 
             // AgendarAlugueis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -647,5 +664,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnFinalizar;
+        private System.Windows.Forms.Button btnPagamentos;
     }
 }

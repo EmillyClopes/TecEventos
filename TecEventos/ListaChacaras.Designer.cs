@@ -45,6 +45,7 @@
             this.SubMenuUsuario = new System.Windows.Forms.Panel();
             this.Menu = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.btnPagamentos = new System.Windows.Forms.Button();
             this.PanelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoTxt)).BeginInit();
             this.SubMenuChacaras.SuspendLayout();
@@ -60,7 +61,7 @@
             this.PanelLogo.Location = new System.Drawing.Point(0, 0);
             this.PanelLogo.Margin = new System.Windows.Forms.Padding(2);
             this.PanelLogo.Name = "PanelLogo";
-            this.PanelLogo.Size = new System.Drawing.Size(188, 81);
+            this.PanelLogo.Size = new System.Drawing.Size(190, 81);
             this.PanelLogo.TabIndex = 0;
             // 
             // LogoTxt
@@ -70,7 +71,7 @@
             this.LogoTxt.Location = new System.Drawing.Point(0, 0);
             this.LogoTxt.Margin = new System.Windows.Forms.Padding(2);
             this.LogoTxt.Name = "LogoTxt";
-            this.LogoTxt.Size = new System.Drawing.Size(188, 77);
+            this.LogoTxt.Size = new System.Drawing.Size(190, 77);
             this.LogoTxt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.LogoTxt.TabIndex = 0;
             this.LogoTxt.TabStop = false;
@@ -96,7 +97,7 @@
             this.BtnHome.Margin = new System.Windows.Forms.Padding(2);
             this.BtnHome.Name = "BtnHome";
             this.BtnHome.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.BtnHome.Size = new System.Drawing.Size(188, 36);
+            this.BtnHome.Size = new System.Drawing.Size(190, 36);
             this.BtnHome.TabIndex = 5;
             this.BtnHome.Text = "Home";
             this.BtnHome.UseVisualStyleBackColor = true;
@@ -267,6 +268,7 @@
             // 
             this.Menu.AutoScroll = true;
             this.Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.Menu.Controls.Add(this.btnPagamentos);
             this.Menu.Controls.Add(this.BtnHome);
             this.Menu.Controls.Add(this.SubMenuUsuario);
             this.Menu.Controls.Add(this.BtnUsuario);
@@ -287,6 +289,21 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(1016, 434);
             this.dataGridView2.TabIndex = 70;
+            // 
+            // btnPagamentos
+            // 
+            this.btnPagamentos.FlatAppearance.BorderSize = 0;
+            this.btnPagamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPagamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPagamentos.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnPagamentos.Location = new System.Drawing.Point(2, 433);
+            this.btnPagamentos.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPagamentos.Name = "btnPagamentos";
+            this.btnPagamentos.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnPagamentos.Size = new System.Drawing.Size(188, 36);
+            this.btnPagamentos.TabIndex = 12;
+            this.btnPagamentos.Text = "Pagamentos";
+            this.btnPagamentos.UseVisualStyleBackColor = true;
             // 
             // ListaChacaras
             // 
@@ -328,5 +345,6 @@
         private System.Windows.Forms.Panel SubMenuUsuario;
         private System.Windows.Forms.Panel Menu;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button btnPagamentos;
     }
 }

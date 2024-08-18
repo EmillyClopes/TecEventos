@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControlePagamentos));
             this.Nave = new System.Windows.Forms.Panel();
             this.Menu = new System.Windows.Forms.Panel();
+            this.btnPagamentos = new System.Windows.Forms.Button();
             this.BtnHome = new System.Windows.Forms.Button();
             this.SubMenuUsuario = new System.Windows.Forms.Panel();
             this.BtnCadastrarCliente = new System.Windows.Forms.Button();
@@ -44,7 +45,9 @@
             this.BtnProcurar = new System.Windows.Forms.Button();
             this.PanelLogo = new System.Windows.Forms.Panel();
             this.LogoTxt = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -61,12 +64,12 @@
             this.NomeClienteTxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSalvar = new System.Windows.Forms.Button();
             this.Menu.SuspendLayout();
             this.SubMenuUsuario.SuspendLayout();
             this.SubMenuChacaras.SuspendLayout();
             this.PanelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoTxt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +88,7 @@
             // 
             this.Menu.AutoScroll = true;
             this.Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.Menu.Controls.Add(this.btnPagamentos);
             this.Menu.Controls.Add(this.BtnHome);
             this.Menu.Controls.Add(this.SubMenuUsuario);
             this.Menu.Controls.Add(this.BtnUsuario);
@@ -98,6 +102,21 @@
             this.Menu.Size = new System.Drawing.Size(188, 845);
             this.Menu.TabIndex = 67;
             // 
+            // btnPagamentos
+            // 
+            this.btnPagamentos.FlatAppearance.BorderSize = 0;
+            this.btnPagamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPagamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPagamentos.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnPagamentos.Location = new System.Drawing.Point(2, 417);
+            this.btnPagamentos.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPagamentos.Name = "btnPagamentos";
+            this.btnPagamentos.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnPagamentos.Size = new System.Drawing.Size(188, 36);
+            this.btnPagamentos.TabIndex = 11;
+            this.btnPagamentos.Text = "Pagamentos";
+            this.btnPagamentos.UseVisualStyleBackColor = true;
+            // 
             // BtnHome
             // 
             this.BtnHome.Dock = System.Windows.Forms.DockStyle.Top;
@@ -109,7 +128,7 @@
             this.BtnHome.Margin = new System.Windows.Forms.Padding(2);
             this.BtnHome.Name = "BtnHome";
             this.BtnHome.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.BtnHome.Size = new System.Drawing.Size(188, 36);
+            this.BtnHome.Size = new System.Drawing.Size(190, 36);
             this.BtnHome.TabIndex = 10;
             this.BtnHome.Text = "Home";
             this.BtnHome.UseVisualStyleBackColor = true;
@@ -284,7 +303,7 @@
             this.PanelLogo.Location = new System.Drawing.Point(0, 0);
             this.PanelLogo.Margin = new System.Windows.Forms.Padding(2);
             this.PanelLogo.Name = "PanelLogo";
-            this.PanelLogo.Size = new System.Drawing.Size(188, 81);
+            this.PanelLogo.Size = new System.Drawing.Size(190, 81);
             this.PanelLogo.TabIndex = 0;
             // 
             // LogoTxt
@@ -294,10 +313,21 @@
             this.LogoTxt.Location = new System.Drawing.Point(0, 0);
             this.LogoTxt.Margin = new System.Windows.Forms.Padding(2);
             this.LogoTxt.Name = "LogoTxt";
-            this.LogoTxt.Size = new System.Drawing.Size(188, 79);
+            this.LogoTxt.Size = new System.Drawing.Size(190, 79);
             this.LogoTxt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.LogoTxt.TabIndex = 0;
             this.LogoTxt.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(188, 81);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1352, 764);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 69;
+            this.pictureBox1.TabStop = false;
             // 
             // panel1
             // 
@@ -319,10 +349,24 @@
             this.panel1.Controls.Add(this.NomeClienteTxt);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(228, 121);
+            this.panel1.Location = new System.Drawing.Point(551, 244);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1300, 703);
-            this.panel1.TabIndex = 69;
+            this.panel1.Size = new System.Drawing.Size(1118, 650);
+            this.panel1.TabIndex = 71;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnSalvar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnSalvar.Location = new System.Drawing.Point(523, 567);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(123, 39);
+            this.btnSalvar.TabIndex = 71;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = false;
             // 
             // dataGridView1
             // 
@@ -479,26 +523,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Controle de Pagamentos";
             // 
-            // btnSalvar
-            // 
-            this.btnSalvar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnSalvar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSalvar.Location = new System.Drawing.Point(463, 583);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(244, 70);
-            this.btnSalvar.TabIndex = 71;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = false;
-            // 
             // ControlePagamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1540, 845);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Nave);
             this.Controls.Add(this.Menu);
             this.Name = "ControlePagamentos";
@@ -509,10 +540,12 @@
             this.SubMenuChacaras.ResumeLayout(false);
             this.PanelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LogoTxt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -533,23 +566,25 @@
         private System.Windows.Forms.Button BtnProcurar;
         private System.Windows.Forms.Panel PanelLogo;
         private System.Windows.Forms.PictureBox LogoTxt;
+        private System.Windows.Forms.Button btnPagamentos;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox NomeChacTxt;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox NomeClienteTxt;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox ValorTotalTxt;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox StatusPag;
+        private System.Windows.Forms.ComboBox MetodoPag;
         private System.Windows.Forms.TextBox DataPagTxt;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox ValorPagoTxt;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox StatusPag;
-        private System.Windows.Forms.ComboBox MetodoPag;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.TextBox ValorTotalTxt;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox NomeChacTxt;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox NomeClienteTxt;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
