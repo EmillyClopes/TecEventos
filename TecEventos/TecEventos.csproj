@@ -58,6 +58,12 @@
     <Compile Include="DatasComemorativas.Designer.cs">
       <DependentUpon>DatasComemorativas.cs</DependentUpon>
     </Compile>
+    <Compile Include="DisponibilidadeChac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisponibilidadeChac.Designer.cs">
+      <DependentUpon>DisponibilidadeChac.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DatasComemorativas.resx">
       <DependentUpon>DatasComemorativas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisponibilidadeChac.resx">
+      <DependentUpon>DisponibilidadeChac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>

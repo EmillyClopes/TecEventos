@@ -1,6 +1,6 @@
 ﻿namespace TecEventos
 {
-    partial class ControlePagamentos
+    partial class DisponibilidadeChac
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControlePagamentos));
-            this.Nave = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DisponibilidadeChac));
             this.Menu = new System.Windows.Forms.Panel();
             this.btnPagamentos = new System.Windows.Forms.Button();
             this.BtnHome = new System.Windows.Forms.Button();
@@ -45,44 +44,19 @@
             this.BtnProcurar = new System.Windows.Forms.Button();
             this.PanelLogo = new System.Windows.Forms.Panel();
             this.LogoTxt = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Nave = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSalvar = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.StatusPag = new System.Windows.Forms.ComboBox();
-            this.MetodoPag = new System.Windows.Forms.ComboBox();
-            this.DataPagTxt = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.ValorPagoTxt = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.ValorTotalTxt = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.NomeChacTxt = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.NomeClienteTxt = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.Menu.SuspendLayout();
             this.SubMenuUsuario.SuspendLayout();
             this.SubMenuChacaras.SuspendLayout();
             this.PanelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoTxt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Nave
-            // 
-            this.Nave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.Nave.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Nave.Location = new System.Drawing.Point(251, 0);
-            this.Nave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Nave.Name = "Nave";
-            this.Nave.Size = new System.Drawing.Size(1691, 100);
-            this.Nave.TabIndex = 68;
             // 
             // Menu
             // 
@@ -98,8 +72,8 @@
             this.Menu.Location = new System.Drawing.Point(0, 0);
             this.Menu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(251, 1040);
-            this.Menu.TabIndex = 67;
+            this.Menu.Size = new System.Drawing.Size(251, 988);
+            this.Menu.TabIndex = 68;
             // 
             // btnPagamentos
             // 
@@ -179,7 +153,6 @@
             this.BtnSair.Text = "Sair";
             this.BtnSair.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnSair.UseVisualStyleBackColor = true;
-            this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
             // BtnPerfil
             // 
@@ -317,267 +290,77 @@
             this.LogoTxt.TabIndex = 0;
             this.LogoTxt.TabStop = false;
             // 
-            // pictureBox1
+            // Nave
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(251, 100);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1691, 940);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 69;
-            this.pictureBox1.TabStop = false;
+            this.Nave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.Nave.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Nave.Location = new System.Drawing.Point(251, 0);
+            this.Nave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Nave.Name = "Nave";
+            this.Nave.Size = new System.Drawing.Size(1673, 100);
+            this.Nave.TabIndex = 69;
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btnSalvar);
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.StatusPag);
-            this.panel1.Controls.Add(this.MetodoPag);
-            this.panel1.Controls.Add(this.DataPagTxt);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.ValorPagoTxt);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.ValorTotalTxt);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.NomeChacTxt);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.NomeClienteTxt);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(439, 149);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.MaximumSize = new System.Drawing.Size(1490, 800);
+            this.panel1.Controls.Add(this.dateTimePicker2);
+            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Location = new System.Drawing.Point(314, 149);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1490, 800);
-            this.panel1.TabIndex = 71;
+            this.panel1.Size = new System.Drawing.Size(1561, 801);
+            this.panel1.TabIndex = 70;
             // 
-            // btnSalvar
+            // dateTimePicker1
             // 
-            this.btnSalvar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnSalvar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSalvar.Location = new System.Drawing.Point(697, 698);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(164, 48);
-            this.btnSalvar.TabIndex = 71;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = false;
+            this.dateTimePicker1.Location = new System.Drawing.Point(618, 341);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.TabIndex = 0;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(618, 160);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker2.TabIndex = 1;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(617, 482);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(32, 88);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(325, 185);
-            this.dataGridView1.TabIndex = 15;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(501, 420);
+            this.dataGridView1.TabIndex = 2;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(740, 384);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(192, 24);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Status de Pagamento:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(224, 384);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(208, 24);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Método de pagamento:";
-            // 
-            // StatusPag
-            // 
-            this.StatusPag.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StatusPag.FormattingEnabled = true;
-            this.StatusPag.Items.AddRange(new object[] {
-            "Pago",
-            "Pendente",
-            "Atrasado"});
-            this.StatusPag.Location = new System.Drawing.Point(972, 380);
-            this.StatusPag.Margin = new System.Windows.Forms.Padding(4);
-            this.StatusPag.Name = "StatusPag";
-            this.StatusPag.Size = new System.Drawing.Size(224, 32);
-            this.StatusPag.TabIndex = 12;
-            // 
-            // MetodoPag
-            // 
-            this.MetodoPag.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MetodoPag.FormattingEnabled = true;
-            this.MetodoPag.Items.AddRange(new object[] {
-            "PIX",
-            "Depósito Bancário",
-            "Cartão Débito",
-            "Cartão Crédito"});
-            this.MetodoPag.Location = new System.Drawing.Point(464, 380);
-            this.MetodoPag.Margin = new System.Windows.Forms.Padding(4);
-            this.MetodoPag.Name = "MetodoPag";
-            this.MetodoPag.Size = new System.Drawing.Size(224, 32);
-            this.MetodoPag.TabIndex = 11;
-            // 
-            // DataPagTxt
-            // 
-            this.DataPagTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DataPagTxt.Location = new System.Drawing.Point(1183, 311);
-            this.DataPagTxt.Margin = new System.Windows.Forms.Padding(4);
-            this.DataPagTxt.Name = "DataPagTxt";
-            this.DataPagTxt.Size = new System.Drawing.Size(156, 30);
-            this.DataPagTxt.TabIndex = 10;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(967, 315);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(180, 24);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Data do Pagamento:";
-            // 
-            // ValorPagoTxt
-            // 
-            this.ValorPagoTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ValorPagoTxt.Location = new System.Drawing.Point(697, 311);
-            this.ValorPagoTxt.Margin = new System.Windows.Forms.Padding(4);
-            this.ValorPagoTxt.Name = "ValorPagoTxt";
-            this.ValorPagoTxt.Size = new System.Drawing.Size(224, 30);
-            this.ValorPagoTxt.TabIndex = 8;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(568, 315);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 24);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Valor Pago:";
-            // 
-            // ValorTotalTxt
-            // 
-            this.ValorTotalTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ValorTotalTxt.Location = new System.Drawing.Point(304, 311);
-            this.ValorTotalTxt.Margin = new System.Windows.Forms.Padding(4);
-            this.ValorTotalTxt.Name = "ValorTotalTxt";
-            this.ValorTotalTxt.Size = new System.Drawing.Size(224, 30);
-            this.ValorTotalTxt.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(124, 311);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(153, 24);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Valor do Aluguel:";
-            // 
-            // NomeChacTxt
-            // 
-            this.NomeChacTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NomeChacTxt.Location = new System.Drawing.Point(304, 234);
-            this.NomeChacTxt.Margin = new System.Windows.Forms.Padding(4);
-            this.NomeChacTxt.Name = "NomeChacTxt";
-            this.NomeChacTxt.Size = new System.Drawing.Size(1035, 30);
-            this.NomeChacTxt.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(117, 238);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(153, 24);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Chácara alugada:";
-            // 
-            // NomeClienteTxt
-            // 
-            this.NomeClienteTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NomeClienteTxt.Location = new System.Drawing.Point(304, 160);
-            this.NomeClienteTxt.Margin = new System.Windows.Forms.Padding(4);
-            this.NomeClienteTxt.Name = "NomeClienteTxt";
-            this.NomeClienteTxt.Size = new System.Drawing.Size(1035, 30);
-            this.NomeClienteTxt.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(123, 162);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(156, 24);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nome do Cliente:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(611, 48);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(254, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Controle de Pagamentos";
-            // 
-            // ControlePagamentos
+            // DisponibilidadeChac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1942, 1040);
+            this.ClientSize = new System.Drawing.Size(1924, 988);
+            this.ControlBox = false;
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Nave);
             this.Controls.Add(this.Menu);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "ControlePagamentos";
-            this.Text = "ControlePagamentos";
+            this.Name = "DisponibilidadeChac";
+            this.Text = "DisponibilidadeChac";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Menu.ResumeLayout(false);
             this.SubMenuUsuario.ResumeLayout(false);
             this.SubMenuChacaras.ResumeLayout(false);
             this.PanelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LogoTxt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel Nave;
         private System.Windows.Forms.Panel Menu;
+        private System.Windows.Forms.Button btnPagamentos;
         private System.Windows.Forms.Button BtnHome;
         private System.Windows.Forms.Panel SubMenuUsuario;
         private System.Windows.Forms.Button BtnCadastrarCliente;
@@ -591,25 +374,10 @@
         private System.Windows.Forms.Button BtnProcurar;
         private System.Windows.Forms.Panel PanelLogo;
         private System.Windows.Forms.PictureBox LogoTxt;
-        private System.Windows.Forms.Button btnPagamentos;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel Nave;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox StatusPag;
-        private System.Windows.Forms.ComboBox MetodoPag;
-        private System.Windows.Forms.TextBox DataPagTxt;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox ValorPagoTxt;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox ValorTotalTxt;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox NomeChacTxt;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox NomeClienteTxt;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
     }
 }
