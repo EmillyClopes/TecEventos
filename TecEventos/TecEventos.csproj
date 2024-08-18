@@ -88,6 +88,12 @@
     <Compile Include="ListaChacaras.Designer.cs">
       <DependentUpon>ListaChacaras.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Splash.cs">
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListaChacaras.resx">
       <DependentUpon>ListaChacaras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -148,6 +157,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Animation - 1724002311676.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teceventos-favicon-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-1.204x256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock-password.247x256.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
