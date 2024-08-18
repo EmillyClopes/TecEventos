@@ -19,16 +19,23 @@ namespace TecEventos
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            panel2.Width += 3;
-            if(panel2.Width >= 800)
-            {
-                timer1.Stop();
-                Home home = new Home();
-                home.Show();
-                this.Hide();
-            }
-              
+            panel2.Width += 3; // Ajuste o valor para controlar a velocidade da animação
 
+            // Quando a barra de progresso completar (igualar a largura do painel principal)
+            if (panel2.Width >= panel1.Width)
+            {
+                timer1.Stop(); // Para o timer
+
+                // Exibe o formulário de Login
+                Login loginForm = new Login();
+                loginForm.Show();
+
+                // Fecha o formulário Splash
+                this.Hide(); // Esconde o Splash antes de fechá-lo
+                this.Close(); // Fecha o Splash (use Close se ele não for mais necessário
+
+
+            }
         }
     }
 }

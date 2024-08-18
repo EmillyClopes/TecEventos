@@ -16,7 +16,16 @@ namespace TecEventos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
-        }/*Splash*/
-    }
+
+            // Inicializa o formulário Splash
+            Splash splash = new Splash();
+            Application.Run(splash); // Exibe o formulário Splash
+
+            // Após o Splash, abre o formulário Login
+            if (splash != null) // Verifica se o Splash foi fechado corretamente
+            {
+                Application.Run(new Login());
+            }
+        }
+}
 }
