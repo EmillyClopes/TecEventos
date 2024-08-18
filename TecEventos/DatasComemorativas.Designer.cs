@@ -47,6 +47,8 @@
             this.Menu = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtPromocao = new System.Windows.Forms.TextBox();
+            this.lblPromocao = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnFinalizar = new System.Windows.Forms.Button();
             this.txtDescricao = new System.Windows.Forms.TextBox();
@@ -61,8 +63,6 @@
             this.txtDiaComemorativo = new System.Windows.Forms.TextBox();
             this.lblDiaComemorativo = new System.Windows.Forms.Label();
             this.GridViewDatasComemorativas = new System.Windows.Forms.DataGridView();
-            this.txtPromocao = new System.Windows.Forms.TextBox();
-            this.lblPromocao = new System.Windows.Forms.Label();
             this.PanelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoTxt)).BeginInit();
             this.SubMenuChacaras.SuspendLayout();
@@ -354,6 +354,24 @@
             this.panel1.Size = new System.Drawing.Size(1188, 581);
             this.panel1.TabIndex = 76;
             // 
+            // txtPromocao
+            // 
+            this.txtPromocao.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPromocao.Location = new System.Drawing.Point(24, 288);
+            this.txtPromocao.Name = "txtPromocao";
+            this.txtPromocao.Size = new System.Drawing.Size(287, 27);
+            this.txtPromocao.TabIndex = 152;
+            // 
+            // lblPromocao
+            // 
+            this.lblPromocao.AutoSize = true;
+            this.lblPromocao.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPromocao.Location = new System.Drawing.Point(19, 267);
+            this.lblPromocao.Name = "lblPromocao";
+            this.lblPromocao.Size = new System.Drawing.Size(155, 19);
+            this.lblPromocao.TabIndex = 151;
+            this.lblPromocao.Text = "Promoções ou pacotes";
+            // 
             // btnLimpar
             // 
             this.btnLimpar.BackColor = System.Drawing.Color.SkyBlue;
@@ -491,24 +509,6 @@
             this.GridViewDatasComemorativas.RowHeadersWidth = 51;
             this.GridViewDatasComemorativas.Size = new System.Drawing.Size(646, 487);
             this.GridViewDatasComemorativas.TabIndex = 125;
-            // 
-            // txtPromocao
-            // 
-            this.txtPromocao.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPromocao.Location = new System.Drawing.Point(24, 288);
-            this.txtPromocao.Name = "txtPromocao";
-            this.txtPromocao.Size = new System.Drawing.Size(287, 27);
-            this.txtPromocao.TabIndex = 152;
-            // 
-            // lblPromocao
-            // 
-            this.lblPromocao.AutoSize = true;
-            this.lblPromocao.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPromocao.Location = new System.Drawing.Point(19, 267);
-            this.lblPromocao.Name = "lblPromocao";
-            this.lblPromocao.Size = new System.Drawing.Size(155, 19);
-            this.lblPromocao.TabIndex = 151;
-            this.lblPromocao.Text = "Promoções ou pacotes";
             // 
             // DatasComemorativas
             // 
