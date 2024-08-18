@@ -86,7 +86,6 @@
             // 
             // Menu
             // 
-            this.Menu.AutoScroll = true;
             this.Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.Menu.Controls.Add(this.btnPagamentos);
             this.Menu.Controls.Add(this.BtnHome);
@@ -128,7 +127,7 @@
             this.BtnHome.Margin = new System.Windows.Forms.Padding(2);
             this.BtnHome.Name = "BtnHome";
             this.BtnHome.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.BtnHome.Size = new System.Drawing.Size(190, 36);
+            this.BtnHome.Size = new System.Drawing.Size(188, 36);
             this.BtnHome.TabIndex = 10;
             this.BtnHome.Text = "Home";
             this.BtnHome.UseVisualStyleBackColor = true;
@@ -303,7 +302,7 @@
             this.PanelLogo.Location = new System.Drawing.Point(0, 0);
             this.PanelLogo.Margin = new System.Windows.Forms.Padding(2);
             this.PanelLogo.Name = "PanelLogo";
-            this.PanelLogo.Size = new System.Drawing.Size(190, 81);
+            this.PanelLogo.Size = new System.Drawing.Size(188, 81);
             this.PanelLogo.TabIndex = 0;
             // 
             // LogoTxt
@@ -313,7 +312,7 @@
             this.LogoTxt.Location = new System.Drawing.Point(0, 0);
             this.LogoTxt.Margin = new System.Windows.Forms.Padding(2);
             this.LogoTxt.Name = "LogoTxt";
-            this.LogoTxt.Size = new System.Drawing.Size(190, 79);
+            this.LogoTxt.Size = new System.Drawing.Size(188, 79);
             this.LogoTxt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.LogoTxt.TabIndex = 0;
             this.LogoTxt.TabStop = false;
