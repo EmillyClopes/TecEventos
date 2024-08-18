@@ -325,6 +325,9 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btnCadastrar);
             this.panel1.Controls.Add(this.btnLimpar);
@@ -339,9 +342,10 @@
             this.panel1.Controls.Add(this.NomeCompTxt);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(568, 322);
+            this.panel1.Location = new System.Drawing.Point(591, 308);
+            this.panel1.MaximumSize = new System.Drawing.Size(879, 530);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(925, 589);
+            this.panel1.Size = new System.Drawing.Size(879, 530);
             this.panel1.TabIndex = 69;
             // 
             // btnCadastrar

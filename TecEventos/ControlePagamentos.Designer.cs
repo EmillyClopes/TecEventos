@@ -330,6 +330,9 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btnSalvar);
             this.panel1.Controls.Add(this.dataGridView1);
@@ -349,6 +352,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(551, 244);
+            this.panel1.MaximumSize = new System.Drawing.Size(1118, 650);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1118, 650);
             this.panel1.TabIndex = 71;
@@ -531,6 +535,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Nave);
             this.Controls.Add(this.Menu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ControlePagamentos";
             this.Text = "ControlePagamentos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
