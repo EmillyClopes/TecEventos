@@ -44,14 +44,22 @@
             this.BtnPerfil = new System.Windows.Forms.Button();
             this.SubMenuUsuario = new System.Windows.Forms.Panel();
             this.Menu = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.btnPagamentos = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblChacarasCadastradas = new System.Windows.Forms.Label();
+            this.GridViewChacarasCadastradas = new System.Windows.Forms.DataGridView();
+            this.picFoto = new System.Windows.Forms.PictureBox();
+            this.lblFoto = new System.Windows.Forms.Label();
             this.PanelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoTxt)).BeginInit();
             this.SubMenuChacaras.SuspendLayout();
             this.SubMenuUsuario.SuspendLayout();
             this.Menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewChacarasCadastradas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelLogo
@@ -282,14 +290,6 @@
             this.Menu.Size = new System.Drawing.Size(188, 1080);
             this.Menu.TabIndex = 67;
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(576, 322);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(1016, 434);
-            this.dataGridView2.TabIndex = 70;
-            // 
             // btnPagamentos
             // 
             this.btnPagamentos.FlatAppearance.BorderSize = 0;
@@ -305,12 +305,80 @@
             this.btnPagamentos.Text = "Pagamentos";
             this.btnPagamentos.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(188, 81);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1732, 999);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 69;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lblFoto);
+            this.panel1.Controls.Add(this.picFoto);
+            this.panel1.Controls.Add(this.lblChacarasCadastradas);
+            this.panel1.Controls.Add(this.GridViewChacarasCadastradas);
+            this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.Location = new System.Drawing.Point(366, 250);
+            this.panel1.MaximumSize = new System.Drawing.Size(1188, 581);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1188, 557);
+            this.panel1.TabIndex = 78;
+            // 
+            // lblChacarasCadastradas
+            // 
+            this.lblChacarasCadastradas.AutoSize = true;
+            this.lblChacarasCadastradas.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChacarasCadastradas.Location = new System.Drawing.Point(20, 20);
+            this.lblChacarasCadastradas.Name = "lblChacarasCadastradas";
+            this.lblChacarasCadastradas.Size = new System.Drawing.Size(179, 23);
+            this.lblChacarasCadastradas.TabIndex = 129;
+            this.lblChacarasCadastradas.Text = "Chácaras Cadastradas";
+            // 
+            // GridViewChacarasCadastradas
+            // 
+            this.GridViewChacarasCadastradas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(177)))), ((int)(((byte)(206)))));
+            this.GridViewChacarasCadastradas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridViewChacarasCadastradas.Location = new System.Drawing.Point(24, 56);
+            this.GridViewChacarasCadastradas.Name = "GridViewChacarasCadastradas";
+            this.GridViewChacarasCadastradas.RowHeadersWidth = 51;
+            this.GridViewChacarasCadastradas.Size = new System.Drawing.Size(646, 487);
+            this.GridViewChacarasCadastradas.TabIndex = 125;
+            // 
+            // picFoto
+            // 
+            this.picFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(177)))), ((int)(((byte)(206)))));
+            this.picFoto.Location = new System.Drawing.Point(776, 152);
+            this.picFoto.Name = "picFoto";
+            this.picFoto.Size = new System.Drawing.Size(324, 269);
+            this.picFoto.TabIndex = 130;
+            this.picFoto.TabStop = false;
+            // 
+            // lblFoto
+            // 
+            this.lblFoto.AutoSize = true;
+            this.lblFoto.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFoto.Location = new System.Drawing.Point(772, 112);
+            this.lblFoto.Name = "lblFoto";
+            this.lblFoto.Size = new System.Drawing.Size(45, 23);
+            this.lblFoto.TabIndex = 131;
+            this.lblFoto.Text = "Foto";
+            // 
             // ListaChacaras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Nave);
             this.Controls.Add(this.Menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -322,7 +390,11 @@
             this.SubMenuChacaras.ResumeLayout(false);
             this.SubMenuUsuario.ResumeLayout(false);
             this.Menu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewChacarasCadastradas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -344,7 +416,12 @@
         private System.Windows.Forms.Button BtnPerfil;
         private System.Windows.Forms.Panel SubMenuUsuario;
         private System.Windows.Forms.Panel Menu;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button btnPagamentos;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox picFoto;
+        private System.Windows.Forms.Label lblChacarasCadastradas;
+        private System.Windows.Forms.DataGridView GridViewChacarasCadastradas;
+        private System.Windows.Forms.Label lblFoto;
     }
 }

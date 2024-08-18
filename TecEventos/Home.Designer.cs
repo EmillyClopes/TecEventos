@@ -33,6 +33,7 @@
             this.PanelHome = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Menu = new System.Windows.Forms.Panel();
+            this.btnPagamentos = new System.Windows.Forms.Button();
             this.BtnHome = new System.Windows.Forms.Button();
             this.SubMenuUsuario = new System.Windows.Forms.Panel();
             this.BtnCadastrarCliente = new System.Windows.Forms.Button();
@@ -46,7 +47,6 @@
             this.BtnProcurar = new System.Windows.Forms.Button();
             this.PanelLogo = new System.Windows.Forms.Panel();
             this.LogoTxt = new System.Windows.Forms.PictureBox();
-            this.btnPagamentos = new System.Windows.Forms.Button();
             this.PanelHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Menu.SuspendLayout();
@@ -109,6 +109,22 @@
             this.Menu.Size = new System.Drawing.Size(193, 1080);
             this.Menu.TabIndex = 3;
             // 
+            // btnPagamentos
+            // 
+            this.btnPagamentos.FlatAppearance.BorderSize = 0;
+            this.btnPagamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPagamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPagamentos.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnPagamentos.Location = new System.Drawing.Point(0, 427);
+            this.btnPagamentos.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPagamentos.Name = "btnPagamentos";
+            this.btnPagamentos.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnPagamentos.Size = new System.Drawing.Size(188, 36);
+            this.btnPagamentos.TabIndex = 12;
+            this.btnPagamentos.Text = "Pagamentos";
+            this.btnPagamentos.UseVisualStyleBackColor = true;
+            this.btnPagamentos.Click += new System.EventHandler(this.btnPagamentos_Click);
+            // 
             // BtnHome
             // 
             this.BtnHome.Dock = System.Windows.Forms.DockStyle.Top;
@@ -134,7 +150,7 @@
             this.SubMenuUsuario.Location = new System.Drawing.Point(2, 308);
             this.SubMenuUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.SubMenuUsuario.Name = "SubMenuUsuario";
-            this.SubMenuUsuario.Size = new System.Drawing.Size(188, 108);
+            this.SubMenuUsuario.Size = new System.Drawing.Size(188, 122);
             this.SubMenuUsuario.TabIndex = 9;
             // 
             // BtnCadastrarCliente
@@ -312,22 +328,6 @@
             this.LogoTxt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.LogoTxt.TabIndex = 0;
             this.LogoTxt.TabStop = false;
-            // 
-            // btnPagamentos
-            // 
-            this.btnPagamentos.FlatAppearance.BorderSize = 0;
-            this.btnPagamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPagamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPagamentos.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnPagamentos.Location = new System.Drawing.Point(0, 416);
-            this.btnPagamentos.Margin = new System.Windows.Forms.Padding(2);
-            this.btnPagamentos.Name = "btnPagamentos";
-            this.btnPagamentos.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnPagamentos.Size = new System.Drawing.Size(188, 36);
-            this.btnPagamentos.TabIndex = 12;
-            this.btnPagamentos.Text = "Pagamentos";
-            this.btnPagamentos.UseVisualStyleBackColor = true;
-            this.btnPagamentos.Click += new System.EventHandler(this.btnPagamentos_Click);
             // 
             // Home
             // 
