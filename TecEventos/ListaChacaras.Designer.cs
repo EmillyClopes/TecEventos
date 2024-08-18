@@ -109,6 +109,7 @@
             this.BtnHome.TabIndex = 5;
             this.BtnHome.Text = "Home";
             this.BtnHome.UseVisualStyleBackColor = true;
+            this.BtnHome.Click += new System.EventHandler(this.BtnHome_Click);
             // 
             // BtnChacaras
             // 
@@ -311,7 +312,7 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(251, 100);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1691, 1002);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -330,7 +331,7 @@
             this.panel1.Controls.Add(this.GridViewChacarasCadastradas);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(488, 308);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.MaximumSize = new System.Drawing.Size(1583, 715);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1583, 685);
@@ -351,7 +352,7 @@
             // 
             this.picFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(177)))), ((int)(((byte)(206)))));
             this.picFoto.Location = new System.Drawing.Point(1035, 187);
-            this.picFoto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picFoto.Margin = new System.Windows.Forms.Padding(4);
             this.picFoto.Name = "picFoto";
             this.picFoto.Size = new System.Drawing.Size(432, 331);
             this.picFoto.TabIndex = 130;
@@ -373,7 +374,7 @@
             this.GridViewChacarasCadastradas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(177)))), ((int)(((byte)(206)))));
             this.GridViewChacarasCadastradas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewChacarasCadastradas.Location = new System.Drawing.Point(32, 69);
-            this.GridViewChacarasCadastradas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GridViewChacarasCadastradas.Margin = new System.Windows.Forms.Padding(4);
             this.GridViewChacarasCadastradas.Name = "GridViewChacarasCadastradas";
             this.GridViewChacarasCadastradas.RowHeadersWidth = 51;
             this.GridViewChacarasCadastradas.Size = new System.Drawing.Size(861, 599);
@@ -389,7 +390,7 @@
             this.Controls.Add(this.Nave);
             this.Controls.Add(this.Menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ListaChacaras";
             this.Text = "ListaChacaras";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

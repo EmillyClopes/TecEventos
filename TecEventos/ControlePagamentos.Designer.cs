@@ -131,6 +131,7 @@
             this.BtnHome.TabIndex = 10;
             this.BtnHome.Text = "Home";
             this.BtnHome.UseVisualStyleBackColor = true;
+            this.BtnHome.Click += new System.EventHandler(this.BtnHome_Click);
             // 
             // SubMenuUsuario
             // 

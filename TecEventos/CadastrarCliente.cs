@@ -54,6 +54,22 @@ namespace TecEventos
                 // Se o resultado for "No" ou qualquer outro, nada acontece e volta para a tela atual.
             }
         }
-     
+
+        private void BtnHome_Click(object sender, EventArgs e)
+        {
+            var homeForm = Application.OpenForms.OfType<Home>().FirstOrDefault();
+            if (homeForm != null)
+            {
+                this.Hide(); // Oculta o formulário atual (FormularioX)
+                homeForm.Show(); // Exibe o formulário Home
+            }
+            else
+            {
+                // Se o formulário Home não estiver aberto, você pode criá-lo e mostrar
+                var newHomeForm = new Home();
+                this.Hide(); // Oculta o formulário atual (FormularioX)
+                newHomeForm.Show(); // Exibe o novo formulário Home
+            }
+        }
     }
 }

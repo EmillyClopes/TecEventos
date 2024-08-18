@@ -126,6 +126,7 @@
             this.BtnHome.TabIndex = 10;
             this.BtnHome.Text = "Home";
             this.BtnHome.UseVisualStyleBackColor = true;
+            this.BtnHome.Click += new System.EventHandler(this.BtnHome_Click);
             // 
             // SubMenuUsuario
             // 
@@ -317,7 +318,7 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(251, 100);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1691, 988);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -344,7 +345,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(622, 237);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.MaximumSize = new System.Drawing.Size(1171, 660);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1171, 660);
@@ -358,7 +359,7 @@
             this.btnCadastrar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnCadastrar.Location = new System.Drawing.Point(429, 542);
-            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(164, 48);
             this.btnCadastrar.TabIndex = 82;
@@ -373,7 +374,7 @@
             this.btnLimpar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnLimpar.Location = new System.Drawing.Point(668, 542);
-            this.btnLimpar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimpar.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(164, 49);
             this.btnLimpar.TabIndex = 81;
@@ -384,7 +385,7 @@
             // 
             this.SenhaTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SenhaTxt.Location = new System.Drawing.Point(256, 443);
-            this.SenhaTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SenhaTxt.Margin = new System.Windows.Forms.Padding(4);
             this.SenhaTxt.Name = "SenhaTxt";
             this.SenhaTxt.Size = new System.Drawing.Size(807, 30);
             this.SenhaTxt.TabIndex = 78;
@@ -404,7 +405,7 @@
             // 
             this.TelefoneTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TelefoneTxt.Location = new System.Drawing.Point(256, 369);
-            this.TelefoneTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TelefoneTxt.Margin = new System.Windows.Forms.Padding(4);
             this.TelefoneTxt.Name = "TelefoneTxt";
             this.TelefoneTxt.Size = new System.Drawing.Size(807, 30);
             this.TelefoneTxt.TabIndex = 76;
@@ -424,7 +425,7 @@
             // 
             this.EnderecoTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EnderecoTxt.Location = new System.Drawing.Point(256, 295);
-            this.EnderecoTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EnderecoTxt.Margin = new System.Windows.Forms.Padding(4);
             this.EnderecoTxt.Name = "EnderecoTxt";
             this.EnderecoTxt.Size = new System.Drawing.Size(807, 30);
             this.EnderecoTxt.TabIndex = 74;
@@ -444,7 +445,7 @@
             // 
             this.EmailTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmailTxt.Location = new System.Drawing.Point(256, 222);
-            this.EmailTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EmailTxt.Margin = new System.Windows.Forms.Padding(4);
             this.EmailTxt.Name = "EmailTxt";
             this.EmailTxt.Size = new System.Drawing.Size(807, 30);
             this.EmailTxt.TabIndex = 72;
@@ -464,7 +465,7 @@
             // 
             this.NomeCompTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NomeCompTxt.Location = new System.Drawing.Point(256, 148);
-            this.NomeCompTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.NomeCompTxt.Margin = new System.Windows.Forms.Padding(4);
             this.NomeCompTxt.Name = "NomeCompTxt";
             this.NomeCompTxt.Size = new System.Drawing.Size(807, 30);
             this.NomeCompTxt.TabIndex = 70;
