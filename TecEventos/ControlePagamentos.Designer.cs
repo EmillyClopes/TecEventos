@@ -1,6 +1,6 @@
 ﻿namespace TecEventos
 {
-    partial class CadastrarClientes
+    partial class ControlePagamentos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastrarClientes));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControlePagamentos));
             this.Nave = new System.Windows.Forms.Panel();
             this.Menu = new System.Windows.Forms.Panel();
             this.BtnHome = new System.Windows.Forms.Button();
@@ -45,24 +45,30 @@
             this.PanelLogo = new System.Windows.Forms.Panel();
             this.LogoTxt = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCadastrar = new System.Windows.Forms.Button();
-            this.SenhaTxt = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.TelefoneTxt = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.EnderecoTxt = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.EmailTxt = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.NomeCompTxt = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.NomeClienteTxt = new System.Windows.Forms.TextBox();
+            this.NomeChacTxt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.ValorTotalTxt = new System.Windows.Forms.TextBox();
+            this.ValorPagoTxt = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.DataPagTxt = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.MetodoPag = new System.Windows.Forms.ComboBox();
+            this.StatusPag = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.SaveButton = new System.Windows.Forms.Button();
             this.Menu.SuspendLayout();
             this.SubMenuUsuario.SuspendLayout();
             this.SubMenuChacaras.SuspendLayout();
             this.PanelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoTxt)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // Nave
@@ -72,8 +78,8 @@
             this.Nave.Location = new System.Drawing.Point(188, 0);
             this.Nave.Margin = new System.Windows.Forms.Padding(2);
             this.Nave.Name = "Nave";
-            this.Nave.Size = new System.Drawing.Size(1368, 81);
-            this.Nave.TabIndex = 66;
+            this.Nave.Size = new System.Drawing.Size(1352, 81);
+            this.Nave.TabIndex = 68;
             // 
             // Menu
             // 
@@ -89,8 +95,8 @@
             this.Menu.Location = new System.Drawing.Point(0, 0);
             this.Menu.Margin = new System.Windows.Forms.Padding(2);
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(188, 884);
-            this.Menu.TabIndex = 65;
+            this.Menu.Size = new System.Drawing.Size(188, 845);
+            this.Menu.TabIndex = 67;
             // 
             // BtnHome
             // 
@@ -295,151 +301,203 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btnCadastrar);
-            this.panel1.Controls.Add(this.SenhaTxt);
+            this.panel1.Controls.Add(this.SaveButton);
+            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.StatusPag);
+            this.panel1.Controls.Add(this.MetodoPag);
+            this.panel1.Controls.Add(this.DataPagTxt);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.TelefoneTxt);
+            this.panel1.Controls.Add(this.ValorPagoTxt);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.EnderecoTxt);
+            this.panel1.Controls.Add(this.ValorTotalTxt);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.EmailTxt);
+            this.panel1.Controls.Add(this.NomeChacTxt);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.NomeCompTxt);
+            this.panel1.Controls.Add(this.NomeClienteTxt);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(406, 161);
+            this.panel1.Location = new System.Drawing.Point(228, 121);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(925, 589);
-            this.panel1.TabIndex = 67;
-            // 
-            // btnCadastrar
-            // 
-            this.btnCadastrar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrar.Location = new System.Drawing.Point(348, 434);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(147, 64);
-            this.btnCadastrar.TabIndex = 79;
-            this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = false;
-            // 
-            // SenhaTxt
-            // 
-            this.SenhaTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SenhaTxt.Location = new System.Drawing.Point(192, 360);
-            this.SenhaTxt.Name = "SenhaTxt";
-            this.SenhaTxt.Size = new System.Drawing.Size(606, 26);
-            this.SenhaTxt.TabIndex = 78;
-            this.SenhaTxt.TextChanged += new System.EventHandler(this.SenhaTxt_TextChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(126, 360);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 20);
-            this.label6.TabIndex = 77;
-            this.label6.Text = "Senha:";
-            // 
-            // TelefoneTxt
-            // 
-            this.TelefoneTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TelefoneTxt.Location = new System.Drawing.Point(192, 300);
-            this.TelefoneTxt.Name = "TelefoneTxt";
-            this.TelefoneTxt.Size = new System.Drawing.Size(606, 26);
-            this.TelefoneTxt.TabIndex = 76;
-            this.TelefoneTxt.TextChanged += new System.EventHandler(this.TelefoneTxt_TextChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(111, 300);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 20);
-            this.label5.TabIndex = 75;
-            this.label5.Text = "Telefone:";
-            // 
-            // EnderecoTxt
-            // 
-            this.EnderecoTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EnderecoTxt.Location = new System.Drawing.Point(192, 240);
-            this.EnderecoTxt.Name = "EnderecoTxt";
-            this.EnderecoTxt.Size = new System.Drawing.Size(606, 26);
-            this.EnderecoTxt.TabIndex = 74;
-            this.EnderecoTxt.TextChanged += new System.EventHandler(this.EnderecoTxt_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(104, 240);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 20);
-            this.label4.TabIndex = 73;
-            this.label4.Text = "Endereço:";
-            // 
-            // EmailTxt
-            // 
-            this.EmailTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailTxt.Location = new System.Drawing.Point(192, 180);
-            this.EmailTxt.Name = "EmailTxt";
-            this.EmailTxt.Size = new System.Drawing.Size(606, 26);
-            this.EmailTxt.TabIndex = 72;
-            this.EmailTxt.TextChanged += new System.EventHandler(this.EmailTxt_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(134, 180);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 20);
-            this.label3.TabIndex = 71;
-            this.label3.Text = "Email:";
-            // 
-            // NomeCompTxt
-            // 
-            this.NomeCompTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NomeCompTxt.Location = new System.Drawing.Point(192, 120);
-            this.NomeCompTxt.Name = "NomeCompTxt";
-            this.NomeCompTxt.Size = new System.Drawing.Size(606, 26);
-            this.NomeCompTxt.TabIndex = 70;
-            this.NomeCompTxt.TextChanged += new System.EventHandler(this.NomeCompTxt_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(59, 120);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 20);
-            this.label2.TabIndex = 69;
-            this.label2.Text = "Nome Completo:";
+            this.panel1.Size = new System.Drawing.Size(1300, 703);
+            this.panel1.TabIndex = 69;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(320, 50);
+            this.label1.Location = new System.Drawing.Point(458, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 25);
-            this.label1.TabIndex = 68;
-            this.label1.Text = "Cadastro de Clientes";
+            this.label1.Size = new System.Drawing.Size(249, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Controle de Pagamentos";
             // 
-            // CadastrarClientes
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(92, 132);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(130, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Nome do Cliente:";
+            // 
+            // NomeClienteTxt
+            // 
+            this.NomeClienteTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NomeClienteTxt.Location = new System.Drawing.Point(228, 130);
+            this.NomeClienteTxt.Name = "NomeClienteTxt";
+            this.NomeClienteTxt.Size = new System.Drawing.Size(777, 26);
+            this.NomeClienteTxt.TabIndex = 2;
+            // 
+            // NomeChacTxt
+            // 
+            this.NomeChacTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NomeChacTxt.Location = new System.Drawing.Point(228, 190);
+            this.NomeChacTxt.Name = "NomeChacTxt";
+            this.NomeChacTxt.Size = new System.Drawing.Size(777, 26);
+            this.NomeChacTxt.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(88, 193);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(134, 20);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Chácara alugada:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(93, 253);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(129, 20);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Valor do Aluguel:";
+            // 
+            // ValorTotalTxt
+            // 
+            this.ValorTotalTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ValorTotalTxt.Location = new System.Drawing.Point(228, 253);
+            this.ValorTotalTxt.Name = "ValorTotalTxt";
+            this.ValorTotalTxt.Size = new System.Drawing.Size(169, 26);
+            this.ValorTotalTxt.TabIndex = 6;
+            // 
+            // ValorPagoTxt
+            // 
+            this.ValorPagoTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ValorPagoTxt.Location = new System.Drawing.Point(523, 253);
+            this.ValorPagoTxt.Name = "ValorPagoTxt";
+            this.ValorPagoTxt.Size = new System.Drawing.Size(169, 26);
+            this.ValorPagoTxt.TabIndex = 8;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(426, 256);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 20);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Valor Pago:";
+            // 
+            // DataPagTxt
+            // 
+            this.DataPagTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataPagTxt.Location = new System.Drawing.Point(887, 253);
+            this.DataPagTxt.Name = "DataPagTxt";
+            this.DataPagTxt.Size = new System.Drawing.Size(118, 26);
+            this.DataPagTxt.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(725, 256);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(156, 20);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Data do Pagamento:";
+            // 
+            // MetodoPag
+            // 
+            this.MetodoPag.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MetodoPag.FormattingEnabled = true;
+            this.MetodoPag.Items.AddRange(new object[] {
+            "PIX",
+            "Depósito Bancário",
+            "Cartão Débito",
+            "Cartão Crédito"});
+            this.MetodoPag.Location = new System.Drawing.Point(348, 309);
+            this.MetodoPag.Name = "MetodoPag";
+            this.MetodoPag.Size = new System.Drawing.Size(169, 28);
+            this.MetodoPag.TabIndex = 11;
+            // 
+            // StatusPag
+            // 
+            this.StatusPag.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatusPag.FormattingEnabled = true;
+            this.StatusPag.Items.AddRange(new object[] {
+            "Pago",
+            "Pendente",
+            "Atrasado"});
+            this.StatusPag.Location = new System.Drawing.Point(729, 309);
+            this.StatusPag.Name = "StatusPag";
+            this.StatusPag.Size = new System.Drawing.Size(169, 28);
+            this.StatusPag.TabIndex = 12;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(168, 312);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(174, 20);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Método de pagamento:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(555, 312);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(168, 20);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Status de Pagamento:";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(463, 392);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(244, 150);
+            this.dataGridView1.TabIndex = 15;
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveButton.Location = new System.Drawing.Point(463, 583);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(244, 70);
+            this.SaveButton.TabIndex = 16;
+            this.SaveButton.Text = "Salvar";
+            this.SaveButton.UseVisualStyleBackColor = true;
+            // 
+            // ControlePagamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1556, 884);
+            this.ClientSize = new System.Drawing.Size(1540, 845);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Nave);
             this.Controls.Add(this.Menu);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "CadastrarClientes";
-            this.Text = "Form3";
+            this.Name = "ControlePagamentos";
+            this.Text = "ControlePagamentos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Menu.ResumeLayout(false);
             this.SubMenuUsuario.ResumeLayout(false);
@@ -448,6 +506,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LogoTxt)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -456,21 +515,6 @@
 
         private System.Windows.Forms.Panel Nave;
         private System.Windows.Forms.Panel Menu;
-        private System.Windows.Forms.Panel PanelLogo;
-        private System.Windows.Forms.PictureBox LogoTxt;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox EmailTxt;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox NomeCompTxt;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox SenhaTxt;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox TelefoneTxt;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox EnderecoTxt;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button BtnHome;
         private System.Windows.Forms.Panel SubMenuUsuario;
         private System.Windows.Forms.Button BtnCadastrarCliente;
@@ -482,5 +526,25 @@
         private System.Windows.Forms.Button BtnAgendar;
         private System.Windows.Forms.Button BtnAdicionar;
         private System.Windows.Forms.Button BtnProcurar;
+        private System.Windows.Forms.Panel PanelLogo;
+        private System.Windows.Forms.PictureBox LogoTxt;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox NomeChacTxt;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox NomeClienteTxt;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox ValorTotalTxt;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox DataPagTxt;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox ValorPagoTxt;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox StatusPag;
+        private System.Windows.Forms.ComboBox MetodoPag;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button SaveButton;
     }
 }

@@ -105,7 +105,7 @@
             this.Nave.Location = new System.Drawing.Point(188, 0);
             this.Nave.Margin = new System.Windows.Forms.Padding(2);
             this.Nave.Name = "Nave";
-            this.Nave.Size = new System.Drawing.Size(1732, 81);
+            this.Nave.Size = new System.Drawing.Size(1368, 81);
             this.Nave.TabIndex = 66;
             // 
             // BtnHome
@@ -301,7 +301,7 @@
             this.Menu.Location = new System.Drawing.Point(0, 0);
             this.Menu.Margin = new System.Windows.Forms.Padding(2);
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(188, 1080);
+            this.Menu.Size = new System.Drawing.Size(188, 884);
             this.Menu.TabIndex = 65;
             // 
             // dataGridView1
@@ -539,7 +539,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.ClientSize = new System.Drawing.Size(1556, 884);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.txtTotal);
