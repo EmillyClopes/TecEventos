@@ -16,5 +16,19 @@ namespace TecEventos
         {
             InitializeComponent();
         }
+
+        private void BtnSair_Click(object sender, EventArgs e)
+        {
+            using (var confirmExit = new Saida()) // Substituímos "ConfirmExit" por "Saida"
+            {
+                var result = confirmExit.ShowDialog();
+
+                if (result == DialogResult.Yes)
+                {
+                    Application.Exit(); // Fecha a aplicação
+                }
+                // Se o resultado for "No" ou qualquer outro, nada acontece e volta para a tela atual.
+            }
+        }
     }
 }

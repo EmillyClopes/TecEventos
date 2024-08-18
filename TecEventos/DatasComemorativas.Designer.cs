@@ -252,6 +252,7 @@
             this.BtnSair.Text = "Sair";
             this.BtnSair.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnSair.UseVisualStyleBackColor = true;
+            this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
             // BtnPerfil
             // 
@@ -320,7 +321,7 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(257, 100);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1685, 935);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -351,7 +352,7 @@
             this.panel1.Controls.Add(this.GridViewDatasComemorativas);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(443, 252);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1583, 715);
             this.panel1.TabIndex = 76;
@@ -360,7 +361,7 @@
             // 
             this.txtPromocao.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPromocao.Location = new System.Drawing.Point(32, 354);
-            this.txtPromocao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPromocao.Margin = new System.Windows.Forms.Padding(4);
             this.txtPromocao.Name = "txtPromocao";
             this.txtPromocao.Size = new System.Drawing.Size(381, 32);
             this.txtPromocao.TabIndex = 152;
@@ -384,7 +385,7 @@
             this.btnLimpar.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnLimpar.Location = new System.Drawing.Point(251, 479);
-            this.btnLimpar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimpar.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(164, 48);
             this.btnLimpar.TabIndex = 150;
@@ -399,7 +400,7 @@
             this.btnFinalizar.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinalizar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnFinalizar.Location = new System.Drawing.Point(32, 479);
-            this.btnFinalizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFinalizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(164, 48);
             this.btnFinalizar.TabIndex = 149;
@@ -410,7 +411,7 @@
             // 
             this.txtDescricao.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescricao.Location = new System.Drawing.Point(32, 251);
-            this.txtDescricao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescricao.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(381, 32);
             this.txtDescricao.TabIndex = 144;
@@ -430,7 +431,7 @@
             // 
             this.txtNomeDataComemorativo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomeDataComemorativo.Location = new System.Drawing.Point(32, 69);
-            this.txtNomeDataComemorativo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNomeDataComemorativo.Margin = new System.Windows.Forms.Padding(4);
             this.txtNomeDataComemorativo.Name = "txtNomeDataComemorativo";
             this.txtNomeDataComemorativo.Size = new System.Drawing.Size(381, 32);
             this.txtNomeDataComemorativo.TabIndex = 142;
@@ -450,7 +451,7 @@
             // 
             this.txtMesComemorativo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMesComemorativo.Location = new System.Drawing.Point(120, 158);
-            this.txtMesComemorativo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMesComemorativo.Margin = new System.Windows.Forms.Padding(4);
             this.txtMesComemorativo.Name = "txtMesComemorativo";
             this.txtMesComemorativo.Size = new System.Drawing.Size(51, 32);
             this.txtMesComemorativo.TabIndex = 133;
@@ -470,7 +471,7 @@
             // 
             this.txtAnoComemorativo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAnoComemorativo.Location = new System.Drawing.Point(200, 158);
-            this.txtAnoComemorativo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAnoComemorativo.Margin = new System.Windows.Forms.Padding(4);
             this.txtAnoComemorativo.Name = "txtAnoComemorativo";
             this.txtAnoComemorativo.Size = new System.Drawing.Size(87, 32);
             this.txtAnoComemorativo.TabIndex = 131;
@@ -501,7 +502,7 @@
             // 
             this.txtDiaComemorativo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaComemorativo.Location = new System.Drawing.Point(37, 158);
-            this.txtDiaComemorativo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDiaComemorativo.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiaComemorativo.Name = "txtDiaComemorativo";
             this.txtDiaComemorativo.Size = new System.Drawing.Size(51, 32);
             this.txtDiaComemorativo.TabIndex = 127;
@@ -522,7 +523,7 @@
             this.GridViewDatasComemorativas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(177)))), ((int)(((byte)(206)))));
             this.GridViewDatasComemorativas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewDatasComemorativas.Location = new System.Drawing.Point(696, 82);
-            this.GridViewDatasComemorativas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GridViewDatasComemorativas.Margin = new System.Windows.Forms.Padding(4);
             this.GridViewDatasComemorativas.Name = "GridViewDatasComemorativas";
             this.GridViewDatasComemorativas.RowHeadersWidth = 51;
             this.GridViewDatasComemorativas.Size = new System.Drawing.Size(861, 599);
@@ -538,7 +539,7 @@
             this.Controls.Add(this.Nave);
             this.Controls.Add(this.Menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DatasComemorativas";
             this.Text = "DatasComemorativas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
