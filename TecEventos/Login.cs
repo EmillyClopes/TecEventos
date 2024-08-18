@@ -48,5 +48,32 @@ namespace TecEventos
         {
             textBox2.UseSystemPasswordChar = true;
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            // Usuário e senha padrão
+            string username = "admin";
+            string password = "admin";
+
+            // Verifica se os campos correspondem ao usuário e senha corretos
+            if (textBox1.Text == username && textBox2.Text == password)
+            {
+                // Se correto, abre o formulário Home
+                Home homeForm = new Home();
+                homeForm.Show();
+
+                // Fecha o formulário de login
+                this.Hide();
+            }
+            else
+            {
+                // Exibe uma mensagem de erro se o login falhar
+                MessageBox.Show("Usuário ou senha incorretos. Tente novamente.", "Erro de Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                // Limpa os campos de senha e foco no usuário
+                textBox2.Clear();
+                textBox1.Focus();
+            }
+        }
     }
 }
