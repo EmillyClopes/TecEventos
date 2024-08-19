@@ -33,35 +33,59 @@ namespace TecEventos
 
         public void AbreForm(Form AdicionarChacara)
         {
-            
             AdicionarChacara.Show(); /*abre*/
             this.Hide(); /*fecha*/
+        }
 
+        private void BtnProcurar_Click(object sender, EventArgs e)
+        {
+            AbreForm(new ListaChacaras());
         }
 
         private void BtnAdicionar_Click(object sender, EventArgs e)
         {
-            AbreForm(new AdicionarChacara()); /*abre o outro formulário*/
+            AbreForm(new AdicionarChacara());
         }
 
         private void BtnAgendar_Click(object sender, EventArgs e)
         {
-            AbreForm(new AgendarAlugueis()); /*abre o outro formulário*/
+            AbreForm(new Agendamento());
         }
 
-        private void BtnCadastrarCliente_Click(object sender, EventArgs e)
+        private void btnDisponibilidade_Click(object sender, EventArgs e)
         {
-            AbreForm(new CadastrarClientes()); /*abre o outro formulário*/
-        }
-
-        private void btnPagamentos_Click(object sender, EventArgs e)
-        {
-            AbreForm(new ControlePagamentos()); /*abre o outro formulário*/
+            AbreForm(new Disponibilidade());
         }
 
         private void BtnPerfil_Click(object sender, EventArgs e)
         {
-            AbreForm(new PerfilAdm()); /*abre o outro formulário*/
+            AbreForm(new PerfilUser());
         }
+
+        private void btnAgendamentos_Click(object sender, EventArgs e)
+        {
+            AbreForm(new Agendamento());
+        }
+
+        private void btnPerfilAdm_Click(object sender, EventArgs e)
+        {
+            AbreForm(new PerfilAdm());
+        }
+
+        private void btnCadastrarCliente_Click(object sender, EventArgs e)
+        {
+            AbreForm(new CadastrarClientes());
+        }
+
+        private void btnPagamentos_Click(object sender, EventArgs e)
+        {
+            AbreForm(new ControlePagamentos());
+        }
+
+        private void btnDatasComemorativas_Click(object sender, EventArgs e)
+        {
+            AbreForm(new DatasComemorativas());
+        }
+
     }
 }

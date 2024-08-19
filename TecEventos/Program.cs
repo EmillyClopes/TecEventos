@@ -24,7 +24,7 @@ namespace TecEventos
            // Após o Splash, abre o formulário Login
             if (splash != null) // Verifica se o Splash foi fechado corretamente
             {
-                Application.Run(new Login());
+                Application.Run(new Home());
             }
         }
     }

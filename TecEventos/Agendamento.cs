@@ -8,36 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-// CS0108.cs
-// compile with: /W:2
-using System;
-
 namespace TecEventos
 {
-    public partial class AgendarAlugueis : Form
+    public partial class Agendamento : Form
     {
-        public AgendarAlugueis()
+        public Agendamento()
         {
             InitializeComponent();
-        }
-
-        private void btnLimpar_Click(object sender, EventArgs e)
-        {
-            txtDiaSaida.Text = "";
-            txtMesSaida.Text = "";
-            txtAnoSaida.Text = "";
-            txtNomeCliente.Text = "";
-            txtContatoCliente.Text = "";
-            comboBox1.Text = "";
-            txtTotal.Text = "";
-            txtDiaEntrada.Text = "";
-            txtMesEntrada.Text = "";
-            txtAnoEntrada.Text = "";
-        }
-
-        private void btnFinalizar_Click(object sender, EventArgs e)
-        {
-            //Conectar com o banco
         }
 
         Home form = new Home();

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Agendamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agendamento.Designer.cs">
+      <DependentUpon>Agendamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlePagamentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,12 +69,6 @@
     </Compile>
     <Compile Include="Disponibilidade.Designer.cs">
       <DependentUpon>Disponibilidade.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DisponibilidadeChac.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DisponibilidadeChac.Designer.cs">
-      <DependentUpon>DisponibilidadeChac.cs</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -132,6 +132,9 @@
     <Compile Include="Splash.Designer.cs">
       <DependentUpon>Splash.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Agendamento.resx">
+      <DependentUpon>Agendamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ControlePagamentos.resx">
       <DependentUpon>ControlePagamentos.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,9 +143,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Disponibilidade.resx">
       <DependentUpon>Disponibilidade.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DisponibilidadeChac.resx">
-      <DependentUpon>DisponibilidadeChac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>

@@ -33,19 +33,7 @@ namespace TecEventos
 
         private void BtnHome_Click(object sender, EventArgs e)
         {
-            var homeForm = Application.OpenForms.OfType<Home>().FirstOrDefault();
-            if (homeForm != null)
-            {
-                this.Hide(); // Oculta o formulário atual (FormularioX)
-                homeForm.Show(); // Exibe o formulário Home
-            }
-            else
-            {
-                // Se o formulário Home não estiver aberto, você pode criá-lo e mostrar
-                var newHomeForm = new Home();
-                this.Hide(); // Oculta o formulário atual (FormularioX)
-                newHomeForm.Show(); // Exibe o novo formulário Home
-            }
+            form.AbreForm(new Home());
         }
 
         Home form = new Home();
@@ -84,6 +72,26 @@ namespace TecEventos
         private void btnPagamentos_Click(object sender, EventArgs e)
         {
             form.AbreForm(new ControlePagamentos());
+        }
+
+        private void btnDisponibilidade_Click(object sender, EventArgs e)
+        {
+            form.AbreForm(new Disponibilidade());
+        }
+
+        private void BtnPerfil_Click(object sender, EventArgs e)
+        {
+            form.AbreForm(new PerfilUser());
+        }
+
+        private void btnDatasComemorativas_Click(object sender, EventArgs e)
+        {
+            form.AbreForm(new DatasComemorativas());
+        }
+
+        private void btnAgendamentos_Click(object sender, EventArgs e)
+        {
+            form.AbreForm(new Agendamento());
         }
     }
 }
