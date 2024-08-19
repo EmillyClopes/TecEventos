@@ -75,5 +75,13 @@ namespace TecEventos
                 textBox1.Focus();
             }
         }
+
+        private void btnEsqueceuSenha_Click(object sender, EventArgs e)
+        {
+            CadastrarClientes esqueceuSenha = new CadastrarClientes();
+            esqueceuSenha.Show();
+
+            this.Hide();
+        }
     }
 }

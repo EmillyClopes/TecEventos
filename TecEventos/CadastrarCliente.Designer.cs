@@ -73,10 +73,10 @@
             // 
             this.Nave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.Nave.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Nave.Location = new System.Drawing.Point(251, 0);
-            this.Nave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Nave.Location = new System.Drawing.Point(188, 0);
+            this.Nave.Margin = new System.Windows.Forms.Padding(2);
             this.Nave.Name = "Nave";
-            this.Nave.Size = new System.Drawing.Size(1691, 100);
+            this.Nave.Size = new System.Drawing.Size(852, 81);
             this.Nave.TabIndex = 66;
             // 
             // Menu
@@ -91,9 +91,9 @@
             this.Menu.Controls.Add(this.PanelLogo);
             this.Menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.Menu.Location = new System.Drawing.Point(0, 0);
-            this.Menu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Menu.Margin = new System.Windows.Forms.Padding(2);
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(251, 1088);
+            this.Menu.Size = new System.Drawing.Size(188, 640);
             this.Menu.TabIndex = 65;
             // 
             // btnPagamentos
@@ -102,14 +102,15 @@
             this.btnPagamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPagamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPagamentos.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnPagamentos.Location = new System.Drawing.Point(0, 511);
-            this.btnPagamentos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPagamentos.Location = new System.Drawing.Point(0, 415);
+            this.btnPagamentos.Margin = new System.Windows.Forms.Padding(2);
             this.btnPagamentos.Name = "btnPagamentos";
-            this.btnPagamentos.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.btnPagamentos.Size = new System.Drawing.Size(251, 44);
+            this.btnPagamentos.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnPagamentos.Size = new System.Drawing.Size(188, 36);
             this.btnPagamentos.TabIndex = 12;
             this.btnPagamentos.Text = "Pagamentos";
             this.btnPagamentos.UseVisualStyleBackColor = true;
+            this.btnPagamentos.Click += new System.EventHandler(this.btnPagamentos_Click);
             // 
             // BtnHome
             // 
@@ -118,11 +119,11 @@
             this.BtnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnHome.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnHome.Location = new System.Drawing.Point(0, 100);
-            this.BtnHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnHome.Location = new System.Drawing.Point(0, 81);
+            this.BtnHome.Margin = new System.Windows.Forms.Padding(2);
             this.BtnHome.Name = "BtnHome";
-            this.BtnHome.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.BtnHome.Size = new System.Drawing.Size(251, 44);
+            this.BtnHome.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.BtnHome.Size = new System.Drawing.Size(188, 36);
             this.BtnHome.TabIndex = 10;
             this.BtnHome.Text = "Home";
             this.BtnHome.UseVisualStyleBackColor = true;
@@ -134,10 +135,10 @@
             this.SubMenuUsuario.Controls.Add(this.BtnCadastrarCliente);
             this.SubMenuUsuario.Controls.Add(this.BtnSair);
             this.SubMenuUsuario.Controls.Add(this.BtnPerfil);
-            this.SubMenuUsuario.Location = new System.Drawing.Point(0, 379);
-            this.SubMenuUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SubMenuUsuario.Location = new System.Drawing.Point(0, 308);
+            this.SubMenuUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.SubMenuUsuario.Name = "SubMenuUsuario";
-            this.SubMenuUsuario.Size = new System.Drawing.Size(251, 133);
+            this.SubMenuUsuario.Size = new System.Drawing.Size(188, 108);
             this.SubMenuUsuario.TabIndex = 9;
             // 
             // BtnCadastrarCliente
@@ -148,11 +149,11 @@
             this.BtnCadastrarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCadastrarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCadastrarCliente.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnCadastrarCliente.Location = new System.Drawing.Point(1, 44);
-            this.BtnCadastrarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnCadastrarCliente.Location = new System.Drawing.Point(1, 36);
+            this.BtnCadastrarCliente.Margin = new System.Windows.Forms.Padding(2);
             this.BtnCadastrarCliente.Name = "BtnCadastrarCliente";
-            this.BtnCadastrarCliente.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.BtnCadastrarCliente.Size = new System.Drawing.Size(251, 39);
+            this.BtnCadastrarCliente.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.BtnCadastrarCliente.Size = new System.Drawing.Size(188, 32);
             this.BtnCadastrarCliente.TabIndex = 3;
             this.BtnCadastrarCliente.Text = "Cadastrar Cliente";
             this.BtnCadastrarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -166,11 +167,11 @@
             this.BtnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSair.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnSair.Location = new System.Drawing.Point(0, 89);
-            this.BtnSair.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnSair.Location = new System.Drawing.Point(0, 72);
+            this.BtnSair.Margin = new System.Windows.Forms.Padding(2);
             this.BtnSair.Name = "BtnSair";
-            this.BtnSair.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.BtnSair.Size = new System.Drawing.Size(251, 39);
+            this.BtnSair.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.BtnSair.Size = new System.Drawing.Size(188, 32);
             this.BtnSair.TabIndex = 1;
             this.BtnSair.Text = "Sair";
             this.BtnSair.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -186,10 +187,10 @@
             this.BtnPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnPerfil.ForeColor = System.Drawing.Color.Gainsboro;
             this.BtnPerfil.Location = new System.Drawing.Point(0, 0);
-            this.BtnPerfil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnPerfil.Margin = new System.Windows.Forms.Padding(2);
             this.BtnPerfil.Name = "BtnPerfil";
-            this.BtnPerfil.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.BtnPerfil.Size = new System.Drawing.Size(251, 39);
+            this.BtnPerfil.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.BtnPerfil.Size = new System.Drawing.Size(188, 32);
             this.BtnPerfil.TabIndex = 0;
             this.BtnPerfil.Text = "Perfil";
             this.BtnPerfil.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -201,11 +202,11 @@
             this.BtnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnUsuario.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnUsuario.Location = new System.Drawing.Point(0, 335);
-            this.BtnUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnUsuario.Location = new System.Drawing.Point(0, 272);
+            this.BtnUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.BtnUsuario.Name = "BtnUsuario";
-            this.BtnUsuario.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.BtnUsuario.Size = new System.Drawing.Size(251, 44);
+            this.BtnUsuario.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.BtnUsuario.Size = new System.Drawing.Size(188, 36);
             this.BtnUsuario.TabIndex = 8;
             this.BtnUsuario.Text = "Usuário";
             this.BtnUsuario.UseVisualStyleBackColor = true;
@@ -216,11 +217,11 @@
             this.BtnChacaras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnChacaras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnChacaras.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnChacaras.Location = new System.Drawing.Point(0, 149);
-            this.BtnChacaras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnChacaras.Location = new System.Drawing.Point(0, 121);
+            this.BtnChacaras.Margin = new System.Windows.Forms.Padding(2);
             this.BtnChacaras.Name = "BtnChacaras";
-            this.BtnChacaras.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.BtnChacaras.Size = new System.Drawing.Size(251, 44);
+            this.BtnChacaras.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.BtnChacaras.Size = new System.Drawing.Size(188, 36);
             this.BtnChacaras.TabIndex = 6;
             this.BtnChacaras.Text = "Chácaras";
             this.BtnChacaras.UseVisualStyleBackColor = true;
@@ -231,10 +232,10 @@
             this.SubMenuChacaras.Controls.Add(this.BtnAgendar);
             this.SubMenuChacaras.Controls.Add(this.BtnAdicionar);
             this.SubMenuChacaras.Controls.Add(this.BtnProcurar);
-            this.SubMenuChacaras.Location = new System.Drawing.Point(0, 198);
-            this.SubMenuChacaras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SubMenuChacaras.Location = new System.Drawing.Point(0, 161);
+            this.SubMenuChacaras.Margin = new System.Windows.Forms.Padding(2);
             this.SubMenuChacaras.Name = "SubMenuChacaras";
-            this.SubMenuChacaras.Size = new System.Drawing.Size(251, 133);
+            this.SubMenuChacaras.Size = new System.Drawing.Size(188, 108);
             this.SubMenuChacaras.TabIndex = 7;
             // 
             // BtnAgendar
@@ -245,15 +246,16 @@
             this.BtnAgendar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAgendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAgendar.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnAgendar.Location = new System.Drawing.Point(0, 79);
-            this.BtnAgendar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnAgendar.Location = new System.Drawing.Point(0, 64);
+            this.BtnAgendar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnAgendar.Name = "BtnAgendar";
-            this.BtnAgendar.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.BtnAgendar.Size = new System.Drawing.Size(251, 39);
+            this.BtnAgendar.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.BtnAgendar.Size = new System.Drawing.Size(188, 32);
             this.BtnAgendar.TabIndex = 2;
             this.BtnAgendar.Text = "Agendar";
             this.BtnAgendar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnAgendar.UseVisualStyleBackColor = true;
+            this.BtnAgendar.Click += new System.EventHandler(this.BtnAgendar_Click);
             // 
             // BtnAdicionar
             // 
@@ -263,15 +265,16 @@
             this.BtnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAdicionar.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnAdicionar.Location = new System.Drawing.Point(0, 39);
-            this.BtnAdicionar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnAdicionar.Location = new System.Drawing.Point(0, 32);
+            this.BtnAdicionar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnAdicionar.Name = "BtnAdicionar";
-            this.BtnAdicionar.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.BtnAdicionar.Size = new System.Drawing.Size(251, 39);
+            this.BtnAdicionar.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.BtnAdicionar.Size = new System.Drawing.Size(188, 32);
             this.BtnAdicionar.TabIndex = 1;
             this.BtnAdicionar.Text = "Adicionar";
             this.BtnAdicionar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnAdicionar.UseVisualStyleBackColor = true;
+            this.BtnAdicionar.Click += new System.EventHandler(this.BtnAdicionar_Click);
             // 
             // BtnProcurar
             // 
@@ -282,23 +285,24 @@
             this.BtnProcurar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnProcurar.ForeColor = System.Drawing.Color.Gainsboro;
             this.BtnProcurar.Location = new System.Drawing.Point(0, 0);
-            this.BtnProcurar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnProcurar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnProcurar.Name = "BtnProcurar";
-            this.BtnProcurar.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.BtnProcurar.Size = new System.Drawing.Size(251, 39);
+            this.BtnProcurar.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.BtnProcurar.Size = new System.Drawing.Size(188, 32);
             this.BtnProcurar.TabIndex = 0;
             this.BtnProcurar.Text = "Procurar";
             this.BtnProcurar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnProcurar.UseVisualStyleBackColor = true;
+            this.BtnProcurar.Click += new System.EventHandler(this.BtnProcurar_Click);
             // 
             // PanelLogo
             // 
             this.PanelLogo.Controls.Add(this.LogoTxt);
             this.PanelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelLogo.Location = new System.Drawing.Point(0, 0);
-            this.PanelLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PanelLogo.Margin = new System.Windows.Forms.Padding(2);
             this.PanelLogo.Name = "PanelLogo";
-            this.PanelLogo.Size = new System.Drawing.Size(251, 100);
+            this.PanelLogo.Size = new System.Drawing.Size(188, 81);
             this.PanelLogo.TabIndex = 0;
             // 
             // LogoTxt
@@ -306,9 +310,9 @@
             this.LogoTxt.Dock = System.Windows.Forms.DockStyle.Top;
             this.LogoTxt.Image = ((System.Drawing.Image)(resources.GetObject("LogoTxt.Image")));
             this.LogoTxt.Location = new System.Drawing.Point(0, 0);
-            this.LogoTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LogoTxt.Margin = new System.Windows.Forms.Padding(2);
             this.LogoTxt.Name = "LogoTxt";
-            this.LogoTxt.Size = new System.Drawing.Size(251, 97);
+            this.LogoTxt.Size = new System.Drawing.Size(188, 79);
             this.LogoTxt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.LogoTxt.TabIndex = 0;
             this.LogoTxt.TabStop = false;
@@ -317,10 +321,9 @@
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(251, 100);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(188, 81);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1691, 988);
+            this.pictureBox1.Size = new System.Drawing.Size(852, 559);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 67;
             this.pictureBox1.TabStop = false;
@@ -344,11 +347,10 @@
             this.panel1.Controls.Add(this.NomeCompTxt);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(622, 237);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.MaximumSize = new System.Drawing.Size(1171, 660);
+            this.panel1.Location = new System.Drawing.Point(349, 103);
+            this.panel1.MaximumSize = new System.Drawing.Size(879, 537);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1171, 660);
+            this.panel1.Size = new System.Drawing.Size(879, 537);
             this.panel1.TabIndex = 69;
             // 
             // btnCadastrar
@@ -358,13 +360,13 @@
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCadastrar.Location = new System.Drawing.Point(429, 542);
-            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCadastrar.Location = new System.Drawing.Point(322, 440);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(164, 48);
+            this.btnCadastrar.Size = new System.Drawing.Size(123, 39);
             this.btnCadastrar.TabIndex = 82;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // btnLimpar
             // 
@@ -373,111 +375,101 @@
             this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnLimpar.Location = new System.Drawing.Point(668, 542);
-            this.btnLimpar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLimpar.Location = new System.Drawing.Point(501, 440);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(164, 49);
+            this.btnLimpar.Size = new System.Drawing.Size(123, 40);
             this.btnLimpar.TabIndex = 81;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // SenhaTxt
             // 
             this.SenhaTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SenhaTxt.Location = new System.Drawing.Point(256, 443);
-            this.SenhaTxt.Margin = new System.Windows.Forms.Padding(4);
+            this.SenhaTxt.Location = new System.Drawing.Point(192, 360);
             this.SenhaTxt.Name = "SenhaTxt";
-            this.SenhaTxt.Size = new System.Drawing.Size(807, 30);
+            this.SenhaTxt.Size = new System.Drawing.Size(606, 26);
             this.SenhaTxt.TabIndex = 78;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(174, 447);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(130, 363);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 24);
+            this.label6.Size = new System.Drawing.Size(52, 19);
             this.label6.TabIndex = 77;
             this.label6.Text = "Senha:";
             // 
             // TelefoneTxt
             // 
             this.TelefoneTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TelefoneTxt.Location = new System.Drawing.Point(256, 369);
-            this.TelefoneTxt.Margin = new System.Windows.Forms.Padding(4);
+            this.TelefoneTxt.Location = new System.Drawing.Point(192, 300);
             this.TelefoneTxt.Name = "TelefoneTxt";
-            this.TelefoneTxt.Size = new System.Drawing.Size(807, 30);
+            this.TelefoneTxt.Size = new System.Drawing.Size(606, 26);
             this.TelefoneTxt.TabIndex = 76;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(154, 373);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(116, 303);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 24);
+            this.label5.Size = new System.Drawing.Size(69, 19);
             this.label5.TabIndex = 75;
             this.label5.Text = "Telefone:";
             // 
             // EnderecoTxt
             // 
             this.EnderecoTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EnderecoTxt.Location = new System.Drawing.Point(256, 295);
-            this.EnderecoTxt.Margin = new System.Windows.Forms.Padding(4);
+            this.EnderecoTxt.Location = new System.Drawing.Point(192, 240);
             this.EnderecoTxt.Name = "EnderecoTxt";
-            this.EnderecoTxt.Size = new System.Drawing.Size(807, 30);
+            this.EnderecoTxt.Size = new System.Drawing.Size(606, 26);
             this.EnderecoTxt.TabIndex = 74;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(147, 299);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(110, 243);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 24);
+            this.label4.Size = new System.Drawing.Size(73, 19);
             this.label4.TabIndex = 73;
             this.label4.Text = "Endereço:";
             // 
             // EmailTxt
             // 
             this.EmailTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailTxt.Location = new System.Drawing.Point(256, 222);
-            this.EmailTxt.Margin = new System.Windows.Forms.Padding(4);
+            this.EmailTxt.Location = new System.Drawing.Point(192, 180);
             this.EmailTxt.Name = "EmailTxt";
-            this.EmailTxt.Size = new System.Drawing.Size(807, 30);
+            this.EmailTxt.Size = new System.Drawing.Size(606, 26);
             this.EmailTxt.TabIndex = 72;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(179, 226);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(134, 184);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 24);
+            this.label3.Size = new System.Drawing.Size(49, 19);
             this.label3.TabIndex = 71;
             this.label3.Text = "Email:";
             // 
             // NomeCompTxt
             // 
             this.NomeCompTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NomeCompTxt.Location = new System.Drawing.Point(256, 148);
-            this.NomeCompTxt.Margin = new System.Windows.Forms.Padding(4);
+            this.NomeCompTxt.Location = new System.Drawing.Point(192, 120);
             this.NomeCompTxt.Name = "NomeCompTxt";
-            this.NomeCompTxt.Size = new System.Drawing.Size(807, 30);
+            this.NomeCompTxt.Size = new System.Drawing.Size(606, 26);
             this.NomeCompTxt.TabIndex = 70;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(88, 152);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(66, 124);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(152, 24);
+            this.label2.Size = new System.Drawing.Size(117, 19);
             this.label2.TabIndex = 69;
             this.label2.Text = "Nome Completo:";
             // 
@@ -485,24 +477,23 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(513, 64);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(385, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(215, 29);
+            this.label1.Size = new System.Drawing.Size(166, 23);
             this.label1.TabIndex = 68;
             this.label1.Text = "Cadastro de Clientes";
             // 
             // CadastrarClientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1942, 1088);
+            this.ClientSize = new System.Drawing.Size(1040, 640);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Nave);
             this.Controls.Add(this.Menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CadastrarClientes";
             this.Text = "Form3";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

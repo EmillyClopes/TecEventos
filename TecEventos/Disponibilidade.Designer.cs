@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Disponibilidade));
             this.PanelLogo = new System.Windows.Forms.Panel();
+            this.LogoTxt = new System.Windows.Forms.PictureBox();
             this.Nave = new System.Windows.Forms.Panel();
             this.BtnHome = new System.Windows.Forms.Button();
             this.BtnChacaras = new System.Windows.Forms.Button();
@@ -44,18 +45,17 @@
             this.btnPagamentos = new System.Windows.Forms.Button();
             this.SubMenuUsuario = new System.Windows.Forms.Panel();
             this.Menu = new System.Windows.Forms.Panel();
-            this.LogoTxt = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.lblDatasdiponiveiseIndiponiveis = new System.Windows.Forms.Label();
             this.lblChacarasDisponiveis = new System.Windows.Forms.Label();
             this.GridViewChacarasDisponiveis = new System.Windows.Forms.DataGridView();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.PanelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoTxt)).BeginInit();
             this.SubMenuChacaras.SuspendLayout();
             this.SubMenuUsuario.SuspendLayout();
             this.Menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoTxt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewChacarasDisponiveis)).BeginInit();
@@ -71,6 +71,18 @@
             this.PanelLogo.Size = new System.Drawing.Size(193, 81);
             this.PanelLogo.TabIndex = 0;
             // 
+            // LogoTxt
+            // 
+            this.LogoTxt.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LogoTxt.Image = ((System.Drawing.Image)(resources.GetObject("LogoTxt.Image")));
+            this.LogoTxt.Location = new System.Drawing.Point(0, 0);
+            this.LogoTxt.Margin = new System.Windows.Forms.Padding(2);
+            this.LogoTxt.Name = "LogoTxt";
+            this.LogoTxt.Size = new System.Drawing.Size(193, 79);
+            this.LogoTxt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LogoTxt.TabIndex = 0;
+            this.LogoTxt.TabStop = false;
+            // 
             // Nave
             // 
             this.Nave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
@@ -78,7 +90,7 @@
             this.Nave.Location = new System.Drawing.Point(193, 0);
             this.Nave.Margin = new System.Windows.Forms.Padding(2);
             this.Nave.Name = "Nave";
-            this.Nave.Size = new System.Drawing.Size(1276, 81);
+            this.Nave.Size = new System.Drawing.Size(1193, 81);
             this.Nave.TabIndex = 9;
             // 
             // BtnHome
@@ -291,25 +303,13 @@
             this.Menu.Size = new System.Drawing.Size(193, 690);
             this.Menu.TabIndex = 8;
             // 
-            // LogoTxt
-            // 
-            this.LogoTxt.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LogoTxt.Image = ((System.Drawing.Image)(resources.GetObject("LogoTxt.Image")));
-            this.LogoTxt.Location = new System.Drawing.Point(0, 0);
-            this.LogoTxt.Margin = new System.Windows.Forms.Padding(2);
-            this.LogoTxt.Name = "LogoTxt";
-            this.LogoTxt.Size = new System.Drawing.Size(193, 79);
-            this.LogoTxt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.LogoTxt.TabIndex = 0;
-            this.LogoTxt.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(193, 81);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1276, 609);
+            this.pictureBox1.Size = new System.Drawing.Size(1193, 609);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
@@ -328,8 +328,14 @@
             this.panel1.Location = new System.Drawing.Point(383, 241);
             this.panel1.MaximumSize = new System.Drawing.Size(1188, 581);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1188, 557);
+            this.panel1.Size = new System.Drawing.Size(1105, 557);
             this.panel1.TabIndex = 79;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(776, 144);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 134;
             // 
             // lblDatasdiponiveiseIndiponiveis
             // 
@@ -361,17 +367,11 @@
             this.GridViewChacarasDisponiveis.Size = new System.Drawing.Size(646, 487);
             this.GridViewChacarasDisponiveis.TabIndex = 125;
             // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(776, 144);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 134;
-            // 
             // Disponibilidade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1469, 690);
+            this.ClientSize = new System.Drawing.Size(1386, 690);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Nave);
@@ -380,10 +380,10 @@
             this.Name = "Disponibilidade";
             this.Text = "Disponibilidade";
             this.PanelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.LogoTxt)).EndInit();
             this.SubMenuChacaras.ResumeLayout(false);
             this.SubMenuUsuario.ResumeLayout(false);
             this.Menu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.LogoTxt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

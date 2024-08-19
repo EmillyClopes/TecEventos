@@ -19,27 +19,27 @@ namespace TecEventos
 
         private void NomeCompTxt_TextChanged(object sender, EventArgs e)
         {
-
+            //Conectar com o banco
         }
 
         private void EmailTxt_TextChanged(object sender, EventArgs e)
         {
-
+            //Conectar com o banco
         }
 
         private void EnderecoTxt_TextChanged(object sender, EventArgs e)
         {
-
+            //Conectar com o banco
         }
 
         private void TelefoneTxt_TextChanged(object sender, EventArgs e)
         {
-
+            //Conectar com o banco
         }
 
         private void SenhaTxt_TextChanged(object sender, EventArgs e)
         {
-
+            //Conectar com o banco
         }
         private void BtnSair_Click(object sender, EventArgs e)
         {
@@ -70,6 +70,41 @@ namespace TecEventos
                 this.Hide(); // Oculta o formulário atual (FormularioX)
                 newHomeForm.Show(); // Exibe o novo formulário Home
             }
+        }
+        Home form = new Home();
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            NomeCompTxt.Text = "";
+            EmailTxt.Text = "";
+            EnderecoTxt.Text = "";
+            TelefoneTxt.Text = "";
+            SenhaTxt.Text = "";
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            //Conectar com o banco
+        }
+
+        private void BtnAdicionar_Click(object sender, EventArgs e)
+        {
+            form.AbreForm(new AdicionarChacara());
+        }
+
+        private void BtnAgendar_Click(object sender, EventArgs e)
+        {
+            form.AbreForm(new AgendarAlugueis());
+        }
+
+        private void BtnProcurar_Click(object sender, EventArgs e)
+        {
+            form.AbreForm(new ListaChacaras());
+        }
+
+        private void btnPagamentos_Click(object sender, EventArgs e)
+        {
+            form.AbreForm(new ControlePagamentos());
         }
     }
 }

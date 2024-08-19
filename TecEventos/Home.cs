@@ -31,7 +31,7 @@ namespace TecEventos
             }
         }
 
-        private void AbreForm(Form AdicionarChacara)
+        public void AbreForm(Form AdicionarChacara)
         {
             
             AdicionarChacara.Show(); /*abre*/
