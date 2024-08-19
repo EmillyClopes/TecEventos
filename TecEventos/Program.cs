@@ -21,11 +21,11 @@ namespace TecEventos
             Splash splash = new Splash();
             Application.Run(splash); // Exibe o formulário Splash
 
-            // Após o Splash, abre o formulário Login
+           // Após o Splash, abre o formulário Login
             if (splash != null) // Verifica se o Splash foi fechado corretamente
             {
                 Application.Run(new Login());
             }
         }
-}
+    }
 }

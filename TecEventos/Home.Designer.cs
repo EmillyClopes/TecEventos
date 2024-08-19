@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.Nave = new System.Windows.Forms.Panel();
             this.PanelHome = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Menu = new System.Windows.Forms.Panel();
             this.btnPagamentos = new System.Windows.Forms.Button();
             this.BtnHome = new System.Windows.Forms.Button();
@@ -46,13 +45,14 @@
             this.BtnAdicionar = new System.Windows.Forms.Button();
             this.BtnProcurar = new System.Windows.Forms.Button();
             this.PanelLogo = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LogoTxt = new System.Windows.Forms.PictureBox();
             this.PanelHome.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Menu.SuspendLayout();
             this.SubMenuUsuario.SuspendLayout();
             this.SubMenuChacaras.SuspendLayout();
             this.PanelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoTxt)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,21 +76,6 @@
             this.PanelHome.Name = "PanelHome";
             this.PanelHome.Size = new System.Drawing.Size(1727, 1080);
             this.PanelHome.TabIndex = 4;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(203, 175);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.MaximumSize = new System.Drawing.Size(1335, 772);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1335, 772);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // Menu
             // 
@@ -208,6 +193,7 @@
             this.BtnPerfil.Text = "Perfil";
             this.BtnPerfil.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnPerfil.UseVisualStyleBackColor = true;
+            this.BtnPerfil.Click += new System.EventHandler(this.BtnPerfil_Click);
             // 
             // BtnUsuario
             // 
@@ -317,6 +303,18 @@
             this.PanelLogo.Size = new System.Drawing.Size(193, 81);
             this.PanelLogo.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(203, 175);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.MaximumSize = new System.Drawing.Size(1335, 772);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1335, 772);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // LogoTxt
             // 
             this.LogoTxt.Dock = System.Windows.Forms.DockStyle.Top;
@@ -344,11 +342,11 @@
             this.Text = "TecEventos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.PanelHome.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Menu.ResumeLayout(false);
             this.SubMenuUsuario.ResumeLayout(false);
             this.SubMenuChacaras.ResumeLayout(false);
             this.PanelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoTxt)).EndInit();
             this.ResumeLayout(false);
 

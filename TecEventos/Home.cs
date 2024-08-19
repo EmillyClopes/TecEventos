@@ -58,5 +58,10 @@ namespace TecEventos
         {
             AbreForm(new ControlePagamentos()); /*abre o outro formulário*/
         }
+
+        private void BtnPerfil_Click(object sender, EventArgs e)
+        {
+            AbreForm(new PerfilAdm()); /*abre o outro formulário*/
+        }
     }
 }
