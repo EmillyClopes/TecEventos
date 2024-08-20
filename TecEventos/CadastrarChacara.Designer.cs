@@ -58,7 +58,7 @@
             this.btnDatasComemorativas = new System.Windows.Forms.Button();
             this.btnPagamentos = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnPerfilAdm = new System.Windows.Forms.Button();
             this.BtnHome = new System.Windows.Forms.Button();
             this.btnAdm = new System.Windows.Forms.Button();
             this.SubMenuUsuario = new System.Windows.Forms.Panel();
@@ -102,7 +102,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1920, 1080);
+            this.pictureBox1.Size = new System.Drawing.Size(1386, 788);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 73;
             this.pictureBox1.TabStop = false;
@@ -134,7 +134,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lblBairro);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(536, 330);
+            this.panel1.Location = new System.Drawing.Point(269, 184);
             this.panel1.MaximumSize = new System.Drawing.Size(1093, 561);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1093, 561);
@@ -305,7 +305,6 @@
             this.btnCadastrarChacara.TabIndex = 57;
             this.btnCadastrarChacara.Text = "Cadastrar";
             this.btnCadastrarChacara.UseVisualStyleBackColor = false;
-            this.btnCadastrarChacara.Click += new System.EventHandler(this.btnCadastrarChacara_Click);
             // 
             // txtNumChacara
             // 
@@ -354,7 +353,7 @@
             this.BtnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSair.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnSair.Location = new System.Drawing.Point(0, 1048);
+            this.BtnSair.Location = new System.Drawing.Point(0, 756);
             this.BtnSair.Margin = new System.Windows.Forms.Padding(2);
             this.BtnSair.Name = "BtnSair";
             this.BtnSair.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
@@ -371,7 +370,7 @@
             this.panel2.Controls.Add(this.btnDatasComemorativas);
             this.panel2.Controls.Add(this.btnPagamentos);
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.btnPerfilAdm);
             this.panel2.Location = new System.Drawing.Point(2, 473);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
@@ -435,23 +434,24 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.BtnCadastrarCliente_Click);
             // 
-            // button3
+            // btnPerfilAdm
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button3.Location = new System.Drawing.Point(0, 0);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(188, 32);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Perfil";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnPerfilAdm.FlatAppearance.BorderSize = 0;
+            this.btnPerfilAdm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnPerfilAdm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.btnPerfilAdm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPerfilAdm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPerfilAdm.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnPerfilAdm.Location = new System.Drawing.Point(0, 0);
+            this.btnPerfilAdm.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPerfilAdm.Name = "btnPerfilAdm";
+            this.btnPerfilAdm.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.btnPerfilAdm.Size = new System.Drawing.Size(188, 32);
+            this.btnPerfilAdm.TabIndex = 0;
+            this.btnPerfilAdm.Text = "Perfil";
+            this.btnPerfilAdm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPerfilAdm.UseVisualStyleBackColor = true;
+            this.btnPerfilAdm.Click += new System.EventHandler(this.btnPerfilAdm_Click);
             // 
             // BtnHome
             // 
@@ -624,7 +624,6 @@
             this.BtnAdicionar.Text = "Adicionar";
             this.BtnAdicionar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnAdicionar.UseVisualStyleBackColor = true;
-            this.BtnAdicionar.Click += new System.EventHandler(this.btnCadastrarChacara_Click);
             // 
             // BtnProcurar
             // 
@@ -691,7 +690,7 @@
             this.Nave.Location = new System.Drawing.Point(193, 0);
             this.Nave.Margin = new System.Windows.Forms.Padding(2);
             this.Nave.Name = "Nave";
-            this.Nave.Size = new System.Drawing.Size(1727, 81);
+            this.Nave.Size = new System.Drawing.Size(1193, 81);
             this.Nave.TabIndex = 76;
             // 
             // Menu
@@ -710,14 +709,14 @@
             this.Menu.Location = new System.Drawing.Point(0, 0);
             this.Menu.Margin = new System.Windows.Forms.Padding(2);
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(193, 1080);
+            this.Menu.Size = new System.Drawing.Size(193, 788);
             this.Menu.TabIndex = 75;
             // 
             // AdicionarChacara
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.Nave);
             this.Controls.Add(this.Menu);
             this.Controls.Add(this.panel1);
@@ -773,7 +772,7 @@
         private System.Windows.Forms.Button btnDatasComemorativas;
         private System.Windows.Forms.Button btnPagamentos;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnPerfilAdm;
         private System.Windows.Forms.Button BtnHome;
         private System.Windows.Forms.Button btnAdm;
         private System.Windows.Forms.Panel SubMenuUsuario;

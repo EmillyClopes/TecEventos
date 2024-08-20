@@ -74,7 +74,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1483, 690);
+            this.pictureBox1.Size = new System.Drawing.Size(1386, 690);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 69;
             this.pictureBox1.TabStop = false;
@@ -88,7 +88,7 @@
             this.panel1.Controls.Add(this.lblAgendamento);
             this.panel1.Controls.Add(this.GridViewAgendamentos);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(440, 241);
+            this.panel1.Location = new System.Drawing.Point(392, 241);
             this.panel1.MaximumSize = new System.Drawing.Size(1188, 581);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1043, 557);
@@ -489,7 +489,7 @@
             this.Nave.Location = new System.Drawing.Point(193, 0);
             this.Nave.Margin = new System.Windows.Forms.Padding(2);
             this.Nave.Name = "Nave";
-            this.Nave.Size = new System.Drawing.Size(1290, 81);
+            this.Nave.Size = new System.Drawing.Size(1193, 81);
             this.Nave.TabIndex = 82;
             // 
             // Menu
@@ -515,7 +515,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1483, 690);
+            this.ClientSize = new System.Drawing.Size(1386, 690);
             this.Controls.Add(this.Nave);
             this.Controls.Add(this.Menu);
             this.Controls.Add(this.panel1);

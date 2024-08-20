@@ -21,7 +21,7 @@ namespace TecEventos
 
         private void BtnHome_Click(object sender, EventArgs e)
         {
-            form.AbreForm(new Disponibilidade());
+            form.AbreForm(new Home());
         }
 
         private void BtnProcurar_Click(object sender, EventArgs e)
@@ -36,7 +36,7 @@ namespace TecEventos
 
         private void BtnAgendar_Click(object sender, EventArgs e)
         {
-            form.AbreForm(new Agendamento());
+            form.AbreForm(new AgendarAlugueis());
         }
 
         private void btnDisponibilidade_Click(object sender, EventArgs e)

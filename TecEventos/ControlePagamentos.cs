@@ -69,5 +69,35 @@ namespace TecEventos
         {
             form.AbreForm(new CadastrarClientes());
         }
+
+        private void btnDisponibilidade_Click(object sender, EventArgs e)
+        {
+            form.AbreForm(new Disponibilidade());
+        }
+
+        private void BtnPerfil_Click(object sender, EventArgs e)
+        {
+            form.AbreForm(new PerfilUser());
+        }
+
+        private void btnAgendamentos_Click(object sender, EventArgs e)
+        {
+            form.AbreForm(new Agendamento());
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            form.AbreForm(new PerfilAdm());
+        }
+
+        private void btnPagamentos_Click(object sender, EventArgs e)
+        {
+            form.AbreForm(new ControlePagamentos());
+        }
+
+        private void btnDatasComemorativas_Click(object sender, EventArgs e)
+        {
+            form.AbreForm(new DatasComemorativas());
+        }
     }
 }

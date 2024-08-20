@@ -87,7 +87,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1433, 724);
+            this.pictureBox1.Size = new System.Drawing.Size(1386, 724);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 69;
             this.pictureBox1.TabStop = false;
@@ -118,7 +118,7 @@
             this.panel1.Location = new System.Drawing.Point(329, 121);
             this.panel1.MaximumSize = new System.Drawing.Size(1118, 650);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1118, 650);
+            this.panel1.Size = new System.Drawing.Size(1071, 650);
             this.panel1.TabIndex = 71;
             // 
             // btnSalvar
@@ -309,6 +309,7 @@
             this.BtnSair.Text = "Sair";
             this.BtnSair.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnSair.UseVisualStyleBackColor = true;
+            this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
             // panel2
             // 
@@ -340,6 +341,7 @@
             this.btnDatasComemorativas.Text = "Datas Comemorativas";
             this.btnDatasComemorativas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDatasComemorativas.UseVisualStyleBackColor = true;
+            this.btnDatasComemorativas.Click += new System.EventHandler(this.btnDatasComemorativas_Click);
             // 
             // btnPagamentos
             // 
@@ -358,6 +360,7 @@
             this.btnPagamentos.Text = "Pagamentos";
             this.btnPagamentos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPagamentos.UseVisualStyleBackColor = true;
+            this.btnPagamentos.Click += new System.EventHandler(this.btnPagamentos_Click);
             // 
             // button1
             // 
@@ -394,6 +397,7 @@
             this.button3.Text = "Perfil";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // BtnHome
             // 
@@ -459,6 +463,7 @@
             this.btnAgendamentos.Text = "Agendamentos";
             this.btnAgendamentos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgendamentos.UseVisualStyleBackColor = true;
+            this.btnAgendamentos.Click += new System.EventHandler(this.btnAgendamentos_Click);
             // 
             // BtnPerfil
             // 
@@ -477,6 +482,7 @@
             this.BtnPerfil.Text = "Perfil";
             this.BtnPerfil.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnPerfil.UseVisualStyleBackColor = true;
+            this.BtnPerfil.Click += new System.EventHandler(this.BtnPerfil_Click);
             // 
             // BtnUsuario
             // 
@@ -525,6 +531,7 @@
             this.btnDisponibilidade.Text = "Disponibilidade";
             this.btnDisponibilidade.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDisponibilidade.UseVisualStyleBackColor = true;
+            this.btnDisponibilidade.Click += new System.EventHandler(this.btnDisponibilidade_Click);
             // 
             // BtnAgendar
             // 
@@ -626,7 +633,7 @@
             this.Nave.Location = new System.Drawing.Point(193, 0);
             this.Nave.Margin = new System.Windows.Forms.Padding(2);
             this.Nave.Name = "Nave";
-            this.Nave.Size = new System.Drawing.Size(1240, 81);
+            this.Nave.Size = new System.Drawing.Size(1193, 81);
             this.Nave.TabIndex = 73;
             // 
             // Menu
@@ -652,7 +659,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1433, 724);
+            this.ClientSize = new System.Drawing.Size(1386, 724);
             this.Controls.Add(this.Nave);
             this.Controls.Add(this.Menu);
             this.Controls.Add(this.panel1);

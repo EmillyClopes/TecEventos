@@ -47,5 +47,52 @@ namespace TecEventos
                 newHomeForm.Show(); // Exibe o novo formulário Home
             }
         }
+
+        Home form = new Home();
+
+        private void BtnProcurar_Click(object sender, EventArgs e)
+        {
+            form.AbreForm(new ListaChacaras());
+        }
+
+        private void BtnAdicionar_Click(object sender, EventArgs e)
+        {
+            form.AbreForm(new AdicionarChacara());
+        }
+
+        private void BtnAgendar_Click(object sender, EventArgs e)
+        {
+            form.AbreForm(new AgendarAlugueis());
+        }
+
+        private void btnDisponibilidade_Click(object sender, EventArgs e)
+        {
+            form.AbreForm(new Disponibilidade());
+        }
+
+        private void BtnPerfil_Click(object sender, EventArgs e)
+        {
+            form.AbreForm(new PerfilUser());
+        }
+
+        private void btnAgendamentos_Click(object sender, EventArgs e)
+        {
+            form.AbreForm(new Agendamento());
+        }
+
+        private void btnPerfilAdm_Click(object sender, EventArgs e)
+        {
+            form.AbreForm(new PerfilAdm());
+        }
+
+        private void btnCadastrarCliente_Click(object sender, EventArgs e)
+        {
+            form.AbreForm(new CadastrarClientes());
+        }
+
+        private void btnPagamentos_Click(object sender, EventArgs e)
+        {
+            form.AbreForm(new ControlePagamentos());
+        }
     }
 }

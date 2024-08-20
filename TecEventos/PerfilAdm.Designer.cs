@@ -47,7 +47,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnDatasComemorativas = new System.Windows.Forms.Button();
             this.btnPagamentos = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCadastrarCliente = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.BtnHome = new System.Windows.Forms.Button();
             this.btnAdm = new System.Windows.Forms.Button();
@@ -97,7 +97,7 @@
             this.panel1.Location = new System.Drawing.Point(438, 170);
             this.panel1.MaximumSize = new System.Drawing.Size(879, 537);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(879, 537);
+            this.panel1.Size = new System.Drawing.Size(811, 537);
             this.panel1.TabIndex = 70;
             // 
             // btnAtualizar
@@ -225,7 +225,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1454, 653);
+            this.pictureBox1.Size = new System.Drawing.Size(1386, 653);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
@@ -254,7 +254,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
             this.panel2.Controls.Add(this.btnDatasComemorativas);
             this.panel2.Controls.Add(this.btnPagamentos);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btnCadastrarCliente);
             this.panel2.Controls.Add(this.button3);
             this.panel2.Location = new System.Drawing.Point(2, 473);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
@@ -279,6 +279,7 @@
             this.btnDatasComemorativas.Text = "Datas Comemorativas";
             this.btnDatasComemorativas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDatasComemorativas.UseVisualStyleBackColor = true;
+            this.btnDatasComemorativas.Click += new System.EventHandler(this.btnDatasComemorativas_Click);
             // 
             // btnPagamentos
             // 
@@ -297,24 +298,26 @@
             this.btnPagamentos.Text = "Pagamentos";
             this.btnPagamentos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPagamentos.UseVisualStyleBackColor = true;
+            this.btnPagamentos.Click += new System.EventHandler(this.btnPagamentos_Click);
             // 
-            // button1
+            // btnCadastrarCliente
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button1.Location = new System.Drawing.Point(1, 36);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(188, 32);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Cadastrar Cliente";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCadastrarCliente.FlatAppearance.BorderSize = 0;
+            this.btnCadastrarCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnCadastrarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.btnCadastrarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrarCliente.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnCadastrarCliente.Location = new System.Drawing.Point(1, 36);
+            this.btnCadastrarCliente.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCadastrarCliente.Name = "btnCadastrarCliente";
+            this.btnCadastrarCliente.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.btnCadastrarCliente.Size = new System.Drawing.Size(188, 32);
+            this.btnCadastrarCliente.TabIndex = 3;
+            this.btnCadastrarCliente.Text = "Cadastrar Cliente";
+            this.btnCadastrarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCadastrarCliente.UseVisualStyleBackColor = true;
+            this.btnCadastrarCliente.Click += new System.EventHandler(this.btnCadastrarCliente_Click);
             // 
             // button3
             // 
@@ -398,6 +401,7 @@
             this.btnAgendamentos.Text = "Agendamentos";
             this.btnAgendamentos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgendamentos.UseVisualStyleBackColor = true;
+            this.btnAgendamentos.Click += new System.EventHandler(this.btnAgendamentos_Click);
             // 
             // BtnPerfil
             // 
@@ -416,6 +420,7 @@
             this.BtnPerfil.Text = "Perfil";
             this.BtnPerfil.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnPerfil.UseVisualStyleBackColor = true;
+            this.BtnPerfil.Click += new System.EventHandler(this.BtnPerfil_Click);
             // 
             // BtnUsuario
             // 
@@ -464,6 +469,7 @@
             this.btnDisponibilidade.Text = "Disponibilidade";
             this.btnDisponibilidade.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDisponibilidade.UseVisualStyleBackColor = true;
+            this.btnDisponibilidade.Click += new System.EventHandler(this.btnDisponibilidade_Click);
             // 
             // BtnAgendar
             // 
@@ -482,6 +488,7 @@
             this.BtnAgendar.Text = "Agendar";
             this.BtnAgendar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnAgendar.UseVisualStyleBackColor = true;
+            this.BtnAgendar.Click += new System.EventHandler(this.BtnAgendar_Click);
             // 
             // BtnAdicionar
             // 
@@ -500,6 +507,7 @@
             this.BtnAdicionar.Text = "Adicionar";
             this.BtnAdicionar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnAdicionar.UseVisualStyleBackColor = true;
+            this.BtnAdicionar.Click += new System.EventHandler(this.BtnAdicionar_Click);
             // 
             // BtnProcurar
             // 
@@ -518,6 +526,7 @@
             this.BtnProcurar.Text = "Procurar";
             this.BtnProcurar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnProcurar.UseVisualStyleBackColor = true;
+            this.BtnProcurar.Click += new System.EventHandler(this.BtnProcurar_Click);
             // 
             // BtnChacaras
             // 
@@ -565,7 +574,7 @@
             this.Nave.Location = new System.Drawing.Point(193, 0);
             this.Nave.Margin = new System.Windows.Forms.Padding(2);
             this.Nave.Name = "Nave";
-            this.Nave.Size = new System.Drawing.Size(1261, 81);
+            this.Nave.Size = new System.Drawing.Size(1193, 81);
             this.Nave.TabIndex = 72;
             // 
             // Menu
@@ -591,7 +600,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1454, 653);
+            this.ClientSize = new System.Drawing.Size(1386, 653);
             this.Controls.Add(this.Nave);
             this.Controls.Add(this.Menu);
             this.Controls.Add(this.panel1);
@@ -634,7 +643,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnDatasComemorativas;
         private System.Windows.Forms.Button btnPagamentos;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCadastrarCliente;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button BtnHome;
         private System.Windows.Forms.Button btnAdm;

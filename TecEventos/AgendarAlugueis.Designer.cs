@@ -96,7 +96,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1509, 789);
+            this.pictureBox1.Size = new System.Drawing.Size(1386, 788);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 67;
             this.pictureBox1.TabStop = false;
@@ -400,7 +400,7 @@
             this.BtnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSair.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnSair.Location = new System.Drawing.Point(0, 757);
+            this.BtnSair.Location = new System.Drawing.Point(0, 756);
             this.BtnSair.Margin = new System.Windows.Forms.Padding(2);
             this.BtnSair.Name = "BtnSair";
             this.BtnSair.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
@@ -737,7 +737,7 @@
             this.Nave.Location = new System.Drawing.Point(193, 0);
             this.Nave.Margin = new System.Windows.Forms.Padding(2);
             this.Nave.Name = "Nave";
-            this.Nave.Size = new System.Drawing.Size(1316, 81);
+            this.Nave.Size = new System.Drawing.Size(1193, 81);
             this.Nave.TabIndex = 79;
             // 
             // Menu
@@ -756,14 +756,14 @@
             this.Menu.Location = new System.Drawing.Point(0, 0);
             this.Menu.Margin = new System.Windows.Forms.Padding(2);
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(193, 789);
+            this.Menu.Size = new System.Drawing.Size(193, 788);
             this.Menu.TabIndex = 78;
             // 
             // AgendarAlugueis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1509, 789);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.Nave);
             this.Controls.Add(this.Menu);
             this.Controls.Add(this.panel1);

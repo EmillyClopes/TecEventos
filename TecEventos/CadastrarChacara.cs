@@ -49,11 +49,6 @@ namespace TecEventos
             txtDescricao.Text = "";
         }
 
-        private void btnCadastrarChacara_Click(object sender, EventArgs e)
-        {
-            //Conectar com o banco
-        }
-
         private void BtnAgendar_Click(object sender, EventArgs e)
         {
             form.AbreForm(new AgendarAlugueis());
@@ -92,6 +87,11 @@ namespace TecEventos
         private void btnAgendamentos_Click(object sender, EventArgs e)
         {
             form.AbreForm(new Agendamento());
+        }
+
+        private void btnPerfilAdm_Click(object sender, EventArgs e)
+        {
+            form.AbreForm(new PerfilAdm());
         }
     }
 }
