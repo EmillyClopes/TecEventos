@@ -17,6 +17,24 @@ namespace TecEventos
             InitializeComponent(); 
         }
 
+        public Form ativarForm = null;
+
+        public void AbreForm(Form novoForm)
+        {
+            if (ativarForm != null) ativarForm.Close();
+            ativarForm = novoForm;
+            ativarForm.TopLevel = false;
+            novoForm.FormBorderStyle = FormBorderStyle.None;
+            novoForm.Dock = DockStyle.Fill;
+            PanelHome.Controls.Add(novoForm);
+            PanelHome.Tag = novoForm;
+            novoForm.BringToFront();
+            novoForm.Show();
+        }
+
+        /* abrirNovoForm(new Form3()); /*abre outro formulario*/
+
+
         private void BtnSair_Click(object sender, EventArgs e)
         {
             using (var confirmExit = new Saida()) // Substituímos "ConfirmExit" por "Saida"
@@ -29,12 +47,6 @@ namespace TecEventos
                 }
                 // Se o resultado for "No" ou qualquer outro, nada acontece e volta para a tela atual.
             }
-        }
-
-        public void AbreForm(Form AdicionarChacara)
-        {
-            AdicionarChacara.Show(); /*abre*/
-            this.Hide(); /*fecha*/
         }
 
         private void BtnProcurar_Click(object sender, EventArgs e)
