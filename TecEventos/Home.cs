@@ -12,28 +12,12 @@ namespace TecEventos
 {
     public partial class Home : Form
     {
+        private AbrirForms abrirForms; //Chamar a classe de ABRIR FORMS
         public Home()
         {
-            InitializeComponent(); 
+            InitializeComponent();
+            abrirForms = new AbrirForms(PanelHome); // Passa o painel para a classe AbrirForms
         }
-
-        public Form ativarForm = null;
-
-        public void AbreForm(Form novoForm)
-        {
-            if (ativarForm != null) ativarForm.Close();
-            ativarForm = novoForm;
-            ativarForm.TopLevel = false;
-            novoForm.FormBorderStyle = FormBorderStyle.None;
-            novoForm.Dock = DockStyle.Fill;
-            PanelHome.Controls.Add(novoForm);
-            PanelHome.Tag = novoForm;
-            novoForm.BringToFront();
-            novoForm.Show();
-        }
-
-        /* abrirNovoForm(new Form3()); /*abre outro formulario*/
-
 
         private void BtnSair_Click(object sender, EventArgs e)
         {
@@ -51,52 +35,52 @@ namespace TecEventos
 
         private void BtnProcurar_Click(object sender, EventArgs e)
         {
-            AbreForm(new ListaChacaras());
+            abrirForms.AbreForm(new ListaChacaras());
         }
 
         private void BtnAdicionar_Click(object sender, EventArgs e)
         {
-            AbreForm(new AdicionarChacara());
+            abrirForms.AbreForm(new AdicionarChacara());
         }
 
         private void BtnAgendar_Click(object sender, EventArgs e)
         {
-            AbreForm(new Agendamento());
+            abrirForms.AbreForm(new Agendamento());
         }
 
         private void btnDisponibilidade_Click(object sender, EventArgs e)
         {
-            AbreForm(new Disponibilidade());
+            abrirForms.AbreForm(new Disponibilidade());
         }
 
         private void BtnPerfil_Click(object sender, EventArgs e)
         {
-            AbreForm(new PerfilUser());
+            abrirForms.AbreForm(new PerfilUser());
         }
 
         private void btnAgendamentos_Click(object sender, EventArgs e)
         {
-            AbreForm(new Agendamento());
+            abrirForms.AbreForm(new Agendamento());
         }
 
         private void btnPerfilAdm_Click(object sender, EventArgs e)
         {
-            AbreForm(new PerfilAdm());
+            abrirForms.AbreForm(new PerfilAdm());
         }
 
         private void btnCadastrarCliente_Click(object sender, EventArgs e)
         {
-            AbreForm(new CadastrarClientes());
+            abrirForms.AbreForm(new CadastrarClientes());
         }
 
         private void btnPagamentos_Click(object sender, EventArgs e)
         {
-            AbreForm(new ControlePagamentos());
+            abrirForms.AbreForm(new ControlePagamentos());
         }
 
         private void btnDatasComemorativas_Click(object sender, EventArgs e)
         {
-            AbreForm(new DatasComemorativas());
+            abrirForms.AbreForm(new DatasComemorativas());
         }
 
     }
