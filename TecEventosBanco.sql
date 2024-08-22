@@ -153,5 +153,20 @@ CREATE TABLE LogAcesso (
 -- Inserir administrador padrão na tabela de usuários
 INSERT INTO Usuario (nome_completo, email, endereco_rua, endereco_numero, endereco_bairro, telefone, senha)
 VALUES ('Administrador', 'admin@teceventos.com', 'Rua Central', '1', 'Centro', '000000000', 'admin');
-select * from Usuario
+select * from Usuario;
+-- Chacaras de teste
+INSERT INTO Chacara (nome, valor_diaria, endereco_rua, endereco_numero, endereco_bairro, regras_politicas, descricao) 
+VALUES ('Chácara Lago Azul', 250.00, 'Rua das Flores', '123', 'Jardim das Rosas', 'Não é permitido som alto após às 22h.', 'Chácara com vista para o lago, área para churrasco e jardim amplo.');
+
+INSERT INTO Chacara (nome, valor_diaria, endereco_rua, endereco_numero, endereco_bairro, regras_politicas, descricao) 
+VALUES ('Chácara do Sol', 350.00, 'Avenida das Palmeiras', '456', 'Centro', 'Proibido trazer animais de estimação.', 'Chácara equipada com piscina, quadra de esportes, e churrasqueira.');
+
+INSERT INTO Chacara (nome, valor_diaria, endereco_rua, endereco_numero, endereco_bairro, regras_politicas, descricao) 
+VALUES ('Chácara Vista do Alto', 400.00, 'Estrada do Alto', '789', 'Montanhas Verdes', 'É necessário fazer reserva antecipada.', 'Chácara com vista panorâmica para as montanhas, ideal para eventos e celebrações.');
+
+INSERT INTO Chacara (nome, valor_diaria, endereco_rua, endereco_numero, endereco_bairro, regras_politicas, descricao) 
+VALUES ('Chácara Rio Azul', 300.00, 'Rua do Rio', '101', 'Beira-Rio', 'Não é permitido fazer fogueiras.', 'Chácara com acesso direto ao rio e área para camping, perfeita para atividades ao ar livre.');
+
+INSERT INTO Chacara (nome, valor_diaria, endereco_rua, endereco_numero, endereco_bairro, regras_politicas, descricao) 
+VALUES ('Chácara Jardim Encantado', 500.00, 'Rua das Orquídeas', '202', 'Vila das Flores', 'Não é permitido o uso de fogos de artifício.', 'Chácara com suíte, cozinha equipada, espaço para eventos e ambiente tranquilo.');
 

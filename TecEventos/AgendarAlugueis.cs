@@ -11,14 +11,38 @@ using System.Windows.Forms;
 // CS0108.cs
 // compile with: /W:2
 using System;
+using MySql.Data.MySqlClient;
 
 namespace TecEventos
 {
     public partial class AgendarAlugueis : Form
     {
+        private int chacaraIdSelecionado; // Variável para armazenar o ID da chácara selecionada
         public AgendarAlugueis()
         {
-            InitializeComponent();
+              InitializeComponent();
+        }
+
+        private void LoadChacarasDisponiveis()
+        {
+            string connectionString = "server=localhost;database=TecEventos;uid=root;pwd=9614206Gil@;";
+            string query = "SELECT id, nome FROM Chacara WHERE id NOT IN (SELECT chacara_id FROM Agendamento WHERE entrada_data <= CURDATE() AND saida_data >= CURDATE())";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    GridViewChacarasDisponiveis.DataSource = dataTable;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao conectar ao banco de dados: " + ex.Message, "Erro de Conexão", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
@@ -37,7 +61,67 @@ namespace TecEventos
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            //Conectar com o banco
+            string entradaData = $"{txtAnoEntrada.Text}-{txtMesEntrada.Text.PadLeft(2, '0')}-{txtDiaEntrada.Text.PadLeft(2, '0')}";
+            string saidaData = $"{txtAnoSaida.Text}-{txtMesSaida.Text.PadLeft(2, '0')}-{txtDiaSaida.Text.PadLeft(2, '0')}";
+            string nomeCliente = txtNomeCliente.Text;
+            string contatoCliente = txtContatoCliente.Text;
+            string status = comboBox1.Text;
+            decimal total = decimal.Parse(txtTotal.Text);
+
+            // Verifica se a chácara foi selecionada
+            if (chacaraIdSelecionado == 0)
+            {
+                MessageBox.Show("Por favor, selecione uma chácara.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            int usuarioId = 1; // Ajustar conforme necessário
+
+            string connectionString = "server=localhost;database=TecEventos;uid=root;pwd=9614206Gil@;";
+            string query = "INSERT INTO Agendamento (entrada_data, saida_data, nome_cliente, telefone_cliente, status, valor_total, chacara_id, usuario_id) " +
+                           "VALUES (@entradaData, @saidaData, @nomeCliente, @contatoCliente, @status, @total, @chacaraId, @usuarioId)";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@entradaData", entradaData);
+                    command.Parameters.AddWithValue("@saidaData", saidaData);
+                    command.Parameters.AddWithValue("@nomeCliente", nomeCliente);
+                    command.Parameters.AddWithValue("@contatoCliente", contatoCliente);
+                    command.Parameters.AddWithValue("@status", status);
+                    command.Parameters.AddWithValue("@total", total);
+                    command.Parameters.AddWithValue("@chacaraId", chacaraIdSelecionado);
+                    command.Parameters.AddWithValue("@usuarioId", usuarioId);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Agendamento realizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao realizar o agendamento.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao conectar ao banco de dados: " + ex.Message, "Erro de Conexão", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
+
+        private void GridViewChacarasDisponiveis_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Verifica se a linha clicada é válida
+            {
+                DataGridViewRow row = GridViewChacarasDisponiveis.Rows[e.RowIndex];
+                // Supondo que o ID da chácara está na primeira coluna (ajuste o índice da coluna conforme necessário)
+                chacaraIdSelecionado = Convert.ToInt32(row.Cells[0].Value);
+            }
+        }
+       
     }
 }
