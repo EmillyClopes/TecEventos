@@ -38,18 +38,12 @@ namespace TecEventos
             //Conectar com o banco
         }
 
-        private void SenhaTxt_TextChanged(object sender, EventArgs e)
-        {
-            //Conectar com o banco
-        }
-
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             NomeCompTxt.Text = "";
             EmailTxt.Text = "";
-            EnderecoTxt.Text = "";
+            EnderecoRuaTxt.Text = "";
             TelefoneTxt.Text = "";
-            SenhaTxt.Text = "";
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -70,12 +64,10 @@ namespace TecEventos
                     MySqlCommand command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@nome_completo", NomeCompTxt.Text);
                     command.Parameters.AddWithValue("@email", EmailTxt.Text);
-                    command.Parameters.AddWithValue("@endereco_rua", EnderecoTxt.Text.Split(',')[0]); // Supondo que EnderecoTxt tenha o formato "Rua, Numero, Bairro"
-                    command.Parameters.AddWithValue("@endereco_numero", EnderecoTxt.Text.Split(',').Length > 1 ? EnderecoTxt.Text.Split(',')[1] : "");
-                    command.Parameters.AddWithValue("@endereco_bairro", EnderecoTxt.Text.Split(',').Length > 2 ? EnderecoTxt.Text.Split(',')[2] : "");
+                    command.Parameters.AddWithValue("@endereco_rua", EnderecoRuaTxt.Text.Split(',')[0]); // Supondo que EnderecoTxt tenha o formato "Rua, Numero, Bairro"
+                    command.Parameters.AddWithValue("@endereco_numero", EnderecoRuaTxt.Text.Split(',').Length > 1 ? EnderecoRuaTxt.Text.Split(',')[1] : "");
+                    command.Parameters.AddWithValue("@endereco_bairro", EnderecoRuaTxt.Text.Split(',').Length > 2 ? EnderecoRuaTxt.Text.Split(',')[2] : "");
                     command.Parameters.AddWithValue("@telefone", TelefoneTxt.Text);
-                    command.Parameters.AddWithValue("@senha", SenhaTxt.Text);
-
                     command.ExecuteNonQuery();
 
                     MessageBox.Show("Cadastro realizado com sucesso!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -83,9 +75,8 @@ namespace TecEventos
                     // Limpar os campos após o cadastro
                     NomeCompTxt.Text = "";
                     EmailTxt.Text = "";
-                    EnderecoTxt.Text = "";
+                    EnderecoRuaTxt.Text = "";
                     TelefoneTxt.Text = "";
-                    SenhaTxt.Text = "";
                 }
                 catch (Exception ex)
                 {
