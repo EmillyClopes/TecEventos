@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing;
+using MySql.Data.MySqlClient;
 
 namespace TecEventos
 {
@@ -51,37 +51,56 @@ namespace TecEventos
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            // Usuário e senha padrão
-            string username = "admin";
-            string password = "admin";
+            // Configure a string de conexão com as informações corretas
+            string connectionString = "server=localhost;database=TecEventos;uid=root;pwd=9614206Gil@;"; // ALTERE A SENHA CASO NECESSÁRIO
 
-            // Verifica se os campos correspondem ao usuário e senha corretos
-            if (textBox1.Text == username && textBox2.Text == password)
+            // Defina a consulta SQL com parâmetros
+            string query = "SELECT * FROM Usuario WHERE email = @username AND senha = @password";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
-                // Se correto, abre o formulário Home
-                Home homeForm = new Home();
-                homeForm.Show();
+                try
+                {
+                    connection.Open(); // Abre a conexão com o banco de dados
 
-                // Fecha o formulário de login
-                this.Hide();
-            }
-            else
-            {
-                // Exibe uma mensagem de erro se o login falhar
-                MessageBox.Show("Usuário ou senha incorretos. Tente novamente.", "Erro de Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    // Adiciona os valores dos parâmetros corretamente
+                    command.Parameters.AddWithValue("@username", textBox1.Text); // Nome de usuário
+                    command.Parameters.AddWithValue("@password", textBox2.Text); // Senha
 
-                // Limpa os campos de senha e foco no usuário
-                textBox2.Clear();
-                textBox1.Focus();
+                    MySqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        // Login correto, abre o formulário Home
+                        Home homeForm = new Home();
+                        homeForm.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        // Exibe uma mensagem de erro se o login falhar
+                        MessageBox.Show("Usuário ou senha incorretos. Tente novamente.", "Erro de Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        // Limpa os campos de senha e foca no campo de usuário
+                        textBox2.Clear();
+                        textBox1.Focus();
+                    }
+
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao conectar ao banco de dados: " + ex.Message, "Erro de Conexão", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
         private void btnEsqueceuSenha_Click(object sender, EventArgs e)
         {
-            CadastrarClientes esqueceuSenha = new CadastrarClientes();
-            esqueceuSenha.Show();
-
-            this.Hide();
+            MessageBox.Show("Para recuperar a senha, entre em contato com o administrador.", "Recuperação de Senha", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
+
+   
 }
