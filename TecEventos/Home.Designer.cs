@@ -40,7 +40,6 @@
             this.btnPagamentos = new System.Windows.Forms.Button();
             this.btnCadastrarCliente = new System.Windows.Forms.Button();
             this.btnPerfilAdm = new System.Windows.Forms.Button();
-            this.BtnHome = new System.Windows.Forms.Button();
             this.SubMenuUsuario = new System.Windows.Forms.Panel();
             this.btnAgendamentos = new System.Windows.Forms.Button();
             this.BtnPerfil = new System.Windows.Forms.Button();
@@ -102,7 +101,6 @@
             this.Menu.Controls.Add(this.BtnSair);
             this.Menu.Controls.Add(this.btnAdm);
             this.Menu.Controls.Add(this.panel1);
-            this.Menu.Controls.Add(this.BtnHome);
             this.Menu.Controls.Add(this.SubMenuUsuario);
             this.Menu.Controls.Add(this.BtnUsuario);
             this.Menu.Controls.Add(this.BtnChacaras);
@@ -143,7 +141,7 @@
             this.btnAdm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdm.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnAdm.Location = new System.Drawing.Point(0, 433);
+            this.btnAdm.Location = new System.Drawing.Point(1, 396);
             this.btnAdm.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdm.Name = "btnAdm";
             this.btnAdm.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
@@ -159,7 +157,7 @@
             this.panel1.Controls.Add(this.btnPagamentos);
             this.panel1.Controls.Add(this.btnCadastrarCliente);
             this.panel1.Controls.Add(this.btnPerfilAdm);
-            this.panel1.Location = new System.Drawing.Point(2, 473);
+            this.panel1.Location = new System.Drawing.Point(3, 436);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(191, 150);
@@ -241,31 +239,12 @@
             this.btnPerfilAdm.UseVisualStyleBackColor = true;
             this.btnPerfilAdm.Click += new System.EventHandler(this.btnPerfilAdm_Click);
             // 
-            // BtnHome
-            // 
-            this.BtnHome.Cursor = System.Windows.Forms.Cursors.Default;
-            this.BtnHome.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnHome.FlatAppearance.BorderSize = 0;
-            this.BtnHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BtnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.BtnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnHome.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnHome.Location = new System.Drawing.Point(0, 81);
-            this.BtnHome.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnHome.Name = "BtnHome";
-            this.BtnHome.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.BtnHome.Size = new System.Drawing.Size(193, 36);
-            this.BtnHome.TabIndex = 10;
-            this.BtnHome.Text = "Home";
-            this.BtnHome.UseVisualStyleBackColor = true;
-            // 
             // SubMenuUsuario
             // 
             this.SubMenuUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
             this.SubMenuUsuario.Controls.Add(this.btnAgendamentos);
             this.SubMenuUsuario.Controls.Add(this.BtnPerfil);
-            this.SubMenuUsuario.Location = new System.Drawing.Point(2, 349);
+            this.SubMenuUsuario.Location = new System.Drawing.Point(3, 312);
             this.SubMenuUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.SubMenuUsuario.Name = "SubMenuUsuario";
             this.SubMenuUsuario.Size = new System.Drawing.Size(191, 80);
@@ -317,7 +296,7 @@
             this.BtnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnUsuario.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnUsuario.Location = new System.Drawing.Point(2, 313);
+            this.BtnUsuario.Location = new System.Drawing.Point(3, 276);
             this.BtnUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.BtnUsuario.Name = "BtnUsuario";
             this.BtnUsuario.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
@@ -334,7 +313,7 @@
             this.BtnChacaras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnChacaras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnChacaras.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnChacaras.Location = new System.Drawing.Point(2, 121);
+            this.BtnChacaras.Location = new System.Drawing.Point(3, 84);
             this.BtnChacaras.Margin = new System.Windows.Forms.Padding(2);
             this.BtnChacaras.Name = "BtnChacaras";
             this.BtnChacaras.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
@@ -350,7 +329,7 @@
             this.SubMenuChacaras.Controls.Add(this.BtnAgendar);
             this.SubMenuChacaras.Controls.Add(this.BtnAdicionar);
             this.SubMenuChacaras.Controls.Add(this.BtnProcurar);
-            this.SubMenuChacaras.Location = new System.Drawing.Point(2, 161);
+            this.SubMenuChacaras.Location = new System.Drawing.Point(3, 124);
             this.SubMenuChacaras.Margin = new System.Windows.Forms.Padding(2);
             this.SubMenuChacaras.Name = "SubMenuChacaras";
             this.SubMenuChacaras.Size = new System.Drawing.Size(191, 148);
@@ -489,7 +468,6 @@
         private System.Windows.Forms.Panel PanelLogo;
         private System.Windows.Forms.PictureBox LogoTxt;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button BtnHome;
         private System.Windows.Forms.Panel SubMenuUsuario;
         private System.Windows.Forms.Button BtnSair;
         private System.Windows.Forms.Button BtnPerfil;

@@ -43,17 +43,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblPerfilAdm = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnHome = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnHome);
             this.panel1.Controls.Add(this.btnAtualizar);
             this.panel1.Controls.Add(this.SenhaTxt);
             this.panel1.Controls.Add(this.label6);
@@ -66,7 +66,7 @@
             this.panel1.Controls.Add(this.NomeCompTxt);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lblPerfilAdm);
-            this.panel1.Location = new System.Drawing.Point(245, 64);
+            this.panel1.Location = new System.Drawing.Point(295, 72);
             this.panel1.MaximumSize = new System.Drawing.Size(879, 537);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(811, 537);
@@ -202,6 +202,22 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
+            // btnHome
+            // 
+            this.btnHome.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnHome.BackColor = System.Drawing.Color.Azure;
+            this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnHome.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnHome.Location = new System.Drawing.Point(720, 3);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(86, 25);
+            this.btnHome.TabIndex = 155;
+            this.btnHome.Text = "Home";
+            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
             // PerfilAdm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -237,5 +253,6 @@
         private System.Windows.Forms.TextBox NomeCompTxt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblPerfilAdm;
+        private System.Windows.Forms.Button btnHome;
     }
 }

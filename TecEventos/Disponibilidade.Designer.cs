@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Disponibilidade));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnHome = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.lblDatasdiponiveiseIndiponiveis = new System.Windows.Forms.Label();
             this.lblChacarasDisponiveis = new System.Windows.Forms.Label();
@@ -53,20 +54,35 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnHome);
             this.panel1.Controls.Add(this.monthCalendar1);
             this.panel1.Controls.Add(this.lblDatasdiponiveiseIndiponiveis);
             this.panel1.Controls.Add(this.lblChacarasDisponiveis);
             this.panel1.Controls.Add(this.GridViewChacarasDisponiveis);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(120, 99);
+            this.panel1.Location = new System.Drawing.Point(147, 83);
             this.panel1.MaximumSize = new System.Drawing.Size(1188, 581);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1105, 557);
             this.panel1.TabIndex = 79;
+            // 
+            // btnHome
+            // 
+            this.btnHome.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnHome.BackColor = System.Drawing.Color.Azure;
+            this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnHome.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnHome.Location = new System.Drawing.Point(1014, 3);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(86, 25);
+            this.btnHome.TabIndex = 154;
+            this.btnHome.Text = "Home";
+            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // monthCalendar1
             // 
@@ -131,5 +147,6 @@
         private System.Windows.Forms.Label lblChacarasDisponiveis;
         private System.Windows.Forms.DataGridView GridViewChacarasDisponiveis;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Button btnHome;
     }
 }

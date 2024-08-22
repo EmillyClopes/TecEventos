@@ -45,7 +45,7 @@ namespace TecEventos
 
         private void BtnAgendar_Click(object sender, EventArgs e)
         {
-            abrirForms.AbreForm(new Agendamento());
+            abrirForms.AbreForm(new AgendarAlugueis());
         }
 
         private void btnDisponibilidade_Click(object sender, EventArgs e)
@@ -82,6 +82,5 @@ namespace TecEventos
         {
             abrirForms.AbreForm(new DatasComemorativas());
         }
-
     }
 }

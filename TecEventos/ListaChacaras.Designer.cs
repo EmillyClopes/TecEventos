@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaChacaras));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnHome = new System.Windows.Forms.Button();
             this.lblFoto = new System.Windows.Forms.Label();
             this.picFoto = new System.Windows.Forms.PictureBox();
             this.lblChacarasCadastradas = new System.Windows.Forms.Label();
@@ -54,16 +55,34 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnHome);
             this.panel1.Controls.Add(this.lblFoto);
             this.panel1.Controls.Add(this.picFoto);
             this.panel1.Controls.Add(this.lblChacarasCadastradas);
             this.panel1.Controls.Add(this.GridViewChacarasCadastradas);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(129, 54);
+            this.panel1.Location = new System.Drawing.Point(185, 57);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1137, 577);
             this.panel1.TabIndex = 78;
+            // 
+            // btnHome
+            // 
+            this.btnHome.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnHome.BackColor = System.Drawing.Color.Azure;
+            this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnHome.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnHome.Location = new System.Drawing.Point(1046, 3);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(86, 25);
+            this.btnHome.TabIndex = 154;
+            this.btnHome.Text = "Home";
+            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // lblFoto
             // 
@@ -132,5 +151,6 @@
         private System.Windows.Forms.Label lblChacarasCadastradas;
         private System.Windows.Forms.DataGridView GridViewChacarasCadastradas;
         private System.Windows.Forms.Label lblFoto;
+        private System.Windows.Forms.Button btnHome;
     }
 }

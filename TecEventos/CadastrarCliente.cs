@@ -93,5 +93,11 @@ namespace TecEventos
                 }
             }
         }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            /*fecha a tela*/
+        }
     }
 }

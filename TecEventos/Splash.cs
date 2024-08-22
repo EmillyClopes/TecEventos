@@ -19,7 +19,8 @@ namespace TecEventos
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            panel2.Width += 3; // Ajuste o valor para controlar a velocidade da animação
+            // Cada vez que o evento Tick é disparado, a largura (Width) do panel2 é aumentada em 3 pixels. Isso faz com que o painel se expanda horizontalmente.
+            panel2.Width += 3; 
 
             // Quando a barra de progresso completar (igualar a largura do painel principal)
             if (panel2.Width >= panel1.Width)
