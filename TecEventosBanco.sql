@@ -2,75 +2,156 @@
 CREATE DATABASE IF NOT EXISTS TecEventos;
 USE TecEventos;
 
--- Tabela de Usuários
 CREATE TABLE Usuario (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nome_completo VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL UNIQUE,
-    telefone VARCHAR(15) NOT NULL,
-    rua VARCHAR(100) NOT NULL,
-    numero VARCHAR(10) NOT NULL,
-    bairro VARCHAR(50) NOT NULL,
-    senha VARCHAR(255) NOT NULL
+    nome_completo VARCHAR(100),
+    email VARCHAR(100) UNIQUE,
+    endereco_rua VARCHAR(255),
+    endereco_numero VARCHAR(50),
+    endereco_bairro VARCHAR(100),
+    telefone VARCHAR(20),
+    senha VARCHAR(255)
 );
 
--- Tabela de Chácaras
 CREATE TABLE Chacara (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nome_chacara VARCHAR(100) NOT NULL,
-    valor_diaria DECIMAL(10, 2) NOT NULL,
-    rua VARCHAR(100) NOT NULL,
-    numero VARCHAR(10) NOT NULL,
-    bairro VARCHAR(50) NOT NULL,
+    nome VARCHAR(100),
+    valor_diaria DECIMAL(10,2),
+    endereco_rua VARCHAR(255),
+    endereco_numero VARCHAR(50),
+    endereco_bairro VARCHAR(100),
     regras_politicas TEXT,
-    descricao_detalhada TEXT
+    descricao TEXT
 );
 
--- Tabela de Agendamentos
 CREATE TABLE Agendamento (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    id_chacara INT NOT NULL,
-    nome_cliente VARCHAR(100) NOT NULL,
-    telefone_cliente VARCHAR(15) NOT NULL,
-    data_entrada DATE NOT NULL,
-    data_saida DATE NOT NULL,
-    status ENUM('Confirmada', 'Pendente', 'Cancelada') NOT NULL DEFAULT 'Pendente',
-    valor_total DECIMAL(10, 2) NOT NULL,
-    FOREIGN KEY (id_chacara) REFERENCES Chacara(id)
+    entrada_data DATE,
+    saida_data DATE,
+    nome_cliente VARCHAR(100),
+    telefone_cliente VARCHAR(20),
+    status ENUM('Confirmada', 'Pendente', 'Cancelada'),
+    valor_total DECIMAL(10,2),
+    chacara_id INT,
+    usuario_id INT,
+    FOREIGN KEY (chacara_id) REFERENCES Chacara(id),
+    FOREIGN KEY (usuario_id) REFERENCES Usuario(id)
 );
 
--- Tabela de Controle de Pagamentos
-CREATE TABLE ControlePagamento (
+CREATE TABLE ControlePagamentos (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nome_cliente VARCHAR(100) NOT NULL,
-    nome_chacara VARCHAR(100) NOT NULL,
-    valor_aluguel DECIMAL(10, 2) NOT NULL,
-    valor_pago DECIMAL(10, 2),
+    nome_cliente VARCHAR(100),
+    chacara_id INT,
+    valor_aluguel DECIMAL(10,2),
+    valor_pago DECIMAL(10,2),
     data_pagamento DATE,
-    metodo_pagamento ENUM('PIX', 'Depósito Bancário', 'Cartão Débito', 'Cartão Crédito') NOT NULL,
-    status_pagamento ENUM('Pago', 'Pendente') NOT NULL DEFAULT 'Pendente'
+    metodo_pagamento ENUM('PIX', 'Depósito Bancário', 'Cartão Débito', 'Cartão Crédito'),
+    status_pagamento ENUM('Pago', 'Pendente', 'Cancelado'),
+    FOREIGN KEY (chacara_id) REFERENCES Chacara(id)
 );
 
--- Tabela de Datas Comemorativas
-CREATE TABLE DataComemorativa (
+CREATE TABLE DatasComemorativas (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nome_data VARCHAR(100) NOT NULL,
-    dia INT NOT NULL,
-    mes INT NOT NULL,
-    ano INT NOT NULL,
+    nome_data VARCHAR(100),
+    dia INT,
+    mes INT,
+    ano INT,
     descricao TEXT,
     promocoes TEXT,
     pacotes TEXT
 );
 
--- Tabela de Disponibilidades de Chácaras
-CREATE TABLE DisponibilidadeChacara (
+CREATE TABLE Disponibilidade (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    id_chacara INT NOT NULL,
-    data_disponivel DATE NOT NULL,
-    FOREIGN KEY (id_chacara) REFERENCES Chacara(id)
+    chacara_id INT,
+    data_disponibilidade DATE,
+    disponivel BOOLEAN,
+    FOREIGN KEY (chacara_id) REFERENCES Chacara(id)
 );
 
+CREATE TABLE Feedback (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome_cliente VARCHAR(100),
+    data_feedback DATE,
+    comentario TEXT,
+    avaliacao INT
+);
+
+CREATE TABLE EnderecoChacara (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    chacara_id INT,
+    endereco_rua VARCHAR(255),
+    endereco_numero VARCHAR(50),
+    endereco_bairro VARCHAR(100),
+    cidade VARCHAR(100),
+    estado VARCHAR(100),
+    cep VARCHAR(10),
+    FOREIGN KEY (chacara_id) REFERENCES Chacara(id)
+);
+
+CREATE TABLE ReservaChacara (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    agendamento_id INT,
+    chacara_id INT,
+    data_reserva DATE,
+    hora_reserva TIME,
+    status ENUM('Confirmada', 'Pendente', 'Cancelada'),
+    FOREIGN KEY (agendamento_id) REFERENCES Agendamento(id),
+    FOREIGN KEY (chacara_id) REFERENCES Chacara(id)
+);
+
+CREATE TABLE HistoricoPagamentos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    controle_pagamentos_id INT,
+    data_historico DATE,
+    descricao TEXT,
+    FOREIGN KEY (controle_pagamentos_id) REFERENCES ControlePagamentos(id)
+);
+
+CREATE TABLE RegrasPoliticas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    chacara_id INT,
+    descricao TEXT,
+    data_atualizacao DATE,
+    FOREIGN KEY (chacara_id) REFERENCES Chacara(id)
+);
+
+CREATE TABLE Promocoes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    data_comemorativa_id INT,
+    descricao TEXT,
+    valor_desconto DECIMAL(10,2),
+    FOREIGN KEY (data_comemorativa_id) REFERENCES DatasComemorativas(id)
+);
+
+CREATE TABLE Pacotes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    data_comemorativa_id INT,
+    descricao TEXT,
+    valor_pacote DECIMAL(10,2),
+    FOREIGN KEY (data_comemorativa_id) REFERENCES DatasComemorativas(id)
+);
+
+CREATE TABLE ClienteContato (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    cliente_id INT,
+    tipo_contato ENUM('Telefone', 'Email', 'Outros'),
+    descricao TEXT,
+    FOREIGN KEY (cliente_id) REFERENCES Usuario(id)
+);
+
+CREATE TABLE LogAcesso (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT,
+    data_acesso DATE,
+    hora_acesso TIME,
+    acao TEXT,
+    FOREIGN KEY (usuario_id) REFERENCES Usuario(id)
+);
+
+
 -- Inserir administrador padrão na tabela de usuários
-INSERT INTO Usuario (nome_completo, email, telefone, rua, numero, bairro, senha)
-VALUES ('Administrador', 'admin@teceventos.com', '000000000', 'Rua Central', '1', 'Centro', 'admin');
+INSERT INTO Usuario (nome_completo, email, endereco_rua, endereco_numero, endereco_bairro, telefone, senha)
+VALUES ('Administrador', 'admin@teceventos.com', 'Rua Central', '1', 'Centro', '000000000', 'admin');
+select * from Usuario
+

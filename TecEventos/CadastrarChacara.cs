@@ -27,5 +27,10 @@ namespace TecEventos
             txtRegras.Text = "";
             txtDescricao.Text = "";
         }
+
+        private void btnCadastrarChacara_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

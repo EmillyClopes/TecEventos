@@ -62,9 +62,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(291, -32);
+            this.label1.Location = new System.Drawing.Point(388, -39);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(220, 29);
+            this.label1.Size = new System.Drawing.Size(271, 37);
             this.label1.TabIndex = 29;
             this.label1.Text = "Anuncie Sua Chácara";
             // 
@@ -73,8 +74,9 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1386, 788);
+            this.pictureBox1.Size = new System.Drawing.Size(1848, 970);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 73;
             this.pictureBox1.TabStop = false;
@@ -106,26 +108,29 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lblBairro);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(110, 102);
-            this.panel1.MaximumSize = new System.Drawing.Size(1093, 561);
+            this.panel1.Location = new System.Drawing.Point(147, 126);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.MaximumSize = new System.Drawing.Size(1457, 690);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1093, 561);
+            this.panel1.Size = new System.Drawing.Size(1457, 690);
             this.panel1.TabIndex = 74;
             // 
             // txtNomeChacara
             // 
             this.txtNomeChacara.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeChacara.Location = new System.Drawing.Point(54, 103);
+            this.txtNomeChacara.Location = new System.Drawing.Point(72, 127);
+            this.txtNomeChacara.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNomeChacara.Name = "txtNomeChacara";
-            this.txtNomeChacara.Size = new System.Drawing.Size(286, 27);
+            this.txtNomeChacara.Size = new System.Drawing.Size(380, 32);
             this.txtNomeChacara.TabIndex = 37;
             // 
             // picFotoChacara
             // 
             this.picFotoChacara.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(177)))), ((int)(((byte)(206)))));
-            this.picFotoChacara.Location = new System.Drawing.Point(575, 160);
+            this.picFotoChacara.Location = new System.Drawing.Point(767, 197);
+            this.picFotoChacara.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picFotoChacara.Name = "picFotoChacara";
-            this.picFotoChacara.Size = new System.Drawing.Size(472, 311);
+            this.picFotoChacara.Size = new System.Drawing.Size(629, 383);
             this.picFotoChacara.TabIndex = 69;
             this.picFotoChacara.TabStop = false;
             // 
@@ -136,9 +141,10 @@
             this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpar.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnLimpar.Location = new System.Drawing.Point(298, 486);
+            this.btnLimpar.Location = new System.Drawing.Point(397, 598);
+            this.btnLimpar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(123, 39);
+            this.btnLimpar.Size = new System.Drawing.Size(164, 48);
             this.btnLimpar.TabIndex = 70;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
@@ -148,9 +154,10 @@
             // 
             this.lblInfo.AutoSize = true;
             this.lblInfo.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfo.Location = new System.Drawing.Point(53, 39);
+            this.lblInfo.Location = new System.Drawing.Point(71, 48);
+            this.lblInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(112, 23);
+            this.lblInfo.Size = new System.Drawing.Size(139, 29);
             this.lblInfo.TabIndex = 71;
             this.lblInfo.Text = "Informações ";
             // 
@@ -158,9 +165,10 @@
             // 
             this.lblAddfoto.AutoSize = true;
             this.lblAddfoto.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddfoto.Location = new System.Drawing.Point(700, 101);
+            this.lblAddfoto.Location = new System.Drawing.Point(933, 124);
+            this.lblAddfoto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddfoto.Name = "lblAddfoto";
-            this.lblAddfoto.Size = new System.Drawing.Size(202, 23);
+            this.lblAddfoto.Size = new System.Drawing.Size(259, 29);
             this.lblAddfoto.TabIndex = 62;
             this.lblAddfoto.Text = "Adiconar foto da chácara";
             // 
@@ -168,35 +176,39 @@
             // 
             this.lblNomeChacara.AutoSize = true;
             this.lblNomeChacara.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeChacara.Location = new System.Drawing.Point(49, 82);
+            this.lblNomeChacara.Location = new System.Drawing.Point(65, 101);
+            this.lblNomeChacara.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNomeChacara.Name = "lblNomeChacara";
-            this.lblNomeChacara.Size = new System.Drawing.Size(122, 19);
+            this.lblNomeChacara.Size = new System.Drawing.Size(155, 24);
             this.lblNomeChacara.TabIndex = 36;
             this.lblNomeChacara.Text = "Nome da chácara";
             // 
             // txtRegras
             // 
             this.txtRegras.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRegras.Location = new System.Drawing.Point(58, 408);
+            this.txtRegras.Location = new System.Drawing.Point(77, 502);
+            this.txtRegras.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtRegras.Name = "txtRegras";
-            this.txtRegras.Size = new System.Drawing.Size(201, 27);
+            this.txtRegras.Size = new System.Drawing.Size(267, 32);
             this.txtRegras.TabIndex = 68;
             // 
             // txtValor
             // 
             this.txtValor.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValor.Location = new System.Drawing.Point(54, 160);
+            this.txtValor.Location = new System.Drawing.Point(72, 197);
+            this.txtValor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(101, 27);
+            this.txtValor.Size = new System.Drawing.Size(133, 32);
             this.txtValor.TabIndex = 39;
             // 
             // lblRegras
             // 
             this.lblRegras.AutoSize = true;
             this.lblRegras.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegras.Location = new System.Drawing.Point(59, 382);
+            this.lblRegras.Location = new System.Drawing.Point(79, 470);
+            this.lblRegras.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRegras.Name = "lblRegras";
-            this.lblRegras.Size = new System.Drawing.Size(125, 19);
+            this.lblRegras.Size = new System.Drawing.Size(154, 24);
             this.lblRegras.TabIndex = 67;
             this.lblRegras.Text = "Regras e políticas";
             // 
@@ -204,63 +216,70 @@
             // 
             this.lblValor.AutoSize = true;
             this.lblValor.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValor.Location = new System.Drawing.Point(50, 139);
+            this.lblValor.Location = new System.Drawing.Point(67, 171);
+            this.lblValor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblValor.Name = "lblValor";
-            this.lblValor.Size = new System.Drawing.Size(103, 19);
+            this.lblValor.Size = new System.Drawing.Size(132, 24);
             this.lblValor.TabIndex = 38;
             this.lblValor.Text = "Valor da diária";
             // 
             // txtDescricao
             // 
             this.txtDescricao.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescricao.Location = new System.Drawing.Point(288, 408);
+            this.txtDescricao.Location = new System.Drawing.Point(384, 502);
+            this.txtDescricao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(243, 27);
+            this.txtDescricao.Size = new System.Drawing.Size(323, 32);
             this.txtDescricao.TabIndex = 66;
             // 
             // lbldDescricao
             // 
             this.lbldDescricao.AutoSize = true;
             this.lbldDescricao.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldDescricao.Location = new System.Drawing.Point(294, 382);
+            this.lbldDescricao.Location = new System.Drawing.Point(392, 470);
+            this.lbldDescricao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbldDescricao.Name = "lbldDescricao";
-            this.lbldDescricao.Size = new System.Drawing.Size(142, 19);
+            this.lbldDescricao.Size = new System.Drawing.Size(179, 24);
             this.lbldDescricao.TabIndex = 65;
             this.lbldDescricao.Text = "Descrição detalhada";
             // 
             // txtBairro
             // 
             this.txtBairro.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBairro.Location = new System.Drawing.Point(422, 273);
+            this.txtBairro.Location = new System.Drawing.Point(563, 336);
+            this.txtBairro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(109, 27);
+            this.txtBairro.Size = new System.Drawing.Size(144, 32);
             this.txtBairro.TabIndex = 61;
             // 
             // lblEndereco
             // 
             this.lblEndereco.AutoSize = true;
             this.lblEndereco.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEndereco.Location = new System.Drawing.Point(54, 199);
+            this.lblEndereco.Location = new System.Drawing.Point(72, 245);
+            this.lblEndereco.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEndereco.Name = "lblEndereco";
-            this.lblEndereco.Size = new System.Drawing.Size(82, 23);
+            this.lblEndereco.Size = new System.Drawing.Size(106, 29);
             this.lblEndereco.TabIndex = 40;
             this.lblEndereco.Text = "Endereço";
             // 
             // txtRua
             // 
             this.txtRua.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRua.Location = new System.Drawing.Point(58, 273);
+            this.txtRua.Location = new System.Drawing.Point(77, 336);
+            this.txtRua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtRua.Name = "txtRua";
-            this.txtRua.Size = new System.Drawing.Size(206, 27);
+            this.txtRua.Size = new System.Drawing.Size(273, 32);
             this.txtRua.TabIndex = 41;
             // 
             // lblNumChacara
             // 
             this.lblNumChacara.AutoSize = true;
             this.lblNumChacara.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumChacara.Location = new System.Drawing.Point(294, 251);
+            this.lblNumChacara.Location = new System.Drawing.Point(392, 309);
+            this.lblNumChacara.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNumChacara.Name = "lblNumChacara";
-            this.lblNumChacara.Size = new System.Drawing.Size(25, 19);
+            this.lblNumChacara.Size = new System.Drawing.Size(31, 24);
             this.lblNumChacara.TabIndex = 44;
             this.lblNumChacara.Text = "n*";
             // 
@@ -271,28 +290,32 @@
             this.btnCadastrarChacara.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrarChacara.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrarChacara.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCadastrarChacara.Location = new System.Drawing.Point(120, 486);
+            this.btnCadastrarChacara.Location = new System.Drawing.Point(160, 598);
+            this.btnCadastrarChacara.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCadastrarChacara.Name = "btnCadastrarChacara";
-            this.btnCadastrarChacara.Size = new System.Drawing.Size(123, 39);
+            this.btnCadastrarChacara.Size = new System.Drawing.Size(164, 48);
             this.btnCadastrarChacara.TabIndex = 57;
             this.btnCadastrarChacara.Text = "Cadastrar";
             this.btnCadastrarChacara.UseVisualStyleBackColor = false;
+            this.btnCadastrarChacara.Click += new System.EventHandler(this.btnCadastrarChacara_Click);
             // 
             // txtNumChacara
             // 
             this.txtNumChacara.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumChacara.Location = new System.Drawing.Point(288, 273);
+            this.txtNumChacara.Location = new System.Drawing.Point(384, 336);
+            this.txtNumChacara.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNumChacara.Name = "txtNumChacara";
-            this.txtNumChacara.Size = new System.Drawing.Size(109, 27);
+            this.txtNumChacara.Size = new System.Drawing.Size(144, 32);
             this.txtNumChacara.TabIndex = 45;
             // 
             // lblInfoAdicional
             // 
             this.lblInfoAdicional.AutoSize = true;
             this.lblInfoAdicional.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfoAdicional.Location = new System.Drawing.Point(55, 327);
+            this.lblInfoAdicional.Location = new System.Drawing.Point(73, 402);
+            this.lblInfoAdicional.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInfoAdicional.Name = "lblInfoAdicional";
-            this.lblInfoAdicional.Size = new System.Drawing.Size(188, 23);
+            this.lblInfoAdicional.Size = new System.Drawing.Size(239, 29);
             this.lblInfoAdicional.TabIndex = 46;
             this.lblInfoAdicional.Text = "Informações adicionais";
             // 
@@ -300,9 +323,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(59, 251);
+            this.label2.Location = new System.Drawing.Point(79, 309);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 19);
+            this.label2.Size = new System.Drawing.Size(42, 24);
             this.label2.TabIndex = 59;
             this.label2.Text = "Rua";
             // 
@@ -310,21 +334,23 @@
             // 
             this.lblBairro.AutoSize = true;
             this.lblBairro.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBairro.Location = new System.Drawing.Point(428, 251);
+            this.lblBairro.Location = new System.Drawing.Point(571, 309);
+            this.lblBairro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBairro.Name = "lblBairro";
-            this.lblBairro.Size = new System.Drawing.Size(48, 19);
+            this.lblBairro.Size = new System.Drawing.Size(61, 24);
             this.lblBairro.TabIndex = 60;
             this.lblBairro.Text = "Bairro";
             // 
             // AdicionarChacara
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.ClientSize = new System.Drawing.Size(1848, 970);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AdicionarChacara";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
