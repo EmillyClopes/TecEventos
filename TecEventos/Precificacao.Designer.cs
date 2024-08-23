@@ -28,28 +28,102 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnCadastrar = new System.Windows.Forms.Button();
-            this.TxtValorPre = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Precificacao));
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.TxtValorPre = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnHome = new System.Windows.Forms.Button();
+            this.btnCadastrarChacara = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1360, 617);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btnCadastrarChacara);
+            this.panel2.Controls.Add(this.btnHome);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.TxtValorPre);
+            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Location = new System.Drawing.Point(345, 52);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(661, 419);
+            this.panel2.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(430, 213);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 19);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Valor do dia:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(428, 83);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(110, 19);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Dia da semana:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(104, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(249, 23);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Precificação por Dia da semana";
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(177)))), ((int)(((byte)(206)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(36, 77);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 63);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(504, 396);
+            this.dataGridView1.Size = new System.Drawing.Size(378, 322);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // TxtValorPre
+            // 
+            this.TxtValorPre.Location = new System.Drawing.Point(432, 234);
+            this.TxtValorPre.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtValorPre.Name = "TxtValorPre";
+            this.TxtValorPre.Size = new System.Drawing.Size(88, 20);
+            this.TxtValorPre.TabIndex = 3;
             // 
             // comboBox1
             // 
@@ -62,103 +136,71 @@
             "Sexta",
             "Sabado",
             "Domingo"});
-            this.comboBox1.Location = new System.Drawing.Point(652, 146);
+            this.comboBox1.Location = new System.Drawing.Point(430, 107);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.Size = new System.Drawing.Size(108, 21);
             this.comboBox1.TabIndex = 1;
             // 
-            // btnCadastrar
+            // btnHome
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(676, 389);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
-            this.btnCadastrar.TabIndex = 2;
-            this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnHome.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnHome.BackColor = System.Drawing.Color.Azure;
+            this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnHome.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnHome.Location = new System.Drawing.Point(570, 3);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(86, 25);
+            this.btnHome.TabIndex = 157;
+            this.btnHome.Text = "Home";
+            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // TxtValorPre
+            // btnCadastrarChacara
             // 
-            this.TxtValorPre.Location = new System.Drawing.Point(652, 211);
-            this.TxtValorPre.Name = "TxtValorPre";
-            this.TxtValorPre.Size = new System.Drawing.Size(100, 22);
-            this.TxtValorPre.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.btnCadastrar);
-            this.panel1.Controls.Add(this.TxtValorPre);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Location = new System.Drawing.Point(330, 60);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(881, 651);
-            this.panel1.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(406, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 16);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Precificação por Dia da semana";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(649, 117);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 16);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Dia da semana:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(649, 192);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 16);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Valor do dia:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(803, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Home";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCadastrarChacara.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnCadastrarChacara.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCadastrarChacara.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrarChacara.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrarChacara.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCadastrarChacara.Location = new System.Drawing.Point(430, 346);
+            this.btnCadastrarChacara.Name = "btnCadastrarChacara";
+            this.btnCadastrarChacara.Size = new System.Drawing.Size(123, 39);
+            this.btnCadastrarChacara.TabIndex = 158;
+            this.btnCadastrarChacara.Text = "Cadastrar";
+            this.btnCadastrarChacara.UseVisualStyleBackColor = false;
             // 
             // Precificacao
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1813, 759);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1360, 617);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Precificacao";
             this.Text = "Precificacao";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.TextBox TxtValorPre;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox TxtValorPre;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnHome;
+        private System.Windows.Forms.Button btnCadastrarChacara;
     }
 }

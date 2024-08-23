@@ -31,9 +31,9 @@ namespace TecEventos
             txtDescricao.Text = "";
         }
 
-        private void btnCadastrarChacara_Click(object sender, EventArgs e)
+       private void btnCadastrarChacara_Click(object sender, EventArgs e)
         {
-            string nomeChacara = txtNomeChacara.Text;
+            /*string nomeChacara = txtNomeChacara.Text;
             string queryValorDiaria = "SELECT valor FROM ValorDiaria WHERE " +
                 "(SELECT valor_diaria_id, id FROM Chacara JOIN ValorDiaria ON id.ValorDiaria = valor_diaria_id.Chacara)";
             string enderecoRua = txtRua.Text;
@@ -68,7 +68,7 @@ namespace TecEventos
 
 
             string query = "INSERT INTO Chacara(nome, valor_diaria_id, endereco_rua, endereco_numero, endereco_bairro, regras_politicas, descricao) VALUES" +
-                "(" + nomeChacara + queryValorDiaria + enderecoRua + enderecoNum + bairro + regras + descricao + ")";
+                "(" + nomeChacara + queryValorDiaria + enderecoRua + enderecoNum + bairro + regras + descricao + ")";*/
         }
         
 

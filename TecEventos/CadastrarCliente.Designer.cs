@@ -31,6 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastrarClientes));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.EnderecoNumeroTxt = new System.Windows.Forms.TextBox();
+            this.EnderecoBairroTxt = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.TelefoneTxt = new System.Windows.Forms.TextBox();
@@ -43,10 +47,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnHome = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.EnderecoBairroTxt = new System.Windows.Forms.TextBox();
-            this.EnderecoNumeroTxt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +66,7 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnHome);
             this.panel1.Controls.Add(this.EnderecoNumeroTxt);
             this.panel1.Controls.Add(this.EnderecoBairroTxt);
             this.panel1.Controls.Add(this.label7);
@@ -86,6 +87,42 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(866, 443);
             this.panel1.TabIndex = 69;
+            // 
+            // EnderecoNumeroTxt
+            // 
+            this.EnderecoNumeroTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EnderecoNumeroTxt.Location = new System.Drawing.Point(708, 240);
+            this.EnderecoNumeroTxt.Name = "EnderecoNumeroTxt";
+            this.EnderecoNumeroTxt.Size = new System.Drawing.Size(87, 26);
+            this.EnderecoNumeroTxt.TabIndex = 86;
+            // 
+            // EnderecoBairroTxt
+            // 
+            this.EnderecoBairroTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EnderecoBairroTxt.Location = new System.Drawing.Point(479, 240);
+            this.EnderecoBairroTxt.Name = "EnderecoBairroTxt";
+            this.EnderecoBairroTxt.Size = new System.Drawing.Size(153, 26);
+            this.EnderecoBairroTxt.TabIndex = 85;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(638, 244);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(64, 19);
+            this.label7.TabIndex = 84;
+            this.label7.Text = "Numero:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(431, 244);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 19);
+            this.label6.TabIndex = 83;
+            this.label6.Text = "Bairro:";
             // 
             // btnCadastrar
             // 
@@ -207,7 +244,7 @@
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnHome.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnHome.Location = new System.Drawing.Point(1122, 12);
+            this.btnHome.Location = new System.Drawing.Point(775, 3);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(86, 25);
             this.btnHome.TabIndex = 157;
@@ -215,48 +252,11 @@
             this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(431, 244);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 19);
-            this.label6.TabIndex = 83;
-            this.label6.Text = "Bairro:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(638, 244);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 19);
-            this.label7.TabIndex = 84;
-            this.label7.Text = "Numero:";
-            // 
-            // EnderecoBairroTxt
-            // 
-            this.EnderecoBairroTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EnderecoBairroTxt.Location = new System.Drawing.Point(479, 240);
-            this.EnderecoBairroTxt.Name = "EnderecoBairroTxt";
-            this.EnderecoBairroTxt.Size = new System.Drawing.Size(153, 26);
-            this.EnderecoBairroTxt.TabIndex = 85;
-            // 
-            // EnderecoNumeroTxt
-            // 
-            this.EnderecoNumeroTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EnderecoNumeroTxt.Location = new System.Drawing.Point(708, 240);
-            this.EnderecoNumeroTxt.Name = "EnderecoNumeroTxt";
-            this.EnderecoNumeroTxt.Size = new System.Drawing.Size(87, 26);
-            this.EnderecoNumeroTxt.TabIndex = 86;
-            // 
             // CadastrarClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1373, 655);
-            this.Controls.Add(this.btnHome);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
