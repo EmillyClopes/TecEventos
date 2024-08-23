@@ -66,10 +66,10 @@
             // 
             this.Nave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.Nave.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Nave.Location = new System.Drawing.Point(193, 0);
-            this.Nave.Margin = new System.Windows.Forms.Padding(2);
+            this.Nave.Location = new System.Drawing.Point(257, 0);
+            this.Nave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Nave.Name = "Nave";
-            this.Nave.Size = new System.Drawing.Size(1727, 81);
+            this.Nave.Size = new System.Drawing.Size(1685, 100);
             this.Nave.TabIndex = 5;
             // 
             // PanelHome
@@ -77,20 +77,20 @@
             this.PanelHome.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.PanelHome.Controls.Add(this.pictureBox1);
             this.PanelHome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelHome.Location = new System.Drawing.Point(193, 0);
-            this.PanelHome.Margin = new System.Windows.Forms.Padding(2);
+            this.PanelHome.Location = new System.Drawing.Point(257, 0);
+            this.PanelHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelHome.Name = "PanelHome";
-            this.PanelHome.Size = new System.Drawing.Size(1727, 1080);
+            this.PanelHome.Size = new System.Drawing.Size(1685, 1102);
             this.PanelHome.TabIndex = 4;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(203, 175);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.MaximumSize = new System.Drawing.Size(1335, 772);
+            this.pictureBox1.Location = new System.Drawing.Point(271, 215);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.MaximumSize = new System.Drawing.Size(1780, 950);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1335, 772);
+            this.pictureBox1.Size = new System.Drawing.Size(1780, 950);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -108,9 +108,9 @@
             this.Menu.Controls.Add(this.PanelLogo);
             this.Menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.Menu.Location = new System.Drawing.Point(0, 0);
-            this.Menu.Margin = new System.Windows.Forms.Padding(2);
+            this.Menu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(193, 1080);
+            this.Menu.Size = new System.Drawing.Size(257, 1102);
             this.Menu.TabIndex = 3;
             // 
             // BtnSair
@@ -122,11 +122,11 @@
             this.BtnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSair.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnSair.Location = new System.Drawing.Point(0, 1048);
-            this.BtnSair.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnSair.Location = new System.Drawing.Point(0, 1063);
+            this.BtnSair.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnSair.Name = "BtnSair";
-            this.BtnSair.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.BtnSair.Size = new System.Drawing.Size(193, 32);
+            this.BtnSair.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.BtnSair.Size = new System.Drawing.Size(257, 39);
             this.BtnSair.TabIndex = 1;
             this.BtnSair.Text = "Sair";
             this.BtnSair.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -141,11 +141,11 @@
             this.btnAdm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdm.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnAdm.Location = new System.Drawing.Point(1, 396);
-            this.btnAdm.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdm.Location = new System.Drawing.Point(1, 487);
+            this.btnAdm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdm.Name = "btnAdm";
-            this.btnAdm.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnAdm.Size = new System.Drawing.Size(188, 36);
+            this.btnAdm.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.btnAdm.Size = new System.Drawing.Size(251, 44);
             this.btnAdm.TabIndex = 15;
             this.btnAdm.Text = "Administrador";
             this.btnAdm.UseVisualStyleBackColor = true;
@@ -157,10 +157,10 @@
             this.panel1.Controls.Add(this.btnPagamentos);
             this.panel1.Controls.Add(this.btnCadastrarCliente);
             this.panel1.Controls.Add(this.btnPerfilAdm);
-            this.panel1.Location = new System.Drawing.Point(3, 436);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(4, 537);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(191, 150);
+            this.panel1.Size = new System.Drawing.Size(255, 185);
             this.panel1.TabIndex = 14;
             // 
             // btnDatasComemorativas
@@ -171,11 +171,11 @@
             this.btnDatasComemorativas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDatasComemorativas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDatasComemorativas.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnDatasComemorativas.Location = new System.Drawing.Point(0, 108);
-            this.btnDatasComemorativas.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDatasComemorativas.Location = new System.Drawing.Point(-4, 132);
+            this.btnDatasComemorativas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDatasComemorativas.Name = "btnDatasComemorativas";
-            this.btnDatasComemorativas.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.btnDatasComemorativas.Size = new System.Drawing.Size(188, 32);
+            this.btnDatasComemorativas.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnDatasComemorativas.Size = new System.Drawing.Size(259, 39);
             this.btnDatasComemorativas.TabIndex = 5;
             this.btnDatasComemorativas.Text = "Datas Comemorativas";
             this.btnDatasComemorativas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -190,11 +190,11 @@
             this.btnPagamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPagamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPagamentos.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnPagamentos.Location = new System.Drawing.Point(-2, 72);
-            this.btnPagamentos.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPagamentos.Location = new System.Drawing.Point(-3, 89);
+            this.btnPagamentos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPagamentos.Name = "btnPagamentos";
-            this.btnPagamentos.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.btnPagamentos.Size = new System.Drawing.Size(188, 32);
+            this.btnPagamentos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnPagamentos.Size = new System.Drawing.Size(251, 39);
             this.btnPagamentos.TabIndex = 4;
             this.btnPagamentos.Text = "Pagamentos";
             this.btnPagamentos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -209,11 +209,11 @@
             this.btnCadastrarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrarCliente.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnCadastrarCliente.Location = new System.Drawing.Point(1, 36);
-            this.btnCadastrarCliente.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCadastrarCliente.Location = new System.Drawing.Point(1, 44);
+            this.btnCadastrarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCadastrarCliente.Name = "btnCadastrarCliente";
-            this.btnCadastrarCliente.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.btnCadastrarCliente.Size = new System.Drawing.Size(188, 32);
+            this.btnCadastrarCliente.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnCadastrarCliente.Size = new System.Drawing.Size(251, 39);
             this.btnCadastrarCliente.TabIndex = 3;
             this.btnCadastrarCliente.Text = "Cadastrar Cliente";
             this.btnCadastrarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -229,10 +229,10 @@
             this.btnPerfilAdm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPerfilAdm.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnPerfilAdm.Location = new System.Drawing.Point(0, 0);
-            this.btnPerfilAdm.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPerfilAdm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPerfilAdm.Name = "btnPerfilAdm";
-            this.btnPerfilAdm.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.btnPerfilAdm.Size = new System.Drawing.Size(188, 32);
+            this.btnPerfilAdm.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnPerfilAdm.Size = new System.Drawing.Size(251, 39);
             this.btnPerfilAdm.TabIndex = 0;
             this.btnPerfilAdm.Text = "Perfil";
             this.btnPerfilAdm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -244,10 +244,10 @@
             this.SubMenuUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
             this.SubMenuUsuario.Controls.Add(this.btnAgendamentos);
             this.SubMenuUsuario.Controls.Add(this.BtnPerfil);
-            this.SubMenuUsuario.Location = new System.Drawing.Point(3, 312);
-            this.SubMenuUsuario.Margin = new System.Windows.Forms.Padding(2);
+            this.SubMenuUsuario.Location = new System.Drawing.Point(4, 384);
+            this.SubMenuUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SubMenuUsuario.Name = "SubMenuUsuario";
-            this.SubMenuUsuario.Size = new System.Drawing.Size(191, 80);
+            this.SubMenuUsuario.Size = new System.Drawing.Size(255, 98);
             this.SubMenuUsuario.TabIndex = 9;
             // 
             // btnAgendamentos
@@ -258,11 +258,11 @@
             this.btnAgendamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgendamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgendamentos.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnAgendamentos.Location = new System.Drawing.Point(-1, 36);
-            this.btnAgendamentos.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAgendamentos.Location = new System.Drawing.Point(-1, 44);
+            this.btnAgendamentos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgendamentos.Name = "btnAgendamentos";
-            this.btnAgendamentos.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.btnAgendamentos.Size = new System.Drawing.Size(188, 32);
+            this.btnAgendamentos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnAgendamentos.Size = new System.Drawing.Size(251, 39);
             this.btnAgendamentos.TabIndex = 1;
             this.btnAgendamentos.Text = "Agendamentos";
             this.btnAgendamentos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -278,10 +278,10 @@
             this.BtnPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnPerfil.ForeColor = System.Drawing.Color.Gainsboro;
             this.BtnPerfil.Location = new System.Drawing.Point(0, 0);
-            this.BtnPerfil.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnPerfil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnPerfil.Name = "BtnPerfil";
-            this.BtnPerfil.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.BtnPerfil.Size = new System.Drawing.Size(188, 32);
+            this.BtnPerfil.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.BtnPerfil.Size = new System.Drawing.Size(251, 39);
             this.BtnPerfil.TabIndex = 0;
             this.BtnPerfil.Text = "Perfil";
             this.BtnPerfil.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -296,11 +296,11 @@
             this.BtnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnUsuario.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnUsuario.Location = new System.Drawing.Point(3, 276);
-            this.BtnUsuario.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnUsuario.Location = new System.Drawing.Point(4, 340);
+            this.BtnUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnUsuario.Name = "BtnUsuario";
-            this.BtnUsuario.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.BtnUsuario.Size = new System.Drawing.Size(188, 36);
+            this.BtnUsuario.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.BtnUsuario.Size = new System.Drawing.Size(251, 44);
             this.BtnUsuario.TabIndex = 8;
             this.BtnUsuario.Text = "Usuário";
             this.BtnUsuario.UseVisualStyleBackColor = true;
@@ -313,11 +313,11 @@
             this.BtnChacaras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnChacaras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnChacaras.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnChacaras.Location = new System.Drawing.Point(3, 84);
-            this.BtnChacaras.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnChacaras.Location = new System.Drawing.Point(4, 103);
+            this.BtnChacaras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnChacaras.Name = "BtnChacaras";
-            this.BtnChacaras.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.BtnChacaras.Size = new System.Drawing.Size(188, 36);
+            this.BtnChacaras.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.BtnChacaras.Size = new System.Drawing.Size(251, 44);
             this.BtnChacaras.TabIndex = 6;
             this.BtnChacaras.Text = "Chácaras";
             this.BtnChacaras.UseVisualStyleBackColor = true;
@@ -329,10 +329,10 @@
             this.SubMenuChacaras.Controls.Add(this.BtnAgendar);
             this.SubMenuChacaras.Controls.Add(this.BtnAdicionar);
             this.SubMenuChacaras.Controls.Add(this.BtnProcurar);
-            this.SubMenuChacaras.Location = new System.Drawing.Point(3, 124);
-            this.SubMenuChacaras.Margin = new System.Windows.Forms.Padding(2);
+            this.SubMenuChacaras.Location = new System.Drawing.Point(4, 153);
+            this.SubMenuChacaras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SubMenuChacaras.Name = "SubMenuChacaras";
-            this.SubMenuChacaras.Size = new System.Drawing.Size(191, 148);
+            this.SubMenuChacaras.Size = new System.Drawing.Size(255, 182);
             this.SubMenuChacaras.TabIndex = 7;
             // 
             // btnDisponibilidade
@@ -343,11 +343,11 @@
             this.btnDisponibilidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDisponibilidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDisponibilidade.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnDisponibilidade.Location = new System.Drawing.Point(-1, 100);
-            this.btnDisponibilidade.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDisponibilidade.Location = new System.Drawing.Point(-1, 123);
+            this.btnDisponibilidade.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDisponibilidade.Name = "btnDisponibilidade";
-            this.btnDisponibilidade.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.btnDisponibilidade.Size = new System.Drawing.Size(188, 32);
+            this.btnDisponibilidade.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnDisponibilidade.Size = new System.Drawing.Size(251, 39);
             this.btnDisponibilidade.TabIndex = 3;
             this.btnDisponibilidade.Text = "Disponibilidade";
             this.btnDisponibilidade.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -362,11 +362,11 @@
             this.BtnAgendar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAgendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAgendar.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnAgendar.Location = new System.Drawing.Point(0, 64);
-            this.BtnAgendar.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnAgendar.Location = new System.Drawing.Point(0, 79);
+            this.BtnAgendar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnAgendar.Name = "BtnAgendar";
-            this.BtnAgendar.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.BtnAgendar.Size = new System.Drawing.Size(188, 32);
+            this.BtnAgendar.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.BtnAgendar.Size = new System.Drawing.Size(251, 39);
             this.BtnAgendar.TabIndex = 2;
             this.BtnAgendar.Text = "Agendar";
             this.BtnAgendar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -381,11 +381,11 @@
             this.BtnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAdicionar.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnAdicionar.Location = new System.Drawing.Point(0, 32);
-            this.BtnAdicionar.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnAdicionar.Location = new System.Drawing.Point(0, 39);
+            this.BtnAdicionar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnAdicionar.Name = "BtnAdicionar";
-            this.BtnAdicionar.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.BtnAdicionar.Size = new System.Drawing.Size(188, 32);
+            this.BtnAdicionar.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.BtnAdicionar.Size = new System.Drawing.Size(251, 39);
             this.BtnAdicionar.TabIndex = 1;
             this.BtnAdicionar.Text = "Adicionar";
             this.BtnAdicionar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -401,10 +401,10 @@
             this.BtnProcurar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnProcurar.ForeColor = System.Drawing.Color.Gainsboro;
             this.BtnProcurar.Location = new System.Drawing.Point(0, 0);
-            this.BtnProcurar.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnProcurar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnProcurar.Name = "BtnProcurar";
-            this.BtnProcurar.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.BtnProcurar.Size = new System.Drawing.Size(188, 32);
+            this.BtnProcurar.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.BtnProcurar.Size = new System.Drawing.Size(251, 39);
             this.BtnProcurar.TabIndex = 0;
             this.BtnProcurar.Text = "Procurar";
             this.BtnProcurar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -416,9 +416,9 @@
             this.PanelLogo.Controls.Add(this.LogoTxt);
             this.PanelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelLogo.Location = new System.Drawing.Point(0, 0);
-            this.PanelLogo.Margin = new System.Windows.Forms.Padding(2);
+            this.PanelLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelLogo.Name = "PanelLogo";
-            this.PanelLogo.Size = new System.Drawing.Size(193, 81);
+            this.PanelLogo.Size = new System.Drawing.Size(257, 100);
             this.PanelLogo.TabIndex = 0;
             // 
             // LogoTxt
@@ -426,24 +426,24 @@
             this.LogoTxt.Dock = System.Windows.Forms.DockStyle.Top;
             this.LogoTxt.Image = ((System.Drawing.Image)(resources.GetObject("LogoTxt.Image")));
             this.LogoTxt.Location = new System.Drawing.Point(0, 0);
-            this.LogoTxt.Margin = new System.Windows.Forms.Padding(2);
+            this.LogoTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LogoTxt.Name = "LogoTxt";
-            this.LogoTxt.Size = new System.Drawing.Size(193, 81);
+            this.LogoTxt.Size = new System.Drawing.Size(257, 100);
             this.LogoTxt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.LogoTxt.TabIndex = 0;
             this.LogoTxt.TabStop = false;
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.ClientSize = new System.Drawing.Size(1942, 1102);
             this.Controls.Add(this.Nave);
             this.Controls.Add(this.PanelHome);
             this.Controls.Add(this.Menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TecEventos";

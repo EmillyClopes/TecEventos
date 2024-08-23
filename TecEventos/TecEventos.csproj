@@ -105,6 +105,7 @@
     <Compile Include="Agendamento.Designer.cs">
       <DependentUpon>Agendamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConexaoBanco.cs" />
     <Compile Include="ControlePagamentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,11 +166,11 @@
     <Compile Include="PerfilAdm.Designer.cs">
       <DependentUpon>PerfilAdm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PerfilUser.cs">
+    <Compile Include="Precificacao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PerfilUser.Designer.cs">
-      <DependentUpon>PerfilUser.cs</DependentUpon>
+    <Compile Include="Precificacao.Designer.cs">
+      <DependentUpon>Precificacao.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -218,8 +219,8 @@
     <EmbeddedResource Include="PerfilAdm.resx">
       <DependentUpon>PerfilAdm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PerfilUser.resx">
-      <DependentUpon>PerfilUser.cs</DependentUpon>
+    <EmbeddedResource Include="Precificacao.resx">
+      <DependentUpon>Precificacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

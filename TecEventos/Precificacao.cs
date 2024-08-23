@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace TecEventos
 {
-    public partial class PerfilUser : Form
+    public partial class Precificacao : Form
     {
-        public PerfilUser()
+        public Precificacao()
         {
             InitializeComponent();
-        }
-
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            /*fecha a tela*/
         }
     }
 }

@@ -12,23 +12,27 @@ using System.Windows.Forms;
 // compile with: /W:2
 using System;
 using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace TecEventos
 {
     public partial class AgendarAlugueis : Form
     {
+        ConexaoBanco conexaoBanco;
         private int chacaraIdSelecionado; // Variável para armazenar o ID da chácara selecionada
+        
         public AgendarAlugueis()
         {
               InitializeComponent();
+            conexaoBanco = new ConexaoBanco();
         }
 
         private void LoadChacarasDisponiveis()
         {
-            string connectionString = "server=localhost;database=TecEventos;uid=root;pwd=9614206Gil@;";
+            conexaoBanco.getConnectionString();
             string query = "SELECT id, nome FROM Chacara WHERE id NOT IN (SELECT chacara_id FROM Agendamento WHERE entrada_data <= CURDATE() AND saida_data >= CURDATE())";
 
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            using (MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString()))
             {
                 try
                 {
