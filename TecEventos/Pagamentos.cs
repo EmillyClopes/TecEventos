@@ -16,6 +16,7 @@ namespace TecEventos
         public Pagamentos()
         {
             InitializeComponent();
+            abrirForms = new AbrirForms(painel);
         }
 
         private void BtnCriarPag_Click(object sender, EventArgs e)
