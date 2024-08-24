@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pagamentos));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnHome = new System.Windows.Forms.Button();
             this.btnVisuPag = new System.Windows.Forms.Button();
             this.BtnCriarPag = new System.Windows.Forms.Button();
-            this.btnHome = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -62,34 +62,6 @@
             this.panel2.Size = new System.Drawing.Size(346, 417);
             this.panel2.TabIndex = 2;
             // 
-            // btnVisuPag
-            // 
-            this.btnVisuPag.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnVisuPag.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnVisuPag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVisuPag.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVisuPag.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnVisuPag.Location = new System.Drawing.Point(39, 245);
-            this.btnVisuPag.Name = "btnVisuPag";
-            this.btnVisuPag.Size = new System.Drawing.Size(262, 79);
-            this.btnVisuPag.TabIndex = 73;
-            this.btnVisuPag.Text = "Visualizar pagamentos";
-            this.btnVisuPag.UseVisualStyleBackColor = false;
-            // 
-            // BtnCriarPag
-            // 
-            this.BtnCriarPag.BackColor = System.Drawing.Color.SkyBlue;
-            this.BtnCriarPag.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.BtnCriarPag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCriarPag.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCriarPag.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BtnCriarPag.Location = new System.Drawing.Point(39, 100);
-            this.BtnCriarPag.Name = "BtnCriarPag";
-            this.BtnCriarPag.Size = new System.Drawing.Size(262, 79);
-            this.BtnCriarPag.TabIndex = 72;
-            this.BtnCriarPag.Text = "Criar novo pagamento";
-            this.BtnCriarPag.UseVisualStyleBackColor = false;
-            // 
             // btnHome
             // 
             this.btnHome.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -105,6 +77,36 @@
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // btnVisuPag
+            // 
+            this.btnVisuPag.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnVisuPag.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnVisuPag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVisuPag.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVisuPag.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnVisuPag.Location = new System.Drawing.Point(39, 245);
+            this.btnVisuPag.Name = "btnVisuPag";
+            this.btnVisuPag.Size = new System.Drawing.Size(262, 79);
+            this.btnVisuPag.TabIndex = 73;
+            this.btnVisuPag.Text = "Visualizar pagamentos";
+            this.btnVisuPag.UseVisualStyleBackColor = false;
+            this.btnVisuPag.Click += new System.EventHandler(this.btnVisuPag_Click_1);
+            // 
+            // BtnCriarPag
+            // 
+            this.BtnCriarPag.BackColor = System.Drawing.Color.SkyBlue;
+            this.BtnCriarPag.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnCriarPag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCriarPag.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCriarPag.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BtnCriarPag.Location = new System.Drawing.Point(39, 100);
+            this.BtnCriarPag.Name = "BtnCriarPag";
+            this.BtnCriarPag.Size = new System.Drawing.Size(262, 79);
+            this.BtnCriarPag.TabIndex = 72;
+            this.BtnCriarPag.Text = "Criar novo pagamento";
+            this.BtnCriarPag.UseVisualStyleBackColor = false;
+            this.BtnCriarPag.Click += new System.EventHandler(this.BtnCriarPag_Click_1);
             // 
             // Pagamentos
             // 

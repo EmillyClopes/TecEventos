@@ -16,23 +16,23 @@ namespace TecEventos
         public Pagamentos()
         {
             InitializeComponent();
-            abrirForms = new AbrirForms(painel);
-        }
-
-        private void BtnCriarPag_Click(object sender, EventArgs e)
-        {
-            abrirForms.AbreForm(new ControlePagamentos());
-        }
-
-        private void btnVisuPag_Click(object sender, EventArgs e)
-        {
-            abrirForms.AbreForm(new VisualizacaoPag());
+            abrirForms = new AbrirForms(panel2);
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
             this.Close();
             /*fecha a tela*/
+        }
+
+        private void BtnCriarPag_Click_1(object sender, EventArgs e)
+        {
+            abrirForms.AbreForm(new VisualizacaoPag());
+        }
+
+        private void btnVisuPag_Click_1(object sender, EventArgs e)
+        {
+            abrirForms.AbreForm(new ControlePagamentos());
         }
     }
 }
