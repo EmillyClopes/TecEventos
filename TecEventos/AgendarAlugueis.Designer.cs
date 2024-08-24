@@ -69,7 +69,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1486, 709);
+            this.pictureBox1.Size = new System.Drawing.Size(1386, 709);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 67;
             this.pictureBox1.TabStop = false;
@@ -106,7 +106,7 @@
             this.panel1.Controls.Add(this.lblDiaEntrada);
             this.panel1.Controls.Add(this.GridViewChacarasDisponiveis);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(118, 128);
+            this.panel1.Location = new System.Drawing.Point(68, 128);
             this.panel1.MaximumSize = new System.Drawing.Size(1188, 581);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1188, 581);
@@ -387,7 +387,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1486, 709);
+            this.ClientSize = new System.Drawing.Size(1386, 709);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

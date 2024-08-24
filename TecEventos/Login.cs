@@ -13,9 +13,11 @@ namespace TecEventos
 {
     public partial class Login : Form
     {
+        ConexaoBanco conexaoBanco;
         public Login()
         {
             InitializeComponent();
+            conexaoBanco = new ConexaoBanco();
         }
 
         private void CloseBtn_Click(object sender, EventArgs e)
@@ -51,13 +53,10 @@ namespace TecEventos
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            // Configure a string de conexão com as informações corretas
-            string connectionString = "server=localhost;database=TecEventos;uid=root;pwd=9614206Gil@;"; // ALTERE A SENHA CASO NECESSÁRIO
-
             // Defina a consulta SQL com parâmetros
             string query = "SELECT * FROM Usuario WHERE email = @username AND senha = @password";
 
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            using (MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString()))
             {
                 try
                 {

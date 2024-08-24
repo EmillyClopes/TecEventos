@@ -13,31 +13,14 @@ namespace TecEventos
 {
     public partial class CadastrarClientes : Form
     {
+        ConexaoBanco conexaoBanco;
+        GetSetCadastrarCliente cliente;
         public CadastrarClientes()
         {
             InitializeComponent();
+            conexaoBanco = new ConexaoBanco();
+            cliente = new GetSetCadastrarCliente();
         }
-
-        private void NomeCompTxt_TextChanged(object sender, EventArgs e)
-        {
-            //Conectar com o banco
-        }
-
-        private void EmailTxt_TextChanged(object sender, EventArgs e)
-        {
-            //Conectar com o banco
-        }
-
-        private void EnderecoTxt_TextChanged(object sender, EventArgs e)
-        {
-            //Conectar com o banco
-        }
-
-        private void TelefoneTxt_TextChanged(object sender, EventArgs e)
-        {
-            //Conectar com o banco
-        }
-
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             NomeCompTxt.Text = "";
@@ -48,35 +31,43 @@ namespace TecEventos
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            // Configurar a string de conexão
-            string connectionString = "server=localhost;database=TecEventos;uid=root;pwd=9614206Gil@;"; // Atualize a senha conforme necessário
+            cliente.setInfoCliente(NomeCompTxt.Text, EmailTxt.Text, EnderecoRuaTxt.Text, EnderecoBairroTxt.Text, EnderecoNumeroTxt.Text, TelefoneTxt.Text);
 
             // Definir a consulta SQL para inserção
-            string query = "INSERT INTO Usuario (nome_completo, email, endereco_rua, endereco_numero, endereco_bairro, telefone, senha) " +
-                           "VALUES (@nome_completo, @email, @endereco_rua, @endereco_numero, @endereco_bairro, @telefone, @senha)";
+            string query = "INSERT INTO Usuario (nome_completo, email, endereco_rua, endereco_numero, endereco_bairro, telefone) " +
+                           "VALUES (@nome_completo, @email, @endereco_rua, @endereco_numero, @endereco_bairro, @telefone)";
 
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            using (MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString()))
             {
                 try
                 {
-                    connection.Open();
 
                     MySqlCommand command = new MySqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@nome_completo", NomeCompTxt.Text);
-                    command.Parameters.AddWithValue("@email", EmailTxt.Text);
-                    command.Parameters.AddWithValue("@endereco_rua", EnderecoRuaTxt.Text.Split(',')[0]); // Supondo que EnderecoTxt tenha o formato "Rua, Numero, Bairro"
-                    command.Parameters.AddWithValue("@endereco_numero", EnderecoRuaTxt.Text.Split(',').Length > 1 ? EnderecoRuaTxt.Text.Split(',')[1] : "");
-                    command.Parameters.AddWithValue("@endereco_bairro", EnderecoRuaTxt.Text.Split(',').Length > 2 ? EnderecoRuaTxt.Text.Split(',')[2] : "");
-                    command.Parameters.AddWithValue("@telefone", TelefoneTxt.Text);
-                    command.ExecuteNonQuery();
+                    command.Parameters.AddWithValue("@nome_completo", cliente.getNome());
+                    command.Parameters.AddWithValue("@email", cliente.getEmail());
+                    command.Parameters.AddWithValue("@endereco_rua", cliente.getRua());
+                    command.Parameters.AddWithValue("@endereco_numero", cliente.getNumero());
+                    command.Parameters.AddWithValue("@endereco_bairro", cliente.getBairro());
+                    command.Parameters.AddWithValue("@telefone", cliente.getTelefone());
 
-                    MessageBox.Show("Cadastro realizado com sucesso!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    connection.Open();
+
+                    int LinhasAfetadas = command.ExecuteNonQuery();
+
+                    if (LinhasAfetadas > 0)
+                    {
+                        MessageBox.Show("Cadastro realizado com sucesso!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao cadastrar cliente!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
 
                     // Limpar os campos após o cadastro
-                    NomeCompTxt.Text = "";
+                    /*NomeCompTxt.Text = "";
                     EmailTxt.Text = "";
                     EnderecoRuaTxt.Text = "";
-                    TelefoneTxt.Text = "";
+                    TelefoneTxt.Text = "";*/
                 }
                 catch (Exception ex)
                 {

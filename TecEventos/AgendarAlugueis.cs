@@ -19,14 +19,15 @@ namespace TecEventos
     public partial class AgendarAlugueis : Form
     {
         ConexaoBanco conexaoBanco;
+        GetSetAgendarAlugueis dadosAluguel;
         private int chacaraIdSelecionado; // Variável para armazenar o ID da chácara selecionada
-        
+
         public AgendarAlugueis()
         {
-              InitializeComponent();
+            InitializeComponent();
             conexaoBanco = new ConexaoBanco();
+            dadosAluguel = new GetSetAgendarAlugueis();
         }
-
         private void LoadChacarasDisponiveis()
         {
             conexaoBanco.getConnectionString();
@@ -48,7 +49,7 @@ namespace TecEventos
                 }
             }
         }
-
+        
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             txtDiaSaida.Text = "";
@@ -62,15 +63,23 @@ namespace TecEventos
             txtMesEntrada.Text = "";
             txtAnoEntrada.Text = "";
         }
-
+        public enum Status
+        {
+            Confirmada,
+            Pendente,
+            Cancelada,
+        }
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            string entradaData = $"{txtAnoEntrada.Text}-{txtMesEntrada.Text.PadLeft(2, '0')}-{txtDiaEntrada.Text.PadLeft(2, '0')}";
+            /*string entradaData = $"{txtAnoEntrada.Text}-{txtMesEntrada.Text.PadLeft(2, '0')}-{txtDiaEntrada.Text.PadLeft(2, '0')}";
             string saidaData = $"{txtAnoSaida.Text}-{txtMesSaida.Text.PadLeft(2, '0')}-{txtDiaSaida.Text.PadLeft(2, '0')}";
             string nomeCliente = txtNomeCliente.Text;
             string contatoCliente = txtContatoCliente.Text;
             string status = comboBox1.Text;
-            decimal total = decimal.Parse(txtTotal.Text);
+            decimal total = decimal.Parse(txtTotal.Text);*/
+            dadosAluguel.setDiaMesAno(int.Parse(txtDiaEntrada.Text), int.Parse(txtMesEntrada.Text), int.Parse(txtAnoEntrada.Text), int.Parse(txtDiaSaida.Text), int.Parse(txtMesSaida.Text), int.Parse(txtAnoSaida.Text));
+            dadosAluguel.setInfoCliente(txtNomeCliente.Text, txtContatoCliente.Text);
+            dadosAluguel.setValorTotal(double.Parse(txtTotal.Text));
 
             // Verifica se a chácara foi selecionada
             if (chacaraIdSelecionado == 0)
@@ -81,22 +90,37 @@ namespace TecEventos
 
             int usuarioId = 1; // Ajustar conforme necessário
 
-            string connectionString = "server=localhost;database=TecEventos;uid=root;pwd=9614206Gil@;";
             string query = "INSERT INTO Agendamento (entrada_data, saida_data, nome_cliente, telefone_cliente, status, valor_total, chacara_id, usuario_id) " +
                            "VALUES (@entradaData, @saidaData, @nomeCliente, @contatoCliente, @status, @total, @chacaraId, @usuarioId)";
+            string queryStatus = "SELECT status FROM Agendamento WHERE (SELECT id, chacara_id FROM Chacara JOIN Agendamento ON id = chacara_id";
 
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            using (MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString()))
             {
                 try
                 {
                     connection.Open();
+
+                    using (MySqlCommand commandStatus = new MySqlCommand(queryStatus, connection))
+                    {
+                        commandStatus.Parameters.AddWithValue("@chacara_id", chacaraIdSelecionado);
+
+                        using (MySqlDataReader reader = commandStatus.ExecuteReader())
+                        {
+                            if(reader.Read())
+                            {
+                                string status = reader["status"].ToString();
+                            }
+
+                        }
+                    }
+
                     MySqlCommand command = new MySqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@entradaData", entradaData);
-                    command.Parameters.AddWithValue("@saidaData", saidaData);
-                    command.Parameters.AddWithValue("@nomeCliente", nomeCliente);
-                    command.Parameters.AddWithValue("@contatoCliente", contatoCliente);
-                    command.Parameters.AddWithValue("@status", status);
-                    command.Parameters.AddWithValue("@total", total);
+                    command.Parameters.AddWithValue("@entradaData", $"{dadosAluguel.getAnoEntrada()}-{dadosAluguel.getMesEntrada()}-{dadosAluguel.getAnoEntrada()}");
+                    command.Parameters.AddWithValue("@saidaData", $"{dadosAluguel.getAnoSaida()}-{dadosAluguel.getMesSaida()}-{dadosAluguel.getDiaSaida()}");
+                    command.Parameters.AddWithValue("@nomeCliente", dadosAluguel.getNomeCliente());
+                    command.Parameters.AddWithValue("@contatoCliente", dadosAluguel.getContatoCliente());
+                    //command.Parameters.AddWithValue("@status", //Passar a variável status pra ca????);
+                    command.Parameters.AddWithValue("@total", dadosAluguel.getValorTotal());
                     command.Parameters.AddWithValue("@chacaraId", chacaraIdSelecionado);
                     command.Parameters.AddWithValue("@usuarioId", usuarioId);
 

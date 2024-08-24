@@ -124,6 +124,9 @@
     <Compile Include="Disponibilidade.Designer.cs">
       <DependentUpon>Disponibilidade.cs</DependentUpon>
     </Compile>
+    <Compile Include="GetSetAgendarAlugueis.cs" />
+    <Compile Include="GetSetCadastrarCliente.cs" />
+    <Compile Include="GetSetDatasComemorativas.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
