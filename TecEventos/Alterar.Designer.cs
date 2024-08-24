@@ -1,6 +1,6 @@
 ﻿namespace TecEventos
 {
-    partial class AdicionarChacara
+    partial class Alterar
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdicionarChacara));
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Alterar));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnProcurar = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.txtNomeChacara = new System.Windows.Forms.TextBox();
-            this.picFotoChacara = new System.Windows.Forms.PictureBox();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.lblInfo = new System.Windows.Forms.Label();
-            this.lblAddfoto = new System.Windows.Forms.Label();
+            this.lblSelecionar = new System.Windows.Forms.Label();
             this.lblNomeChacara = new System.Windows.Forms.Label();
             this.txtRegras = new System.Windows.Forms.TextBox();
             this.txtValor = new System.Windows.Forms.TextBox();
@@ -50,25 +48,16 @@
             this.lblEndereco = new System.Windows.Forms.Label();
             this.txtRua = new System.Windows.Forms.TextBox();
             this.lblNumChacara = new System.Windows.Forms.Label();
-            this.btnCadastrarChacara = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.txtNumChacara = new System.Windows.Forms.TextBox();
             this.lblInfoAdicional = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblBairro = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picFotoChacara)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(291, -32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(220, 29);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "Anuncie Sua Chácara";
             // 
             // pictureBox1
             // 
@@ -76,9 +65,9 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1386, 788);
+            this.pictureBox1.Size = new System.Drawing.Size(1475, 688);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 73;
+            this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // panel1
@@ -86,13 +75,13 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.AutoSize = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btnProcurar);
+            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.btnAlterar);
             this.panel1.Controls.Add(this.btnHome);
             this.panel1.Controls.Add(this.txtNomeChacara);
-            this.panel1.Controls.Add(this.picFotoChacara);
             this.panel1.Controls.Add(this.btnLimpar);
             this.panel1.Controls.Add(this.lblInfo);
-            this.panel1.Controls.Add(this.lblAddfoto);
+            this.panel1.Controls.Add(this.lblSelecionar);
             this.panel1.Controls.Add(this.lblNomeChacara);
             this.panel1.Controls.Add(this.txtRegras);
             this.panel1.Controls.Add(this.txtValor);
@@ -104,31 +93,31 @@
             this.panel1.Controls.Add(this.lblEndereco);
             this.panel1.Controls.Add(this.txtRua);
             this.panel1.Controls.Add(this.lblNumChacara);
-            this.panel1.Controls.Add(this.btnCadastrarChacara);
+            this.panel1.Controls.Add(this.btnExcluir);
             this.panel1.Controls.Add(this.txtNumChacara);
             this.panel1.Controls.Add(this.lblInfoAdicional);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lblBairro);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(110, 102);
+            this.panel1.Location = new System.Drawing.Point(197, 81);
             this.panel1.MaximumSize = new System.Drawing.Size(1093, 561);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1093, 561);
-            this.panel1.TabIndex = 74;
+            this.panel1.TabIndex = 75;
             // 
-            // btnProcurar
+            // btnAlterar
             // 
-            this.btnProcurar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnProcurar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnProcurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProcurar.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProcurar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnProcurar.Location = new System.Drawing.Point(753, 486);
-            this.btnProcurar.Name = "btnProcurar";
-            this.btnProcurar.Size = new System.Drawing.Size(123, 39);
-            this.btnProcurar.TabIndex = 157;
-            this.btnProcurar.Text = "Procurar";
-            this.btnProcurar.UseVisualStyleBackColor = false;
+            this.btnAlterar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterar.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnAlterar.Location = new System.Drawing.Point(55, 483);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(123, 39);
+            this.btnAlterar.TabIndex = 157;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.UseVisualStyleBackColor = false;
             // 
             // btnHome
             // 
@@ -154,15 +143,6 @@
             this.txtNomeChacara.Size = new System.Drawing.Size(286, 27);
             this.txtNomeChacara.TabIndex = 37;
             // 
-            // picFotoChacara
-            // 
-            this.picFotoChacara.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(177)))), ((int)(((byte)(206)))));
-            this.picFotoChacara.Location = new System.Drawing.Point(575, 160);
-            this.picFotoChacara.Name = "picFotoChacara";
-            this.picFotoChacara.Size = new System.Drawing.Size(472, 311);
-            this.picFotoChacara.TabIndex = 69;
-            this.picFotoChacara.TabStop = false;
-            // 
             // btnLimpar
             // 
             this.btnLimpar.BackColor = System.Drawing.Color.SkyBlue;
@@ -170,13 +150,12 @@
             this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpar.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnLimpar.Location = new System.Drawing.Point(298, 486);
+            this.btnLimpar.Location = new System.Drawing.Point(334, 483);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(123, 39);
             this.btnLimpar.TabIndex = 70;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
-            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // lblInfo
             // 
@@ -188,15 +167,15 @@
             this.lblInfo.TabIndex = 71;
             this.lblInfo.Text = "Informações ";
             // 
-            // lblAddfoto
+            // lblSelecionar
             // 
-            this.lblAddfoto.AutoSize = true;
-            this.lblAddfoto.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddfoto.Location = new System.Drawing.Point(700, 101);
-            this.lblAddfoto.Name = "lblAddfoto";
-            this.lblAddfoto.Size = new System.Drawing.Size(202, 23);
-            this.lblAddfoto.TabIndex = 62;
-            this.lblAddfoto.Text = "Adiconar foto da chácara";
+            this.lblSelecionar.AutoSize = true;
+            this.lblSelecionar.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelecionar.Location = new System.Drawing.Point(568, 39);
+            this.lblSelecionar.Name = "lblSelecionar";
+            this.lblSelecionar.Size = new System.Drawing.Size(159, 23);
+            this.lblSelecionar.TabIndex = 62;
+            this.lblSelecionar.Text = "Selecione a chácara";
             // 
             // lblNomeChacara
             // 
@@ -298,20 +277,19 @@
             this.lblNumChacara.TabIndex = 44;
             this.lblNumChacara.Text = "n°";
             // 
-            // btnCadastrarChacara
+            // btnExcluir
             // 
-            this.btnCadastrarChacara.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnCadastrarChacara.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCadastrarChacara.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrarChacara.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrarChacara.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCadastrarChacara.Location = new System.Drawing.Point(120, 486);
-            this.btnCadastrarChacara.Name = "btnCadastrarChacara";
-            this.btnCadastrarChacara.Size = new System.Drawing.Size(123, 39);
-            this.btnCadastrarChacara.TabIndex = 57;
-            this.btnCadastrarChacara.Text = "Cadastrar";
-            this.btnCadastrarChacara.UseVisualStyleBackColor = false;
-            this.btnCadastrarChacara.Click += new System.EventHandler(this.btnCadastrarChacara_Click);
+            this.btnExcluir.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnExcluir.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnExcluir.Location = new System.Drawing.Point(193, 483);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(123, 39);
+            this.btnExcluir.TabIndex = 57;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = false;
             // 
             // txtNumChacara
             // 
@@ -351,37 +329,45 @@
             this.lblBairro.TabIndex = 60;
             this.lblBairro.Text = "Bairro";
             // 
-            // AdicionarChacara
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(177)))), ((int)(((byte)(206)))));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(572, 82);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(496, 440);
+            this.dataGridView1.TabIndex = 158;
+            // 
+            // Alterar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.ClientSize = new System.Drawing.Size(1475, 688);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AdicionarChacara";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form2";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Name = "Alterar";
+            this.Text = "Alterar";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picFotoChacara)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
+
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.TextBox txtNomeChacara;
-        private System.Windows.Forms.PictureBox picFotoChacara;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Label lblInfo;
-        private System.Windows.Forms.Label lblAddfoto;
+        private System.Windows.Forms.Label lblSelecionar;
         private System.Windows.Forms.Label lblNomeChacara;
         private System.Windows.Forms.TextBox txtRegras;
         private System.Windows.Forms.TextBox txtValor;
@@ -393,12 +379,10 @@
         private System.Windows.Forms.Label lblEndereco;
         private System.Windows.Forms.TextBox txtRua;
         private System.Windows.Forms.Label lblNumChacara;
-        private System.Windows.Forms.Button btnCadastrarChacara;
+        private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.TextBox txtNumChacara;
         private System.Windows.Forms.Label lblInfoAdicional;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblBairro;
-        private System.Windows.Forms.Button btnProcurar;
-        private System.Windows.Forms.Button btnHome;
     }
 }

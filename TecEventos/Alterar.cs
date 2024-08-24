@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TecEventos
 {
-    public partial class VisualizacaoPag : Form
+    public partial class Alterar : Form
     {
-        public VisualizacaoPag()
+        public Alterar()
         {
             InitializeComponent();
         }

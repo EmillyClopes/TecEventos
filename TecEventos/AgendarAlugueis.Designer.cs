@@ -106,7 +106,7 @@
             this.panel1.Controls.Add(this.lblDiaEntrada);
             this.panel1.Controls.Add(this.GridViewChacarasDisponiveis);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(68, 128);
+            this.panel1.Location = new System.Drawing.Point(115, 62);
             this.panel1.MaximumSize = new System.Drawing.Size(1188, 581);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1188, 581);

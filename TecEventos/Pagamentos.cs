@@ -27,5 +27,11 @@ namespace TecEventos
         {
             abrirForms.AbreForm(new VisualizacaoPag());
         }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            /*fecha a tela*/
+        }
     }
 }

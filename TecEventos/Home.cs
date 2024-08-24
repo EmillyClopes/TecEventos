@@ -80,7 +80,7 @@ namespace TecEventos
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-
+            abrirForms.AbreForm(new Alterar());
         }
 
         private void btnPrecificacao_Click(object sender, EventArgs e)

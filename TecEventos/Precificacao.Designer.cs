@@ -31,14 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Precificacao));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCadastrarChacara = new System.Windows.Forms.Button();
+            this.btnHome = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.TxtValorPre = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnHome = new System.Windows.Forms.Button();
-            this.btnCadastrarChacara = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -57,6 +57,7 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.btnCadastrarChacara);
             this.panel2.Controls.Add(this.btnHome);
@@ -66,11 +67,41 @@
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.TxtValorPre);
             this.panel2.Controls.Add(this.comboBox1);
-            this.panel2.Location = new System.Drawing.Point(345, 52);
+            this.panel2.Location = new System.Drawing.Point(369, 103);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(661, 419);
             this.panel2.TabIndex = 6;
+            // 
+            // btnCadastrarChacara
+            // 
+            this.btnCadastrarChacara.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnCadastrarChacara.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCadastrarChacara.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrarChacara.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrarChacara.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCadastrarChacara.Location = new System.Drawing.Point(430, 346);
+            this.btnCadastrarChacara.Name = "btnCadastrarChacara";
+            this.btnCadastrarChacara.Size = new System.Drawing.Size(123, 39);
+            this.btnCadastrarChacara.TabIndex = 158;
+            this.btnCadastrarChacara.Text = "Cadastrar";
+            this.btnCadastrarChacara.UseVisualStyleBackColor = false;
+            // 
+            // btnHome
+            // 
+            this.btnHome.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnHome.BackColor = System.Drawing.Color.Azure;
+            this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnHome.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnHome.Location = new System.Drawing.Point(570, 3);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(86, 25);
+            this.btnHome.TabIndex = 157;
+            this.btnHome.Text = "Home";
+            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // label3
             // 
@@ -142,36 +173,6 @@
             this.comboBox1.Size = new System.Drawing.Size(108, 21);
             this.comboBox1.TabIndex = 1;
             // 
-            // btnHome
-            // 
-            this.btnHome.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnHome.BackColor = System.Drawing.Color.Azure;
-            this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnHome.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnHome.Location = new System.Drawing.Point(570, 3);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(86, 25);
-            this.btnHome.TabIndex = 157;
-            this.btnHome.Text = "Home";
-            this.btnHome.UseVisualStyleBackColor = false;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
-            // btnCadastrarChacara
-            // 
-            this.btnCadastrarChacara.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnCadastrarChacara.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCadastrarChacara.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrarChacara.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrarChacara.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCadastrarChacara.Location = new System.Drawing.Point(430, 346);
-            this.btnCadastrarChacara.Name = "btnCadastrarChacara";
-            this.btnCadastrarChacara.Size = new System.Drawing.Size(123, 39);
-            this.btnCadastrarChacara.TabIndex = 158;
-            this.btnCadastrarChacara.Text = "Cadastrar";
-            this.btnCadastrarChacara.UseVisualStyleBackColor = false;
-            // 
             // Precificacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,7 +180,8 @@
             this.ClientSize = new System.Drawing.Size(1360, 617);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Precificacao";
             this.Text = "Precificacao";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
