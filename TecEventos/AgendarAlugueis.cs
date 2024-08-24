@@ -22,11 +22,16 @@ namespace TecEventos
         GetSetAgendarAlugueis dadosAluguel;
         private int chacaraIdSelecionado; // Variável para armazenar o ID da chácara selecionada
 
+        private void AgendarAlugueis_Load(object sender, EventArgs e)
+        {
+            LoadChacarasDisponiveis();
+        }
         public AgendarAlugueis()
         {
             InitializeComponent();
             conexaoBanco = new ConexaoBanco();
             dadosAluguel = new GetSetAgendarAlugueis();
+            this.Load += AgendarAlugueis_Load;
         }
         private void LoadChacarasDisponiveis()
         {
@@ -42,6 +47,14 @@ namespace TecEventos
                     DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);
                     GridViewChacarasDisponiveis.DataSource = dataTable;
+
+                    if(dataTable.Rows.Count == 0)
+                    {
+                        MessageBox.Show("Nenhuma chácara disponível!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    GridViewChacarasDisponiveis.Refresh();
+                    
                 }
                 catch (Exception ex)
                 {
@@ -102,6 +115,7 @@ namespace TecEventos
 
                     using (MySqlCommand commandStatus = new MySqlCommand(queryStatus, connection))
                     {
+                        chacaraIdSelecionado = GridViewChacarasDisponiveis.RowCount;
                         commandStatus.Parameters.AddWithValue("@chacara_id", chacaraIdSelecionado);
 
                         using (MySqlDataReader reader = commandStatus.ExecuteReader())
@@ -140,14 +154,13 @@ namespace TecEventos
                 }
             }
         }
-
         private void GridViewChacarasDisponiveis_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0) // Verifica se a linha clicada é válida
             {
                 DataGridViewRow row = GridViewChacarasDisponiveis.Rows[e.RowIndex];
                 // Supondo que o ID da chácara está na primeira coluna (ajuste o índice da coluna conforme necessário)
-                chacaraIdSelecionado = Convert.ToInt32(row.Cells[0].Value);
+                chacaraIdSelecionado = Convert.ToInt32(row.Cells[0].Value);   
             }
         }
 
