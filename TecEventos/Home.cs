@@ -70,7 +70,7 @@ namespace TecEventos
 
         private void btnPagamentos_Click(object sender, EventArgs e)
         {
-            abrirForms.AbreForm(new ControlePagamentos());
+            abrirForms.AbreForm(new Pagamentos());
         }
 
         private void btnDatasComemorativas_Click(object sender, EventArgs e)

@@ -29,8 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControlePagamentos));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.TxtAno = new System.Windows.Forms.TextBox();
+            this.TxtMes = new System.Windows.Forms.TextBox();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -48,25 +51,10 @@
             this.NomeClienteTxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.TxtMes = new System.Windows.Forms.TextBox();
-            this.TxtAno = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1848, 891);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 69;
-            this.pictureBox1.TabStop = false;
             // 
             // panel1
             // 
@@ -93,11 +81,51 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(193, 47);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.MaximumSize = new System.Drawing.Size(1490, 800);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1427, 800);
             this.panel1.TabIndex = 71;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(1177, 315);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(49, 24);
+            this.label10.TabIndex = 158;
+            this.label10.Text = "Ano:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(1054, 315);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(50, 24);
+            this.label9.TabIndex = 157;
+            this.label9.Text = "Mês:";
+            // 
+            // TxtAno
+            // 
+            this.TxtAno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtAno.Location = new System.Drawing.Point(1234, 311);
+            this.TxtAno.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtAno.Name = "TxtAno";
+            this.TxtAno.Size = new System.Drawing.Size(105, 30);
+            this.TxtAno.TabIndex = 156;
+            // 
+            // TxtMes
+            // 
+            this.TxtMes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtMes.Location = new System.Drawing.Point(1108, 311);
+            this.TxtMes.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtMes.Name = "TxtMes";
+            this.TxtMes.Size = new System.Drawing.Size(61, 30);
+            this.TxtMes.TabIndex = 155;
             // 
             // btnHome
             // 
@@ -108,7 +136,7 @@
             this.btnHome.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnHome.Location = new System.Drawing.Point(1308, 5);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(4);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(115, 31);
             this.btnHome.TabIndex = 154;
@@ -124,12 +152,13 @@
             this.btnSalvar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnSalvar.Location = new System.Drawing.Point(646, 649);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(215, 97);
             this.btnSalvar.TabIndex = 71;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // label8
             // 
@@ -162,7 +191,7 @@
             "Pendente",
             "Atrasado"});
             this.StatusPag.Location = new System.Drawing.Point(1028, 377);
-            this.StatusPag.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StatusPag.Margin = new System.Windows.Forms.Padding(4);
             this.StatusPag.Name = "StatusPag";
             this.StatusPag.Size = new System.Drawing.Size(224, 32);
             this.StatusPag.TabIndex = 12;
@@ -177,7 +206,7 @@
             "Cartão Débito",
             "Cartão Crédito"});
             this.MetodoPag.Location = new System.Drawing.Point(480, 377);
-            this.MetodoPag.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MetodoPag.Margin = new System.Windows.Forms.Padding(4);
             this.MetodoPag.Name = "MetodoPag";
             this.MetodoPag.Size = new System.Drawing.Size(224, 32);
             this.MetodoPag.TabIndex = 11;
@@ -186,7 +215,7 @@
             // 
             this.TxtDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtDia.Location = new System.Drawing.Point(977, 311);
-            this.TxtDia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtDia.Margin = new System.Windows.Forms.Padding(4);
             this.TxtDia.Name = "TxtDia";
             this.TxtDia.Size = new System.Drawing.Size(69, 30);
             this.TxtDia.TabIndex = 10;
@@ -206,7 +235,7 @@
             // 
             this.ValorPagoTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ValorPagoTxt.Location = new System.Drawing.Point(697, 311);
-            this.ValorPagoTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ValorPagoTxt.Margin = new System.Windows.Forms.Padding(4);
             this.ValorPagoTxt.Name = "ValorPagoTxt";
             this.ValorPagoTxt.Size = new System.Drawing.Size(224, 30);
             this.ValorPagoTxt.TabIndex = 8;
@@ -226,7 +255,7 @@
             // 
             this.ValorTotalTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ValorTotalTxt.Location = new System.Drawing.Point(304, 311);
-            this.ValorTotalTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ValorTotalTxt.Margin = new System.Windows.Forms.Padding(4);
             this.ValorTotalTxt.Name = "ValorTotalTxt";
             this.ValorTotalTxt.Size = new System.Drawing.Size(224, 30);
             this.ValorTotalTxt.TabIndex = 6;
@@ -246,7 +275,7 @@
             // 
             this.NomeChacTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NomeChacTxt.Location = new System.Drawing.Point(304, 234);
-            this.NomeChacTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.NomeChacTxt.Margin = new System.Windows.Forms.Padding(4);
             this.NomeChacTxt.Name = "NomeChacTxt";
             this.NomeChacTxt.Size = new System.Drawing.Size(1035, 30);
             this.NomeChacTxt.TabIndex = 4;
@@ -266,7 +295,7 @@
             // 
             this.NomeClienteTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NomeClienteTxt.Location = new System.Drawing.Point(304, 160);
-            this.NomeClienteTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.NomeClienteTxt.Margin = new System.Windows.Forms.Padding(4);
             this.NomeClienteTxt.Name = "NomeClienteTxt";
             this.NomeClienteTxt.Size = new System.Drawing.Size(1035, 30);
             this.NomeClienteTxt.TabIndex = 2;
@@ -293,45 +322,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Controle de Pagamentos";
             // 
-            // TxtMes
+            // pictureBox1
             // 
-            this.TxtMes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtMes.Location = new System.Drawing.Point(1108, 311);
-            this.TxtMes.Margin = new System.Windows.Forms.Padding(4);
-            this.TxtMes.Name = "TxtMes";
-            this.TxtMes.Size = new System.Drawing.Size(61, 30);
-            this.TxtMes.TabIndex = 155;
-            // 
-            // TxtAno
-            // 
-            this.TxtAno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtAno.Location = new System.Drawing.Point(1234, 311);
-            this.TxtAno.Margin = new System.Windows.Forms.Padding(4);
-            this.TxtAno.Name = "TxtAno";
-            this.TxtAno.Size = new System.Drawing.Size(105, 30);
-            this.TxtAno.TabIndex = 156;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(1054, 315);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(50, 24);
-            this.label9.TabIndex = 157;
-            this.label9.Text = "Mês:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(1177, 315);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 24);
-            this.label10.TabIndex = 158;
-            this.label10.Text = "Ano:";
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1848, 891);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 69;
+            this.pictureBox1.TabStop = false;
             // 
             // ControlePagamentos
             // 
@@ -341,14 +342,14 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ControlePagamentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ControlePagamentos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

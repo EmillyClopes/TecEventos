@@ -163,6 +163,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pagamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagamentos.Designer.cs">
+      <DependentUpon>Pagamentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="PerfilAdm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,12 @@
     </Compile>
     <Compile Include="Splash.Designer.cs">
       <DependentUpon>Splash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisualizacaoPag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisualizacaoPag.Designer.cs">
+      <DependentUpon>VisualizacaoPag.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Agendamento.resx">
       <DependentUpon>Agendamento.cs</DependentUpon>
@@ -219,6 +231,9 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pagamentos.resx">
+      <DependentUpon>Pagamentos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PerfilAdm.resx">
       <DependentUpon>PerfilAdm.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisualizacaoPag.resx">
+      <DependentUpon>VisualizacaoPag.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

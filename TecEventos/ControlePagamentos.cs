@@ -22,5 +22,10 @@ namespace TecEventos
             this.Close();
             /*fecha a tela*/
         }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
