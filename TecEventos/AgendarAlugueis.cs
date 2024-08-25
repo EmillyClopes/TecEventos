@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using System;
 using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
+using Mysqlx.Prepare;
 
 namespace TecEventos
 {
@@ -75,36 +76,25 @@ namespace TecEventos
             txtMesEntrada.Text = "";
             txtAnoEntrada.Text = "";
         }
-        public enum Status
-        {
-            Confirmada,
-            Pendente,
-            Cancelada,
-        }
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            /*string entradaData = $"{txtAnoEntrada.Text}-{txtMesEntrada.Text.PadLeft(2, '0')}-{txtDiaEntrada.Text.PadLeft(2, '0')}";
-            string saidaData = $"{txtAnoSaida.Text}-{txtMesSaida.Text.PadLeft(2, '0')}-{txtDiaSaida.Text.PadLeft(2, '0')}";
-            string nomeCliente = txtNomeCliente.Text;
-            string contatoCliente = txtContatoCliente.Text;
-            string status = comboBox1.Text;
-            decimal total = decimal.Parse(txtTotal.Text);*/
-            dadosAluguel.setDiaMesAno(int.Parse(txtDiaEntrada.Text), int.Parse(txtMesEntrada.Text), int.Parse(txtAnoEntrada.Text), int.Parse(txtDiaSaida.Text), int.Parse(txtMesSaida.Text), int.Parse(txtAnoSaida.Text));
-            dadosAluguel.setInfoCliente(txtNomeCliente.Text, txtContatoCliente.Text);
-            dadosAluguel.setValorTotal(double.Parse(txtTotal.Text));
-
-            // Verifica se a chácara foi selecionada
             if (chacaraIdSelecionado == 0)
             {
                 MessageBox.Show("Por favor, selecione uma chácara.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            DateTime entradaData = new DateTime(int.Parse(txtAnoEntrada.Text), int.Parse(txtMesEntrada.Text), int.Parse(txtDiaEntrada.Text));
+            DateTime saidaData = new DateTime(int.Parse(txtAnoSaida.Text), int.Parse(txtMesSaida.Text), int.Parse(txtDiaSaida.Text));
 
-            int usuarioId = 1; // Ajustar conforme necessário
+            dadosAluguel.setDiaMesAno(int.Parse(txtDiaEntrada.Text), int.Parse(txtMesEntrada.Text), int.Parse(txtAnoEntrada.Text),
+                int.Parse(txtDiaSaida.Text), int.Parse(txtMesSaida.Text), int.Parse(txtAnoSaida.Text));
+            dadosAluguel.setInfoCliente(txtNomeCliente.Text, txtContatoCliente.Text);
+            dadosAluguel.setValorTotal(double.Parse(txtTotal.Text));
 
-            string query = "INSERT INTO Agendamento (entrada_data, saida_data, nome_cliente, telefone_cliente, status, valor_total, chacara_id, usuario_id) " +
-                           "VALUES (@entradaData, @saidaData, @nomeCliente, @contatoCliente, @status, @total, @chacaraId, @usuarioId)";
-            string queryStatus = "SELECT status FROM Agendamento WHERE (SELECT id, chacara_id FROM Chacara JOIN Agendamento ON id = chacara_id";
+            string queryUsuarioId = "SELECT id FROM usuarios WHERE nome = @nome";
+
+            string queryAgendamento = "INSERT INTO agendamento (entrada_data, saida_data, usuario_id, chacara_id, valor_agendamento, status) " +
+                                      "VALUES (@entradaData, @saidaData, @usuarioId, @chacaraId, @valor_agendamento, @status)";
 
             using (MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString()))
             {
@@ -112,39 +102,42 @@ namespace TecEventos
                 {
                     connection.Open();
 
-                    using (MySqlCommand commandStatus = new MySqlCommand(queryStatus, connection))
+                    int usuarioId;
+                    using (MySqlCommand commandUsuarioId = new MySqlCommand(queryUsuarioId, connection))
                     {
-                        chacaraIdSelecionado = GridViewChacarasDisponiveis.RowCount;
-                        commandStatus.Parameters.AddWithValue("@chacara_id", chacaraIdSelecionado);
+                        commandUsuarioId.Parameters.AddWithValue("@nome", txtNomeCliente.Text);
 
-                        using (MySqlDataReader reader = commandStatus.ExecuteReader())
+                        object result = commandUsuarioId.ExecuteScalar();
+
+                        if (result != null)
                         {
-                            if(reader.Read())
-                            {
-                                string status = reader["status"].ToString();
-                            }
-
+                            usuarioId = Convert.ToInt32(result);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Usuário não encontrado com o contato fornecido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
                         }
                     }
 
-                    MySqlCommand command = new MySqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@entradaData", $"{dadosAluguel.getAnoEntrada()}-{dadosAluguel.getMesEntrada()}-{dadosAluguel.getAnoEntrada()}");
-                    command.Parameters.AddWithValue("@saidaData", $"{dadosAluguel.getAnoSaida()}-{dadosAluguel.getMesSaida()}-{dadosAluguel.getDiaSaida()}");
-                    command.Parameters.AddWithValue("@nomeCliente", dadosAluguel.getNomeCliente());
-                    command.Parameters.AddWithValue("@contatoCliente", dadosAluguel.getContatoCliente());
-                    //command.Parameters.AddWithValue("@status", //Passar a variável status pra ca????);
-                    command.Parameters.AddWithValue("@total", dadosAluguel.getValorTotal());
-                    command.Parameters.AddWithValue("@chacaraId", chacaraIdSelecionado);
-                    command.Parameters.AddWithValue("@usuarioId", usuarioId);
+                    using (MySqlCommand commandAgendamento = new MySqlCommand(queryAgendamento, connection))
+                    {
+                        commandAgendamento.Parameters.AddWithValue("@entradaData", entradaData);
+                        commandAgendamento.Parameters.AddWithValue("@saidaData", saidaData);
+                        commandAgendamento.Parameters.AddWithValue("@usuarioId", usuarioId);
+                        commandAgendamento.Parameters.AddWithValue("@chacaraId", chacaraIdSelecionado);
+                        commandAgendamento.Parameters.AddWithValue("@valor_agendamento", dadosAluguel.getValorTotal());
+                        commandAgendamento.Parameters.AddWithValue("@status", comboBox1.Text);
 
-                    int rowsAffected = command.ExecuteNonQuery();
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Agendamento realizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Erro ao realizar o agendamento.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        int linhasAfetadas = commandAgendamento.ExecuteNonQuery();
+                        if (linhasAfetadas > 0)
+                        {
+                            MessageBox.Show("Agendamento realizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Erro ao realizar o agendamento.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
                 catch (Exception ex)

@@ -89,6 +89,7 @@
             this.btnProcurar.TabIndex = 158;
             this.btnProcurar.Text = "Procurar";
             this.btnProcurar.UseVisualStyleBackColor = false;
+            this.btnProcurar.Click += new System.EventHandler(this.btnProcurar_Click);
             // 
             // label1
             // 
@@ -120,6 +121,7 @@
             this.GridViewChacarasCadastradas.RowHeadersWidth = 51;
             this.GridViewChacarasCadastradas.Size = new System.Drawing.Size(758, 440);
             this.GridViewChacarasCadastradas.TabIndex = 125;
+            this.GridViewChacarasCadastradas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewChacarasCadastradas_CellContentClick);
             // 
             // ListaChacaras
             // 

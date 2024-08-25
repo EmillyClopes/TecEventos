@@ -134,7 +134,9 @@
     <Compile Include="GetSetAgendarAlugueis.cs" />
     <Compile Include="GetSetCadastrarCliente.cs" />
     <Compile Include="GetSetChacara.cs" />
+    <Compile Include="GetSetControlePagamentos.cs" />
     <Compile Include="GetSetDatasComemorativas.cs" />
+    <Compile Include="GetSetPrecificacao.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>

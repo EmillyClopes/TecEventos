@@ -86,6 +86,7 @@
             this.btnCadastrarChacara.TabIndex = 158;
             this.btnCadastrarChacara.Text = "Cadastrar";
             this.btnCadastrarChacara.UseVisualStyleBackColor = false;
+            this.btnCadastrarChacara.Click += new System.EventHandler(this.btnCadastrarChacara_Click);
             // 
             // btnHome
             // 
@@ -147,6 +148,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(378, 322);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // TxtValorPre
             // 

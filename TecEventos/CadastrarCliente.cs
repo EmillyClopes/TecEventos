@@ -33,45 +33,52 @@ namespace TecEventos
         {
             cliente.setInfoCliente(NomeCompTxt.Text, EmailTxt.Text, EnderecoRuaTxt.Text, EnderecoBairroTxt.Text, EnderecoNumeroTxt.Text, TelefoneTxt.Text);
 
-            // Definir a consulta SQL para inserção
-            string query = "INSERT INTO Usuario (nome_completo, email, endereco_rua, endereco_numero, endereco_bairro, telefone) " +
-                           "VALUES (@nome_completo, @email, @endereco_rua, @endereco_numero, @endereco_bairro, @telefone)";
+            string queryInserir = "INSERT INTO usuarios (nome, email, telefone, endereco_id) " +
+                                  "VALUES (@nome, @email, @telefone, @endereco_id)";
+            string queryEnderecoID = "SELECT id FROM enderecos WHERE numero = @numero AND bairro = @bairro";
 
             using (MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString()))
             {
                 try
                 {
-
-                    MySqlCommand command = new MySqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@nome_completo", cliente.getNome());
-                    command.Parameters.AddWithValue("@email", cliente.getEmail());
-                    command.Parameters.AddWithValue("@endereco_rua", cliente.getRua());
-                    command.Parameters.AddWithValue("@endereco_numero", cliente.getNumero());
-                    command.Parameters.AddWithValue("@endereco_bairro", cliente.getBairro());
-                    command.Parameters.AddWithValue("@telefone", cliente.getTelefone());
-
                     connection.Open();
 
-                    int LinhasAfetadas = command.ExecuteNonQuery();
-
-                    if (LinhasAfetadas > 0)
+                    string endereco_id = null;
+                    using (MySqlCommand commandEndereco = new MySqlCommand(queryEnderecoID, connection))
                     {
-                        MessageBox.Show("Cadastro realizado com sucesso!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Erro ao cadastrar cliente!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        commandEndereco.Parameters.AddWithValue("@bairro", EnderecoBairroTxt.Text);
+                        commandEndereco.Parameters.AddWithValue("@numero", EnderecoNumeroTxt.Text);
+
+                        using (MySqlDataReader reader = commandEndereco.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                endereco_id = reader["id"].ToString();
+                            }
+                        }
                     }
 
-                    // Limpar os campos após o cadastro
-                    /*NomeCompTxt.Text = "";
-                    EmailTxt.Text = "";
-                    EnderecoRuaTxt.Text = "";
-                    TelefoneTxt.Text = "";*/
+                    if (endereco_id == null)
+                    {
+                        MessageBox.Show("Endereco não encontrado.");
+                        return;
+                    }
+
+                    using (MySqlCommand commandInserir = new MySqlCommand(queryInserir, connection))
+                    {
+                        commandInserir.Parameters.AddWithValue("@nome", cliente.getNome());
+                        commandInserir.Parameters.AddWithValue("@email", cliente.getEmail());
+                        commandInserir.Parameters.AddWithValue("@telefone", cliente.getTelefone());
+                        commandInserir.Parameters.AddWithValue("@endereco_id", endereco_id);
+
+                        commandInserir.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Usuário cadastrado com sucesso.");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Erro ao conectar ao banco de dados: " + ex.Message, "Erro de Conexão", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Erro: " + ex.Message);
                 }
             }
         }

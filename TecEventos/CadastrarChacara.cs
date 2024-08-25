@@ -34,77 +34,89 @@ namespace TecEventos
             txtDescricao.Text = "";
         }
 
-       private void btnCadastrarChacara_Click(object sender, EventArgs e)
-       {
+        private void btnCadastrarChacara_Click(object sender, EventArgs e)
+        {
+            chacara.setInfoChacara(txtNomeChacara.Text, txtRua.Text, txtBairro.Text, txtNumChacara.Text, txtRegras.Text, txtRegras.Text, txtValor.Text, txtDescricao.Text);
 
-            /*string queryValorDiaria = "SELECT valor FROM ValorDiaria WHERE " +
-                "(SELECT valor_diaria_id, id FROM Chacara JOIN valores_diarias ON id.valores_diarias = valor_diaria_id.Chacara)";*/
+            string query = "INSERT INTO chacara(nome, endereco_id, regras_id) VALUES" +
+                "(@nome, @endereco_id, @regras_id)";
+            string queryEnderecoID = "SELECT id FROM enderecos WHERE numero = @numero AND bairro = @bairro";
+            string queryRegrasID = "SELECT id FROM regras WHERE descricao = @descricao";
 
-            /*using (MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString()))
+            using (MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString()))
             {
                 try
                 {
                     connection.Open();
-                    MySqlCommand commandValorDiaria = new MySqlCommand(queryValorDiaria, connection);
-                    using (MySqlDataReader reader = commandValorDiaria.ExecuteReader())
+
+                    // Obter o ID do endereço
+                    int enderecoId = 0; // Inicializa com um valor padrão
+                    using (MySqlCommand commandEndereco = new MySqlCommand(queryEnderecoID, connection))
                     {
-                        if (reader.HasRows)
+                        commandEndereco.Parameters.AddWithValue("@bairro", txtBairro.Text);
+                        commandEndereco.Parameters.AddWithValue("@numero", txtNumChacara.Text);
+
+                        using (MySqlDataReader reader = commandEndereco.ExecuteReader())
                         {
-                            while (reader.Read())
+                            if (reader.Read())
                             {
-                                var valor = reader["valor"];
-                                Console.WriteLine(valor);
+                                enderecoId = Convert.ToInt32(reader["id"]);
                             }
+                        }
+                    }
+
+                    // Obter o ID das regras
+                    int regrasId = 0; // Inicializa com um valor padrão
+                    using (MySqlCommand commandRegras = new MySqlCommand(queryRegrasID, connection))
+                    {
+                        commandRegras.Parameters.AddWithValue("@descricao", txtRegras.Text);
+
+                        using (MySqlDataReader reader = commandRegras.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                regrasId = Convert.ToInt32(reader["id"]); // Converte para inteiro
+                            }
+                        }
+                    }
+
+                    if (enderecoId == 0 || regrasId == 0)
+                    {
+                        MessageBox.Show("Não foi possível encontrar o endereço ou as regras. Verifique os dados fornecidos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    // Inserir a chácara
+                    using (MySqlCommand commandInserir = new MySqlCommand(query, connection))
+                    {
+                        commandInserir.Parameters.AddWithValue("@nome", txtNomeChacara.Text);
+                        commandInserir.Parameters.AddWithValue("@endereco_id", enderecoId);
+                        commandInserir.Parameters.AddWithValue("@regras_id", regrasId);
+
+                        int linhasAfetadas = commandInserir.ExecuteNonQuery();
+                        if (linhasAfetadas > 0)
+                        {
+                            MessageBox.Show("Chácara cadastrada com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Nenhuma linha afetada. Verifique os dados e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Valor não encontrado.", "Valor não encontrado no banco de dados.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }*/
-            chacara.setInfoChacara(txtNomeChacara.Text, txtRua.Text, txtBairro.Text, txtNumChacara.Text, txtRegras.Text, txtRegras.Text, txtValor.Text, txtDescricao.Text);
-
-            string query = "INSERT INTO Chacara(nome, valor_diaria, endereco_rua, endereco_numero, endereco_bairro, regras_politicas, descricao) VALUES" +
-                "(@nome, @valor_diaria, @endereco_rua, @endereco_numero, @endereco_bairro, @regras_politicas, @descricao)";
-            MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString());
-
-            using(MySqlCommand command = new MySqlCommand(query, connection))
-            {
-                try
-                {
-                    command.Parameters.AddWithValue("@nome", chacara.getNome());
-                    command.Parameters.AddWithValue("@valor_diaria", chacara.getValorDiaria());
-                    command.Parameters.AddWithValue("@endereco_rua", chacara.getRua());
-                    command.Parameters.AddWithValue("@endereco_numero", chacara.getNumero());
-                    command.Parameters.AddWithValue("@endereco_bairro", chacara.getBairro());
-                    command.Parameters.AddWithValue("@regras_politicas", chacara.getRegras());
-                    command.Parameters.AddWithValue("@descricao", chacara.getDescricao());
-
-                    connection.Open();
-
-                    int linhasAfetadas = command.ExecuteNonQuery();
-                    if(linhasAfetadas > 0)
-                    {
-                        MessageBox.Show("Chácara cadastrada com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Nenhuma linha afetada. Verifique os dados e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
-                catch (Exception ex)
-                {
                     MessageBox.Show("Erro ao adicionar a chácara: " + ex.Message, "Conexão com o banco de dados", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }           
+                }
             }
         }
-        
+
 
         private void btnHome_Click(object sender, EventArgs e)
         {
             this.Close();
             /*fecha a tela*/
         }
+
     }
 }
