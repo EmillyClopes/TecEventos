@@ -132,6 +132,7 @@
     </Compile>
     <Compile Include="GetSetAgendarAlugueis.cs" />
     <Compile Include="GetSetCadastrarCliente.cs" />
+    <Compile Include="GetSetChacara.cs" />
     <Compile Include="GetSetDatasComemorativas.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
