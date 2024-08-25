@@ -84,7 +84,7 @@ CREATE TABLE datas_comemorativas (
 );
 
 # 9 logins
-CREATE TABLE logins (
+CREATE TABLE Adm (
     id INT NOT NULL AUTO_INCREMENT,
     usuario_id INTEGER REFERENCES usuarios(id),
     senha VARCHAR(255) NOT NULL,
@@ -147,6 +147,22 @@ CREATE TABLE contratos (
     PRIMARY KEY (id),
     FOREIGN KEY (agendamento_id) REFERENCES agendamento(id)
 );
+# 14 Login
+CREATE TABLE LoginRegistro (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT,
+    login_datetime DATETIME,
+    FOREIGN KEY (usuario_id) REFERENCES Usuarios(id)
+);
+
+#15 Logout
+CREATE TABLE LogoutRegistro (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT,
+    logout_datetime DATETIME,
+    FOREIGN KEY (usuario_id) REFERENCES Usuarios(id)
+);
+
 
 #Inserindo Endereços
 INSERT INTO enderecos (rua, numero, bairro) VALUES ('Rua das Flores', '123', 'Jardim Primavera');
