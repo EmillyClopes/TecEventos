@@ -13,15 +13,19 @@ namespace TecEventos
     public partial class Home : Form
     {
         private AbrirForms abrirForms; //Chamar a classe de ABRIR FORMS
-        public Home()
+        private int usuarioId;
+        public Home(int usuarioId)
         {
             InitializeComponent();
             abrirForms = new AbrirForms(PanelHome); // Passa o painel para a classe AbrirForms
+            this.usuarioId = usuarioId;
+            
+
         }
 
         private void BtnSair_Click(object sender, EventArgs e)
         {
-            using (var confirmExit = new Saida()) // Substituímos "ConfirmExit" por "Saida"
+            using (var confirmExit = new Saida(usuarioId)) // Passa o usuarioId para o formulário Saida
             {
                 var result = confirmExit.ShowDialog();
 
@@ -29,7 +33,6 @@ namespace TecEventos
                 {
                     Application.Exit(); // Fecha a aplicação
                 }
-                // Se o resultado for "No" ou qualquer outro, nada acontece e volta para a tela atual.
             }
         }
 

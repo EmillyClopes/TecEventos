@@ -13,19 +13,19 @@ namespace TecEventos
 {
     public partial class Saida : Form
     {
-        private int usuarioId; // Armazena o ID do usuário que está saindo
-        ConexaoBanco conexaoBanco;
-        public Saida()
+        private int usuarioId; 
+        
+        public Saida(int usuarioId)
         {
             InitializeComponent();
-            usuarioId = userId; // Inicializa o ID do usuário
-            conexaoBanco = new ConexaoBanco();
+            this.usuarioId = usuarioId;
+            
 
         }
 
         private void BtnYes_Click(object sender, EventArgs e)
         {
-            RegistrarLogout(usuarioId); // Registra o logout antes de fechar a aplicação
+            RegistrarLogout(usuarioId); // Registra o horário de logout
             this.DialogResult = DialogResult.Yes; // Retorna "Yes" para fechar a aplicação
             Application.Exit();
         }
@@ -37,24 +37,22 @@ namespace TecEventos
         }
         private void RegistrarLogout(int usuarioId)
         {
-            // Consulta SQL para inserir o registro de logout
-            string query = "INSERT INTO LogoutRegistro (usuario_id, logout_datetime) VALUES (@usuarioId, @logoutDateTime)";
+            string query = "INSERT INTO LogoutRegistro (usuario_id, logout_datetime) VALUES (@usuarioId, @logoutDatetime)";
 
-            using (MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString()))
+            using (MySqlConnection connection = new MySqlConnection(new ConexaoBanco().getConnectionString()))
             {
                 try
                 {
                     connection.Open();
-
                     MySqlCommand command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@usuarioId", usuarioId);
-                    command.Parameters.AddWithValue("@logoutDateTime", DateTime.Now); // Define o timestamp do logout
+                    command.Parameters.AddWithValue("@logoutDatetime", DateTime.Now);
 
-                    command.ExecuteNonQuery(); // Executa a inserção
+                    command.ExecuteNonQuery();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Erro ao registrar o logout: " + ex.Message, "Erro de Registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Erro ao registrar logout: " + ex.Message, "Erro de Registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
