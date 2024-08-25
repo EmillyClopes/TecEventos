@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pagamentos));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnHome = new System.Windows.Forms.Button();
             this.btnVisuPag = new System.Windows.Forms.Button();
             this.BtnCriarPag = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -53,30 +52,13 @@
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.btnHome);
             this.panel2.Controls.Add(this.btnVisuPag);
             this.panel2.Controls.Add(this.BtnCriarPag);
-            this.panel2.Location = new System.Drawing.Point(524, 132);
+            this.panel2.Location = new System.Drawing.Point(152, 65);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(346, 417);
+            this.panel2.Size = new System.Drawing.Size(1049, 522);
             this.panel2.TabIndex = 2;
-            // 
-            // btnHome
-            // 
-            this.btnHome.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnHome.BackColor = System.Drawing.Color.Azure;
-            this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnHome.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnHome.Location = new System.Drawing.Point(255, 3);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(86, 25);
-            this.btnHome.TabIndex = 157;
-            this.btnHome.Text = "Home";
-            this.btnHome.UseVisualStyleBackColor = false;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // btnVisuPag
             // 
@@ -85,7 +67,7 @@
             this.btnVisuPag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVisuPag.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVisuPag.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnVisuPag.Location = new System.Drawing.Point(39, 245);
+            this.btnVisuPag.Location = new System.Drawing.Point(377, 321);
             this.btnVisuPag.Name = "btnVisuPag";
             this.btnVisuPag.Size = new System.Drawing.Size(262, 79);
             this.btnVisuPag.TabIndex = 73;
@@ -100,7 +82,7 @@
             this.BtnCriarPag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCriarPag.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCriarPag.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BtnCriarPag.Location = new System.Drawing.Point(39, 100);
+            this.BtnCriarPag.Location = new System.Drawing.Point(377, 138);
             this.BtnCriarPag.Name = "BtnCriarPag";
             this.BtnCriarPag.Size = new System.Drawing.Size(262, 79);
             this.BtnCriarPag.TabIndex = 72;
@@ -132,6 +114,5 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button BtnCriarPag;
         private System.Windows.Forms.Button btnVisuPag;
-        private System.Windows.Forms.Button btnHome;
     }
 }

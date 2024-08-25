@@ -81,10 +81,10 @@
             this.panel1.Controls.Add(this.NomeClienteTxt);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(158, 99);
+            this.panel1.Location = new System.Drawing.Point(144, 95);
             this.panel1.MaximumSize = new System.Drawing.Size(1118, 650);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1070, 539);
+            this.panel1.Size = new System.Drawing.Size(1104, 539);
             this.panel1.TabIndex = 71;
             // 
             // label10
@@ -131,7 +131,7 @@
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnHome.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnHome.Location = new System.Drawing.Point(980, -53);
+            this.btnHome.Location = new System.Drawing.Point(997, -53);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(86, 25);
             this.btnHome.TabIndex = 154;
@@ -332,7 +332,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label label8;
@@ -355,5 +354,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox TxtAno;
         private System.Windows.Forms.TextBox TxtMes;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

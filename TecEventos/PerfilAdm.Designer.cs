@@ -31,19 +31,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PerfilAdm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAtualizar = new System.Windows.Forms.Button();
-            this.SenhaTxt = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.TelefoneTxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.EnderecoTxt = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.EmailTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.NomeCompTxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblPerfilAdm = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnHome = new System.Windows.Forms.Button();
+            this.EnderecoNumeroTxt = new System.Windows.Forms.TextBox();
+            this.EnderecoBairroTxt = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.EnderecoRuaTxt = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -53,14 +54,15 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btnHome);
-            this.panel1.Controls.Add(this.btnAtualizar);
-            this.panel1.Controls.Add(this.SenhaTxt);
+            this.panel1.Controls.Add(this.EnderecoNumeroTxt);
+            this.panel1.Controls.Add(this.EnderecoBairroTxt);
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.EnderecoRuaTxt);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.btnAtualizar);
             this.panel1.Controls.Add(this.TelefoneTxt);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.EnderecoTxt);
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.EmailTxt);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.NomeCompTxt);
@@ -86,25 +88,6 @@
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = false;
             // 
-            // SenhaTxt
-            // 
-            this.SenhaTxt.BackColor = System.Drawing.SystemColors.Window;
-            this.SenhaTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SenhaTxt.Location = new System.Drawing.Point(141, 349);
-            this.SenhaTxt.Name = "SenhaTxt";
-            this.SenhaTxt.Size = new System.Drawing.Size(606, 26);
-            this.SenhaTxt.TabIndex = 78;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(79, 352);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 19);
-            this.label6.TabIndex = 77;
-            this.label6.Text = "Senha:";
-            // 
             // TelefoneTxt
             // 
             this.TelefoneTxt.BackColor = System.Drawing.SystemColors.Window;
@@ -123,25 +106,6 @@
             this.label5.Size = new System.Drawing.Size(69, 19);
             this.label5.TabIndex = 75;
             this.label5.Text = "Telefone:";
-            // 
-            // EnderecoTxt
-            // 
-            this.EnderecoTxt.BackColor = System.Drawing.SystemColors.Window;
-            this.EnderecoTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EnderecoTxt.Location = new System.Drawing.Point(141, 229);
-            this.EnderecoTxt.Name = "EnderecoTxt";
-            this.EnderecoTxt.Size = new System.Drawing.Size(606, 26);
-            this.EnderecoTxt.TabIndex = 74;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(59, 232);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 19);
-            this.label4.TabIndex = 73;
-            this.label4.Text = "Endereço:";
             // 
             // EmailTxt
             // 
@@ -202,21 +166,59 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // btnHome
+            // EnderecoNumeroTxt
             // 
-            this.btnHome.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnHome.BackColor = System.Drawing.Color.Azure;
-            this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnHome.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnHome.Location = new System.Drawing.Point(720, 3);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(86, 25);
-            this.btnHome.TabIndex = 155;
-            this.btnHome.Text = "Home";
-            this.btnHome.UseVisualStyleBackColor = false;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            this.EnderecoNumeroTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EnderecoNumeroTxt.Location = new System.Drawing.Point(657, 233);
+            this.EnderecoNumeroTxt.Name = "EnderecoNumeroTxt";
+            this.EnderecoNumeroTxt.Size = new System.Drawing.Size(87, 26);
+            this.EnderecoNumeroTxt.TabIndex = 92;
+            // 
+            // EnderecoBairroTxt
+            // 
+            this.EnderecoBairroTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EnderecoBairroTxt.Location = new System.Drawing.Point(428, 233);
+            this.EnderecoBairroTxt.Name = "EnderecoBairroTxt";
+            this.EnderecoBairroTxt.Size = new System.Drawing.Size(153, 26);
+            this.EnderecoBairroTxt.TabIndex = 91;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(587, 237);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(64, 19);
+            this.label7.TabIndex = 90;
+            this.label7.Text = "Numero:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(380, 237);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 19);
+            this.label6.TabIndex = 89;
+            this.label6.Text = "Bairro:";
+            // 
+            // EnderecoRuaTxt
+            // 
+            this.EnderecoRuaTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EnderecoRuaTxt.Location = new System.Drawing.Point(141, 233);
+            this.EnderecoRuaTxt.Name = "EnderecoRuaTxt";
+            this.EnderecoRuaTxt.Size = new System.Drawing.Size(223, 26);
+            this.EnderecoRuaTxt.TabIndex = 88;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(91, 233);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 19);
+            this.label4.TabIndex = 87;
+            this.label4.Text = "Rua:";
             // 
             // PerfilAdm
             // 
@@ -242,17 +244,18 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnAtualizar;
-        private System.Windows.Forms.TextBox SenhaTxt;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox TelefoneTxt;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox EnderecoTxt;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox EmailTxt;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox NomeCompTxt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblPerfilAdm;
-        private System.Windows.Forms.Button btnHome;
+        private System.Windows.Forms.TextBox EnderecoNumeroTxt;
+        private System.Windows.Forms.TextBox EnderecoBairroTxt;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox EnderecoRuaTxt;
+        private System.Windows.Forms.Label label4;
     }
 }

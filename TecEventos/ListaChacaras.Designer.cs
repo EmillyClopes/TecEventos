@@ -34,7 +34,6 @@
             this.txtNomeChacara = new System.Windows.Forms.TextBox();
             this.btnProcurar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnHome = new System.Windows.Forms.Button();
             this.lblChacarasCadastradas = new System.Windows.Forms.Label();
             this.GridViewChacarasCadastradas = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -48,7 +47,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1455, 675);
+            this.pictureBox1.Size = new System.Drawing.Size(1386, 675);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 69;
             this.pictureBox1.TabStop = false;
@@ -60,13 +59,12 @@
             this.panel1.Controls.Add(this.txtNomeChacara);
             this.panel1.Controls.Add(this.btnProcurar);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnHome);
             this.panel1.Controls.Add(this.lblChacarasCadastradas);
             this.panel1.Controls.Add(this.GridViewChacarasCadastradas);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(197, 122);
+            this.panel1.Location = new System.Drawing.Point(156, 77);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1137, 488);
+            this.panel1.Size = new System.Drawing.Size(1082, 563);
             this.panel1.TabIndex = 78;
             // 
             // txtNomeChacara
@@ -103,22 +101,6 @@
             this.label1.TabIndex = 156;
             this.label1.Text = "Pesquisa por nome:";
             // 
-            // btnHome
-            // 
-            this.btnHome.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnHome.BackColor = System.Drawing.Color.Azure;
-            this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnHome.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnHome.Location = new System.Drawing.Point(1046, -41);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(86, 25);
-            this.btnHome.TabIndex = 154;
-            this.btnHome.Text = "Home";
-            this.btnHome.UseVisualStyleBackColor = false;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
             // lblChacarasCadastradas
             // 
             this.lblChacarasCadastradas.AutoSize = true;
@@ -136,14 +118,14 @@
             this.GridViewChacarasCadastradas.Location = new System.Drawing.Point(283, 68);
             this.GridViewChacarasCadastradas.Name = "GridViewChacarasCadastradas";
             this.GridViewChacarasCadastradas.RowHeadersWidth = 51;
-            this.GridViewChacarasCadastradas.Size = new System.Drawing.Size(807, 383);
+            this.GridViewChacarasCadastradas.Size = new System.Drawing.Size(758, 440);
             this.GridViewChacarasCadastradas.TabIndex = 125;
             // 
             // ListaChacaras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1455, 675);
+            this.ClientSize = new System.Drawing.Size(1386, 675);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -164,7 +146,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblChacarasCadastradas;
         private System.Windows.Forms.DataGridView GridViewChacarasCadastradas;
-        private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnProcurar;
         private System.Windows.Forms.TextBox txtNomeChacara;

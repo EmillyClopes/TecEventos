@@ -12,7 +12,7 @@ namespace TecEventos
 
         public ConexaoBanco()
         {
-            connectionString = "server=localhost;database=TecEventos;uid=root;pwd=ga130105";
+            connectionString = "server=localhost;database=TecEventos;uid=root;pwd=debs";
         }
         public string getConnectionString()
         {

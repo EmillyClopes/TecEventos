@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Alterar));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnAlterar = new System.Windows.Forms.Button();
-            this.btnHome = new System.Windows.Forms.Button();
             this.txtNomeChacara = new System.Windows.Forms.TextBox();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.lblInfo = new System.Windows.Forms.Label();
@@ -53,7 +53,6 @@
             this.lblInfoAdicional = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblBairro = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -65,7 +64,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1475, 688);
+            this.pictureBox1.Size = new System.Drawing.Size(1386, 688);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -77,7 +76,6 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.btnAlterar);
-            this.panel1.Controls.Add(this.btnHome);
             this.panel1.Controls.Add(this.txtNomeChacara);
             this.panel1.Controls.Add(this.btnLimpar);
             this.panel1.Controls.Add(this.lblInfo);
@@ -99,11 +97,20 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lblBairro);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(197, 81);
+            this.panel1.Location = new System.Drawing.Point(153, 81);
             this.panel1.MaximumSize = new System.Drawing.Size(1093, 561);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1093, 561);
             this.panel1.TabIndex = 75;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(177)))), ((int)(((byte)(206)))));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(572, 82);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(496, 440);
+            this.dataGridView1.TabIndex = 158;
             // 
             // btnAlterar
             // 
@@ -118,22 +125,6 @@
             this.btnAlterar.TabIndex = 157;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = false;
-            // 
-            // btnHome
-            // 
-            this.btnHome.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnHome.BackColor = System.Drawing.Color.Azure;
-            this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnHome.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnHome.Location = new System.Drawing.Point(1002, 3);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(86, 25);
-            this.btnHome.TabIndex = 156;
-            this.btnHome.Text = "Home";
-            this.btnHome.UseVisualStyleBackColor = false;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // txtNomeChacara
             // 
@@ -329,20 +320,11 @@
             this.lblBairro.TabIndex = 60;
             this.lblBairro.Text = "Bairro";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(177)))), ((int)(((byte)(206)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(572, 82);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(496, 440);
-            this.dataGridView1.TabIndex = 158;
-            // 
             // Alterar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1475, 688);
+            this.ClientSize = new System.Drawing.Size(1386, 688);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -363,7 +345,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnAlterar;
-        private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.TextBox txtNomeChacara;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Label lblInfo;

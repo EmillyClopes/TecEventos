@@ -38,7 +38,6 @@
             this.TxtChacara = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnHome = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -58,7 +57,6 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btnHome);
             this.panel1.Controls.Add(this.btnPesquisar);
             this.panel1.Controls.Add(this.txtCliente);
             this.panel1.Controls.Add(this.label3);
@@ -66,10 +64,10 @@
             this.panel1.Controls.Add(this.TxtChacara);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(161, 71);
+            this.panel1.Location = new System.Drawing.Point(-21, -9);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1029, 492);
+            this.panel1.Size = new System.Drawing.Size(1080, 539);
             this.panel1.TabIndex = 4;
             // 
             // btnPesquisar
@@ -149,22 +147,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(701, 391);
             this.dataGridView1.TabIndex = 0;
             // 
-            // btnHome
-            // 
-            this.btnHome.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnHome.BackColor = System.Drawing.Color.Azure;
-            this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnHome.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnHome.Location = new System.Drawing.Point(938, 3);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(86, 25);
-            this.btnHome.TabIndex = 158;
-            this.btnHome.Text = "Home";
-            this.btnHome.UseVisualStyleBackColor = false;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
             // VisualizacaoPag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,6 +178,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnPesquisar;
-        private System.Windows.Forms.Button btnHome;
     }
 }

@@ -27,12 +27,12 @@ namespace TecEventos
 
         private void BtnCriarPag_Click_1(object sender, EventArgs e)
         {
-            abrirForms.AbreForm(new VisualizacaoPag());
+            abrirForms.AbreForm(new ControlePagamentos());
         }
 
         private void btnVisuPag_Click_1(object sender, EventArgs e)
         {
-            abrirForms.AbreForm(new ControlePagamentos());
+            abrirForms.AbreForm(new VisualizacaoPag());
         }
     }
 }

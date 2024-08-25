@@ -1,172 +1,239 @@
 -- Criação do banco de dados
+DROP SCHEMA IF EXISTS TecEventos;
+
 CREATE DATABASE IF NOT EXISTS TecEventos;
+
 USE TecEventos;
 
-CREATE TABLE Usuario (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome_completo VARCHAR(100),
-    email VARCHAR(100) UNIQUE,
-    endereco_rua VARCHAR(255),
-    endereco_numero VARCHAR(50),
-    endereco_bairro VARCHAR(100),
+# 1 enderecos
+CREATE TABLE enderecos (
+    id INT NOT NULL AUTO_INCREMENT,
+    rua VARCHAR(100) NOT NULL,
+    numero VARCHAR(10) NOT NULL,
+    bairro VARCHAR(50) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+
+# 2 usuários
+CREATE TABLE usuarios (
+    id INT NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
     telefone VARCHAR(20),
-    senha VARCHAR(255)
+    endereco_id INT(11),
+    PRIMARY KEY (id),
+    FOREIGN KEY (endereco_id) REFERENCES enderecos(id)
 );
 
-CREATE TABLE Chacara (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100),
-    valor_diaria DECIMAL(10,2),
-    endereco_rua VARCHAR(255),
-    endereco_numero VARCHAR(50),
-    endereco_bairro VARCHAR(100),
-    regras_politicas TEXT,
-    descricao TEXT
+# 3 regras 
+CREATE TABLE regras (
+    id INT NOT NULL AUTO_INCREMENT,
+    descricao TEXT NOT NULL,
+    PRIMARY KEY (id)
 );
 
-CREATE TABLE Agendamento (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    entrada_data DATE,
-    saida_data DATE,
-    nome_cliente VARCHAR(100),
-    telefone_cliente VARCHAR(20),
+
+# 4 politicas
+CREATE TABLE politicas (
+    id INT NOT NULL AUTO_INCREMENT,
+    descricao TEXT NOT NULL,
+    PRIMARY KEY (id)
+);
+
+# 5 chacaras
+CREATE TABLE chacara (
+    id INT NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    endereco_id INT(11),
+    regras_id INT(11),
+    politicas_id INT(11),
+    PRIMARY KEY (id),
+    FOREIGN KEY (endereco_id) REFERENCES enderecos(id),
+    FOREIGN KEY (regras_id) REFERENCES regras(id),
+    FOREIGN KEY (politicas_id) REFERENCES politicas(id)
+);
+
+# 6 valores_diarias
+CREATE TABLE valores_diarias (
+    id INT NOT NULL AUTO_INCREMENT,
+    valor DECIMAL(10, 2) NOT NULL,
+    dia_semana VARCHAR(10) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+# 7 chacaras_valores_diarias
+CREATE TABLE chacaras_valores_diarias (
+    id INT NOT NULL AUTO_INCREMENT,
+    chacara_id INT(11),
+    valor_diaria_id INT(11),
+    FOREIGN KEY (chacara_id) REFERENCES chacara(id),
+    FOREIGN KEY (valor_diaria_id) REFERENCES valores_diarias(id),
+    PRIMARY KEY (id),
+    UNIQUE INDEX idx_chacaras_valores_diarias (chacara_id, valor_diaria_id)
+);
+
+# 8 datas_comemorativas
+CREATE TABLE datas_comemorativas (
+    id INT NOT NULL AUTO_INCREMENT,
+    descricao VARCHAR(100),
+    valor_promocional_id INT(11),
+    data_comemorativa DATE NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (valor_promocional_id) REFERENCES valores_diarias(id)
+);
+
+# 9 logins
+CREATE TABLE logins (
+    id INT NOT NULL AUTO_INCREMENT,
+    usuario_id INTEGER REFERENCES usuarios(id),
+    senha VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+);
+
+# 10 agendamentos
+CREATE TABLE agendamento (
+    id INT NOT NULL AUTO_INCREMENT,
+    entrada_data DATE NOT NULL,
+    saida_data DATE NOT NULL,
+    usuario_id INT(11),
+    chacara_id INT(11),
+    valor_agendamento DECIMAL(10, 2) NOT NULL,
     status ENUM('Confirmada', 'Pendente', 'Cancelada'),
-    valor_total DECIMAL(10,2),
-    chacara_id INT,
-    usuario_id INT,
-    FOREIGN KEY (chacara_id) REFERENCES Chacara(id),
-    FOREIGN KEY (usuario_id) REFERENCES Usuario(id)
+    PRIMARY KEY (id),
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
+    FOREIGN KEY (chacara_id) REFERENCES chacara(id),
+    UNIQUE INDEX idx_agendamento (chacara_id, entrada_data)
 );
 
-CREATE TABLE ControlePagamentos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome_cliente VARCHAR(100),
-    chacara_id INT,
-    valor_aluguel DECIMAL(10,2),
-    valor_pago DECIMAL(10,2),
-    data_pagamento DATE,
+# 11 controle_pagamentos
+CREATE TABLE controle_pagamentos (
+    id INT NOT NULL AUTO_INCREMENT,
+    usuario_id INT(11),
+    chacara_id INT(11),
+    agendamento_id INT(11),
+    valor_pago DECIMAL(10, 2) NOT NULL,
+    data_pagamento DATE NOT NULL,
     metodo_pagamento ENUM('PIX', 'Depósito Bancário', 'Cartão Débito', 'Cartão Crédito'),
     status_pagamento ENUM('Pago', 'Pendente', 'Cancelado'),
-    FOREIGN KEY (chacara_id) REFERENCES Chacara(id)
+    PRIMARY KEY (id),
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
+    FOREIGN KEY (chacara_id) REFERENCES chacara(id),
+    FOREIGN KEY (agendamento_id) REFERENCES agendamento(id)
 );
 
-CREATE TABLE DatasComemorativas (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome_data VARCHAR(100),
-    dia INT,
-    mes INT,
-    ano INT,
-    descricao TEXT,
-    promocoes TEXT,
-    pacotes TEXT
-);
-
-CREATE TABLE Disponibilidade (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    chacara_id INT,
-    data_disponibilidade DATE,
-    disponivel BOOLEAN,
-    FOREIGN KEY (chacara_id) REFERENCES Chacara(id)
-);
-
-CREATE TABLE Feedback (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome_cliente VARCHAR(100),
-    data_feedback DATE,
-    comentario TEXT,
-    avaliacao INT
-);
-
-CREATE TABLE EnderecoChacara (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    chacara_id INT,
-    endereco_rua VARCHAR(255),
-    endereco_numero VARCHAR(50),
-    endereco_bairro VARCHAR(100),
-    cidade VARCHAR(100),
-    estado VARCHAR(100),
-    cep VARCHAR(10),
-    FOREIGN KEY (chacara_id) REFERENCES Chacara(id)
-);
-
-CREATE TABLE ReservaChacara (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    agendamento_id INT,
-    chacara_id INT,
-    data_reserva DATE,
-    hora_reserva TIME,
-    status ENUM('Confirmada', 'Pendente', 'Cancelada'),
-    FOREIGN KEY (agendamento_id) REFERENCES Agendamento(id),
-    FOREIGN KEY (chacara_id) REFERENCES Chacara(id)
-);
-
-CREATE TABLE HistoricoPagamentos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    controle_pagamentos_id INT,
-    data_historico DATE,
-    descricao TEXT,
-    FOREIGN KEY (controle_pagamentos_id) REFERENCES ControlePagamentos(id)
-);
-
-CREATE TABLE RegrasPoliticas (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    chacara_id INT,
-    descricao TEXT,
-    data_atualizacao DATE,
-    FOREIGN KEY (chacara_id) REFERENCES Chacara(id)
-);
-
-CREATE TABLE Promocoes (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    data_comemorativa_id INT,
-    descricao TEXT,
-    valor_desconto DECIMAL(10,2),
-    FOREIGN KEY (data_comemorativa_id) REFERENCES DatasComemorativas(id)
-);
-
-CREATE TABLE Pacotes (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    data_comemorativa_id INT,
-    descricao TEXT,
-    valor_pacote DECIMAL(10,2),
-    FOREIGN KEY (data_comemorativa_id) REFERENCES DatasComemorativas(id)
-);
-
-CREATE TABLE ClienteContato (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    cliente_id INT,
-    tipo_contato ENUM('Telefone', 'Email', 'Outros'),
-    descricao TEXT,
-    FOREIGN KEY (cliente_id) REFERENCES Usuario(id)
-);
-
-CREATE TABLE LogAcesso (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    usuario_id INT,
-    data_acesso DATE,
-    hora_acesso TIME,
-    acao TEXT,
-    FOREIGN KEY (usuario_id) REFERENCES Usuario(id)
+# 12 disponibilidade
+CREATE TABLE disponibilidade (
+    id INT NOT NULL AUTO_INCREMENT,
+    chacara_id INT(11),
+    data DATE NOT NULL,
+    disponivel BOOLEAN NOT NULL DEFAULT TRUE,
+    PRIMARY KEY (id),
+    FOREIGN KEY (chacara_id) REFERENCES chacara(id),
+    UNIQUE INDEX idx_disponibilidade (chacara_id, data)
 );
 
 
--- Inserir administrador padrão na tabela de usuários
-INSERT INTO Usuario (nome_completo, email, endereco_rua, endereco_numero, endereco_bairro, telefone, senha)
-VALUES ('Administrador', 'admin@teceventos.com', 'Rua Central', '1', 'Centro', '000000000', 'admin');
-select * from Usuario;
--- Chacaras de teste
-INSERT INTO Chacara (nome, valor_diaria, endereco_rua, endereco_numero, endereco_bairro, regras_politicas, descricao) 
-VALUES ('Chácara Lago Azul', 250.00, 'Rua das Flores', '123', 'Jardim das Rosas', 'Não é permitido som alto após às 22h.', 'Chácara com vista para o lago, área para churrasco e jardim amplo.');
 
-INSERT INTO Chacara (nome, valor_diaria, endereco_rua, endereco_numero, endereco_bairro, regras_politicas, descricao) 
-VALUES ('Chácara do Sol', 350.00, 'Avenida das Palmeiras', '456', 'Centro', 'Proibido trazer animais de estimação.', 'Chácara equipada com piscina, quadra de esportes, e churrasqueira.');
+# 13 contratos
+CREATE TABLE contratos (
+    id INT NOT NULL AUTO_INCREMENT,
+    agendamento_id INT(11),
+    data_criacao DATE NOT NULL,
+    detalhes TEXT NOT NULL,
+    assinatura_cliente BOOLEAN NOT NULL DEFAULT FALSE,
+    assinatura_proprietario BOOLEAN NOT NULL DEFAULT FALSE,
+    PRIMARY KEY (id),
+    FOREIGN KEY (agendamento_id) REFERENCES agendamento(id)
+);
 
-INSERT INTO Chacara (nome, valor_diaria, endereco_rua, endereco_numero, endereco_bairro, regras_politicas, descricao) 
-VALUES ('Chácara Vista do Alto', 400.00, 'Estrada do Alto', '789', 'Montanhas Verdes', 'É necessário fazer reserva antecipada.', 'Chácara com vista panorâmica para as montanhas, ideal para eventos e celebrações.');
+#Inserindo Endereços
+INSERT INTO enderecos (rua, numero, bairro) VALUES ('Rua das Flores', '123', 'Jardim Primavera');
+INSERT INTO enderecos (rua, numero, bairro) VALUES ('Avenida Central', '456', 'Centro');
+INSERT INTO enderecos (rua, numero, bairro) VALUES ('Rua do Sol', '789', 'Bela Vista');
 
-INSERT INTO Chacara (nome, valor_diaria, endereco_rua, endereco_numero, endereco_bairro, regras_politicas, descricao) 
-VALUES ('Chácara Rio Azul', 300.00, 'Rua do Rio', '101', 'Beira-Rio', 'Não é permitido fazer fogueiras.', 'Chácara com acesso direto ao rio e área para camping, perfeita para atividades ao ar livre.');
+#Inserindo Regras
+INSERT INTO regras (descricao) VALUES ('Piscina disponível apenas até às 20h');
+INSERT INTO regras (descricao) VALUES ('Proibido som alto após as 22h');
 
-INSERT INTO Chacara (nome, valor_diaria, endereco_rua, endereco_numero, endereco_bairro, regras_politicas, descricao) 
-VALUES ('Chácara Jardim Encantado', 500.00, 'Rua das Orquídeas', '202', 'Vila das Flores', 'Não é permitido o uso de fogos de artifício.', 'Chácara com suíte, cozinha equipada, espaço para eventos e ambiente tranquilo.');
+#Inserindo Políticas
+INSERT INTO politicas (descricao) VALUES ('Check-in a partir das 14h e check-out até às 12h');
+INSERT INTO politicas (descricao) VALUES ('Animais de estimação são permitidos mediante aviso prévio');
+
+#Inserindo Chácaras
+INSERT INTO chacara (nome, endereco_id, regras_id, politicas_id) VALUES 
+('Chácara Vista Alegre', 
+    (SELECT id FROM enderecos WHERE rua = 'Rua das Flores' AND numero = '123'),
+    (SELECT id FROM regras WHERE descricao = 'Proibido som alto após as 22h'),
+    (SELECT id FROM politicas WHERE descricao = 'Check-in a partir das 14h e check-out até às 12h')
+);
+INSERT INTO chacara (nome, endereco_id, regras_id, politicas_id) VALUES ('Chácara Paraíso', 
+    (SELECT id FROM enderecos WHERE rua = 'Avenida Central' AND numero = '456'),
+    (SELECT id FROM regras WHERE descricao = 'Piscina disponível apenas até às 20h'),
+    (SELECT id FROM politicas WHERE descricao = 'Animais de estimação são permitidos mediante aviso prévio')
+);
+
+#Inserindo Valores de Diárias
+INSERT INTO valores_diarias (valor, dia_semana) VALUES (500.00, 'Segunda-feira');
+INSERT INTO valores_diarias (valor, dia_semana) VALUES (600.00, 'Sábado');
+INSERT INTO valores_diarias (valor, dia_semana) VALUES (700.00, 'Domingo');
+
+#Inserindo Valores de Diárias para Chácaras
+INSERT INTO chacaras_valores_diarias (chacara_id, valor_diaria_id) VALUES ((SELECT id FROM chacara WHERE nome = 'Chácara Vista Alegre'), 
+    (SELECT id FROM valores_diarias WHERE valor = 500.00 AND dia_semana = 'Segunda-feira'));
+INSERT INTO chacaras_valores_diarias (chacara_id, valor_diaria_id) VALUES ((SELECT id FROM chacara WHERE nome = 'Chácara Vista Alegre'), 
+    (SELECT id FROM valores_diarias WHERE valor = 600.00 AND dia_semana = 'Sábado'));
+INSERT INTO chacaras_valores_diarias (chacara_id, valor_diaria_id) VALUES ((SELECT id FROM chacara WHERE nome = 'Chácara Paraíso'), 
+    (SELECT id FROM valores_diarias WHERE valor = 700.00 AND dia_semana = 'Domingo'));
+
+#Inserindo Datas Comemorativas
+INSERT INTO datas_comemorativas (descricao, valor_promocional_id, data_comemorativa) VALUES ('Natal', 
+    (SELECT id FROM valores_diarias WHERE valor = 700.00 AND dia_semana = 'Domingo'), '2024-12-25');
+INSERT INTO datas_comemorativas (descricao, valor_promocional_id, data_comemorativa) VALUES  ('Ano Novo', 
+    (SELECT id FROM valores_diarias WHERE valor = 600.00 AND dia_semana = 'Sábado'), '2024-12-31');
+
+#Inserindo Logins
+INSERT INTO logins (usuario_id, senha) VALUES ((SELECT id FROM usuarios WHERE email = 'joao@gmail.com'), 'senha123');
+INSERT INTO logins (usuario_id, senha) VALUES ((SELECT id FROM usuarios WHERE email = 'maria@gmail.com'), 'senha456');
+
+#Inserindo Usuários
+INSERT INTO usuarios (nome, email, telefone, endereco_id) VALUES 
+('João da Silva', 'joao@gmail.com', '11999999999', 
+    (SELECT id FROM enderecos WHERE rua = 'Rua das Flores' AND numero = '123'));
+INSERT INTO usuarios (nome, email, telefone, endereco_id) VALUES ('Maria Oliveira', 'maria@gmail.com', '11988888888', 
+    (SELECT id FROM enderecos WHERE rua = 'Avenida Central' AND numero = '456'));
+
+#Inserindo Agendamentos
+INSERT INTO agendamento (entrada_data, saida_data, usuario_id, chacara_id, valor_agendamento, status) VALUES 
+('2024-12-24', '2024-12-26', 
+    (SELECT id FROM usuarios WHERE email = 'joao@gmail.com'),
+    (SELECT id FROM chacara WHERE nome = 'Chácara Vista Alegre'),
+    1200.00, 'Confirmada');
+INSERT INTO agendamento (entrada_data, saida_data, usuario_id, chacara_id, valor_agendamento, status) VALUES ('2024-12-31', '2025-01-02', 
+    (SELECT id FROM usuarios WHERE email = 'maria@gmail.com'),
+    (SELECT id FROM chacara WHERE nome = 'Chácara Paraíso'),
+    1400.00, 'Pendente');
+
+#Inserindo Controle de Pagamentos
+INSERT INTO controle_pagamentos (usuario_id, chacara_id, agendamento_id, valor_pago, data_pagamento, metodo_pagamento, status_pagamento) VALUES 
+((SELECT id FROM usuarios WHERE email = 'joao@gmail.com'), 
+    (SELECT id FROM chacara WHERE nome = 'Chácara Vista Alegre'), 
+    (SELECT id FROM agendamento WHERE entrada_data = '2024-12-24' AND usuario_id = (SELECT id FROM usuarios WHERE email = 'joao@gmail.com')), 
+    1200.00, '2024-12-01', 'PIX', 'Pago');
+INSERT INTO controle_pagamentos (usuario_id, chacara_id, agendamento_id, valor_pago, data_pagamento, metodo_pagamento, status_pagamento) VALUES ((SELECT id FROM usuarios WHERE email = 'maria@gmail.com'), 
+    (SELECT id FROM chacara WHERE nome = 'Chácara Paraíso'), 
+    (SELECT id FROM agendamento WHERE entrada_data = '2024-12-31' AND usuario_id = (SELECT id FROM usuarios WHERE email = 'maria@gmail.com')), 
+    700.00, '2024-12-15', 'Cartão Crédito', 'Pendente');
+
+#Inserindo Disponibilidade
+INSERT INTO disponibilidade (chacara_id, data, disponivel) VALUES ((SELECT id FROM chacara WHERE nome = 'Chácara Vista Alegre'), '2024-12-24', FALSE);
+INSERT INTO disponibilidade (chacara_id, data, disponivel) VALUES ((SELECT id FROM chacara WHERE nome = 'Chácara Paraíso'), '2024-12-31', FALSE);
+INSERT INTO disponibilidade (chacara_id, data, disponivel) VALUES ((SELECT id FROM chacara WHERE nome = 'Chácara Vista Alegre'), '2024-12-28', TRUE);
+
+#Inserindo Contratos
+INSERT INTO contratos (agendamento_id, data_criacao, detalhes, assinatura_cliente, assinatura_proprietario) VALUES ((SELECT id FROM agendamento WHERE entrada_data = '2024-12-24' AND usuario_id = (SELECT id FROM usuarios WHERE email = 'joao@gmail.com')), 
+    '2024-11-20', 'Contrato para a festa de Natal', TRUE, FALSE);
+INSERT INTO contratos (agendamento_id, data_criacao, detalhes, assinatura_cliente, assinatura_proprietario) VALUES ((SELECT id FROM agendamento WHERE entrada_data = '2024-12-31' AND usuario_id = (SELECT id FROM usuarios WHERE email = 'maria@gmail.com')), 
+    '2024-11-25', 'Contrato para a festa de Ano Novo', FALSE, FALSE);
 
