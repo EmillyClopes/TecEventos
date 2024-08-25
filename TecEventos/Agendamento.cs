@@ -15,6 +15,7 @@ namespace TecEventos
     public partial class Agendamento : Form
     {
         ConexaoBanco conexaoBanco;
+        GetSetAgendamento agendamento;
         private int chacaraIdSelecionado;
         private void Agendamento_Load(object sender, EventArgs e)
         {
@@ -24,12 +25,14 @@ namespace TecEventos
         {
             InitializeComponent();
             conexaoBanco = new ConexaoBanco();
+            agendamento = new GetSetAgendamento();
             this.Load += Agendamento_Load;
         }
         private void LoadChacarasDisponiveis()
         {
-            string query = "SELECT entrada_data, saida_data, nome_cliente, telefone_cliente, status, valor_total, chacara_id" +
-                "FROM Agendamento";
+            string query = "SELECT entrada_data, saida_data, usuario_id, chacara_id, valor_pagamento" +
+                "FROM agendamento";
+            
             using(MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString()))
             {
                 try
@@ -73,12 +76,6 @@ namespace TecEventos
                 // Supondo que o ID da chácara está na primeira coluna (ajuste o índice da coluna conforme necessário)
                 chacaraIdSelecionado = Convert.ToInt32(row.Cells[0].Value);
             }
-        }
-        public enum Status
-        {
-            Confirmada,
-            Pendente,
-            Cancelada,
         }
     }
     

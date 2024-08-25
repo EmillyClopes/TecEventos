@@ -12,10 +12,10 @@ namespace TecEventos
         private string rua;
         private string bairro;
         private string numero;
-        private string telefone;
         private string regras;
         private string politicas;
         private string valorDiaria;
+        private string descricao;
 
         public GetSetChacara()
         {
@@ -23,27 +23,27 @@ namespace TecEventos
             rua = "";
             bairro = "";
             numero = "";
-            telefone = "";
             regras = "";
             politicas = "";
             valorDiaria = "";
+            descricao = "";
         }
-        public void setInfoChacara(string nome, string rua, string bairro, string numero, string telefone, string regras, string politicas, string valorDiaria)
+        public void setInfoChacara(string nome, string rua, string bairro, string numero, string regras, string politicas, string valorDiaria, string descricao)
         {
             this.nome = nome;
             this.rua = rua;
             this.bairro = bairro;
             this.numero = numero;
-            this.telefone = telefone;
             this.regras = regras;
             this.politicas = politicas;
             this.valorDiaria = valorDiaria;
+            this.descricao = descricao;
         }
         public string getNome()
         {
             return nome;
         }
-        public string getEndereco()
+        public string getRua()
         {
             return rua;
         }
@@ -54,10 +54,6 @@ namespace TecEventos
         public string getNumero()
         {
             return numero;
-        }
-        public string getTelefone()
-        {
-            return telefone;
         }
         public string getRegras()
         {
@@ -70,6 +66,10 @@ namespace TecEventos
         public string getValorDiaria()
         {
             return valorDiaria;
+        }
+        public string getDescricao()
+        {
+            return descricao;
         }
     }
 }

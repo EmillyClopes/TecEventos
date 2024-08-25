@@ -15,10 +15,12 @@ namespace TecEventos
     public partial class AdicionarChacara : Form
     {
         ConexaoBanco conexaoBanco;
+        GetSetChacara chacara;
         public AdicionarChacara()
         {
             InitializeComponent();
             conexaoBanco = new ConexaoBanco();
+            chacara = new GetSetChacara();
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
@@ -34,15 +36,9 @@ namespace TecEventos
 
        private void btnCadastrarChacara_Click(object sender, EventArgs e)
        {
-            string nomeChacara = txtNomeChacara.Text;
+
             /*string queryValorDiaria = "SELECT valor FROM ValorDiaria WHERE " +
                 "(SELECT valor_diaria_id, id FROM Chacara JOIN valores_diarias ON id.valores_diarias = valor_diaria_id.Chacara)";*/
-            double valorDiaria = double.Parse(txtValor.Text);
-            string enderecoRua = txtRua.Text;
-            string enderecoNum = txtNumChacara.Text;
-            string bairro = txtBairro.Text;
-            string regras = txtRegras.Text;
-            string descricao = txtDescricao.Text;
 
             /*using (MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString()))
             {
@@ -67,7 +63,7 @@ namespace TecEventos
                     MessageBox.Show("Valor não encontrado.", "Valor não encontrado no banco de dados.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }*/
-
+            chacara.setInfoChacara(txtNomeChacara.Text, txtRua.Text, txtBairro.Text, txtNumChacara.Text, txtRegras.Text, txtRegras.Text, txtValor.Text, txtDescricao.Text);
 
             string query = "INSERT INTO Chacara(nome, valor_diaria, endereco_rua, endereco_numero, endereco_bairro, regras_politicas, descricao) VALUES" +
                 "(@nome, @valor_diaria, @endereco_rua, @endereco_numero, @endereco_bairro, @regras_politicas, @descricao)";
@@ -77,13 +73,13 @@ namespace TecEventos
             {
                 try
                 {
-                    command.Parameters.AddWithValue("@nome", nomeChacara);
-                    command.Parameters.AddWithValue("@valor_diaria", valorDiaria);
-                    command.Parameters.AddWithValue("@endereco_rua", enderecoRua);
-                    command.Parameters.AddWithValue("@endereco_numero", enderecoNum);
-                    command.Parameters.AddWithValue("@endereco_bairro", bairro);
-                    command.Parameters.AddWithValue("@regras_politicas", regras);
-                    command.Parameters.AddWithValue("@descricao", descricao);
+                    command.Parameters.AddWithValue("@nome", chacara.getNome());
+                    command.Parameters.AddWithValue("@valor_diaria", chacara.getValorDiaria());
+                    command.Parameters.AddWithValue("@endereco_rua", chacara.getRua());
+                    command.Parameters.AddWithValue("@endereco_numero", chacara.getNumero());
+                    command.Parameters.AddWithValue("@endereco_bairro", chacara.getBairro());
+                    command.Parameters.AddWithValue("@regras_politicas", chacara.getRegras());
+                    command.Parameters.AddWithValue("@descricao", chacara.getDescricao());
 
                     connection.Open();
 

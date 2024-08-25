@@ -130,6 +130,7 @@
     <Compile Include="Disponibilidade.Designer.cs">
       <DependentUpon>Disponibilidade.cs</DependentUpon>
     </Compile>
+    <Compile Include="GetSetAgendamento.cs" />
     <Compile Include="GetSetAgendarAlugueis.cs" />
     <Compile Include="GetSetCadastrarCliente.cs" />
     <Compile Include="GetSetChacara.cs" />
