@@ -52,9 +52,12 @@ namespace TecEventos
         }
 
         private void BtnLogin_Click(object sender, EventArgs e)
-        {
-            // Defina a consulta SQL com parâmetros
-            string query = "SELECT * FROM Usuario WHERE email = @username AND senha = @password";
+        { // Defina a consulta SQL para verificar o login
+            string query = @"
+                SELECT a.usuario_id 
+                FROM Adm a
+                JOIN usuarios u ON a.usuario_id = u.id
+                WHERE u.email = @username AND a.senha = @password";
 
             using (MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString()))
             {
@@ -64,14 +67,20 @@ namespace TecEventos
 
                     MySqlCommand command = new MySqlCommand(query, connection);
                     // Adiciona os valores dos parâmetros corretamente
-                    command.Parameters.AddWithValue("@username", textBox1.Text); // Nome de usuário
+                    command.Parameters.AddWithValue("@username", textBox1.Text); // Email
                     command.Parameters.AddWithValue("@password", textBox2.Text); // Senha
 
-                    MySqlDataReader reader = command.ExecuteReader();
+                    object result = command.ExecuteScalar(); // Executa a consulta e retorna o primeiro valor
 
-                    if (reader.HasRows)
+                    if (result != null)
                     {
-                        // Login correto, abre o formulário Home
+                        // Login correto, obtém o usuario_id
+                        int usuarioId = Convert.ToInt32(result);
+
+                        // Registrar o login na tabela LoginRegistro
+                        RegistrarLogin(usuarioId);
+
+                        // Abre o formulário Home
                         Home homeForm = new Home();
                         homeForm.Show();
                         this.Hide();
@@ -79,14 +88,12 @@ namespace TecEventos
                     else
                     {
                         // Exibe uma mensagem de erro se o login falhar
-                        MessageBox.Show("Usuário ou senha incorretos. Tente novamente.", "Erro de Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Email ou senha incorretos. Tente novamente.", "Erro de Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                        // Limpa os campos de senha e foca no campo de usuário
+                        // Limpa os campos de senha e foca no campo de email
                         textBox2.Clear();
                         textBox1.Focus();
                     }
-
-                    reader.Close();
                 }
                 catch (Exception ex)
                 {
@@ -95,7 +102,30 @@ namespace TecEventos
             }
         }
 
-        private void btnEsqueceuSenha_Click(object sender, EventArgs e)
+        private void RegistrarLogin(int usuarioId)
+        {
+            // Consulta SQL para inserir o registro de login
+            string query = "INSERT INTO LoginRegistro (usuario_id, login_datetime) VALUES (@usuarioId, @loginDateTime)";
+
+            using (MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString()))
+            {
+                try
+                {
+                    connection.Open();
+
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@usuarioId", usuarioId);
+                    command.Parameters.AddWithValue("@loginDateTime", DateTime.Now); // Define o timestamp do login
+
+                    command.ExecuteNonQuery(); // Executa a inserção
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao registrar o login: " + ex.Message, "Erro de Registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+                private void btnEsqueceuSenha_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Para recuperar a senha, entre em contato com o administrador.", "Recuperação de Senha", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
