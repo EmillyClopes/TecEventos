@@ -18,7 +18,7 @@ namespace TecEventos
         private int chacaraIdSelecionado;
         private void Precificacao_Load(object sender, EventArgs e)
         {
-            LoadChacarasDisponiveis();
+            LoadPrecificaDisponiveis();
         }
         public Precificacao()
         {
@@ -27,7 +27,7 @@ namespace TecEventos
             precificacao = new GetSetPrecificacao();
             this.Load += Precificacao_Load;
         }
-        private void LoadChacarasDisponiveis()
+        private void LoadPrecificaDisponiveis()
         {
             string query = "SELECT valor, dia_semana " +
                 "FROM valores_diarias";
@@ -86,7 +86,7 @@ namespace TecEventos
                     command.ExecuteNonQuery(); 
 
                     MessageBox.Show("Dados inseridos com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadChacarasDisponiveis();
+                    LoadPrecificaDisponiveis();
                 }
                 catch (Exception ex)
                 {
