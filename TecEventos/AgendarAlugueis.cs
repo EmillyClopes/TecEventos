@@ -1,43 +1,47 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
-// CS0108.cs
-// compile with: /W:2
-using System;
 using MySql.Data.MySqlClient;
-using System.Data.SqlClient;
-using Mysqlx.Prepare;
 
 namespace TecEventos
 {
     public partial class AgendarAlugueis : Form
     {
-        ConexaoBanco conexaoBanco;
-        GetSetAgendarAlugueis dadosAluguel;
+        // Instâncias para conexão com o banco de dados e manipulação dos dados de aluguel
+        private ConexaoBanco conexaoBanco;
+        private GetSetAgendarAlugueis dadosAluguel;
         private int chacaraIdSelecionado; // Variável para armazenar o ID da chácara selecionada
 
-        private void AgendarAlugueis_Load(object sender, EventArgs e)
-        {
-            LoadChacarasDisponiveis();
-        }
         public AgendarAlugueis()
         {
             InitializeComponent();
             conexaoBanco = new ConexaoBanco();
             dadosAluguel = new GetSetAgendarAlugueis();
-            this.Load += AgendarAlugueis_Load;
-            GridViewChacarasDisponiveis.ReadOnly = true;
+            this.Load += AgendarAlugueis_Load; // Associar o evento de carregamento ao método correspondente
+            GridViewChacarasDisponiveis.ReadOnly = true; // Tornar o DataGridView somente leitura
         }
+
+        // Método chamado quando o formulário é carregado
+        private void AgendarAlugueis_Load(object sender, EventArgs e)
+        {
+            LoadChacarasDisponiveis(); // Carregar chácaras disponíveis ao iniciar o formulário
+        }
+
+        // Método para carregar as chácaras disponíveis e exibi-las no DataGridView
         private void LoadChacarasDisponiveis()
         {
-            string query = "SELECT c. id, c.nome as Nome, e.Rua as Endereço, e.numero as Número, e.bairro as Bairro, p.descricao as Politicas, r.descricao as Regras  FROM Chacara c\r\njoin enderecos e on e.id = c.endereco_id\r\njoin politicas p on p.id = c.politicas_id\r\njoin regras r on r.id = c.regras_id\r\nWHERE c.id NOT IN (SELECT chacara_id FROM Agendamento WHERE entrada_data <= CURDATE() AND saida_data >= CURDATE())";
+            // Consulta SQL para selecionar chácaras que não estão agendadas na data atual
+            string query = @"
+                SELECT c.id, c.nome as Nome, e.Rua as Endereço, e.numero as Número, e.bairro as Bairro, 
+                       p.descricao as Politicas, r.descricao as Regras  
+                FROM Chacara c
+                JOIN enderecos e ON e.id = c.endereco_id
+                JOIN politicas p ON p.id = c.politicas_id
+                JOIN regras r ON r.id = c.regras_id
+                WHERE c.id NOT IN (
+                    SELECT chacara_id FROM Agendamento 
+                    WHERE entrada_data <= CURDATE() AND saida_data >= CURDATE()
+                )";
 
             using (MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString()))
             {
@@ -47,15 +51,14 @@ namespace TecEventos
                     MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
                     DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);
-                    GridViewChacarasDisponiveis.DataSource = dataTable;
+                    GridViewChacarasDisponiveis.DataSource = dataTable; // Definir o DataSource do DataGridView
 
-                    if(dataTable.Rows.Count == 0)
+                    if (dataTable.Rows.Count == 0)
                     {
                         MessageBox.Show("Nenhuma chácara disponível!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
-                    GridViewChacarasDisponiveis.Refresh();
-                    
+                    GridViewChacarasDisponiveis.Refresh(); // Atualizar o DataGridView
                 }
                 catch (Exception ex)
                 {
@@ -63,39 +66,49 @@ namespace TecEventos
                 }
             }
         }
-        
+
+        // Método para limpar todos os campos do formulário
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            txtDiaSaida.Text = "";
-            txtMesSaida.Text = "";
-            txtAnoSaida.Text = "";
-            txtNomeCliente.Text = "";
-            txtContatoCliente.Text = "";
-            comboBox1.Text = "";
-            txtTotal.Text = "";
-            txtDiaEntrada.Text = "";
-            txtMesEntrada.Text = "";
-            txtAnoEntrada.Text = "";
+            txtDiaSaida.Clear();
+            txtMesSaida.Clear();
+            txtAnoSaida.Clear();
+            txtNomeCliente.Clear();
+            txtContatoCliente.Clear();
+            comboBox1.SelectedIndex = -1;
+            txtTotal.Clear();
+            txtDiaEntrada.Clear();
+            txtMesEntrada.Clear();
+            txtAnoEntrada.Clear();
         }
+
+        // Método para finalizar o agendamento
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
+            // Verifica se uma chácara foi selecionada
             if (chacaraIdSelecionado == 0)
             {
                 MessageBox.Show("Por favor, selecione uma chácara.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            DateTime entradaData = new DateTime(int.Parse(txtAnoEntrada.Text), int.Parse(txtMesEntrada.Text), int.Parse(txtDiaEntrada.Text));
-            DateTime saidaData = new DateTime(int.Parse(txtAnoSaida.Text), int.Parse(txtMesSaida.Text), int.Parse(txtDiaSaida.Text));
+
+            // Validações básicas de entrada
+            if (!DateTime.TryParse($"{txtAnoEntrada.Text}-{txtMesEntrada.Text}-{txtDiaEntrada.Text}", out DateTime entradaData) ||
+                !DateTime.TryParse($"{txtAnoSaida.Text}-{txtMesSaida.Text}-{txtDiaSaida.Text}", out DateTime saidaData))
+            {
+                MessageBox.Show("Por favor, insira datas válidas.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             dadosAluguel.setDiaMesAno(int.Parse(txtDiaEntrada.Text), int.Parse(txtMesEntrada.Text), int.Parse(txtAnoEntrada.Text),
-                int.Parse(txtDiaSaida.Text), int.Parse(txtMesSaida.Text), int.Parse(txtAnoSaida.Text));
+                                       int.Parse(txtDiaSaida.Text), int.Parse(txtMesSaida.Text), int.Parse(txtAnoSaida.Text));
             dadosAluguel.setInfoCliente(txtNomeCliente.Text, txtContatoCliente.Text);
             dadosAluguel.setValorTotal(double.Parse(txtTotal.Text));
 
             string queryUsuarioId = "SELECT id FROM usuarios WHERE nome = @nome";
-
-            string queryAgendamento = "INSERT INTO agendamento (entrada_data, saida_data, usuario_id, chacara_id, valor_agendamento, status) " +
-                                      "VALUES (@entradaData, @saidaData, @usuarioId, @chacaraId, @valor_agendamento, @status)";
+            string queryAgendamento = @"
+                INSERT INTO agendamento (entrada_data, saida_data, usuario_id, chacara_id, valor_agendamento, status) 
+                VALUES (@entradaData, @saidaData, @usuarioId, @chacaraId, @valorAgendamento, @status)";
 
             using (MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString()))
             {
@@ -103,11 +116,11 @@ namespace TecEventos
                 {
                     connection.Open();
 
+                    // Obter o ID do usuário a partir do nome
                     int usuarioId;
                     using (MySqlCommand commandUsuarioId = new MySqlCommand(queryUsuarioId, connection))
                     {
                         commandUsuarioId.Parameters.AddWithValue("@nome", txtNomeCliente.Text);
-
                         object result = commandUsuarioId.ExecuteScalar();
 
                         if (result != null)
@@ -116,24 +129,26 @@ namespace TecEventos
                         }
                         else
                         {
-                            MessageBox.Show("Usuário não encontrado com o contato fornecido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Usuário não encontrado com o nome fornecido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
                     }
 
+                    // Inserir o novo agendamento no banco de dados
                     using (MySqlCommand commandAgendamento = new MySqlCommand(queryAgendamento, connection))
                     {
                         commandAgendamento.Parameters.AddWithValue("@entradaData", entradaData);
                         commandAgendamento.Parameters.AddWithValue("@saidaData", saidaData);
                         commandAgendamento.Parameters.AddWithValue("@usuarioId", usuarioId);
                         commandAgendamento.Parameters.AddWithValue("@chacaraId", chacaraIdSelecionado);
-                        commandAgendamento.Parameters.AddWithValue("@valor_agendamento", dadosAluguel.getValorTotal());
+                        commandAgendamento.Parameters.AddWithValue("@valorAgendamento", dadosAluguel.getValorTotal());
                         commandAgendamento.Parameters.AddWithValue("@status", comboBox1.Text);
 
                         int linhasAfetadas = commandAgendamento.ExecuteNonQuery();
                         if (linhasAfetadas > 0)
                         {
                             MessageBox.Show("Agendamento realizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            btnLimpar_Click(sender, e); // Limpar o formulário após o agendamento bem-sucedido
                         }
                         else
                         {
@@ -147,20 +162,21 @@ namespace TecEventos
                 }
             }
         }
+
+        // Evento para capturar o clique em uma célula do DataGridView
         private void GridViewChacarasDisponiveis_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0) // Verifica se a linha clicada é válida
             {
                 DataGridViewRow row = GridViewChacarasDisponiveis.Rows[e.RowIndex];
-                // Supondo que o ID da chácara está na primeira coluna (ajuste o índice da coluna conforme necessário)
-                chacaraIdSelecionado = Convert.ToInt32(row.Cells[0].Value);   
+                chacaraIdSelecionado = Convert.ToInt32(row.Cells[0].Value); // Captura o ID da chácara selecionada
             }
         }
 
+        // Evento para o botão 'Home' que fecha o formulário
         private void btnHome_Click(object sender, EventArgs e)
         {
-            this.Close();
-            /*fecha a tela*/
+            this.Close(); // Fecha o formulário
         }
     }
 }

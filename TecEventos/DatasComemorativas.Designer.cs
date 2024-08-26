@@ -118,9 +118,10 @@
             this.lblPromocao.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPromocao.Location = new System.Drawing.Point(19, 267);
             this.lblPromocao.Name = "lblPromocao";
-            this.lblPromocao.Size = new System.Drawing.Size(155, 19);
+            this.lblPromocao.Size = new System.Drawing.Size(63, 19);
             this.lblPromocao.TabIndex = 151;
-            this.lblPromocao.Text = "Promoções ou pacotes";
+            this.lblPromocao.Text = "ID Preço";
+            this.lblPromocao.Click += new System.EventHandler(this.lblPromocao_Click);
             // 
             // btnLimpar
             // 

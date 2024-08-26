@@ -66,15 +66,15 @@ namespace TecEventos
                 string.IsNullOrWhiteSpace(txtPromocao.Text) ||
                 !int.TryParse(txtDiaComemorativo.Text, out int dia) ||
                 !int.TryParse(txtMesComemorativo.Text, out int mes) ||
-                !int.TryParse(txtAnoComemorativo.Text, out int ano) ||
-                !int.TryParse(txtPromocao.Text, out int valorPromocionalId))
+                !int.TryParse(txtAnoComemorativo.Text, out int ano)) 
             {
                 MessageBox.Show("Por favor, preencha todos os campos corretamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+            // Assumindo que 'data' é uma instância de uma classe que você criou
             data.setDiaMesAno(dia, mes, ano);
-            data.setInfoDataComemorativa(txtNomeDataComemorativo.Text, txtNomeDataComemorativo.Text, txtPromocao.Text, txtPromocao.Text); // Supondo que a descrição esteja sendo definida assim
+            data.setInfoDataComemorativa(txtNomeDataComemorativo.Text, txtNomeDataComemorativo.Text, txtPromocao.Text, txtPromocao.Text);
 
             using (MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString()))
             {
@@ -82,41 +82,57 @@ namespace TecEventos
                 {
                     connection.Open();
 
-                    // Verifica se o valor promocional existe
-                    if (!ValorPromocionalExists(valorPromocionalId, connection))
+                    // Começar uma transação para garantir que ambas as inserções sejam bem-sucedidas
+                    using (MySqlTransaction transaction = connection.BeginTransaction())
                     {
-                        MessageBox.Show("Valor promocional inválido ou não encontrado!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                    string query = "INSERT INTO datas_comemorativas(descricao, valor_promocional_id, data_comemorativa) " +
-                                   "VALUES (@descricao, @valor_promocional_id, @data_comemorativa)";
-
-                    using (MySqlCommand command = new MySqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@descricao", data.getDescricao());
-                        command.Parameters.AddWithValue("@valor_promocional_id", valorPromocionalId);
-                        command.Parameters.AddWithValue("@data_comemorativa", new DateTime(data.getAno(), data.getMes(), data.getDia()).ToString("yyyy-MM-dd"));
-
-                        int linhasAfetadas = command.ExecuteNonQuery();
-
-                        if (linhasAfetadas > 0)
+                        try
                         {
-                            MessageBox.Show("Data comemorativa cadastrada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            int valorPromocional = int.Parse(txtPromocao.Text);
+
+                            // Inserir na tabela valores_diarias
+                            string insertValoresDiariasQuery = "INSERT INTO valores_diarias (valor, dia_semana) VALUES (@valor,@dia_semana)";
+                            using (MySqlCommand commandValoresDiarias = new MySqlCommand(insertValoresDiariasQuery, connection, transaction))
+                            {
+                                commandValoresDiarias.Parameters.AddWithValue("@valor", valorPromocional);
+                                commandValoresDiarias.Parameters.AddWithValue("@dia_semana", "Feriado");
+                                commandValoresDiarias.ExecuteNonQuery();
+                            }
+
+                            // Inserir na tabela datas_comemorativas
+                            string insertDatasComemorativasQuery = @"INSERT INTO datas_comemorativas (descricao, valor_promocional_id, data_comemorativa) 
+                                                             VALUES (@descricao, @valor_promocional_id, @data_comemorativa)";
+                            using (MySqlCommand commandDatasComemorativas = new MySqlCommand(insertDatasComemorativasQuery, connection, transaction))
+                            {
+                                commandDatasComemorativas.Parameters.AddWithValue("@descricao", data.getDescricao());
+                                commandDatasComemorativas.Parameters.AddWithValue("@valor_promocional_id", txtPromocao.Text); // Verifica se a promo é um valor promocional id
+                                commandDatasComemorativas.Parameters.AddWithValue("@data_comemorativa", new DateTime(data.getAno(), data.getMes(), data.getDia()).ToString("yyyy-MM-dd"));
+
+                                int linhasAfetadas = commandDatasComemorativas.ExecuteNonQuery();
+
+                                if (linhasAfetadas > 0)
+                                {
+                                    MessageBox.Show("Data comemorativa cadastrada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Nenhuma data comemorativa cadastrada. Verifique os dados e tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                }
+                            }
+
+                            // Confirmar a transação
+                            transaction.Commit();
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            MessageBox.Show("Nenhuma data comemorativa cadastrada. Verifique os dados e tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            // Reverter a transação em caso de erro
+                            transaction.Rollback();
+                            MessageBox.Show("Erro ao salvar dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
                 catch (MySqlException ex)
                 {
                     MessageBox.Show("Erro ao conectar ao banco de dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao salvar data comemorativa: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -146,6 +162,11 @@ namespace TecEventos
             txtDiaComemorativo.Text = "";
             txtMesComemorativo.Text = "";
             txtAnoComemorativo.Text = "";
+        }
+
+        private void lblPromocao_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
