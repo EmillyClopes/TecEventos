@@ -41,7 +41,7 @@ namespace TecEventos
         }
         private void LoadChacarasDisponiveis()
         {
-            string query = "SELECT id, nome FROM Chacara WHERE id NOT IN (SELECT chacara_id FROM Agendamento WHERE entrada_data <= CURDATE() AND saida_data >= CURDATE())";
+            string query = "SELECT c.nome as Nome, e.Rua as Endereço, e.numero as Número, e.bairro as Bairro, p.descricao as Politicas, r.descricao as Regras  FROM Chacara c\r\njoin enderecos e on e.id = c.endereco_id\r\njoin politicas p on p.id = c.politicas_id\r\njoin regras r on r.id = c.regras_id\r\nWHERE c.id NOT IN (SELECT chacara_id FROM Agendamento WHERE entrada_data <= CURDATE() AND saida_data >= CURDATE())";
 
             using (MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString()))
             {

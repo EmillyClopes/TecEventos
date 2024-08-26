@@ -71,12 +71,6 @@ namespace TecEventos
             string nomeChacara = TxtChacara.Text.Trim();
             string nomeCliente = txtCliente.Text.Trim();
 
-            if (string.IsNullOrEmpty(nomeChacara) && string.IsNullOrEmpty(nomeCliente))
-            {
-                MessageBox.Show("Por favor, preencha o nome da chácara ou do cliente para realizar a pesquisa.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
             string query = "SELECT u.nome as Nome, c.nome as Chacara, cp.valor_pago as 'Valor Pago', cp.data_pagamento as 'Data de Pagamento', cp.metodo_pagamento as 'Método de Pagamento', cp.status_pagamento as 'Status do Pagamento' " +
                            "FROM controle_pagamentos cp " +
                            "JOIN usuarios u ON cp.usuario_id = u.id " +

@@ -29,8 +29,7 @@ namespace TecEventos
         }
         private void LoadPrecificaDisponiveis()
         {
-            string query = "SELECT valor, dia_semana " +
-                "FROM valores_diarias";
+            string query = "SELECT valor as Valor, dia_semana as 'Dia da Semana' FROM valores_diarias";
 
             using (MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString()))
             {

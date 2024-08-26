@@ -201,9 +201,9 @@
             this.lblRegras.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegras.Location = new System.Drawing.Point(59, 382);
             this.lblRegras.Name = "lblRegras";
-            this.lblRegras.Size = new System.Drawing.Size(125, 19);
+            this.lblRegras.Size = new System.Drawing.Size(54, 19);
             this.lblRegras.TabIndex = 67;
-            this.lblRegras.Text = "Regras e políticas";
+            this.lblRegras.Text = "Regras";
             // 
             // lblValor
             // 
@@ -229,9 +229,9 @@
             this.lbldDescricao.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbldDescricao.Location = new System.Drawing.Point(294, 382);
             this.lbldDescricao.Name = "lbldDescricao";
-            this.lbldDescricao.Size = new System.Drawing.Size(142, 19);
+            this.lbldDescricao.Size = new System.Drawing.Size(64, 19);
             this.lbldDescricao.TabIndex = 65;
-            this.lbldDescricao.Text = "Descrição detalhada";
+            this.lbldDescricao.Text = "Políticas";
             // 
             // txtBairro
             // 
