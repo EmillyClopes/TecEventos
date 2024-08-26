@@ -29,8 +29,8 @@ namespace TecEventos
         }
         private void LoadChacarasDisponiveis()
         {
-            string query = "SELECT entrada_data, saida_data, usuario_id, chacara_id, valor_agendamento " +
-                "FROM agendamento";
+            string query = "SELECT valor, dia_semana " +
+                "FROM valores_diarias";
 
             using (MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString()))
             {
@@ -42,6 +42,12 @@ namespace TecEventos
                     adapter.Fill(datatable);
                     dataGridView1.DataSource = datatable;
 
+                    dataGridView1.ReadOnly = true; 
+                    dataGridView1.AllowUserToAddRows = false; 
+                    dataGridView1.AllowUserToDeleteRows = false; 
+                    dataGridView1.MultiSelect = false; 
+                    dataGridView1.Enabled = false; 
+
                     if (datatable.Rows.Count == 0)
                     {
                         MessageBox.Show("Nenhuma chácara disponível!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -51,10 +57,11 @@ namespace TecEventos
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Erro ao conectar ao banco de dados!", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Erro ao conectar ao banco de dados! " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
+
 
         private void btnHome_Click(object sender, EventArgs e)
         {
@@ -64,7 +71,7 @@ namespace TecEventos
 
         private void btnCadastrarChacara_Click(object sender, EventArgs e)
         {
-            string query = "INSERT INTO valores_diaria(valor, dia_semana) VALUES " +
+            string query = "INSERT INTO valores_diarias(valor, dia_semana) VALUES " +
                 "(@valor, @dia_semana)";
             precificacao.setValores(comboBox1.Text, double.Parse(TxtValorPre.Text));
 
@@ -74,15 +81,20 @@ namespace TecEventos
                 {
                     connection.Open();
                     MySqlCommand command = new MySqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@valor", precificacao.getDiaSemana());
-                    command.Parameters.AddWithValue("@dia_semana", precificacao.getValor());
+                    command.Parameters.AddWithValue("@valor", precificacao.getValor());
+                    command.Parameters.AddWithValue("@dia_semana", precificacao.getDiaSemana());
+                    command.ExecuteNonQuery(); 
+
+                    MessageBox.Show("Dados inseridos com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadChacarasDisponiveis();
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show("Erro ao inserir os dados! " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
