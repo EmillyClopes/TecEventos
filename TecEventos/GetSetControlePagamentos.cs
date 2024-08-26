@@ -9,7 +9,7 @@ namespace TecEventos
 {
     internal class GetSetControlePagamentos
     {
-        private string nomeCliente;
+        private string usuarioId;
         private int chacaraID;
         private double valorAluguel;
         private double valorPago;
@@ -20,7 +20,7 @@ namespace TecEventos
         private string statusPagamento;
         public GetSetControlePagamentos()
         {
-            nomeCliente = "";
+            usuarioId = "";
             chacaraID = 0;
             valorAluguel = 0.0;
             valorPago = 0.0;
@@ -30,9 +30,9 @@ namespace TecEventos
             metodoPagamento = "";
             statusPagamento = "";
         }
-        public void setInfoPagamento(string nomeCliente, int chacaraID, double valorAluguel, double valorPago, int dia, int mes, int ano, string metodoPagamento, string statusPagamento)
+        public void setInfoPagamento(string usuariId, int chacaraID, double valorAluguel, double valorPago, int dia, int mes, int ano, string metodoPagamento, string statusPagamento)
         {
-            this.nomeCliente = nomeCliente;
+            this.usuarioId = usuariId;
             this.chacaraID = chacaraID;
             this.valorAluguel = valorAluguel;
             this.valorPago = valorPago;
@@ -44,7 +44,7 @@ namespace TecEventos
         }
         public string getNomeCliente()
         {
-            return nomeCliente;
+            return usuarioId;
         }
         public int getChacaraID()
         {

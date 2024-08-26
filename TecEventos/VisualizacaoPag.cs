@@ -77,32 +77,44 @@ namespace TecEventos
                 return;
             }
 
-            if (string.IsNullOrEmpty(nomeChacara))
+            string query = "SELECT u.nome as Nome, c.nome as Chacara, cp.valor_pago as 'Valor Pago', cp.data_pagamento as 'Data de Pagamento', cp.metodo_pagamento as 'Método de Pagamento', cp.status_pagamento as 'Status do Pagamento' " +
+                           "FROM controle_pagamentos cp " +
+                           "JOIN usuarios u ON cp.usuario_id = u.id " +
+                           "JOIN chacara c ON cp.chacara_id = c.id " +
+                           "JOIN agendamento a ON cp.agendamento_id = a.id " +
+                           "WHERE 1=1";
+
+            if (!string.IsNullOrEmpty(nomeChacara))
             {
-                PesquisarPorCliente();
+                query += " AND c.nome LIKE @nomeChacara";
             }
-            else if (string.IsNullOrEmpty(nomeCliente))
+
+            if (!string.IsNullOrEmpty(nomeCliente))
             {
-                PesquisarPorChacara();
+                query += " AND u.nome LIKE @nomeCliente";
             }
-            else
-            {
-                PesquisarPorChacaraCliente();
-            }
+
+            PerformSearch(query, nomeChacara, nomeCliente);
         }
 
-        void PesquisarPorCliente()
+        private void PerformSearch(string query, string nomeChacara, string nomeCliente)
         {
-            string query = "SELECT u.nome as Nome,    c.nome as Chacara,     cp.valor_pago as 'Valor Pago',    cp.data_pagamento as 'Data de Pagamento',    cp.metodo_pagamento as 'Método de Pagamento',    cp.status_pagamento as 'Status do Pagamento' FROM controle_pagamentos cp join usuarios u on cp.usuario_id = u.id join chacara c on cp.chacara_id = c.id join agendamento a on cp.agendamento_id = a.id where u.nome  LIKE '@nomeCliente'";
-
             using (MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString()))
             {
                 try
                 {
                     connection.Open();
                     MySqlCommand command = new MySqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@nomeChacara", TxtChacara.Text);
-                    command.Parameters.AddWithValue("@nomeCliente", txtCliente.Text);
+
+                    if (!string.IsNullOrEmpty(nomeChacara))
+                    {
+                        command.Parameters.AddWithValue("@nomeChacara", "%" + nomeChacara + "%");
+                    }
+
+                    if (!string.IsNullOrEmpty(nomeCliente))
+                    {
+                        command.Parameters.AddWithValue("@nomeCliente", "%" + nomeCliente + "%");
+                    }
 
                     MySqlDataAdapter adapter = new MySqlDataAdapter(command);
                     DataTable datatable = new DataTable();
@@ -115,58 +127,6 @@ namespace TecEventos
                     MessageBox.Show("Erro ao realizar a pesquisa: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
-
-        void PesquisarPorChacara()
-        {
-            string query = "SELECT u.nome as Nome,    c.nome as Chacara,     cp.valor_pago as 'Valor Pago',    cp.data_pagamento as 'Data de Pagamento',    cp.metodo_pagamento as 'Método de Pagamento',    cp.status_pagamento as 'Status do Pagamento' FROM controle_pagamentos cp join usuarios u on cp.usuario_id = u.id join chacara c on cp.chacara_id = c.id join agendamento a on cp.agendamento_id = a.id where c.nome  LIKE '@nomeChacara'";
-
-            using (MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString()))
-            {
-                try
-                {
-                    connection.Open();
-                    MySqlCommand command = new MySqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@nomeChacara", TxtChacara.Text);
-                    command.Parameters.AddWithValue("@nomeCliente", txtCliente.Text);
-
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
-                    DataTable datatable = new DataTable();
-                    adapter.Fill(datatable);
-                    dataGridView1.DataSource = datatable;
-                    dataGridView1.Refresh();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao realizar a pesquisa: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        void PesquisarPorChacaraCliente()
-        {
-            string query = "SELECT u.nome as Nome,    c.nome as Chacara,     cp.valor_pago as 'Valor Pago',    cp.data_pagamento as 'Data de Pagamento',    cp.metodo_pagamento as 'Método de Pagamento',    cp.status_pagamento as 'Status do Pagamento' FROM controle_pagamentos cp join usuarios u on cp.usuario_id = u.id join chacara c on cp.chacara_id = c.id join agendamento a on cp.agendamento_id = a.id where c.nome  LIKE '@nomeChacara' and u.nome  LIKE '@nomeCliente'";
-            using (MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString()))
-            {
-                try
-                {
-                    connection.Open();
-                    MySqlCommand command = new MySqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@nomeChacara", TxtChacara.Text);
-                    command.Parameters.AddWithValue("@nomeCliente", txtCliente.Text);
-
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
-                    DataTable datatable = new DataTable();
-                    adapter.Fill(datatable);
-                    dataGridView1.DataSource = datatable;
-                    dataGridView1.Refresh();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao realizar a pesquisa: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
         }
 
     }
