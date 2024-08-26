@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PerfilAdm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.EnderecoNumeroTxt = new System.Windows.Forms.TextBox();
+            this.EnderecoBairroTxt = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.EnderecoRuaTxt = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.TelefoneTxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -39,12 +45,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblPerfilAdm = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.EnderecoNumeroTxt = new System.Windows.Forms.TextBox();
-            this.EnderecoBairroTxt = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.EnderecoRuaTxt = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -74,6 +74,60 @@
             this.panel1.Size = new System.Drawing.Size(811, 537);
             this.panel1.TabIndex = 70;
             // 
+            // EnderecoNumeroTxt
+            // 
+            this.EnderecoNumeroTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EnderecoNumeroTxt.Location = new System.Drawing.Point(657, 233);
+            this.EnderecoNumeroTxt.Name = "EnderecoNumeroTxt";
+            this.EnderecoNumeroTxt.Size = new System.Drawing.Size(87, 26);
+            this.EnderecoNumeroTxt.TabIndex = 92;
+            // 
+            // EnderecoBairroTxt
+            // 
+            this.EnderecoBairroTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EnderecoBairroTxt.Location = new System.Drawing.Point(428, 233);
+            this.EnderecoBairroTxt.Name = "EnderecoBairroTxt";
+            this.EnderecoBairroTxt.Size = new System.Drawing.Size(153, 26);
+            this.EnderecoBairroTxt.TabIndex = 91;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(587, 237);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(64, 19);
+            this.label7.TabIndex = 90;
+            this.label7.Text = "Numero:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(380, 237);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 19);
+            this.label6.TabIndex = 89;
+            this.label6.Text = "Bairro:";
+            // 
+            // EnderecoRuaTxt
+            // 
+            this.EnderecoRuaTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EnderecoRuaTxt.Location = new System.Drawing.Point(141, 233);
+            this.EnderecoRuaTxt.Name = "EnderecoRuaTxt";
+            this.EnderecoRuaTxt.Size = new System.Drawing.Size(223, 26);
+            this.EnderecoRuaTxt.TabIndex = 88;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(91, 233);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 19);
+            this.label4.TabIndex = 87;
+            this.label4.Text = "Rua:";
+            // 
             // btnAtualizar
             // 
             this.btnAtualizar.BackColor = System.Drawing.Color.SkyBlue;
@@ -87,6 +141,7 @@
             this.btnAtualizar.TabIndex = 82;
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = false;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // TelefoneTxt
             // 
@@ -165,60 +220,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
-            // 
-            // EnderecoNumeroTxt
-            // 
-            this.EnderecoNumeroTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EnderecoNumeroTxt.Location = new System.Drawing.Point(657, 233);
-            this.EnderecoNumeroTxt.Name = "EnderecoNumeroTxt";
-            this.EnderecoNumeroTxt.Size = new System.Drawing.Size(87, 26);
-            this.EnderecoNumeroTxt.TabIndex = 92;
-            // 
-            // EnderecoBairroTxt
-            // 
-            this.EnderecoBairroTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EnderecoBairroTxt.Location = new System.Drawing.Point(428, 233);
-            this.EnderecoBairroTxt.Name = "EnderecoBairroTxt";
-            this.EnderecoBairroTxt.Size = new System.Drawing.Size(153, 26);
-            this.EnderecoBairroTxt.TabIndex = 91;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(587, 237);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 19);
-            this.label7.TabIndex = 90;
-            this.label7.Text = "Numero:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(380, 237);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 19);
-            this.label6.TabIndex = 89;
-            this.label6.Text = "Bairro:";
-            // 
-            // EnderecoRuaTxt
-            // 
-            this.EnderecoRuaTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EnderecoRuaTxt.Location = new System.Drawing.Point(141, 233);
-            this.EnderecoRuaTxt.Name = "EnderecoRuaTxt";
-            this.EnderecoRuaTxt.Size = new System.Drawing.Size(223, 26);
-            this.EnderecoRuaTxt.TabIndex = 88;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(91, 233);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 19);
-            this.label4.TabIndex = 87;
-            this.label4.Text = "Rua:";
             // 
             // PerfilAdm
             // 

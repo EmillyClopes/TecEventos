@@ -125,6 +125,7 @@
             this.btnAlterar.TabIndex = 157;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = false;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // txtNomeChacara
             // 

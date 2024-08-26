@@ -27,13 +27,17 @@ namespace TecEventos
             conexaoBanco = new ConexaoBanco();
             agendamento = new GetSetAgendamento();
             this.Load += Agendamento_Load;
+            GridViewAgendamentos.ReadOnly = true;
+            GridViewAgendamentos.AllowUserToAddRows = false;
+            GridViewAgendamentos.AllowUserToDeleteRows = false;
+            GridViewAgendamentos.MultiSelect = false;
+            GridViewAgendamentos.Enabled = false;
         }
         private void LoadChacarasDisponiveis()
         {
-            string query = "SELECT entrada_data, saida_data, usuario_id, chacara_id, valor_pagamento" +
-                "FROM agendamento";
-            
-            using(MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString()))
+            string query = "SELECT entrada_data, saida_data, usuario_id, chacara_id, valor_agendamento FROM agendamento";
+
+            using (MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString()))
             {
                 try
                 {
@@ -45,12 +49,12 @@ namespace TecEventos
 
                     if (datatable.Rows.Count == 0)
                     {
-                        MessageBox.Show("Nenhum agendamento disponível!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Nenhuma chácara disponível!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                     GridViewAgendamentos.Refresh();
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show("Erro ao conectar ao banco de dados!", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -65,16 +69,31 @@ namespace TecEventos
 
         private void btnExluir_Click(object sender, EventArgs e)
         {
+            if (GridViewAgendamentos.SelectedRows.Count > 0)
+            {
+                DataGridViewRow linhaSelecionada = GridViewAgendamentos.SelectedRows[0];
 
+                if (linhaSelecionada.Index >= 0)
+                { 
+                    GridViewAgendamentos.Rows.Remove(linhaSelecionada);
+                }
+                else
+                {
+                    MessageBox.Show("Nenhuma linha selecionada.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma linha para excluir.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
         private void GridViewAgendamentos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0) // Verifica se a linha clicada é válida
             {
-                DataGridViewRow row = GridViewAgendamentos.Rows[e.RowIndex];
+                //DataGridViewRow row = GridViewAgendamentos.Rows[e.RowIndex];
                 // Supondo que o ID da chácara está na primeira coluna (ajuste o índice da coluna conforme necessário)
-                chacaraIdSelecionado = Convert.ToInt32(row.Cells[0].Value);
+                //chacaraIdSelecionado = Convert.ToInt32(row.Cells[0].Value);
             }
         }
     }

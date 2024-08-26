@@ -33,6 +33,11 @@ namespace TecEventos
             conexaoBanco = new ConexaoBanco();
             dadosAluguel = new GetSetAgendarAlugueis();
             this.Load += AgendarAlugueis_Load;
+            GridViewChacarasDisponiveis.ReadOnly = true;
+            GridViewChacarasDisponiveis.AllowUserToAddRows = false;
+            GridViewChacarasDisponiveis.AllowUserToDeleteRows = false;
+            GridViewChacarasDisponiveis.MultiSelect = false;
+            GridViewChacarasDisponiveis.Enabled = false;
         }
         private void LoadChacarasDisponiveis()
         {

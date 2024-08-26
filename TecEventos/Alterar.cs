@@ -61,5 +61,10 @@ namespace TecEventos
             this.Close();
             /*fecha a tela*/
         }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
