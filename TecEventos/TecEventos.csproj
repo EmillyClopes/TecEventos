@@ -112,6 +112,24 @@
       <DependentUpon>Alterar.cs</DependentUpon>
     </Compile>
     <Compile Include="ConexaoBanco.cs" />
+    <Compile Include="Contrato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contrato.Designer.cs">
+      <DependentUpon>Contrato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContratoCriar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContratoCriar.Designer.cs">
+      <DependentUpon>ContratoCriar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContratoVisu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContratoVisu.Designer.cs">
+      <DependentUpon>ContratoVisu.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlePagamentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +234,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Alterar.resx">
       <DependentUpon>Alterar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contrato.resx">
+      <DependentUpon>Contrato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContratoCriar.resx">
+      <DependentUpon>ContratoCriar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContratoVisu.resx">
+      <DependentUpon>ContratoVisu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControlePagamentos.resx">
       <DependentUpon>ControlePagamentos.cs</DependentUpon>

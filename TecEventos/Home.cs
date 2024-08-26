@@ -90,5 +90,10 @@ namespace TecEventos
         {
             abrirForms.AbreForm(new Precificacao());
         }
+
+        private void btnContratos_Click(object sender, EventArgs e)
+        {
+            abrirForms.AbreForm(new Contrato());
+        }
     }
 }
