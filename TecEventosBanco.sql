@@ -21,6 +21,8 @@ CREATE TABLE usuarios (
     endereco_id INT,
     PRIMARY KEY (id),
     FOREIGN KEY (endereco_id) REFERENCES enderecos(id)
+		ON UPDATE CASCADE
+        ON DELETE CASCADE
 );
 
 -- 3. Tabela de Regras
@@ -48,6 +50,8 @@ CREATE TABLE chacara (
     FOREIGN KEY (endereco_id) REFERENCES enderecos(id),
     FOREIGN KEY (regras_id) REFERENCES regras(id),
     FOREIGN KEY (politicas_id) REFERENCES politicas(id)
+		ON UPDATE CASCADE
+        ON DELETE CASCADE
 );
 
 -- 6. Tabela de Valores de Diárias
@@ -64,7 +68,9 @@ CREATE TABLE chacaras_valores_diarias (
     chacara_id INT,
     valor_diaria_id INT,
     FOREIGN KEY (chacara_id) REFERENCES chacara(id),
-    FOREIGN KEY (valor_diaria_id) REFERENCES valores_diarias(id),
+    FOREIGN KEY (valor_diaria_id) REFERENCES valores_diarias(id)
+		ON UPDATE CASCADE
+        ON DELETE CASCADE,
     PRIMARY KEY (id),
     UNIQUE INDEX idx_chacaras_valores_diarias (chacara_id, valor_diaria_id)
 );
@@ -77,6 +83,8 @@ CREATE TABLE datas_comemorativas (
     data_comemorativa DATE NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (valor_promocional_id) REFERENCES valores_diarias(id)
+		ON UPDATE CASCADE
+        ON DELETE CASCADE
 );
 
 -- 9. Tabela de Administração (Login)
@@ -86,6 +94,8 @@ CREATE TABLE Adm (
     senha VARCHAR(255) NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+		ON UPDATE CASCADE
+        ON DELETE CASCADE
 );
 
 -- 10. Tabela de Agendamentos
@@ -99,8 +109,11 @@ CREATE TABLE agendamento (
     status ENUM('Confirmada', 'Pendente', 'Cancelada'),
     PRIMARY KEY (id),
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
-    FOREIGN KEY (chacara_id) REFERENCES chacara(id),
+    FOREIGN KEY (chacara_id) REFERENCES chacara(id)
+		ON UPDATE CASCADE
+        ON DELETE CASCADE,
     UNIQUE INDEX idx_agendamento (chacara_id, entrada_data)
+    
 );
 
 -- 11. Tabela de Controle de Pagamentos
@@ -117,6 +130,8 @@ CREATE TABLE controle_pagamentos (
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
     FOREIGN KEY (chacara_id) REFERENCES chacara(id),
     FOREIGN KEY (agendamento_id) REFERENCES agendamento(id)
+		ON UPDATE CASCADE
+        ON DELETE CASCADE
 );
 
 -- 12. Tabela de Disponibilidade
@@ -126,7 +141,9 @@ CREATE TABLE disponibilidade (
     data DATE NOT NULL,
     disponivel BOOLEAN NOT NULL DEFAULT TRUE,
     PRIMARY KEY (id),
-    FOREIGN KEY (chacara_id) REFERENCES chacara(id),
+    FOREIGN KEY (chacara_id) REFERENCES chacara(id)
+		ON UPDATE CASCADE
+        ON DELETE CASCADE,
     UNIQUE INDEX idx_disponibilidade (chacara_id, data)
 );
 
@@ -140,6 +157,8 @@ CREATE TABLE contratos (
     assinatura_proprietario BOOLEAN NOT NULL DEFAULT FALSE,
     PRIMARY KEY (id),
     FOREIGN KEY (agendamento_id) REFERENCES agendamento(id)
+		ON UPDATE CASCADE
+        ON DELETE CASCADE
 );
 
 -- 14. Tabela de Registros de Login
@@ -148,6 +167,8 @@ CREATE TABLE LoginRegistro (
     usuario_id INT,
     login_datetime DATETIME,
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+		ON UPDATE CASCADE
+        ON DELETE CASCADE
 );
 
 -- 15. Tabela de Registros de Logout
@@ -156,6 +177,8 @@ CREATE TABLE LogoutRegistro (
     usuario_id INT,
     logout_datetime DATETIME,
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+		ON UPDATE CASCADE
+        ON DELETE CASCADE
 );
 
 -- Inserindo Endereços
@@ -225,7 +248,7 @@ SELECT * FROM politicas;
 SELECT * FROM chacara;
 SELECT * FROM valores_diarias;
 SELECT * FROM chacaras_valores_diarias;
-SELECT * FROM datas_comemorativas;
+SELECT * FROM datas_comemorativas;	
 SELECT * FROM Adm;
 SELECT * FROM agendamento;
 SELECT * FROM controle_pagamentos;

@@ -1,12 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TecEventos
@@ -20,6 +14,7 @@ namespace TecEventos
         {
             LoadDatasComemorativas();
         }
+
         public DatasComemorativas()
         {
             InitializeComponent();
@@ -30,7 +25,9 @@ namespace TecEventos
 
         private void LoadDatasComemorativas()
         {
-            string query = "SELECT dc.data_comemorativa as Data, dc.descricao as Descrição, vd.valor as Valor  FROM datas_comemorativas dc\r\njoin valores_diarias vd on vd.id = dc.valor_promocional_id;";
+            string query = "SELECT dc.data_comemorativa as Data, dc.descricao as Descrição, vd.valor as Valor " +
+                           "FROM datas_comemorativas dc " +
+                           "JOIN valores_diarias vd ON vd.id = dc.valor_promocional_id;";
 
             using (MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString()))
             {
@@ -57,7 +54,7 @@ namespace TecEventos
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Erro ao conectar ao banco de dados! " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Erro ao conectar ao banco de dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -69,27 +66,37 @@ namespace TecEventos
                 string.IsNullOrWhiteSpace(txtPromocao.Text) ||
                 !int.TryParse(txtDiaComemorativo.Text, out int dia) ||
                 !int.TryParse(txtMesComemorativo.Text, out int mes) ||
-                !int.TryParse(txtAnoComemorativo.Text, out int ano))
+                !int.TryParse(txtAnoComemorativo.Text, out int ano) ||
+                !int.TryParse(txtPromocao.Text, out int valorPromocionalId))
             {
                 MessageBox.Show("Por favor, preencha todos os campos corretamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             data.setDiaMesAno(dia, mes, ano);
-
-            string query = "INSERT INTO datas_comemorativas(descricao, valor_promocional_id, data_comemorativa) " +
-                           "VALUES (@descricao, @valor_promocional_id, @data_comemorativa)";
+            data.setInfoDataComemorativa(txtNomeDataComemorativo.Text, txtNomeDataComemorativo.Text, txtPromocao.Text, txtPromocao.Text); // Supondo que a descrição esteja sendo definida assim
 
             using (MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString()))
             {
-                using (MySqlCommand command = new MySqlCommand(query, connection))
+                try
                 {
-                    command.Parameters.AddWithValue("@descricao", data.getDescricao());
-                    command.Parameters.AddWithValue("@data_comemorativa", new DateTime(data.getAno(), data.getMes(), data.getDia()).ToString("yyyy-MM-dd")); // Formata a data
+                    connection.Open();
 
-                    try
+                    // Verifica se o valor promocional existe
+                    if (!ValorPromocionalExists(valorPromocionalId, connection))
                     {
-                        connection.Open();
+                        MessageBox.Show("Valor promocional inválido ou não encontrado!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    string query = "INSERT INTO datas_comemorativas(descricao, valor_promocional_id, data_comemorativa) " +
+                                   "VALUES (@descricao, @valor_promocional_id, @data_comemorativa)";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@descricao", data.getDescricao());
+                        command.Parameters.AddWithValue("@valor_promocional_id", valorPromocionalId);
+                        command.Parameters.AddWithValue("@data_comemorativa", new DateTime(data.getAno(), data.getMes(), data.getDia()).ToString("yyyy-MM-dd"));
 
                         int linhasAfetadas = command.ExecuteNonQuery();
 
@@ -102,19 +109,18 @@ namespace TecEventos
                             MessageBox.Show("Nenhuma data comemorativa cadastrada. Verifique os dados e tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
-                    catch (MySqlException ex)
-                    {
-                        MessageBox.Show("Erro ao conectar ao banco de dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Erro ao salvar data comemorativa: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Erro ao conectar ao banco de dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao salvar data comemorativa: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
-        // Função para verificar se o valor promocional existe
         private bool ValorPromocionalExists(int valorPromocionalId, MySqlConnection connection)
         {
             string query = "SELECT COUNT(*) FROM valores_diarias WHERE id = @valorPromocionalId";
@@ -126,7 +132,6 @@ namespace TecEventos
                 return count > 0;
             }
         }
-
 
         private void btnHome_Click(object sender, EventArgs e)
         {
