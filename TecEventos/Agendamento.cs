@@ -27,11 +27,6 @@ namespace TecEventos
             conexaoBanco = new ConexaoBanco();
             agendamento = new GetSetAgendamento();
             this.Load += Agendamento_Load;
-            GridViewAgendamentos.ReadOnly = true;
-            GridViewAgendamentos.AllowUserToAddRows = false;
-            GridViewAgendamentos.AllowUserToDeleteRows = false;
-            GridViewAgendamentos.MultiSelect = false;
-            GridViewAgendamentos.Enabled = false;
         }
         private void LoadChacarasDisponiveis()
         {
@@ -95,6 +90,14 @@ namespace TecEventos
                 // Supondo que o ID da chácara está na primeira coluna (ajuste o índice da coluna conforme necessário)
                 //chacaraIdSelecionado = Convert.ToInt32(row.Cells[0].Value);
             }
+        }
+
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+            string updateQuery = "UPDATE entrada_data, saida_data, usuario_id, chacara_id, valor_agendamento, status" +
+                "SET @entrada_data, @saida_data, @usuario_id, @chacara_id, @valor_pagamentos, @status" +
+                "FROM agendamento WHERE id = @idAgendamentoSelecionado";
+
         }
     }
     
