@@ -54,7 +54,7 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.btnVisuPag);
             this.panel2.Controls.Add(this.BtnCriarPag);
-            this.panel2.Location = new System.Drawing.Point(152, 65);
+            this.panel2.Location = new System.Drawing.Point(156, 55);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1049, 522);
