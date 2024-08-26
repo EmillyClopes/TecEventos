@@ -118,6 +118,15 @@
     <Compile Include="Contrato.Designer.cs">
       <DependentUpon>Contrato.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="ContratoVisu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContratoVisu.Designer.cs">
+      <DependentUpon>ContratoVisu.cs</DependentUpon>
+    </Compile>
+>>>>>>> 39dcfc22c136459539fecaa61cf5f26900eafc9a
     <Compile Include="ControlePagamentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +235,12 @@
     <EmbeddedResource Include="Contrato.resx">
       <DependentUpon>Contrato.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
+=======
+    <EmbeddedResource Include="ContratoVisu.resx">
+      <DependentUpon>ContratoVisu.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> 39dcfc22c136459539fecaa61cf5f26900eafc9a
     <EmbeddedResource Include="ControlePagamentos.resx">
       <DependentUpon>ControlePagamentos.cs</DependentUpon>
     </EmbeddedResource>
