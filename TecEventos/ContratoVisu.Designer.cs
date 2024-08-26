@@ -44,9 +44,8 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1830, 844);
+            this.pictureBox1.Size = new System.Drawing.Size(1028, 609);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 71;
             this.pictureBox1.TabStop = false;
@@ -56,18 +55,20 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(180, 91);
-            this.panel1.MaximumSize = new System.Drawing.Size(1490, 800);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.MaximumSize = new System.Drawing.Size(1118, 650);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1471, 663);
+            this.panel1.Size = new System.Drawing.Size(1103, 539);
             this.panel1.TabIndex = 72;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.SkyBlue;
-            this.button1.Location = new System.Drawing.Point(1108, 527);
+            this.button1.Location = new System.Drawing.Point(705, 382);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(340, 124);
+            this.button1.Size = new System.Drawing.Size(255, 101);
             this.button1.TabIndex = 4;
             this.button1.Text = "Deletar";
             this.button1.UseVisualStyleBackColor = false;
@@ -76,9 +77,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 3);
+            this.label1.Location = new System.Drawing.Point(10, 2);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 35);
+            this.label1.Size = new System.Drawing.Size(108, 27);
             this.label1.TabIndex = 1;
             this.label1.Text = "Contratos:";
             // 
@@ -86,20 +88,22 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(177)))), ((int)(((byte)(206)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 41);
+            this.dataGridView1.Location = new System.Drawing.Point(15, 33);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1082, 610);
+            this.dataGridView1.Size = new System.Drawing.Size(658, 450);
             this.dataGridView1.TabIndex = 0;
             // 
             // ContratoVisu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1830, 844);
+            this.ClientSize = new System.Drawing.Size(1028, 609);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ContratoVisu";
             this.Text = "ContratoVisu";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

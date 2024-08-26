@@ -43,10 +43,10 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.btnVisuPag);
             this.panel2.Controls.Add(this.BtnCriarPag);
-            this.panel2.Location = new System.Drawing.Point(198, 35);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Location = new System.Drawing.Point(11, 45);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1398, 642);
+            this.panel2.Size = new System.Drawing.Size(995, 522);
             this.panel2.TabIndex = 3;
             // 
             // btnVisuPag
@@ -56,10 +56,9 @@
             this.btnVisuPag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVisuPag.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVisuPag.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnVisuPag.Location = new System.Drawing.Point(503, 395);
-            this.btnVisuPag.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVisuPag.Location = new System.Drawing.Point(377, 321);
             this.btnVisuPag.Name = "btnVisuPag";
-            this.btnVisuPag.Size = new System.Drawing.Size(349, 97);
+            this.btnVisuPag.Size = new System.Drawing.Size(262, 79);
             this.btnVisuPag.TabIndex = 73;
             this.btnVisuPag.Text = "Visualizar Contratos";
             this.btnVisuPag.UseVisualStyleBackColor = false;
@@ -72,10 +71,9 @@
             this.BtnCriarPag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCriarPag.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCriarPag.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BtnCriarPag.Location = new System.Drawing.Point(503, 170);
-            this.BtnCriarPag.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnCriarPag.Location = new System.Drawing.Point(377, 138);
             this.BtnCriarPag.Name = "BtnCriarPag";
-            this.BtnCriarPag.Size = new System.Drawing.Size(349, 97);
+            this.BtnCriarPag.Size = new System.Drawing.Size(262, 79);
             this.BtnCriarPag.TabIndex = 72;
             this.BtnCriarPag.Text = "Criar novo Contrato";
             this.BtnCriarPag.UseVisualStyleBackColor = false;
@@ -86,20 +84,20 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1795, 712);
+            this.pictureBox1.Size = new System.Drawing.Size(1028, 578);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
             // Contrato
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1795, 712);
+            this.ClientSize = new System.Drawing.Size(1028, 578);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Contrato";
             this.Text = "Contrato";
             this.panel2.ResumeLayout(false);
