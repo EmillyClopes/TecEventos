@@ -181,63 +181,320 @@ CREATE TABLE LogoutRegistro (
         ON DELETE CASCADE
 );
 
--- Inserindo Endereços
-INSERT INTO enderecos (rua, numero, bairro) VALUES ('Rua das Flores', '123', 'Jardim Primavera');
-INSERT INTO enderecos (rua, numero, bairro) VALUES ('Avenida Central', '456', 'Centro');
-INSERT INTO enderecos (rua, numero, bairro) VALUES ('Rua do Sol', '789', 'Bela Vista');
+-- Inserindo dados na tabela de Endereços
+INSERT INTO enderecos (rua, numero, bairro) VALUES 
+('Rua Barão de Jaguara', '100', 'Centro'),
+('Rua Dr. Quirino', '200', 'Centro'),
+('Rua Conceição', '300', 'Cambuí'),
+('Rua Emília Paiva Meira', '400', 'Taquaral'),
+('Rua José de Alencar', '500', 'Vila Itapura'),
+('Avenida Moraes Salles', '600', 'Bosque'),
+('Rua Dr. Guilherme da Silva', '700', 'Cambuí'),
+('Rua Irmã Serafina', '800', 'Centro'),
+('Rua Maria Monteiro', '900', 'Cambuí'),
+('Rua Antonio Cesarino', '1000', 'Vila Industrial');
 
--- Inserindo Usuários
-INSERT INTO usuarios (nome, email, telefone, endereco_id) VALUES 
-('João da Silva', 'joao@gmail.com', '11999999999', (SELECT id FROM enderecos WHERE rua = 'Rua das Flores' AND numero = '123')),
-('Maria Oliveira', 'maria@gmail.com', '11988888888', (SELECT id FROM enderecos WHERE rua = 'Avenida Central' AND numero = '456'));
 
--- Inserindo Regras
+-- Inserindo dados na tabela de Usuários
+INSERT INTO usuarios (nome, email, telefone, endereco_id) 
+SELECT 'TecEventos', 'teceventos@admin.com', '19998887766', id FROM enderecos WHERE rua = 'Rua Barão de Jaguara';
+SELECT 'João Silva', 'joao.silva@example.com', '19998887766', id FROM enderecos WHERE rua = 'Rua Barão de Jaguara';
+INSERT INTO usuarios (nome, email, telefone, endereco_id) 
+SELECT 'Maria Oliveira', 'maria.oliveira@example.com', '19997776655', id FROM enderecos WHERE rua = 'Rua Dr. Quirino';
+INSERT INTO usuarios (nome, email, telefone, endereco_id) 
+SELECT 'Carlos Pereira', 'carlos.pereira@example.com', '19996665544', id FROM enderecos WHERE rua = 'Rua Conceição';
+INSERT INTO usuarios (nome, email, telefone, endereco_id) 
+SELECT 'Ana Souza', 'ana.souza@example.com', '19995554433', id FROM enderecos WHERE rua = 'Rua Emília Paiva Meira';
+INSERT INTO usuarios (nome, email, telefone, endereco_id) 
+SELECT 'Pedro Lima', 'pedro.lima@example.com', '19994443322', id FROM enderecos WHERE rua = 'Rua José de Alencar';
+INSERT INTO usuarios (nome, email, telefone, endereco_id) 
+SELECT 'Julia Santos', 'julia.santos@example.com', '19993332211', id FROM enderecos WHERE rua = 'Avenida Moraes Salles';
+INSERT INTO usuarios (nome, email, telefone, endereco_id) 
+SELECT 'Roberto Costa', 'roberto.costa@example.com', '19992221100', id FROM enderecos WHERE rua = 'Rua Dr. Guilherme da Silva';
+INSERT INTO usuarios (nome, email, telefone, endereco_id) 
+SELECT 'Fernanda Almeida', 'fernanda.almeida@example.com', '19991110099', id FROM enderecos WHERE rua = 'Rua Irmã Serafina';
+INSERT INTO usuarios (nome, email, telefone, endereco_id) 
+SELECT 'Lucas Martins', 'lucas.martins@example.com', '19990000999', id FROM enderecos WHERE rua = 'Rua Maria Monteiro';
+INSERT INTO usuarios (nome, email, telefone, endereco_id) 
+SELECT 'Paula Fernandes', 'paula.fernandes@example.com', '19998889988', id FROM enderecos WHERE rua = 'Rua Antonio Cesarino';
+
+-- Inserindo dados na tabela de Regras
 INSERT INTO regras (descricao) VALUES 
-('Piscina disponível apenas até às 20h'),
-('Proibido som alto após as 22h');
+('Não é permitido música alta após as 22h'),
+('É obrigatório o uso de máscaras nas áreas comuns'),
+('Proibido fumar dentro das instalações'),
+('Animais de estimação são permitidos mediante aviso prévio'),
+('Uso da piscina permitido até as 20h'),
+('Somente hóspedes registrados podem pernoitar nas dependências'),
+('Manter a limpeza dos espaços comuns'),
+('É proibido levar toalhas das acomodações'),
+('Solicitar autorização para eventos com mais de 10 pessoas'),
+('Não é permitido churrasco nas varandas dos apartamentos');
 
--- Inserindo Políticas
+
+-- Inserindo dados na tabela de Políticas
 INSERT INTO politicas (descricao) VALUES 
-('Check-in a partir das 14h e check-out até às 12h'),
-('Animais de estimação são permitidos mediante aviso prévio');
+('Check-in a partir das 14h e check-out até as 12h'),
+('Cancelamento gratuito até 48h antes do check-in'),
+('Taxa de 50% do valor total em caso de cancelamento tardio'),
+('Pagamento de caução no valor de R$500,00 no check-in'),
+('Política de privacidade para tratamento de dados pessoais'),
+('Reservas confirmadas somente mediante pagamento antecipado de 50% do valor'),
+('Proibido estender a estadia sem prévia autorização'),
+('Reembolso de 100% em caso de problemas técnicos que não possam ser resolvidos'),
+('É necessário documento de identificação para o check-in'),
+('Reservas para menores de idade somente acompanhados pelos pais ou responsáveis');
 
--- Inserindo Chácaras
-INSERT INTO chacara (nome, endereco_id, regras_id, politicas_id) VALUES 
-('Chácara Vista Alegre', 
-    (SELECT id FROM enderecos WHERE rua = 'Rua das Flores' AND numero = '123'),
-    (SELECT id FROM regras WHERE descricao = 'Proibido som alto após as 22h'),
-    (SELECT id FROM politicas WHERE descricao = 'Check-in a partir das 14h e check-out até às 12h')
-),
-('Chácara Paraíso', 
-    (SELECT id FROM enderecos WHERE rua = 'Avenida Central' AND numero = '456'),
-    (SELECT id FROM regras WHERE descricao = 'Piscina disponível apenas até às 20h'),
-    (SELECT id FROM politicas WHERE descricao = 'Animais de estimação são permitidos mediante aviso prévio')
-);
 
--- Inserindo Valores de Diárias
+-- Inserindo dados na tabela de Chácaras
+INSERT INTO chacara (nome, endereco_id, regras_id, politicas_id) 
+SELECT 'Chácara Bela Vista', e.id, r.id, p.id 
+FROM enderecos e, regras r, politicas p WHERE e.rua = 'Rua Barão de Jaguara' AND r.id = 1 AND p.id = 1;
+INSERT INTO chacara (nome, endereco_id, regras_id, politicas_id) 
+SELECT 'Chácara Paraíso', e.id, r.id, p.id 
+FROM enderecos e, regras r, politicas p WHERE e.rua = 'Rua Dr. Quirino' AND r.id = 2 AND p.id = 2;
+INSERT INTO chacara (nome, endereco_id, regras_id, politicas_id) 
+SELECT 'Chácara Recanto Feliz', e.id, r.id, p.id 
+FROM enderecos e, regras r, politicas p WHERE e.rua = 'Rua Conceição' AND r.id = 3 AND p.id = 3;
+INSERT INTO chacara (nome, endereco_id, regras_id, politicas_id) 
+SELECT 'Chácara Flor do Campo', e.id, r.id, p.id 
+FROM enderecos e, regras r, politicas p WHERE e.rua = 'Rua Emília Paiva Meira' AND r.id = 4 AND p.id = 4;
+INSERT INTO chacara (nome, endereco_id, regras_id, politicas_id) 
+SELECT 'Chácara Sol Nascente', e.id, r.id, p.id 
+FROM enderecos e, regras r, politicas p WHERE e.rua = 'Rua José de Alencar' AND r.id = 5 AND p.id = 5;
+INSERT INTO chacara (nome, endereco_id, regras_id, politicas_id) 
+SELECT 'Chácara Raio de Luz', e.id, r.id, p.id 
+FROM enderecos e, regras r, politicas p WHERE e.rua = 'Avenida Moraes Salles' AND r.id = 6 AND p.id = 6;
+INSERT INTO chacara (nome, endereco_id, regras_id, politicas_id) 
+SELECT 'Chácara Horizonte Verde', e.id, r.id, p.id 
+FROM enderecos e, regras r, politicas p WHERE e.rua = 'Rua Dr. Guilherme da Silva' AND r.id = 7 AND p.id = 7;
+INSERT INTO chacara (nome, endereco_id, regras_id, politicas_id) 
+SELECT 'Chácara Recanto dos Pássaros', e.id, r.id, p.id 
+FROM enderecos e, regras r, politicas p WHERE e.rua = 'Rua Irmã Serafina' AND r.id = 8 AND p.id = 8;
+INSERT INTO chacara (nome, endereco_id, regras_id, politicas_id) 
+SELECT 'Chácara Beija-Flor', e.id, r.id, p.id 
+FROM enderecos e, regras r, politicas p WHERE e.rua = 'Rua Maria Monteiro' AND r.id = 9 AND p.id = 9;
+INSERT INTO chacara (nome, endereco_id, regras_id, politicas_id) 
+SELECT 'Chácara Jardim das Flores', e.id, r.id, p.id 
+FROM enderecos e, regras r, politicas p WHERE e.rua = 'Rua Antonio Cesarino' AND r.id = 10 AND p.id = 10;
+
+
+-- Inserindo dados na tabela de Valores de Diárias
 INSERT INTO valores_diarias (valor, dia_semana) VALUES 
 (500.00, 'Segunda-feira'),
-(600.00, 'Sábado'),
-(700.00, 'Domingo');
+(550.00, 'Terça-feira'),
+(600.00, 'Quarta-feira'),
+(650.00, 'Quinta-feira'),
+(700.00, 'Sexta-feira'),
+(800.00, 'Sábado'),
+(750.00, 'Domingo'),
+(900.00, 'Sábado'),
+(850.00, 'Domingo'),
+(5000.00, 'Feriado'),
+(1000.00, 'Sábado');
 
--- Inserindo Valores de Diárias para Chácaras
-INSERT INTO chacaras_valores_diarias (chacara_id, valor_diaria_id) VALUES 
-((SELECT id FROM chacara WHERE nome = 'Chácara Vista Alegre'), (SELECT id FROM valores_diarias WHERE valor = 500.00 AND dia_semana = 'Segunda-feira')),
-((SELECT id FROM chacara WHERE nome = 'Chácara Vista Alegre'), (SELECT id FROM valores_diarias WHERE valor = 600.00 AND dia_semana = 'Sábado')),
-((SELECT id FROM chacara WHERE nome = 'Chácara Paraíso'), (SELECT id FROM valores_diarias WHERE valor = 700.00 AND dia_semana = 'Domingo'));
 
--- Inserindo Datas Comemorativas
-INSERT INTO datas_comemorativas (descricao, valor_promocional_id, data_comemorativa) VALUES 
-('Natal', (SELECT id FROM valores_diarias WHERE valor = 700.00 AND dia_semana = 'Domingo'), '2024-12-25'),
-('Ano Novo', (SELECT id FROM valores_diarias WHERE valor = 600.00 AND dia_semana = 'Sábado'), '2024-12-31');
+-- Inserindo dados na tabela de Associação entre Chácaras e Valores de Diárias
+INSERT INTO chacaras_valores_diarias (chacara_id, valor_diaria_id)
+SELECT c.id, v.id FROM chacara c, valores_diarias v WHERE c.nome = 'Chácara Bela Vista' AND v.dia_semana = 'Segunda-feira';
+INSERT INTO chacaras_valores_diarias (chacara_id, valor_diaria_id)
+SELECT c.id, v.id FROM chacara c, valores_diarias v WHERE c.nome = 'Chácara Paraíso' AND v.dia_semana = 'Terça-feira';
+INSERT INTO chacaras_valores_diarias (chacara_id, valor_diaria_id)
+SELECT c.id, v.id FROM chacara c, valores_diarias v WHERE c.nome = 'Chácara Recanto Feliz' AND v.dia_semana = 'Quarta-feira';
+INSERT INTO chacaras_valores_diarias (chacara_id, valor_diaria_id)
+SELECT c.id, v.id FROM chacara c, valores_diarias v WHERE c.nome = 'Chácara Flor do Campo' AND v.dia_semana = 'Quinta-feira';
+INSERT INTO chacaras_valores_diarias (chacara_id, valor_diaria_id)
+SELECT c.id, v.id FROM chacara c, valores_diarias v WHERE c.nome = 'Chácara Sol Nascente' AND v.dia_semana = 'Sexta-feira';
+INSERT INTO chacaras_valores_diarias (chacara_id, valor_diaria_id)
+SELECT c.id, v.id FROM chacara c, valores_diarias v WHERE c.nome = 'Chácara Raio de Luz' AND v.dia_semana = 'Sábado';
+INSERT INTO chacaras_valores_diarias (chacara_id, valor_diaria_id)
+SELECT c.id, v.id FROM chacara c, valores_diarias v WHERE c.nome = 'Chácara Horizonte Verde' AND v.dia_semana = 'Domingo';
+INSERT INTO chacaras_valores_diarias (chacara_id, valor_diaria_id)
+SELECT c.id, v.id FROM chacara c, valores_diarias v WHERE c.nome = 'Chácara Recanto dos Pássaros' AND v.dia_semana = 'Feriado';
+INSERT INTO chacaras_valores_diarias (chacara_id, valor_diaria_id)
+SELECT c.id, v.id FROM chacara c, valores_diarias v WHERE c.nome = 'Chácara Beija-Flor' AND v.dia_semana = 'Véspera de feriado';
+INSERT INTO chacaras_valores_diarias (chacara_id, valor_diaria_id)
+SELECT c.id, v.id FROM chacara c, valores_diarias v WHERE c.nome = 'Chácara Jardim das Flores' AND v.dia_semana = 'Ano Novo';
 
--- Inserindo Logins
-INSERT INTO Adm (usuario_id, senha) VALUES 
-((SELECT id FROM usuarios WHERE email = 'joao@gmail.com'), 'admin');
+-- Inserindo dados na tabela de Datas Comemorativas
+INSERT INTO datas_comemorativas (descricao, valor_promocional_id, data_comemorativa) 
+SELECT 'Natal', id, '2024-12-25' FROM valores_diarias WHERE dia_semana = 'Feriado';
+INSERT INTO datas_comemorativas (descricao, valor_promocional_id, data_comemorativa) 
+SELECT 'Ano Novo', id, '2024-01-01' FROM valores_diarias WHERE dia_semana = 'Ano Novo';
+INSERT INTO datas_comemorativas (descricao, valor_promocional_id, data_comemorativa) 
+SELECT 'Carnaval', id, '2024-02-13' FROM valores_diarias WHERE dia_semana = 'Feriado';
+INSERT INTO datas_comemorativas (descricao, valor_promocional_id, data_comemorativa) 
+SELECT 'Páscoa', id, '2024-04-01' FROM valores_diarias WHERE dia_semana = 'Feriado';
+INSERT INTO datas_comemorativas (descricao, valor_promocional_id, data_comemorativa) 
+SELECT 'Dia do Trabalho', id, '2024-05-01' FROM valores_diarias WHERE dia_semana = 'Feriado';
+INSERT INTO datas_comemorativas (descricao, valor_promocional_id, data_comemorativa) 
+SELECT 'Independência do Brasil', id, '2024-09-07' FROM valores_diarias WHERE dia_semana = 'Feriado';
+INSERT INTO datas_comemorativas (descricao, valor_promocional_id, data_comemorativa) 
+SELECT 'Finados', id, '2024-11-02' FROM valores_diarias WHERE dia_semana = 'Feriado';
+INSERT INTO datas_comemorativas (descricao, valor_promocional_id, data_comemorativa) 
+SELECT 'Proclamação da República', id, '2024-11-15' FROM valores_diarias WHERE dia_semana = 'Feriado';
+INSERT INTO datas_comemorativas (descricao, valor_promocional_id, data_comemorativa) 
+SELECT 'Dia das Crianças', id, '2024-10-12' FROM valores_diarias WHERE dia_semana = 'Feriado';
+INSERT INTO datas_comemorativas (descricao, valor_promocional_id, data_comemorativa) 
+SELECT 'Dia da Consciência Negra', id, '2024-11-20' FROM valores_diarias WHERE dia_semana = 'Feriado';
 
--- Inserindo Agendamentos
-INSERT INTO agendamento (entrada_data, saida_data, usuario_id, chacara_id, valor_agendamento, status) VALUES 
-('2024-12-24', '2024-12-26', (SELECT id FROM usuarios WHERE email = 'joao@gmail.com'), (SELECT id FROM chacara WHERE nome = 'Chácara Vista Alegre'), 1000.00, 'Confirmada');
+
+-- Inserindo dados na tabela de Administração (Login)
+INSERT INTO Adm (usuario_id, senha) 
+SELECT id, 'admin' FROM usuarios WHERE email = 'teceventos@admin.com';
+INSERT INTO Adm (usuario_id, senha) 
+SELECT id, '1234' FROM usuarios WHERE email = 'maria.oliveira@example.com';
+
+
+-- Inserindo dados na tabela de Agendamentos
+INSERT INTO agendamento (entrada_data, saida_data, usuario_id, chacara_id, valor_agendamento, status)
+SELECT '2024-09-01', '2024-09-05', u.id, c.id, 2500.00, 'Confirmada' 
+FROM usuarios u, chacara c WHERE u.email = 'joao.silva@example.com' AND c.nome = 'Chácara Bela Vista';
+INSERT INTO agendamento (entrada_data, saida_data, usuario_id, chacara_id, valor_agendamento, status)
+SELECT '2024-10-01', '2024-10-05', u.id, c.id, 2700.00, 'Pendente' 
+FROM usuarios u, chacara c WHERE u.email = 'maria.oliveira@example.com' AND c.nome = 'Chácara Paraíso';
+INSERT INTO agendamento (entrada_data, saida_data, usuario_id, chacara_id, valor_agendamento, status)
+SELECT '2024-11-01', '2024-11-05', u.id, c.id, 3000.00, 'Cancelada' 
+FROM usuarios u, chacara c WHERE u.email = 'carlos.pereira@example.com' AND c.nome = 'Chácara Recanto Feliz';
+INSERT INTO agendamento (entrada_data, saida_data, usuario_id, chacara_id, valor_agendamento, status)
+SELECT '2024-12-01', '2024-12-05', u.id, c.id, 3200.00, 'Confirmada' 
+FROM usuarios u, chacara c WHERE u.email = 'ana.souza@example.com' AND c.nome = 'Chácara Flor do Campo';
+INSERT INTO agendamento (entrada_data, saida_data, usuario_id, chacara_id, valor_agendamento, status)
+SELECT '2024-09-10', '2024-09-15', u.id, c.id, 2900.00, 'Pendente' 
+FROM usuarios u, chacara c WHERE u.email = 'pedro.lima@example.com' AND c.nome = 'Chácara Sol Nascente';
+INSERT INTO agendamento (entrada_data, saida_data, usuario_id, chacara_id, valor_agendamento, status)
+SELECT '2024-08-20', '2024-08-25', u.id, c.id, 3100.00, 'Confirmada' 
+FROM usuarios u, chacara c WHERE u.email = 'julia.santos@example.com' AND c.nome = 'Chácara Raio de Luz';
+INSERT INTO agendamento (entrada_data, saida_data, usuario_id, chacara_id, valor_agendamento, status)
+SELECT '2024-07-10', '2024-07-15', u.id, c.id, 2600.00, 'Pendente' 
+FROM usuarios u, chacara c WHERE u.email = 'roberto.costa@example.com' AND c.nome = 'Chácara Horizonte Verde';
+INSERT INTO agendamento (entrada_data, saida_data, usuario_id, chacara_id, valor_agendamento, status)
+SELECT '2024-06-01', '2024-06-05', u.id, c.id, 2800.00, 'Cancelada' 
+FROM usuarios u, chacara c WHERE u.email = 'fernanda.almeida@example.com' AND c.nome = 'Chácara Recanto dos Pássaros';
+INSERT INTO agendamento (entrada_data, saida_data, usuario_id, chacara_id, valor_agendamento, status)
+SELECT '2024-05-20', '2024-05-25', u.id, c.id, 2700.00, 'Confirmada' 
+FROM usuarios u, chacara c WHERE u.email = 'lucas.martins@example.com' AND c.nome = 'Chácara Beija-Flor';
+INSERT INTO agendamento (entrada_data, saida_data, usuario_id, chacara_id, valor_agendamento, status)
+SELECT '2024-04-15', '2024-04-20', u.id, c.id, 2900.00, 'Pendente' 
+FROM usuarios u, chacara c WHERE u.email = 'paula.fernandes@example.com' AND c.nome = 'Chácara Jardim das Flores';
+
+-- Inserindo dados na tabela de Controle de Pagamentos
+INSERT INTO controle_pagamentos (usuario_id, chacara_id, agendamento_id, valor_pago, data_pagamento, metodo_pagamento, status_pagamento)
+SELECT u.id, c.id, a.id, 2500.00, '2024-09-01', 'PIX', 'Pago'
+FROM usuarios u
+JOIN chacara c ON c.nome = 'Chácara Bela Vista'
+JOIN agendamento a ON a.usuario_id = u.id AND a.chacara_id = c.id
+WHERE u.email = 'joao.silva@example.com';
+
+INSERT INTO controle_pagamentos (usuario_id, chacara_id, agendamento_id, valor_pago, data_pagamento, metodo_pagamento, status_pagamento)
+SELECT u.id, c.id, a.id, 2700.00, '2024-10-02', 'Cartão Crédito', 'Pendente'
+FROM usuarios u
+JOIN chacara c ON c.nome = 'Chácara Paraíso'
+JOIN agendamento a ON a.usuario_id = u.id AND a.chacara_id = c.id
+WHERE u.email = 'maria.oliveira@example.com';
+
+INSERT INTO controle_pagamentos (usuario_id, chacara_id, agendamento_id, valor_pago, data_pagamento, metodo_pagamento, status_pagamento)
+SELECT u.id, c.id, a.id, 3000.00, '2024-11-03', 'Depósito Bancário', 'Cancelado'
+FROM usuarios u
+JOIN chacara c ON c.nome = 'Chácara Recanto Feliz'
+JOIN agendamento a ON a.usuario_id = u.id AND a.chacara_id = c.id
+WHERE u.email = 'carlos.pereira@example.com';
+
+INSERT INTO controle_pagamentos (usuario_id, chacara_id, agendamento_id, valor_pago, data_pagamento, metodo_pagamento, status_pagamento)
+SELECT u.id, c.id, a.id, 3200.00, '2024-12-04', 'PIX', 'Pago'
+FROM usuarios u
+JOIN chacara c ON c.nome = 'Chácara Flor do Campo'
+JOIN agendamento a ON a.usuario_id = u.id AND a.chacara_id = c.id
+WHERE u.email = 'ana.souza@example.com';
+
+INSERT INTO controle_pagamentos (usuario_id, chacara_id, agendamento_id, valor_pago, data_pagamento, metodo_pagamento, status_pagamento)
+SELECT u.id, c.id, a.id, 2900.00, '2024-09-11', 'Cartão Débito', 'Pendente'
+FROM usuarios u
+JOIN chacara c ON c.nome = 'Chácara Sol Nascente'
+JOIN agendamento a ON a.usuario_id = u.id AND a.chacara_id = c.id
+WHERE u.email = 'pedro.lima@example.com';
+
+
+-- Inserindo dados na tabela de Disponibilidade
+INSERT INTO disponibilidade (chacara_id, data, disponivel)
+SELECT id, '2024-09-01', FALSE FROM chacara WHERE nome = 'Chácara Bela Vista';
+
+INSERT INTO disponibilidade (chacara_id, data, disponivel)
+SELECT id, '2024-10-02', TRUE FROM chacara WHERE nome = 'Chácara Paraíso';
+
+INSERT INTO disponibilidade (chacara_id, data, disponivel)
+SELECT id, '2024-11-03', FALSE FROM chacara WHERE nome = 'Chácara Recanto Feliz';
+
+INSERT INTO disponibilidade (chacara_id, data, disponivel)
+SELECT id, '2024-12-04', TRUE FROM chacara WHERE nome = 'Chácara Flor do Campo';
+
+INSERT INTO disponibilidade (chacara_id, data, disponivel)
+SELECT id, '2024-09-11', TRUE FROM chacara WHERE nome = 'Chácara Sol Nascente';
+
+INSERT INTO disponibilidade (chacara_id, data, disponivel)
+SELECT id, '2024-08-20', FALSE FROM chacara WHERE nome = 'Chácara Raio de Luz';
+
+INSERT INTO disponibilidade (chacara_id, data, disponivel)
+SELECT id, '2024-07-10', TRUE FROM chacara WHERE nome = 'Chácara Horizonte Verde';
+
+INSERT INTO disponibilidade (chacara_id, data, disponivel)
+SELECT id, '2024-06-01', FALSE FROM chacara WHERE nome = 'Chácara Recanto dos Pássaros';
+
+INSERT INTO disponibilidade (chacara_id, data, disponivel)
+SELECT id, '2024-05-20', TRUE FROM chacara WHERE nome = 'Chácara Beija-Flor';
+
+INSERT INTO disponibilidade (chacara_id, data, disponivel)
+SELECT id, '2024-04-15', FALSE FROM chacara WHERE nome = 'Chácara Jardim das Flores';
+
+
+-- Inserindo dados na tabela de Contratos
+INSERT INTO contratos (agendamento_id, data_criacao, detalhes, assinatura_cliente, assinatura_proprietario)
+SELECT a.id, '2024-09-01', 'Contrato para locação de Chácara Bela Vista.', TRUE, TRUE 
+FROM agendamento a
+JOIN chacara c ON a.chacara_id = c.id
+WHERE c.nome = 'Chácara Bela Vista';
+
+INSERT INTO contratos (agendamento_id, data_criacao, detalhes, assinatura_cliente, assinatura_proprietario)
+SELECT a.id, '2024-10-01', 'Contrato para locação de Chácara Paraíso.', TRUE, FALSE 
+FROM agendamento a
+JOIN chacara c ON a.chacara_id = c.id
+WHERE c.nome = 'Chácara Paraíso';
+
+INSERT INTO contratos (agendamento_id, data_criacao, detalhes, assinatura_cliente, assinatura_proprietario)
+SELECT a.id, '2024-11-01', 'Contrato para locação de Chácara Recanto Feliz.', FALSE, FALSE 
+FROM agendamento a
+JOIN chacara c ON a.chacara_id = c.id
+WHERE c.nome = 'Chácara Recanto Feliz';
+
+INSERT INTO contratos (agendamento_id, data_criacao, detalhes, assinatura_cliente, assinatura_proprietario)
+SELECT a.id, '2024-12-01', 'Contrato para locação de Chácara Flor do Campo.', TRUE, TRUE 
+FROM agendamento a
+JOIN chacara c ON a.chacara_id = c.id
+WHERE c.nome = 'Chácara Flor do Campo';
+
+INSERT INTO contratos (agendamento_id, data_criacao, detalhes, assinatura_cliente, assinatura_proprietario)
+SELECT a.id, '2024-09-10', 'Contrato para locação de Chácara Sol Nascente.', TRUE, TRUE 
+FROM agendamento a
+JOIN chacara c ON a.chacara_id = c.id
+WHERE c.nome = 'Chácara Sol Nascente';
+
+
+-- Inserindo dados na tabela de Registros de Login
+INSERT INTO LoginRegistro (usuario_id, login_datetime) VALUES 
+((SELECT id FROM usuarios WHERE nome='João Silva'), '2024-08-01 09:00:00');
+
+-- Inserindo dados na tabela de Registros de Logout
+INSERT INTO LogoutRegistro (usuario_id, logout_datetime) VALUES 
+((SELECT id FROM usuarios WHERE nome='João Silva'), '2024-08-01 17:00:00');
+
+-- Agendamento
+SELECT entrada_data as Entrada, saida_data as Saída, u.nome as Cliente, 
+                             u.telefone as Telefone, c.nome as Chacara, 
+                             a.valor_agendamento as 'Valor Agendamento', 
+                             a.status as 'Status Agendamento' 
+                             FROM agendamento a
+                             JOIN usuarios u ON u.id = a.usuario_id
+                             JOIN chacara c ON c.id = a.chacara_id;
 
 -- Selecionando todos os registros das tabelas
 
