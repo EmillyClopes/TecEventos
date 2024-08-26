@@ -27,11 +27,14 @@ namespace TecEventos
 
         private void LoadChacarasDisponiveis()
         {
-            string query = @"SELECT c.id as Id, c.nome as Nome 
-                             FROM chacara c 
-                             WHERE c.id NOT IN (SELECT chacara_id 
-                                                FROM agendamento 
-                                                WHERE entrada_data <= CURDATE() AND saida_data >= CURDATE())";
+            string query = @"SELECT c.Id as ID, c.nome as Nome, v.valor as Valor, e.rua as Rua, e.numero as Numero, e.bairro as Bairro, 
+                                    r.descricao as Regras, p.descricao as Politicas  
+                             FROM chacara c
+                             JOIN enderecos e ON e.id = c.endereco_id
+                             JOIN regras r ON r.id = c.regras_id
+                             JOIN politicas p ON p.id = c.politicas_id
+                             JOIN chacaras_valores_diarias cvd ON c.id = cvd.chacara_id
+                             JOIN valores_diarias v ON v.id = cvd.valor_diaria_id";
 
             using (MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString()))
             {
@@ -180,7 +183,8 @@ namespace TecEventos
 
                 if (result == DialogResult.Yes)
                 {
-                    string query = "DELETE FROM chacara WHERE id = @ChacaraId";
+                    
+                    string query = "update chacara set endereco_id = null and regras_id = null and politicas_id = null where id =@ChacaraId;DELETE FROM chacara WHERE id = @ChacaraId";
 
                     using (MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString()))
                     {
