@@ -109,6 +109,5 @@ namespace TecEventos
             this.Close();
             /*fecha a tela*/
         }
-
     }
 }
