@@ -35,7 +35,7 @@ namespace TecEventos
         }
         private void LoadChacarasDisponiveis()
         {
-            string query = "SELECT entrada_data, saida_data, usuario_id, chacara_id, valor_agendamento FROM agendamento";
+            string query = "SELECT entrada_data as Entrada, saida_data as Saída, u.nome as Cliente, u.telefone as Telefone, c.nome as Chacara, valor_agendamento, a.status as 'Status Agendamento' FROM agendamento a\r\njoin usuarios u on u.id = a.usuario_id\r\njoin chacara c on c.id =a.chacara_id;\r\n\r\n";
 
             using (MySqlConnection connection = new MySqlConnection(conexaoBanco.getConnectionString()))
             {
